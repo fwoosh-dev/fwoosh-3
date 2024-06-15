@@ -41,6 +41,9 @@ importers:
       glob:
         specifier: ^10.4.1
         version: 10.4.1
+      multilang-extract-comments:
+        specifier: ^0.4.0
+        version: 0.4.0
       react:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
         version: 19.0.0-beta-e7d213dfb0-20240507
@@ -1310,6 +1313,12 @@ packages:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: false
 
+  /comment-patterns@0.12.2:
+    resolution: {integrity: sha512-yA1FeubMSK0MXzapPm1uNdxyGk0mTAn5qrsVS6uQUSDOpUgWVLCqsgZfA/lhRx6TCLr1MvxeRqXOb1peWXWg3Q==}
+    dependencies:
+      lodash: 4.17.21
+    dev: false
+
   /compare-versions@6.1.0:
     resolution: {integrity: sha512-LNZQXhqUvqUTotpZ00qLSaify3b4VFD588aRr8MKFw4CMUr98ytzCW5wDH5qx/DEY5kCDXcbcRuCqL0szEf2tg==}
     dev: false
@@ -1617,6 +1626,10 @@ packages:
     hasBin: true
     dev: false
 
+  /line-counter@1.1.0:
+    resolution: {integrity: sha512-6bmXJG/pOX5HBb2aIJZrI9CALBgY1VMbS0GPuXfJaT13UEfee/2xxPCsOOJdXLl3KPRyBf2/D+cjiG8hU9S7LA==}
+    dev: false
+
   /loader-runner@4.3.0:
     resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
     engines: {node: '>=6.11.5'}
@@ -1624,6 +1637,10 @@ packages:
 
   /lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
+    dev: false
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
   /loose-envify@1.4.0:
@@ -1681,6 +1698,15 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+    dev: false
+
+  /multilang-extract-comments@0.4.0:
+    resolution: {integrity: sha512-8mXCo9Q42Wyfho9nn7hHkG/0sKxH0nJWfmBLl8+c+FLv++XhFkFC1sntOk4NFZ+nSpoMjlF/8ILeOLyMRTFbIw==}
+    dependencies:
+      comment-patterns: 0.12.2
+      line-counter: 1.1.0
+      lodash: 4.17.21
+      quotemeta: 0.0.0
     dev: false
 
   /nanoid@3.3.7:
@@ -1743,6 +1769,10 @@ packages:
   /punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
+    dev: false
+
+  /quotemeta@0.0.0:
+    resolution: {integrity: sha512-1XGObUh7RN5b58vKuAsrlfqT+Rc4vmw8N4pP9gFCq1GFlTdV0Ex/D2Ro1Drvrqj++HPi3ig0Np17XPslELeMRA==}
     dev: false
 
   /randombytes@2.1.0:

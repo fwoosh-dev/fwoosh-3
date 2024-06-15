@@ -9,7 +9,7 @@ export async function Story({ story }: { story: Story }) {
 
   /* @vite-ignore */
   const mod = await import(story.file);
-  const Example = mod[firstExample];
+  const Example = mod[firstExample.name];
 
   return <Example />;
 }

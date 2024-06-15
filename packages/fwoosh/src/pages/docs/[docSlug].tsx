@@ -10,8 +10,6 @@ export default async function DocViewer({ docSlug }: { docSlug: string }) {
 
   const story = await getStoryByName(name);
 
-  console.log({ name });
-
   if (!story) {
     return <div>Doc not found</div>;
   }

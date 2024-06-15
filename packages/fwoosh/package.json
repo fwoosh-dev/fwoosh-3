@@ -14,6 +14,7 @@
     "change-case": "^5.4.4",
     "command-line-application": "^0.10.1",
     "glob": "^10.4.1",
+    "multilang-extract-comments": "^0.4.0",
     "react": "19.0.0-beta-e7d213dfb0-20240507",
     "react-dom": "19.0.0-beta-e7d213dfb0-20240507",
     "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",

@@ -16,11 +16,13 @@ export async function Doc({ story }: { story: Story }) {
   return (
     <div>
       <h1>{story.title}</h1>
+      <p>{story.description}</p>
 
-      {story.stories.map((key) => (
-        <div key={key}>
-          <h2>{key}</h2>
-          <DocExample story={story} name={key} />
+      {story.stories.map(({ name, description }) => (
+        <div key={name}>
+          <h2>{name}</h2>
+          <p>{description}</p>
+          <DocExample story={story} name={name} />
         </div>
       ))}
     </div>

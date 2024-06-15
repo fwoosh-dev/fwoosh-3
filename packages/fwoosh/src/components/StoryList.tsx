@@ -11,9 +11,9 @@ export async function StoryList() {
           <div>{title}</div>
 
           <ul>
-            {stories.map((story) => (
-              <li key={story}>
-                <Link to={`/bench/${getStorySlug(title, story)}`}>{story}</Link>
+            {stories.map(({ name }) => (
+              <li key={name}>
+                <Link to={`/bench/${getStorySlug(title, name)}`}>{name}</Link>
               </li>
             ))}
           </ul>

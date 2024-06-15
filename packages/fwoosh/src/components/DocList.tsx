@@ -1,8 +1,8 @@
 import { Link } from "waku";
-import { getAllStories } from "../utils/stories";
+import { getAllPageGroups } from "../utils/stories";
 
 export async function DocList() {
-  const data = await getAllStories();
+  const data = await getAllPageGroups();
 
   return (
     <ul>

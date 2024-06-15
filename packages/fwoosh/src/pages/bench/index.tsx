@@ -1,8 +1,8 @@
-import { getAllStories } from "../../utils/stories";
+import { getAllPageGroups } from "../../utils/stories";
 import { Story } from "../../components/Story";
 
 export default async function FirstStory() {
-  const stories = await getAllStories();
+  const stories = await getAllPageGroups();
   const firstStory = Object.values(stories).flat()[0];
 
   if (!firstStory) {

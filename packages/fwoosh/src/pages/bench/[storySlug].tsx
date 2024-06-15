@@ -1,4 +1,4 @@
-import { getStoryById, parseStorySlug } from "../../utils/stories";
+import { getPageById, parseStorySlug } from "../../utils/stories";
 
 export default async function Story({ storySlug }: { storySlug: string }) {
   const { name, key } = parseStorySlug(storySlug);
@@ -7,13 +7,19 @@ export default async function Story({ storySlug }: { storySlug: string }) {
     return <div>Invalid story slug</div>;
   }
 
-  const story = await getStoryById(name);
+  const page = await getPageById(name);
+
+  if (!page) {
+    return <div>Page not found</div>;
+  }
+
+  const story = page.stories.find((s) => s.id === key);
 
   if (!story) {
     return <div>Story not found</div>;
   }
 
-  const Example = (await import(story.file))[key];
+  const Example = (await import(page.file))[story.name];
 
   return <Example />;
 }

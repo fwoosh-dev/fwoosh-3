@@ -1,24 +1,24 @@
 import { Link } from "waku";
-import { getAllStories, getStorySlug } from "../utils/stories";
+import { getAllPageGroups, getStorySlug } from "../utils/stories";
 
 export async function StoryList() {
-  const data = await getAllStories();
+  const groups = await getAllPageGroups();
 
   return (
     <ul>
-      {Object.entries(data).map(([group, stories]) => (
+      {Object.entries(groups).map(([group, pages]) => (
         <li key={group}>
           <h2>{group}</h2>
           <ul>
-            {stories.map(({ title, stories }) => (
-              <li key={title}>
-                <div>{title}</div>
+            {pages.map((page) => (
+              <li key={page.title}>
+                <div>{page.title}</div>
 
                 <ul>
-                  {stories.map(({ name }) => (
-                    <li key={name}>
-                      <Link to={`/bench/${getStorySlug(title, name)}`}>
-                        {name}
+                  {page.stories.map((story) => (
+                    <li key={story.name}>
+                      <Link to={`/bench/${getStorySlug(page, story)}`}>
+                        {story.name}
                       </Link>
                     </li>
                   ))}

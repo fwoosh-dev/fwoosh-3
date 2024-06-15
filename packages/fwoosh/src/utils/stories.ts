@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 import { kebabCase } from "change-case";
 import extract from "multilang-extract-comments";
 
-export const getAllStories = async () => {
+export const getAllPageGroups = async () => {
   const files = await glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
   const stories = await Promise.all(
     files.map(async (file) => {
@@ -31,6 +31,7 @@ export const getAllStories = async () => {
         title,
         description: storyMeta?.description,
         stories: Object.keys(stories).map((item) => ({
+          id: kebabCase(item),
           name: item,
           description: storyToComment[item],
         })),
@@ -65,8 +66,8 @@ export const getAllStories = async () => {
   );
 };
 
-export async function getStoryById(id: string) {
-  const allStories = await getAllStories();
+export async function getPageById(id: string) {
+  const allStories = await getAllPageGroups();
 
   for (const story of Object.values(allStories).flat()) {
     if (story.id === id) {
@@ -75,10 +76,11 @@ export async function getStoryById(id: string) {
   }
 }
 
-export type Story = Awaited<ReturnType<typeof getAllStories>>[string][number];
+export type Page = Awaited<ReturnType<typeof getAllPageGroups>>[string][number];
+export type Story = Page["stories"][number];
 
-export function getStorySlug(name: string, key: string) {
-  return `${kebabCase(name)}_${key}`;
+export function getStorySlug(page: Page, story: Story) {
+  return `${page.id}_${story.id}`;
 }
 
 export function getDocSlug(name: string) {

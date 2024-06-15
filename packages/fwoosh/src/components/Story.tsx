@@ -1,6 +1,6 @@
-import { Story } from "../utils/stories";
+import { Page } from "../utils/stories";
 
-export async function Story({ story }: { story: Story }) {
+export async function Story({ story }: { story: Page }) {
   const firstExample = story.stories[0];
 
   if (!firstExample) {

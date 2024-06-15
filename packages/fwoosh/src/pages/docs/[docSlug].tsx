@@ -1,4 +1,4 @@
-import { getStoryByName, parseStorySlug } from "../../utils/stories";
+import { getStoryById, parseStorySlug } from "../../utils/stories";
 import { Doc } from "../../components/Doc";
 
 export default async function DocViewer({ docSlug }: { docSlug: string }) {
@@ -8,7 +8,7 @@ export default async function DocViewer({ docSlug }: { docSlug: string }) {
     return <div>Invalid doc slug</div>;
   }
 
-  const story = await getStoryByName(name);
+  const story = await getStoryById(name);
 
   if (!story) {
     return <div>Doc not found</div>;

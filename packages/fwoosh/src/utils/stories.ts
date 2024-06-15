@@ -21,9 +21,12 @@ export const getAllStories = async () => {
         };
       }, {} as Record<string, string>);
 
+      const id = storyMeta?.title ?? title;
+
       return {
+        id: kebabCase(id),
         file,
-        title: storyMeta?.title ?? title,
+        title: id,
         description: storyMeta?.description,
         stories: Object.keys(stories).map((item) => ({
           name: item,
@@ -36,9 +39,9 @@ export const getAllStories = async () => {
   return stories.sort((a, b) => a.title.localeCompare(b.title));
 };
 
-export async function getStoryByName(title: string) {
+export async function getStoryById(id: string) {
   return getAllStories().then((stories) =>
-    stories.find((story) => kebabCase(story.title) === title)
+    stories.find((story) => story.id === id)
   );
 }
 

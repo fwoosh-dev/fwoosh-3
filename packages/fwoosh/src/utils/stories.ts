@@ -1,7 +1,7 @@
 import { glob } from "glob";
 import { promises as fs } from "fs";
 import { kebabCase } from "change-case";
-import extract from "multilang-extract-comments";
+// import extract from "multilang-extract-comments";
 
 export const getAllPageGroups = async () => {
   const files = await glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
@@ -11,7 +11,7 @@ export const getAllPageGroups = async () => {
       /* @vite-ignore */
       const { default: storyMeta, ...stories } = await import(file);
       const contents = await fs.readFile(file, "utf-8");
-      const comments = Object.values(extract(contents));
+      const comments: any[] = []; //Object.values(extract(contents));
       const storyToComment = comments.reduce((acc, comment) => {
         const storyName = comment.code.match(/export const (.*?)\s/)?.[1];
 

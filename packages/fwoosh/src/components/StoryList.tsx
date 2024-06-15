@@ -6,14 +6,23 @@ export async function StoryList() {
 
   return (
     <ul>
-      {data.map(({ title, stories }) => (
-        <li key={title}>
-          <div>{title}</div>
-
+      {Object.entries(data).map(([group, stories]) => (
+        <li key={group}>
+          <h2>{group}</h2>
           <ul>
-            {stories.map(({ name }) => (
-              <li key={name}>
-                <Link to={`/bench/${getStorySlug(title, name)}`}>{name}</Link>
+            {stories.map(({ title, stories }) => (
+              <li key={title}>
+                <div>{title}</div>
+
+                <ul>
+                  {stories.map(({ name }) => (
+                    <li key={name}>
+                      <Link to={`/bench/${getStorySlug(title, name)}`}>
+                        {name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>

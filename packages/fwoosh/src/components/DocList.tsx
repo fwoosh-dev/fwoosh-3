@@ -1,14 +1,21 @@
 import { Link } from "waku";
-import { getAllStories, getDocSlug } from "../utils/stories";
+import { getAllStories } from "../utils/stories";
 
 export async function DocList() {
   const data = await getAllStories();
 
   return (
     <ul>
-      {data.map(({ title }) => (
-        <li key={title}>
-          <Link to={`/docs/${getDocSlug(title)}`}>{title}</Link>
+      {Object.entries(data).map(([group, stories]) => (
+        <li key={group}>
+          <h2>{group}</h2>
+          <ul>
+            {stories.map(({ title, id }) => (
+              <li key={id}>
+                <Link to={`/docs/${id}`}>{title}</Link>
+              </li>
+            ))}
+          </ul>
         </li>
       ))}
     </ul>

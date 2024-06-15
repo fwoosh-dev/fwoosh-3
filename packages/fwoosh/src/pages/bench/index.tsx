@@ -2,7 +2,8 @@ import { getAllStories } from "../../utils/stories";
 import { Story } from "../../components/Story";
 
 export default async function FirstStory() {
-  const [firstStory] = await getAllStories();
+  const stories = await getAllStories();
+  const firstStory = Object.values(stories).flat()[0];
 
   if (!firstStory) {
     return <div>No stories found</div>;

@@ -2,15 +2,10 @@ import micromatch from "micromatch";
 import dedent from "dedent";
 import { promises as fs } from "fs";
 import path from "path";
-import { PluginOption } from "vite";
 
 // this needs to also be a custom loader for node
 // this will only run for client side code
-export function annotateExportPlugin({
-  include,
-}: {
-  include: string[];
-}): PluginOption[] {
+export function annotateExportPlugin({ include }: { include: string[] }) {
   const activeStoryFiles = new Set<string>();
 
   return [
@@ -112,7 +107,15 @@ export function annotateExportPlugin({
           };
         }
       },
-      handleHotUpdate({ server, file, modules }) {
+      handleHotUpdate({
+        server,
+        file,
+        modules,
+      }: {
+        server: { moduleGraph: { getModuleById: (id: string) => any } };
+        file: string;
+        modules: string[];
+      }) {
         if (activeStoryFiles.has(file)) {
           const virtualModule = server.moduleGraph.getModuleById(
             `/fwoosh-meta?file=${file}`

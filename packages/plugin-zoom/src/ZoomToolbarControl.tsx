@@ -55,7 +55,7 @@ export default function ZoomToolbarControl() {
   }, [storyPreviewId, zoom]);
 
   return (
-    <div style={{ position: "absolute", top: 0, right: 0 }}>
+    <div>
       <button onClick={increaseZoom}>+</button>
       <button onClick={decreaseZoom}>-</button>
       <button onClick={resetZoom}>Reset</button>

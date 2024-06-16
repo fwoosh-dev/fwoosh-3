@@ -1,4 +1,4 @@
-import { Page } from "../utils/stories";
+import { Page } from "@fwoosh/types";
 
 async function DocExample({ page, name }: { page: Page; name: string }) {
   /* @vite-ignore */

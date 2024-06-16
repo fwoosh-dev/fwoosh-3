@@ -2,10 +2,17 @@ import micromatch from "micromatch";
 import dedent from "dedent";
 import { promises as fs } from "fs";
 import path from "path";
+import { PluginOption } from "vite";
 
 // this needs to also be a custom loader for node
 // this will only run for client side code
-export function annotateExportPlugin({ include }: { include: string[] }) {
+export function annotateExportPlugin({
+  include,
+}: {
+  include: string[];
+}): PluginOption[] {
+  const activeStoryFiles = new Set<string>();
+
   return [
     // Connected a story to a source file with the component definitions is hard.
     // To get this info we annotate the exports of files included in the docgen
@@ -82,6 +89,7 @@ export function annotateExportPlugin({ include }: { include: string[] }) {
         if (id.startsWith("/fwoosh-meta")) {
           const actualFile = id.replace("/fwoosh-meta?file=", "");
           const dir = path.dirname(actualFile);
+          activeStoryFiles.add(actualFile);
 
           // Update the relative paths in the file to be absolute
           // I couldn't find another way of making it seem like this file is
@@ -102,6 +110,17 @@ export function annotateExportPlugin({ include }: { include: string[] }) {
             code: modifiedCode,
             map: null,
           };
+        }
+      },
+      handleHotUpdate({ server, file, modules }) {
+        if (activeStoryFiles.has(file)) {
+          const virtualModule = server.moduleGraph.getModuleById(
+            `/fwoosh-meta?file=${file}`
+          );
+
+          if (virtualModule) {
+            return [...modules, virtualModule];
+          }
         }
       },
     },

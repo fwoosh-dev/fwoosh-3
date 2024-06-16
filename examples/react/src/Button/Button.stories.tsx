@@ -6,6 +6,7 @@ import { Button } from "./Button";
 export const meta: Meta = {
   title: "Components/Button",
   component: Button,
+  description: "A button is something that can be clicked",
 };
 
 /** Use a button to trigger an action */

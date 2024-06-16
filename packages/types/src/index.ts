@@ -48,8 +48,12 @@ export interface StoryContext {
 }
 
 export interface Meta<T = Object> {
+  /** The title of the stories. This is used to created the sidebar. */
   title: string;
+  /** The component to generate documentation for. This can be a single component or an array of components. */
   component?: T | T[];
+  /** A top level description for the component. */
+  description?: string;
 }
 
 // We add extra properties to the component so that we can

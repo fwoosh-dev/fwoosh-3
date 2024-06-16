@@ -33,6 +33,7 @@ export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
         id: kebabCase(id),
         file,
         title,
+        description: meta?.description,
         stories: Object.keys(stories).map((item) => ({
           id: kebabCase(item),
           name: item,

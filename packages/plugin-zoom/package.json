@@ -10,6 +10,7 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "@fwoosh/types": "workspace:*",
     "@fwoosh/config-typescript": "workspace:*",
     "@types/react": "18.3.1",

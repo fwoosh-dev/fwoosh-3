@@ -1,17 +1,14 @@
-import { FwooshConfig, FwooshToolbarButton } from "@fwoosh/types";
+import { FwooshToolbarButton } from "@fwoosh/types";
 import { getConfig } from "../utils/config";
 import path from "path";
 
 export async function ToolsToolbarTool({
   tool,
-  config,
 }: {
   tool: FwooshToolbarButton;
-  config: FwooshConfig;
 }) {
-  const Component = await import(
-    path.join(tool.filepath.replace("commonjs", "esm"))
-  ).then((mod) => mod.default);
+  const esmPath = path.join(tool.filepath.replace("commonjs", "esm"));
+  const Component = await import(esmPath).then((mod) => mod.default);
   return <Component />;
 }
 
@@ -28,7 +25,7 @@ export async function ToolsToolbar() {
   return (
     <div>
       {toolbarTools.map((tool) => (
-        <ToolsToolbarTool key={tool.id} tool={tool} config={config} />
+        <ToolsToolbarTool key={tool.id} tool={tool} />
       ))}
     </div>
   );

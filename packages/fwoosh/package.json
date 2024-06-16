@@ -76,5 +76,6 @@
     }
   },
   "main": "./dist/commonjs/api/api.js",
-  "types": "./dist/commonjs/api/api.d.ts"
+  "types": "./dist/commonjs/api/api.d.ts",
+  "type": "module"
 }

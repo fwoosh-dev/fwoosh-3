@@ -23,6 +23,11 @@ export async function Panels() {
 
   return (
     <div>
+      <div>
+        {panels.map((panel) => (
+          <button>{panel.panelTitle}</button>
+        ))}
+      </div>
       {panels.map((panel) => (
         <Panel key={panel.id} panel={panel} />
       ))}

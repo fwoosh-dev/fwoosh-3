@@ -7,3 +7,5 @@ dist
 *.pem
 .tshy-build
 .tshy
+.turbo
+.tshy-build

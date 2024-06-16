@@ -1,7 +1,7 @@
-import styleX from "vite-plugin-stylex";
+// import styleX from "vite-plugin-stylex";
 
 const config = {
-  plugins: [styleX()],
+  // plugins: [styleX()],
 };
 
 export default config;

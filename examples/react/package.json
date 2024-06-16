@@ -1,22 +1,24 @@
 {
   "name": "fwoosh-react-example",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "scripts": {
-    "build": "fwoosh build",
-    "start": "fwoosh start"
+    "docs:build": "fwoosh build",
+    "docs:start": "fwoosh start"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "19.0.0-beta-e7d213dfb0-20240507",
+    "react-dom": "19.0.0-beta-e7d213dfb0-20240507"
   },
   "devDependencies": {
+    "@fwoosh/config-typescript": "workspace:*",
+    "@fwoosh/plugin-zoom": "workspace:*",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
     "fwoosh": "workspace:*"
   },
   "keywords": [],
   "author": "Andrew Lisowski",
-  "license": "ISC",
+  "license": "MIT",
   "description": ""
 }

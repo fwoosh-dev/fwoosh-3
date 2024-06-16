@@ -47,8 +47,9 @@ export interface StoryContext {
   story: Story;
 }
 
-type Component = object & {
-  fwoosh_file?: string;
+type Component = {} & {
+  fwoosh_file: string;
+  displayName: string;
 };
 
 export interface Meta {

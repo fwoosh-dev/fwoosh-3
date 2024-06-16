@@ -1,14 +1,26 @@
 import micromatch from "micromatch";
 import dedent from "dedent";
+import { PluginOption } from "vite";
+import { promises as fs } from "fs";
+import path from "path";
 
 // this needs to also be a custom loader for node
 // this will only run for client side code
-export function annotateExportPlugin({ include }: { include: string[] }) {
+export function annotateExportPlugin({
+  include,
+}: {
+  include: string[];
+}): PluginOption[] {
   return [
+    // Connected a story to a source file with the component definitions is hard.
+    // To get this info we annotate the exports of files included in the docgen
+    // globs.
     {
       name: "annotate-exports",
-
       async transform(src: string, id: string) {
+        // Only match some files cause doing all of them is too slow
+        // Instead of this we could try to use something like es-module-lexer
+        // to follow all the imports and exports to the source file.
         const isIncluded = ["!**/*.stories.*", ...include].every((glob) =>
           micromatch.isMatch(id, glob)
         );
@@ -46,6 +58,56 @@ export function annotateExportPlugin({ include }: { include: string[] }) {
         }
 
         return src;
+      },
+    },
+    // When you 'use client' in a file all exports from that fill are wrapped in
+    // a function and cannot be used in the server. This plugin creates a virtual
+    // module that removes that so that in can be evaluated in the server.
+    // We do this mainly to be able to access the `meta` object.
+    {
+      name: "fwoosh-meta",
+      resolveId: (name: string) => {
+        // Match any import that starts with /fwoosh-meta
+        if (name.startsWith("/fwoosh-meta")) {
+          return name;
+        }
+      },
+      load: async (id: string) => {
+        if (id.startsWith("/fwoosh-meta")) {
+          const actualFile = id.replace("/fwoosh-meta?file=", "");
+          const contents = await fs
+            .readFile(actualFile, "utf-8")
+            // Remove the `use client` line so that the file can be evaluated in the server
+            .then((c) => c.replace(/['"`]use client['"`]/, ""));
+
+          return contents;
+        }
+      },
+      transform(code, id) {
+        if (id.startsWith("/fwoosh-meta")) {
+          const actualFile = id.replace("/fwoosh-meta?file=", "");
+          const dir = path.dirname(actualFile);
+
+          // Update the relative paths in the file to be absolute
+          // I couldn't find another way of making it seem like this file is
+          // resolved from the same place as the original file.
+          const modifiedCode = code.replace(
+            /from\s+['"](.+)['"]/g,
+            (_, importPath) => {
+              if (importPath.startsWith(".")) {
+                const resolvedImportPath = path.join(dir, importPath);
+                return `from '${resolvedImportPath}'`;
+              }
+
+              return `from '${importPath}'`;
+            }
+          );
+
+          return {
+            code: modifiedCode,
+            map: null,
+          };
+        }
       },
     },
   ];

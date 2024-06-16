@@ -1,4 +1,5 @@
-import { Meta, StoryContext } from "@fwoosh/types";
+import { StoryContext } from "@fwoosh/types";
+import { getMeta } from "@fwoosh/types/resolve-file";
 import docgen from "react-docgen-typescript";
 
 const defaultOptions: docgen.ParserOptions = {
@@ -10,59 +11,67 @@ const defaultOptions: docgen.ParserOptions = {
   },
 };
 
-export default async function ReactDocgenPanel({ page, story }: StoryContext) {
-  const { meta } = (await import(
-    /* @vite-ignore */ `/fwoosh-meta?file=${page.file}`
-  )) as { meta: Meta };
+export default async function ReactDocgenPanel({ page }: StoryContext) {
+  const { component = [] } = await getMeta(page.file);
+  const components = Array.isArray(component) ? component : [component];
+  const fwooshFiles = new Set(components.map((c) => c.fwoosh_file));
+  const docComponents = new Set(components.map((c) => c.displayName));
+  const docs: docgen.ComponentDoc[] = [];
 
-  const { fwoosh_file } = (meta.component || {}) as { fwoosh_file: string };
+  for (const fwooshFile of fwooshFiles) {
+    const doc = docgen.parse(fwooshFile, defaultOptions);
+    const docWithFile = doc.find((d) => docComponents.has(d.displayName));
 
-  if (!fwoosh_file) {
-    return <div>No component configured for documentation</div>;
+    if (!docWithFile) {
+      continue;
+    }
+
+    docs.push(docWithFile);
   }
 
-  const docs = docgen.parse(fwoosh_file, defaultOptions);
-  const doc = docs.find(
-    (d) => d.displayName === (meta.component as any).displayName
-  );
-
-  if (!doc) {
+  if (!docs.length) {
     return <div>No documentation found for component</div>;
   }
-
-  const { props, description } = doc;
-
-  if (!props || !description) {
-    return <div>No documentation found for component</div>;
-  }
-
-  const propEntries = Object.values(props);
 
   return (
     <div>
-      {description && <div>{description}</div>}
-      {propEntries.length > 0 && (
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {propEntries.map((prop) => (
-              <tr key={prop.name}>
-                <td>{prop.name}</td>
-                <td>{prop.type.name}</td>
-                <td>{prop.defaultValue}</td>
-                <td>{prop.description}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+      {docs.map((doc) => {
+        const { props, description } = doc;
+
+        if (!props || !description) {
+          return null;
+        }
+
+        const propEntries = Object.values(props);
+
+        return (
+          <>
+            {description && <div>{description}</div>}
+            {propEntries.length > 0 && (
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {propEntries.map((prop) => (
+                    <tr key={prop.name}>
+                      <td>{prop.name}</td>
+                      <td>{prop.type.name}</td>
+                      <td>{prop.defaultValue}</td>
+                      <td>{prop.description}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </>
+        );
+      })}
     </div>
   );
 }

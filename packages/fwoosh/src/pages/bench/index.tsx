@@ -1,6 +1,5 @@
 import { getAllPageGroups, getStorySlug } from "../../utils/stories";
 import Story from "./[storySlug]";
-import { BenchLayout } from "../../components/BenchLayout";
 
 export default async function FirstStory() {
   const groups = await getAllPageGroups();
@@ -16,9 +15,5 @@ export default async function FirstStory() {
     return <div>No story found</div>;
   }
 
-  return (
-    <BenchLayout page={page} story={firstStory}>
-      <Story storySlug={getStorySlug(page, firstStory)} />
-    </BenchLayout>
-  );
+  return <Story storySlug={getStorySlug(page, firstStory)} />;
 }

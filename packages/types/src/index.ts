@@ -47,14 +47,18 @@ export interface StoryContext {
   story: Story;
 }
 
-type Component = {} & {
+export interface Meta<T = Object> {
+  title: string;
+  component?: T | T[];
+}
+
+// We add extra properties to the component so that we can
+// use the component in the story context
+type RuntimeComponent = {} & {
   fwoosh_file: string;
   displayName: string;
 };
 
-export interface Meta {
-  title: string;
-  component?: Component | Component[];
-}
+export type RuntimeMeta = Meta<RuntimeComponent>;
 
 export const storyPreviewId = "story-preview";

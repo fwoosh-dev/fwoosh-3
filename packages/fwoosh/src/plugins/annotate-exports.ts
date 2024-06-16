@@ -1,16 +1,11 @@
 import micromatch from "micromatch";
 import dedent from "dedent";
-import { PluginOption } from "vite";
 import { promises as fs } from "fs";
 import path from "path";
 
 // this needs to also be a custom loader for node
 // this will only run for client side code
-export function annotateExportPlugin({
-  include,
-}: {
-  include: string[];
-}): PluginOption[] {
+export function annotateExportPlugin({ include }: { include: string[] }) {
   return [
     // Connected a story to a source file with the component definitions is hard.
     // To get this info we annotate the exports of files included in the docgen
@@ -83,7 +78,7 @@ export function annotateExportPlugin({
           return contents;
         }
       },
-      transform(code, id) {
+      transform(code: string, id: string) {
         if (id.startsWith("/fwoosh-meta")) {
           const actualFile = id.replace("/fwoosh-meta?file=", "");
           const dir = path.dirname(actualFile);

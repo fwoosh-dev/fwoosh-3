@@ -1,5 +1,5 @@
 import path from "path";
-import { Meta } from "./index.js";
+import { RuntimeMeta } from "./index.js";
 
 export const resolveFile = (filename: string) => {
   const dummyError = new Error("Not implemented");
@@ -17,7 +17,7 @@ export const resolveFile = (filename: string) => {
 export async function getMeta(filename: string) {
   const { meta } = (await import(
     /* @vite-ignore */ `/fwoosh-meta?file=${filename}`
-  )) as { meta: Meta };
+  )) as { meta: RuntimeMeta };
 
   if (!meta) {
     throw new Error("Could not find meta");

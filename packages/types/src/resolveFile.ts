@@ -1,6 +1,14 @@
-import { createRequire } from "module";
+import path from "path";
 
-//@ts-ignore
-const require = createRequire(import.meta.url);
+export const resolveFile = (filename: string) => {
+  const dummyError = new Error("Not implemented");
+  const parentInStack = (dummyError.stack || "").split("\n")[2];
+  const [, parentFilePath = ""] =
+    (parentInStack || "").match(/at \S*\s*\(([^:]*)/) || [];
 
-export const resolveFile = require.resolve;
+  if (!parentFilePath) {
+    throw new Error("Could not find parent file path");
+  }
+
+  return path.join(path.dirname(parentFilePath), filename);
+};

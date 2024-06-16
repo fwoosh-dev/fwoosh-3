@@ -11,7 +11,12 @@ export interface FwooshToolbarButton extends FwooshToolBase {
   scope: "story" | "global" | "docs";
 }
 
-export type FwooshTool = FwooshToolbarButton;
+export interface FwooshPanel extends FwooshToolBase {
+  type: "panel";
+  panelTitle?: string;
+}
+
+export type FwooshTool = FwooshToolbarButton | FwooshPanel;
 
 export interface FwooshPluginConfig {
   tools?: FwooshTool[];

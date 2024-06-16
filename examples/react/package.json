@@ -11,7 +11,9 @@
     "react-dom": "19.0.0-beta-e7d213dfb0-20240507"
   },
   "devDependencies": {
+    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "@fwoosh/config-typescript": "workspace:*",
+    "@fwoosh/plugin-react-docgen": "workspace:*",
     "@fwoosh/plugin-description": "workspace:*",
     "@fwoosh/plugin-zoom": "workspace:*",
     "@types/react": "18.3.1",

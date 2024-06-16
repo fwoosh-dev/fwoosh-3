@@ -1,13 +1,9 @@
-"use client";
+import { StoryContext } from "@fwoosh/types";
 
-import { useStoryContext } from "@fwoosh/ui";
-
-export default function DescriptionPanel() {
-  const currentStory = useStoryContext("DescriptionPanel");
-
-  if (!currentStory.story.description) {
+export default function DescriptionPanel({ story }: StoryContext) {
+  if (!story.description) {
     return <div>No description for story...</div>;
   }
 
-  return <div>{currentStory.story.description}</div>;
+  return <div>{story.description}</div>;
 }

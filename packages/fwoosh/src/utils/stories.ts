@@ -9,8 +9,13 @@ export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
   const stories = await Promise.all(
     files.map(async (file) => {
       const fileTitle = file.replace(/\.stories\.tsx$/, "");
-      /* @vite-ignore */
-      const { default: storyMeta, ...stories } = await import(file);
+
+      let {
+        meta,
+        title: pageTitle,
+        ...stories
+      } = await import(/* @vite-ignore */ `/fwoosh-meta?file=${file}`);
+
       const contents = await fs.readFile(file, "utf-8");
       const comments = extractComments(contents);
       const storyToComment = comments.reduce((acc, comment) => {
@@ -20,7 +25,7 @@ export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
         };
       }, {} as Record<string, string>);
 
-      const id = storyMeta?.title ?? fileTitle;
+      const id = meta?.title ?? fileTitle;
       let [group, title] = id.includes("/") ? id.split("/") : [, id];
 
       return {
@@ -28,7 +33,6 @@ export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
         id: kebabCase(id),
         file,
         title,
-        description: storyMeta?.description,
         stories: Object.keys(stories).map((item) => ({
           id: kebabCase(item),
           name: item,
@@ -102,7 +106,7 @@ export async function getStoryBySlug(slug: string) {
   const page = await getPageById(name);
 
   if (!page) {
-    throw new Error("Page not found");
+    throw new Error(`Page not found: ${slug}`);
   }
 
   const story = page.stories.find((s) => s.id === key);

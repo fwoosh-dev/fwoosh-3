@@ -1,0 +1,3 @@
+{
+  "extends": "@fwoosh/config-typescript/react.json"
+}

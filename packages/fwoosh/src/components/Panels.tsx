@@ -1,15 +1,20 @@
-import { FwooshPanel } from "@fwoosh/types";
+import { FwooshPanel, StoryContext } from "@fwoosh/types";
 import { getConfig } from "../utils/config";
 import path from "path";
 
-export async function Panel({ panel }: { panel: FwooshPanel }) {
+export async function Panel({
+  panel,
+  ...props
+}: { panel: FwooshPanel } & StoryContext) {
   const esmPath = path.join(panel.filepath.replace("commonjs", "esm"));
-  const Component = await import(esmPath).then((mod) => mod.default);
-  return <Component />;
+  const Component = await import(/* @vite-ignore */ esmPath).then(
+    (mod) => mod.default
+  );
+  return <Component {...props} />;
 }
 
-export async function Panels() {
-  const { config } = await getConfig();
+export async function Panels({ page, story }: StoryContext) {
+  const { config } = getConfig();
   const panels = config.plugins
     ?.map((plugin) => plugin.tools)
     .flat()
@@ -29,7 +34,7 @@ export async function Panels() {
         ))}
       </div>
       {panels.map((panel) => (
-        <Panel key={panel.id} panel={panel} />
+        <Panel key={panel.id} panel={panel} page={page} story={story} />
       ))}
     </div>
   );

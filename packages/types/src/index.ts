@@ -23,6 +23,7 @@ export interface FwooshPluginConfig {
 }
 
 export interface FwooshConfig {
+  docgen: string[];
   plugins?: FwooshPluginConfig[];
 }
 
@@ -39,6 +40,20 @@ export interface Page {
   title: any;
   description?: any;
   stories: Story[];
+}
+
+export interface StoryContext {
+  page: Page;
+  story: Story;
+}
+
+type Component = object & {
+  fwoosh_file?: string;
+};
+
+export interface Meta {
+  title: string;
+  component?: Component | Component[];
 }
 
 export const storyPreviewId = "story-preview";

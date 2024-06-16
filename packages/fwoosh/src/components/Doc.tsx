@@ -2,7 +2,7 @@ import { Page } from "../utils/stories";
 
 async function DocExample({ page, name }: { page: Page; name: string }) {
   /* @vite-ignore */
-  const mod = await import(page.file);
+  const mod = await import(/* @vite-ignore */ page.file);
   const Example = mod[name];
 
   return <Example />;

@@ -8,12 +8,14 @@ export async function ToolsToolbarTool({
   tool: FwooshToolbarButton;
 }) {
   const esmPath = path.join(tool.filepath.replace("commonjs", "esm"));
-  const Component = await import(esmPath).then((mod) => mod.default);
+  const Component = await import(/* @vite-ignore */ esmPath).then(
+    (mod) => mod.default
+  );
   return <Component />;
 }
 
 export async function ToolsToolbar() {
-  const { config } = await getConfig();
+  const { config } = getConfig();
   const toolbarTools = config.plugins
     ?.find((plugin) => plugin)
     ?.tools?.filter(

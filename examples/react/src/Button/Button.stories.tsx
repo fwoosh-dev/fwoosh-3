@@ -1,9 +1,11 @@
+"use client";
+
+import { Meta } from "fwoosh";
 import { Button } from "./Button";
 
-export default {
+export const meta: Meta = {
   title: "Components/Button",
   component: Button,
-  description: "A button",
 };
 
 /** Use a button to trigger an action */

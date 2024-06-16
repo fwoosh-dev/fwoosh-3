@@ -60,7 +60,6 @@ async function main() {
     throw new Error("Could not find cache directory");
   }
 
-  console.log({ fwooshConfig });
   await fs.writeFile(
     path.join(cacheDir, "fwoosh.config.json"),
     JSON.stringify(fwooshConfig)

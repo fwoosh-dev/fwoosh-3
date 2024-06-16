@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
+    "@fwoosh/plugin-description": "workspace:*",
     "@fwoosh/plugin-zoom": "workspace:*",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",

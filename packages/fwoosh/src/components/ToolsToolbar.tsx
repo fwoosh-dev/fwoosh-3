@@ -16,10 +16,12 @@ export async function ToolsToolbar() {
   const { config } = await getConfig();
   const toolbarTools = config.plugins
     ?.find((plugin) => plugin)
-    ?.tools?.filter((tool) => tool.type === "toolbar");
+    ?.tools?.filter(
+      (tool): tool is FwooshToolbarButton => tool.type === "toolbar"
+    );
 
   if (!toolbarTools) {
-    return <div>No tools found</div>;
+    return null;
   }
 
   return (

@@ -27,6 +27,9 @@ importers:
       '@fwoosh/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
+      '@fwoosh/plugin-description':
+        specifier: workspace:*
+        version: link:../../packages/plugin-description
       '@fwoosh/plugin-zoom':
         specifier: workspace:*
         version: link:../../packages/plugin-zoom
@@ -42,11 +45,40 @@ importers:
 
   packages/config-typescript: {}
 
+  packages/extract-comments:
+    dependencies:
+      comment-parser:
+        specifier: ^1.4.1
+        version: 1.4.1
+      js-tokens:
+        specifier: ^9.0.0
+        version: 9.0.0
+    devDependencies:
+      '@fwoosh/config-typescript':
+        specifier: workspace:*
+        version: link:../config-typescript
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      tshy:
+        specifier: ^1.15.1
+        version: 1.15.1
+
+  packages/extract-comments/dist/commonjs: {}
+
+  packages/extract-comments/dist/esm: {}
+
   packages/fwoosh:
     dependencies:
+      '@fwoosh/extract-comments':
+        specifier: workspace:*
+        version: link:../extract-comments
       '@fwoosh/types':
         specifier: workspace:*
         version: link:../types
+      '@fwoosh/ui':
+        specifier: workspace:*
+        version: link:../ui
       '@sliphua/lilconfig-ts-loader':
         specifier: ^3.2.2
         version: 3.2.2(lilconfig@3.1.2)(typescript@5.4.5)
@@ -74,9 +106,6 @@ importers:
       lilconfig:
         specifier: ^3.1.2
         version: 3.1.2
-      multilang-extract-comments:
-        specifier: ^0.4.0
-        version: 0.4.0
       react:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
         version: 19.0.0-beta-e7d213dfb0-20240507
@@ -123,6 +152,10 @@ importers:
   packages/fwoosh/dist/esm: {}
 
   packages/plugin-description:
+    dependencies:
+      '@fwoosh/ui':
+        specifier: workspace:*
+        version: link:../ui
     devDependencies:
       '@fwoosh/config-typescript':
         specifier: workspace:*
@@ -142,6 +175,10 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
+
+  packages/plugin-description/dist/commonjs: {}
+
+  packages/plugin-description/dist/esm: {}
 
   packages/plugin-zoom:
     devDependencies:
@@ -186,6 +223,35 @@ importers:
   packages/types/dist/commonjs: {}
 
   packages/types/dist/esm: {}
+
+  packages/ui:
+    dependencies:
+      '@radix-ui/react-context':
+        specifier: ^1.0.1
+        version: 1.0.1(@types/react@18.3.1)(react@19.0.0-beta-e7d213dfb0-20240507)
+    devDependencies:
+      '@fwoosh/config-typescript':
+        specifier: workspace:*
+        version: link:../config-typescript
+      '@fwoosh/types':
+        specifier: workspace:*
+        version: link:../types
+      '@types/react':
+        specifier: 18.3.1
+        version: 18.3.1
+      react-server-dom-webpack:
+        specifier: 19.0.0-beta-e7d213dfb0-20240507
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507)(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0)
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      tshy:
+        specifier: ^1.15.1
+        version: 1.15.1
+
+  packages/ui/dist/commonjs: {}
+
+  packages/ui/dist/esm: {}
 
 packages:
 
@@ -422,6 +488,13 @@ packages:
       core-js-pure: 3.37.1
       regenerator-runtime: 0.14.1
     dev: true
+
+  /@babel/runtime@7.24.7:
+    resolution: {integrity: sha512-UwgBRMjJP+xv857DCngvqXI3Iq6J4v0wXmwc6sapg+zyhbwmQX67LUEFrkK5tbyJ30jGuG3ZvWpBiB9LCy1kWw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.1
+    dev: false
 
   /@babel/template@7.24.7:
     resolution: {integrity: sha512-jYqfPrU9JTF0PmPy1tLYHW4Mp4KlgxJD9l2nP9fD6yT/ICi554DmrWBAEYpIelzjHf1msDP3PxJIRt/nFNfBig==}
@@ -938,6 +1011,20 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@radix-ui/react-context@1.0.1(@types/react@18.3.1)(react@19.0.0-beta-e7d213dfb0-20240507):
+    resolution: {integrity: sha512-ebbrdFoYTcuZ0v4wG5tedGnp9tzcV8awzsxYph7gXUyvnNLuTIcCk1q17JEbnVhXAKG9oX3KtchwiMIAYp9NLg==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.24.7
+      '@types/react': 18.3.1
+      react: 19.0.0-beta-e7d213dfb0-20240507
+    dev: false
+
   /@rollup/rollup-android-arm-eabi@4.18.0:
     resolution: {integrity: sha512-Tya6xypR10giZV1XzxmH5wr25VcZSncG0pZIjfePT0OVBvqNEurzValetGNarVrGiq66EBVAFn15iYX4w6FKgQ==}
     cpu: [arm]
@@ -1374,7 +1461,6 @@ packages:
 
   /@types/prop-types@15.7.12:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
-    dev: true
 
   /@types/react-dom@18.3.0:
     resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
@@ -1387,7 +1473,6 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
-    dev: true
 
   /@types/through@0.0.33:
     resolution: {integrity: sha512-HsJ+z3QuETzP3cswwtzt2vEIiHBk/dCcHGhbmG5X3ecnwFD/lPrMpliGXxSCg03L9AhrdwA4Oz/qfspkDW+xGQ==}
@@ -1875,10 +1960,9 @@ packages:
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
 
-  /comment-patterns@0.12.2:
-    resolution: {integrity: sha512-yA1FeubMSK0MXzapPm1uNdxyGk0mTAn5qrsVS6uQUSDOpUgWVLCqsgZfA/lhRx6TCLr1MvxeRqXOb1peWXWg3Q==}
-    dependencies:
-      lodash: 4.17.21
+  /comment-parser@1.4.1:
+    resolution: {integrity: sha512-buhp5kePrmda3vhc5B9t7pUQXAb2Tnd0qgpkIhPhkHXxJpiPJ11H0ZEU0oBpJ2QztSbzG/ZxMj/CHsYJqRHmyg==}
+    engines: {node: '>= 12.0.0'}
     dev: false
 
   /common-path-prefix@3.0.0:
@@ -1926,7 +2010,6 @@ packages:
 
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
-    dev: true
 
   /data-uri-to-buffer@6.0.2:
     resolution: {integrity: sha512-7hvf7/GW8e86rW0ptuwS3OcBGDjIi6SZva7hCyWC0yYry2cOPmLIjXAUHI6DK2HsnwJd9ifmt57i8eV2n4YNpw==}
@@ -2619,6 +2702,10 @@ packages:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: false
 
+  /js-tokens@9.0.0:
+    resolution: {integrity: sha512-WriZw1luRMlmV3LGJaR6QOJjWwgLUTf89OwT2lUOyjX2dJGBwgmIkbcz+7WFZjrZM635JOIR517++e/67CP9dQ==}
+    dev: false
+
   /js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
@@ -2661,10 +2748,6 @@ packages:
     engines: {node: '>=14'}
     dev: false
 
-  /line-counter@1.1.0:
-    resolution: {integrity: sha512-6bmXJG/pOX5HBb2aIJZrI9CALBgY1VMbS0GPuXfJaT13UEfee/2xxPCsOOJdXLl3KPRyBf2/D+cjiG8hU9S7LA==}
-    dev: false
-
   /loader-runner@4.3.0:
     resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
     engines: {node: '>=6.11.5'}
@@ -2685,6 +2768,7 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
 
   /log-symbols@3.0.0:
     resolution: {integrity: sha512-dSkNGuI7iG3mfvDzUuYZyvk5dD9ocYCYzNU6CYDE6+Xqd+gwme6Z00NS3dUh8mq/73HaEtT7m6W+yUPtU6BZnQ==}
@@ -2806,15 +2890,6 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-
-  /multilang-extract-comments@0.4.0:
-    resolution: {integrity: sha512-8mXCo9Q42Wyfho9nn7hHkG/0sKxH0nJWfmBLl8+c+FLv++XhFkFC1sntOk4NFZ+nSpoMjlF/8ILeOLyMRTFbIw==}
-    dependencies:
-      comment-patterns: 0.12.2
-      line-counter: 1.1.0
-      lodash: 4.17.21
-      quotemeta: 0.0.0
-    dev: false
 
   /mute-stream@0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
@@ -3074,10 +3149,6 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /quotemeta@0.0.0:
-    resolution: {integrity: sha512-1XGObUh7RN5b58vKuAsrlfqT+Rc4vmw8N4pP9gFCq1GFlTdV0Ex/D2Ro1Drvrqj++HPi3ig0Np17XPslELeMRA==}
-    dev: false
-
   /randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
     dependencies:
@@ -3147,7 +3218,6 @@ packages:
 
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
-    dev: true
 
   /registry-auth-token@3.3.2:
     resolution: {integrity: sha512-JL39c60XlzCVgNrO+qq68FoNb56w/m7JYvGR2jT5iR1xBrUA3Mfx5Twk5rqTThPmQKMWydGmq8oFtDlxfrmxnQ==}

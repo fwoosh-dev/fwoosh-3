@@ -1,11 +1,10 @@
 import type { ReactNode } from "react";
 
-import { StoryList } from "../../components/StoryList";
-import { ToolsToolbar } from "../../components/ToolsToolbar";
+import { StoryList } from "./StoryList";
+import { ToolsToolbar } from "./ToolsToolbar";
+import { Panels } from "./Panels";
 
-type RootLayoutProps = { children: ReactNode };
-
-export default async function RootLayout({ children }: RootLayoutProps) {
+export async function BenchLayout({ children }: { children: ReactNode }) {
   return (
     <div style={{ display: "flex" }}>
       <aside>
@@ -16,6 +15,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       </main>
       <aside>
         <ToolsToolbar />
+      </aside>
+      <aside>
+        <Panels />
       </aside>
     </div>
   );

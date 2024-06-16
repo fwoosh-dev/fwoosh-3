@@ -1,5 +1,8 @@
+import { StoryContextProvider } from "@fwoosh/ui";
+
 import { getAllPageGroups, getStorySlug } from "../../utils/stories";
 import Story from "./[storySlug]";
+import { BenchLayout } from "../../components/BenchLayout";
 
 export default async function FirstStory() {
   const groups = await getAllPageGroups();
@@ -15,5 +18,11 @@ export default async function FirstStory() {
     return <div>No story found</div>;
   }
 
-  return <Story storySlug={getStorySlug(page, firstStory)} />;
+  return (
+    <StoryContextProvider page={page} story={firstStory}>
+      <BenchLayout>
+        <Story storySlug={getStorySlug(page, firstStory)} />
+      </BenchLayout>
+    </StoryContextProvider>
+  );
 }

@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@fwoosh/types": "workspace:*",
+    "@fwoosh/ui": "workspace:*",
+    "@fwoosh/extract-comments": "workspace:*",
     "@sliphua/lilconfig-ts-loader": "^3.2.2",
     "@stylexjs/stylex": "^0.6.1",
     "change-case": "^5.4.4",
@@ -21,7 +23,6 @@
     "find-cache-dir": "^5.0.0",
     "glob": "^10.4.1",
     "lilconfig": "^3.1.2",
-    "multilang-extract-comments": "^0.4.0",
     "react": "19.0.0-beta-e7d213dfb0-20240507",
     "react-dom": "19.0.0-beta-e7d213dfb0-20240507",
     "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",

@@ -1,9 +1,10 @@
 import { glob } from "glob";
 import { promises as fs } from "fs";
 import { kebabCase } from "change-case";
-// import extract from "multilang-extract-comments";
+import { Page, Story } from "@fwoosh/types";
+import { extractComments } from "@fwoosh/extract-comments";
 
-export const getAllPageGroups = async () => {
+export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
   const files = await glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
   const stories = await Promise.all(
     files.map(async (file) => {
@@ -11,13 +12,11 @@ export const getAllPageGroups = async () => {
       /* @vite-ignore */
       const { default: storyMeta, ...stories } = await import(file);
       const contents = await fs.readFile(file, "utf-8");
-      const comments: any[] = []; //Object.values(extract(contents));
+      const comments = extractComments(contents);
       const storyToComment = comments.reduce((acc, comment) => {
-        const storyName = comment.code.match(/export const (.*?)\s/)?.[1];
-
         return {
           ...acc,
-          ...(storyName && { [storyName]: comment.content }),
+          [comment.entity]: comment.comment,
         };
       }, {} as Record<string, string>);
 
@@ -76,9 +75,6 @@ export async function getPageById(id: string) {
   }
 }
 
-export type Page = Awaited<ReturnType<typeof getAllPageGroups>>[string][number];
-export type Story = Page["stories"][number];
-
 export function getStorySlug(page: Page, story: Story) {
   return `${page.id}_${story.id}`;
 }
@@ -94,4 +90,26 @@ export function parseStorySlug(slug: string) {
     name,
     key,
   };
+}
+
+export async function getStoryBySlug(slug: string) {
+  const { name, key } = parseStorySlug(slug);
+
+  if (!name || !key) {
+    throw new Error("Invalid slug");
+  }
+
+  const page = await getPageById(name);
+
+  if (!page) {
+    throw new Error("Page not found");
+  }
+
+  const story = page.stories.find((s) => s.id === key);
+
+  if (!story) {
+    throw new Error("Story not found");
+  }
+
+  return { page, story };
 }

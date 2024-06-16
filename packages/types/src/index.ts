@@ -26,4 +26,19 @@ export interface FwooshConfig {
   plugins?: FwooshPluginConfig[];
 }
 
+export interface Story {
+  id: string;
+  name: string;
+  description?: string;
+}
+
+export interface Page {
+  group: any;
+  id: string;
+  file: string;
+  title: any;
+  description?: any;
+  stories: Story[];
+}
+
 export const storyPreviewId = "story-preview";

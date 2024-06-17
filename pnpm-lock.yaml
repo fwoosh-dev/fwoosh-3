@@ -184,6 +184,9 @@ importers:
       '@types/react':
         specifier: 18.3.1
         version: 18.3.1
+      react:
+        specifier: 19.0.0-beta-e7d213dfb0-20240507
+        version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
         version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507)(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0)
@@ -213,6 +216,9 @@ importers:
       '@types/react':
         specifier: 18.3.1
         version: 18.3.1
+      react:
+        specifier: 19.0.0-beta-e7d213dfb0-20240507
+        version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
         version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507)(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0)

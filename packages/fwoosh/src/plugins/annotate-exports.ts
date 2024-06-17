@@ -21,6 +21,14 @@ export function annotateExportPlugin() {
   const activeStoryFiles = new Set<string>();
 
   return [
+    {
+      name: "inject-filename",
+      transform(src: string, id: string) {
+        if (src.includes("__filename")) {
+          return `const __filename = "${id}";\n` + src;
+        }
+      },
+    },
     // Connected a story to a source file with the component definitions is hard.
     // To get this info we annotate the exports of files included in the docgen
     // globs.
@@ -173,7 +181,6 @@ export function annotateExportPlugin() {
             .map((plugin) => plugin.tools)
             .filter((tools): tools is FwooshTool[] => Boolean(tools))
             .flat()
-            .filter((item) => item.type === "toolbar")
             .map((item) => item.filepath);
 
           return dedent`

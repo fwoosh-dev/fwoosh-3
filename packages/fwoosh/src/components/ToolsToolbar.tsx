@@ -1,16 +1,13 @@
 import { FwooshToolbarButton } from "@fwoosh/types";
 import { getConfig } from "../utils/config";
-import path from "path";
+import { importPlugin } from "@fwoosh/pages";
 
 export async function ToolsToolbarTool({
   tool,
 }: {
   tool: FwooshToolbarButton;
 }) {
-  const esmPath = path.join(tool.filepath.replace("commonjs", "esm"));
-  const Component = await import(/* @vite-ignore */ esmPath).then(
-    (mod) => mod.default
-  );
+  const Component = await importPlugin(tool.filepath);
   return <Component />;
 }
 

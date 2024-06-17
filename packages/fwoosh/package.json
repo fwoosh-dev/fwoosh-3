@@ -46,6 +46,7 @@
   "tshy": {
     "exclude": [
       "src/components/**/*",
+      "src/plugins/**/*",
       "src/pages/**/*",
       "src/utils/**/*"
     ],

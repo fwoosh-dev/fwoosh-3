@@ -4,6 +4,6 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "bundler",
-    "types": ["react/experimental", "node"]
+    "types": ["react/experimental", "node", "@fwoosh/types/globals"]
   }
 }

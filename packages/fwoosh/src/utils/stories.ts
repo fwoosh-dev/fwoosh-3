@@ -1,21 +1,40 @@
 import { glob } from "glob";
 import { promises as fs } from "fs";
-import { kebabCase } from "change-case";
 import { Page, Story } from "@fwoosh/types";
 import { extractComments } from "@fwoosh/extract-comments";
+import { getProdMetaCache } from "./cache.js";
+import { importMeta, importPage } from "@fwoosh/pages";
 
-export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
-  const files = await glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
+const changeCasePromise = import("change-case");
+
+async function getProdMetaCachedData() {
+  const cacheFile = await getProdMetaCache();
+  return JSON.parse(await fs.readFile(cacheFile, "utf-8"));
+}
+
+export async function getAllPages() {
+  return glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
+}
+
+export const getAllPageGroupsBase = async (): Promise<
+  Record<string, Page[]>
+> => {
+  const { kebabCase } = await changeCasePromise;
+  const files = await getAllPages();
   const stories = await Promise.all(
     files.map(async (file) => {
       const fileTitle = file.replace(/\.stories\.tsx$/, "");
 
-      let {
-        meta,
-        title: pageTitle,
-        ...stories
-      } = await import(/* @vite-ignore */ `/fwoosh-meta?file=${file}`);
-
+      // TODO: This doesn't work in build
+      // since the dynamically imported file is not build during the vite build
+      // To fix this we need to make sure that the story files are build during the vite build
+      // and then we need to import those instead of /fwoosh-meta
+      // This specifically can't be the client component and has to be one without `use client`
+      // Cannot import just the file, since that's the source file
+      // since we can precompute all of this during the vite build i think we can just write all this info to a file
+      // and read from that during the production build
+      let { meta: _, ...stories } = await importPage(file);
+      let meta = await importMeta(file);
       const contents = await fs.readFile(file, "utf-8");
       const comments = extractComments(contents);
       const storyToComment = comments.reduce((acc, comment) => {
@@ -70,6 +89,10 @@ export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
   );
 };
 
+export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
+  return getAllPageGroupsBase();
+};
+
 export async function getPageById(id: string) {
   const allStories = await getAllPageGroups();
 
@@ -82,10 +105,6 @@ export async function getPageById(id: string) {
 
 export function getStorySlug(page: Page, story: Story) {
   return `${page.id}_${story.id}`;
-}
-
-export function getDocSlug(name: string) {
-  return `${kebabCase(name)}`;
 }
 
 export function parseStorySlug(slug: string) {

@@ -1,11 +1,23 @@
 import { Page } from "@fwoosh/types";
+import { importPage } from "@fwoosh/pages";
 
 async function DocExample({ page, name }: { page: Page; name: string }) {
-  /* @vite-ignore */
-  const mod = await import(/* @vite-ignore */ page.file);
-  const Example = mod[name];
+  try {
+    const mod = await importPage(page.file);
+    const Example = mod[name];
 
-  return <Example />;
+    console.log("EXAMPLE", page.file, name);
+    console.log("EXAMPLE", mod);
+
+    if (!Example) {
+      throw new Error("Could not find example");
+    }
+
+    return <Example />;
+  } catch (error) {
+    console.error("COULD NOT LOAD DOC");
+    console.error(error);
+  }
 }
 
 export async function Doc({ page }: { page: Page }) {

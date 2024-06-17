@@ -1,5 +1,5 @@
 import { StoryContext } from "@fwoosh/types";
-import { getMeta } from "@fwoosh/types/resolve-file";
+import { importMeta } from "@fwoosh/pages";
 import docgen from "react-docgen-typescript";
 
 const defaultOptions: docgen.ParserOptions = {
@@ -12,7 +12,7 @@ const defaultOptions: docgen.ParserOptions = {
 };
 
 export default async function ReactDocgenPanel({ page }: StoryContext) {
-  const { component = [] } = await getMeta(page.file);
+  const { component = [] } = await importMeta(page.file);
   const components = Array.isArray(component) ? component : [component];
   const fwooshFiles = new Set(components.map((c) => c.fwoosh_file));
   const docComponents = new Set(components.map((c) => c.displayName));

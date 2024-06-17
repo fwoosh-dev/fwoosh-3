@@ -1,17 +1,15 @@
 import { spawn } from "child_process";
 import path from "path";
-import { StartCommand } from "./types.js";
 
-export async function start(options: StartCommand) {
+export async function dev() {
   const waku = require.resolve("waku").replace(/\/waku\/.*/, "/waku/cli.js");
 
-  const child = spawn("node", [waku, "start", "--with-vercel-static"], {
+  const child = spawn("node", [waku, "dev"], {
     cwd: path.join(__dirname, "../../../"),
     stdio: "inherit",
     env: {
       ...process.env,
       TARGET_DIRECTORY: process.cwd(),
-      OUTPUT_DIRECTORY: options.out,
     },
   });
 

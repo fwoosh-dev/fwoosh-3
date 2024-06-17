@@ -1,15 +1,24 @@
-import { Page } from "../utils/stories";
+import { importPage } from "@fwoosh/pages";
+import { Page } from "@fwoosh/types";
 
-export async function Story({ story }: { story: Page }) {
-  const firstExample = story.stories[0];
+export async function Story({ page }: { page: Page }) {
+  const firstStory = page.stories[0];
 
-  if (!firstExample) {
+  if (!firstStory) {
     return <div>No examples found</div>;
   }
 
-  /* @vite-ignore */
-  const mod = await import(story.file);
-  const Example = mod[firstExample.name];
+  try {
+    const mod = await importPage(page.file);
+    const Example = mod[firstStory.name];
 
-  return <Example />;
+    if (!Example) {
+      throw new Error("Could not find example");
+    }
+
+    return <Example />;
+  } catch (error) {
+    console.error("COULD NOT LOAD STORY");
+    console.error(error);
+  }
 }

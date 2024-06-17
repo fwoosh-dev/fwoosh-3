@@ -17,6 +17,7 @@
   "tshy": {
     "exports": {
       ".": "./src/index.ts",
+      "./globals": "./globals.d.ts",
       "./resolve-file": "./src/resolveFile.ts"
     }
   },
@@ -33,6 +34,7 @@
         "default": "./dist/commonjs/index.js"
       }
     },
+    "./globals": "./globals.d.ts",
     "./resolve-file": {
       "import": {
         "source": "./src/resolveFile.ts",

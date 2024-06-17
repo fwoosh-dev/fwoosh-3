@@ -4,8 +4,11 @@ const findCacheDirectoryPromise = import("find-cache-dir");
 import { promises as fs } from "fs";
 import path from "path";
 
-import { start } from "./start.js";
+import { dev } from "./dev.js";
 import { build } from "./build.js";
+import { start } from "./start.js";
+import { Options } from "./types.js";
+import { FwooshConfig } from "@fwoosh/types";
 
 const explorer = lilconfig("fwoosh", {
   searchPlaces: ["fwoosh.config.ts", "fwoosh.config.js"],
@@ -22,6 +25,15 @@ const explorer = lilconfig("fwoosh", {
 const fwoosh: MultiCommand = {
   name: "fwoosh",
   description: "A tool for building components",
+  options: [
+    {
+      name: "out",
+      alias: "o",
+      description: "The output directory for the build",
+      type: String,
+      defaultValue: "out",
+    },
+  ],
   commands: [
     {
       name: "build",
@@ -29,7 +41,11 @@ const fwoosh: MultiCommand = {
     },
     {
       name: "start",
-      description: "Start the component documentation",
+      description: "Start the build from `fwoosh build`",
+    },
+    {
+      name: "dev",
+      description: "Start the component documentation in development mode",
     },
   ],
 };
@@ -41,18 +57,12 @@ if (args?.error) {
   process.exit(1);
 }
 
-const options = args as
-  | {
-      _command: "build";
-    }
-  | {
-      _command: "start";
-    };
+const options = args as Options;
 
 async function main() {
   // @ts-ignore
   await import("tsx");
-  const fwooshConfig = (await explorer.search()) ?? {};
+  const fwooshConfig = await explorer.search();
   const findCacheDirectory = (await findCacheDirectoryPromise).default;
   const cacheDir = findCacheDirectory({ name: "fwoosh", create: true });
 
@@ -65,10 +75,20 @@ async function main() {
     JSON.stringify(fwooshConfig)
   );
 
-  if (options._command === "build") {
-    build();
-  } else if (options._command === "start") {
-    start();
+  const mergeOptions = {
+    ...options,
+    out: path.join(
+      process.cwd(),
+      (fwooshConfig?.config as FwooshConfig).out || options.out
+    ),
+  };
+
+  if (mergeOptions._command === "build") {
+    build(mergeOptions);
+  } else if (mergeOptions._command === "start") {
+    start(mergeOptions);
+  } else if (options._command === "dev") {
+    dev();
   }
 }
 

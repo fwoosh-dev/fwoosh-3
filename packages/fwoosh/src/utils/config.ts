@@ -1,6 +1,6 @@
 import { FwooshConfig } from "@fwoosh/types";
-import findCacheDirectory from "find-cache-dir";
 import fs from "fs";
+import findCacheDirectory from "find-cache-dir";
 import path from "path";
 
 export function getConfig() {

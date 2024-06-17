@@ -2,10 +2,22 @@ import micromatch from "micromatch";
 import dedent from "dedent";
 import { promises as fs } from "fs";
 import path from "path";
+import { getProdMetaCache } from "../utils/cache.js";
+import { glob } from "glob";
+import { getConfig } from "../utils/config.js";
+import { FwooshTool } from "@fwoosh/types";
+
+function getAllPages() {
+  return glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
+}
 
 // this needs to also be a custom loader for node
 // this will only run for client side code
-export function annotateExportPlugin({ include }: { include: string[] }) {
+export function annotateExportPlugin() {
+  const {
+    config: { docgen, plugins = [] },
+  } = getConfig();
+
   const activeStoryFiles = new Set<string>();
 
   return [
@@ -18,7 +30,7 @@ export function annotateExportPlugin({ include }: { include: string[] }) {
         // Only match some files cause doing all of them is too slow
         // Instead of this we could try to use something like es-module-lexer
         // to follow all the imports and exports to the source file.
-        const isIncluded = ["!**/*.stories.*", ...include].every((glob) =>
+        const isIncluded = ["!**/*.stories.*", ...docgen].every((glob) =>
           micromatch.isMatch(id, glob)
         );
 
@@ -124,6 +136,96 @@ export function annotateExportPlugin({ include }: { include: string[] }) {
           if (virtualModule) {
             return [...modules, virtualModule];
           }
+        }
+      },
+    },
+    {
+      name: "@fwoosh/pages",
+      resolveId: (name: string) => {
+        if (name === "@fwoosh/pages") {
+          return name;
+        }
+      },
+      load: async (id: string) => {
+        if (id === "@fwoosh/pages") {
+          const pages = await getAllPages();
+
+          if (process.env.NODE_ENV === "development") {
+            return dedent`
+              import path from "path";
+
+              // During development keep it simple and just use the dynamic import.
+              // This way we don't have to worry about HMR and reloading the virtual file
+              export const importPage = (filename) => import(/* @vite-ignore */ filename);
+
+              export const importPlugin = (filename) => {
+                const esmPath = path.join(filename.replace("commonjs", "esm"));
+                return import(/* @vite-ignore */ esmPath).then((mod) => mod.default);
+              };
+
+              export const importMeta = (filename) => 
+                import(/* @vite-ignore */ \`/fwoosh-meta?file=\${filename}\`)
+                  .then((mod) => mod.meta)
+            `;
+          }
+
+          const pluginPaths = plugins
+            .map((plugin) => plugin.tools)
+            .filter((tools): tools is FwooshTool[] => Boolean(tools))
+            .flat()
+            .filter((item) => item.type === "toolbar")
+            .map((item) => item.filepath);
+
+          return dedent`
+            // During production we want all the pages to be available
+            // so we need to generate this imports. The resulting file
+            // will contain references to all the pages and they'll be
+            // included in the bundle
+            export function importPage(filename) {
+              switch (filename) {
+                ${pages
+                  .map((page) => {
+                    return dedent`
+                    case '${page}':
+                      return import('${page}');
+                  `;
+                  })
+                  .join("\n")}
+                default:
+                  throw new Error(\`Page "\${filename}" not found\`);
+              }
+            }
+
+            export function importPlugin(filename) {
+              switch (filename) {
+                ${pluginPaths
+                  .map((plugin) => {
+                    return dedent`
+                    case '${plugin}':
+                      return import("${plugin}").then((mod) => mod.default);
+                  `;
+                  })
+                  .join("\n")}
+                default:
+                  throw new Error(\`No plugin "\${filename}" not found\`);
+              }
+            }
+
+            export function importMeta(filename) {
+              switch (filename) {
+                ${pages
+                  .map((page) => {
+                    return dedent`
+                    case '${page}':
+                      return import('/fwoosh-meta?file=${page}').then((mod) => mod.meta);
+                  `;
+                  })
+                  .join("\n")}
+                default:
+                  throw new Error(\`Meta for page "\${filename}" not found\`);
+              }
+            }
+          `;
         }
       },
     },

@@ -1,11 +1,10 @@
 import path from "path";
-import { RuntimeMeta } from "./index.js";
 
 export const resolveFile = (filename: string) => {
   const dummyError = new Error("Not implemented");
   const parentInStack = (dummyError.stack || "").split("\n")[2];
   const [, parentFilePath = ""] =
-    (parentInStack || "").match(/at \S*\s*\(([^:]*)/) || [];
+    (parentInStack || "").match(/at \S*\s*\((?:file:\/\/)*([^:]*)/) || [];
 
   if (!parentFilePath) {
     throw new Error("Could not find parent file path");
@@ -13,15 +12,3 @@ export const resolveFile = (filename: string) => {
 
   return path.join(path.dirname(parentFilePath), filename);
 };
-
-export async function getMeta(filename: string) {
-  const { meta } = (await import(
-    /* @vite-ignore */ `/fwoosh-meta?file=${filename}`
-  )) as { meta: RuntimeMeta };
-
-  if (!meta) {
-    throw new Error("Could not find meta");
-  }
-
-  return meta;
-}

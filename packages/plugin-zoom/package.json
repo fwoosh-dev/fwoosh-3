@@ -11,6 +11,7 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^20.14.2",
+    "react": "19.0.0-beta-e7d213dfb0-20240507",
     "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "@fwoosh/types": "workspace:*",
     "@fwoosh/config-typescript": "workspace:*",

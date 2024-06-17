@@ -24,6 +24,7 @@ export interface FwooshPluginConfig {
 
 export interface FwooshConfig {
   docgen: string[];
+  out?: string;
   plugins?: FwooshPluginConfig[];
 }
 

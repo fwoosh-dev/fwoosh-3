@@ -2,9 +2,10 @@
   "name": "fwoosh-react-example",
   "private": true,
   "version": "0.1.0",
+  "type": "module",
   "scripts": {
     "docs:build": "fwoosh build",
-    "docs:start": "fwoosh start"
+    "docs:": "fwoosh start"
   },
   "dependencies": {
     "react": "19.0.0-beta-e7d213dfb0-20240507",

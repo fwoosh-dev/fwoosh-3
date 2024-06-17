@@ -33,9 +33,9 @@ export async function Panels({ page, story }: StoryContext) {
           <button>{panel.panelTitle}</button>
         ))}
       </div>
-      {panels.map((panel) => (
+      {/* {panels.map((panel) => (
         <Panel key={panel.id} panel={panel} page={page} story={story} />
-      ))}
+      ))} */}
     </div>
   );
 }

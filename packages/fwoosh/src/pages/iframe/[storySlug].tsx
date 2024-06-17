@@ -1,8 +1,18 @@
+import { importPage } from "@fwoosh/pages";
 import { getStoryBySlug } from "../../utils/stories";
 
 export default async function Iframe({ storySlug }: { storySlug: string }) {
-  const { page, story } = await getStoryBySlug(storySlug);
-  const Example = (await import(/* @vite-ignore */ page.file))[story.name];
+  try {
+    const { page, story } = await getStoryBySlug(storySlug);
+    const Example = (await importPage(page.file))[story.name];
 
-  return <Example component={Example} />;
+    if (!Example) {
+      throw new Error("Could not find example");
+    }
+
+    return <Example />;
+  } catch (error) {
+    console.error("COULD NOT LOAD STORY IN IFRAME");
+    console.error(error);
+  }
 }

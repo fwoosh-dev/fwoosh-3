@@ -61,7 +61,7 @@ const options = args as Options;
 
 async function main() {
   // @ts-ignore
-  await import("tsx");
+  // await import("tsx");
   const fwooshConfig = await explorer.search();
   const findCacheDirectory = (await findCacheDirectoryPromise).default;
   const cacheDir = findCacheDirectory({ name: "fwoosh", create: true });

@@ -7,11 +7,6 @@ import { importMeta, importPage } from "@fwoosh/pages";
 
 const changeCasePromise = import("change-case");
 
-async function getProdMetaCachedData() {
-  const cacheFile = await getProdMetaCache();
-  return JSON.parse(await fs.readFile(cacheFile, "utf-8"));
-}
-
 export async function getAllPages() {
   return glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
 }

@@ -3,7 +3,6 @@ import { lilconfig } from "lilconfig";
 const findCacheDirectoryPromise = import("find-cache-dir");
 import { promises as fs } from "fs";
 import path from "path";
-// import { consola } from "consola";
 
 import { FwooshConfig } from "@fwoosh/types";
 

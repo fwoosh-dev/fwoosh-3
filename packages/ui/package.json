@@ -4,22 +4,37 @@
   "version": "0.1.0",
   "scripts": {
     "build": "tshy",
-    "clean": "rimraf dist .tshy"
+    "clean": "rimraf dist .tshy",
+    "gen-colors": "tsx scripts/gen-colors.ts"
   },
   "keywords": [],
   "author": "Andrew Lisowski",
   "license": "MIT",
+  "dependencies": {
+    "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-context": "^1.0.1",
+    "@stylexjs/open-props": "^0.6.1",
+    "@stylexjs/stylex": "^0.6.1",
+    "lucide-react": "^0.395.0",
+    "react-aria": "^3.33.1",
+    "react-aria-components": "^1.2.1"
+  },
   "devDependencies": {
-    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "@fwoosh/config-typescript": "workspace:*",
     "@fwoosh/types": "workspace:*",
+    "@types/node": "^20.14.2",
     "@types/react": "18.3.1",
+    "dedent": "^1.5.3",
+    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "rimraf": "^5.0.7",
-    "tshy": "^1.15.1"
+    "tshy": "^1.15.1",
+    "tsx": "^4.15.5"
   },
   "tshy": {
     "exports": {
-      ".": "./src/index.ts"
+      ".": "./src/index.ts",
+      "./components": "./src/components/index.ts",
+      "./colors": "./src/theme/colors.stylex.ts"
     }
   },
   "exports": {
@@ -34,12 +49,33 @@
         "types": "./dist/commonjs/index.d.ts",
         "default": "./dist/commonjs/index.js"
       }
+    },
+    "./components": {
+      "import": {
+        "source": "./src/components/index.ts",
+        "types": "./dist/esm/components/index.d.ts",
+        "default": "./dist/esm/components/index.js"
+      },
+      "require": {
+        "source": "./src/components/index.ts",
+        "types": "./dist/commonjs/components/index.d.ts",
+        "default": "./dist/commonjs/components/index.js"
+      }
+    },
+    "./colors": {
+      "import": {
+        "source": "./src/theme/colors.stylex.ts",
+        "types": "./dist/esm/theme/colors.stylex.d.ts",
+        "default": "./dist/esm/theme/colors.stylex.js"
+      },
+      "require": {
+        "source": "./src/theme/colors.stylex.ts",
+        "types": "./dist/commonjs/theme/colors.stylex.d.ts",
+        "default": "./dist/commonjs/theme/colors.stylex.js"
+      }
     }
   },
   "main": "./dist/commonjs/index.js",
   "types": "./dist/commonjs/index.d.ts",
-  "type": "module",
-  "dependencies": {
-    "@radix-ui/react-context": "^1.0.1"
-  }
+  "type": "module"
 }

@@ -1,10 +1,18 @@
 import type { ReactNode } from "react";
+import * as stylex from "@stylexjs/stylex";
 
 import { StoryList } from "./StoryList";
 import { ToolsToolbar } from "./ToolsToolbar";
 import { Panels } from "./Panels";
 import { StoryContext } from "@fwoosh/types";
 import { StoryContextProvider } from "@fwoosh/ui";
+import { gray } from "@fwoosh/ui/colors";
+
+const inspectorStyles = stylex.create({
+  base: {
+    backgroundColor: gray.subtleBg,
+  },
+});
 
 export interface BenchLayoutProps extends StoryContext {
   children: ReactNode;
@@ -17,17 +25,17 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
         <aside>
           <StoryList />
         </aside>
-        <div>
+        <main {...stylex.props(inspectorStyles.base)}>
           <aside>
             <ToolsToolbar />
           </aside>
-          <main className="m-6 flex items-center *:min-h-64 *:min-w-64 lg:m-0 lg:min-h-svh lg:justify-center">
+          <div className="m-6 flex items-center *:min-h-64 *:min-w-64 lg:m-0 lg:min-h-svh lg:justify-center">
             {children}
-          </main>
+          </div>
           <aside>
             <Panels page={page} story={story} />
           </aside>
-        </div>
+        </main>
       </div>
     </StoryContextProvider>
   );

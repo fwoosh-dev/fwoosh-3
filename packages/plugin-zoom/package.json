@@ -9,13 +9,17 @@
   "author": "Andrew Lisowski",
   "license": "MIT",
   "description": "",
+  "dependencies": {
+    "@fwoosh/ui": "workspace:*",
+    "@radix-ui/react-icons": "^1.3.0"
+  },
   "devDependencies": {
+    "@fwoosh/config-typescript": "workspace:*",
+    "@fwoosh/types": "workspace:*",
     "@types/node": "^20.14.2",
+    "@types/react": "18.3.1",
     "react": "19.0.0-beta-e7d213dfb0-20240507",
     "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
-    "@fwoosh/types": "workspace:*",
-    "@fwoosh/config-typescript": "workspace:*",
-    "@types/react": "18.3.1",
     "rimraf": "^5.0.7",
     "tshy": "^1.15.1"
   },

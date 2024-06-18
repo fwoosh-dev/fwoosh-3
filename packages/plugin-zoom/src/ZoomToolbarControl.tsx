@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { storyPreviewId } from "@fwoosh/types";
+import { HStack, IconButton } from "@fwoosh/ui/components";
+import { PlusIcon, MinusIcon, ResetIcon } from "@radix-ui/react-icons";
 
 function browserSupportsCssZoom(): boolean {
   try {
@@ -55,10 +57,16 @@ export default function ZoomToolbarControl() {
   }, [storyPreviewId, zoom]);
 
   return (
-    <div>
-      <button onClick={increaseZoom}>+</button>
-      <button onClick={decreaseZoom}>-</button>
-      <button onClick={resetZoom}>Reset</button>
-    </div>
+    <HStack gap="md">
+      <IconButton variant="toolbar" onPress={increaseZoom}>
+        <PlusIcon />
+      </IconButton>
+      <IconButton variant="toolbar" onPress={decreaseZoom}>
+        <MinusIcon />
+      </IconButton>
+      <IconButton variant="toolbar" onPress={resetZoom}>
+        <ResetIcon />
+      </IconButton>
+    </HStack>
   );
 }

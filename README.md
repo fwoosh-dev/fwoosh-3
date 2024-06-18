@@ -18,6 +18,8 @@ cd examples/react
 pnpm fwoosh dev
 ```
 
+Then navigate to http://localhost:3000/bench
+
 ### Naman
 
 In `packages/fwoosh/src/components/BenchLayout.tsx` we import `@fwoosh/ui/colors`.

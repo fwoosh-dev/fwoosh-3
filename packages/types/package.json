@@ -11,6 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
+    "@types/node": "^20.14.2",
     "rimraf": "^5.0.7",
     "tshy": "^1.15.1"
   },

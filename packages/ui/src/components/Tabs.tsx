@@ -11,7 +11,8 @@ import {
   TabPanelProps,
 } from "react-aria-components";
 import * as stylex from "@stylexjs/stylex";
-import { gray, space } from "../theme/theme.stylex.js";
+import { space } from "../theme/theme.stylex.js";
+import { gray } from "../theme/colors.stylex.js";
 
 export function Tabs(props: TabsProps) {
   return <TabsPrimitive {...props} />;

@@ -13,5 +13,9 @@
   "devDependencies": {
     "@turbo/gen": "^2.0.4",
     "turbo": "^2.0.4"
+  },
+  "resolutions": {
+    "react": "19.0.0-beta-e7d213dfb0-20240507",
+    "react-dom": "19.0.0-beta-e7d213dfb0-20240507"
   }
 }

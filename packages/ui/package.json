@@ -35,7 +35,7 @@
     "exports": {
       ".": "./src/index.ts",
       "./components": "./src/components/index.ts",
-      "./colors": "./src/theme/colors.stylex.ts",
+      "./colors.stylex": "./src/theme/colors.stylex.ts",
       "./app": "./src/app/app.tsx"
     }
   },
@@ -64,7 +64,7 @@
         "default": "./dist/commonjs/components/index.js"
       }
     },
-    "./colors": {
+    "./colors.stylex": {
       "import": {
         "source": "./src/theme/colors.stylex.ts",
         "types": "./dist/esm/theme/colors.stylex.d.ts",

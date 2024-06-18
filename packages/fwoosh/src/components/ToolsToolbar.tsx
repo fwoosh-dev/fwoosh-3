@@ -1,6 +1,7 @@
 import { FwooshToolbarButton } from "@fwoosh/types";
 import { getConfig } from "../utils/config";
 import { importPlugin } from "@fwoosh/pages";
+import { InspectorToolbar } from "@fwoosh/ui/app";
 
 export async function ToolsToolbarTool({
   tool,
@@ -24,10 +25,10 @@ export async function ToolsToolbar() {
   }
 
   return (
-    <div>
+    <InspectorToolbar>
       {toolbarTools.map((tool) => (
         <ToolsToolbarTool key={tool.id} tool={tool} />
       ))}
-    </div>
+    </InspectorToolbar>
   );
 }

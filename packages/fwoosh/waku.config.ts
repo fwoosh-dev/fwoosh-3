@@ -7,6 +7,4 @@ const config = {
   ),
 };
 
-console.log("DIST DIR", config.distDir);
-
 export default config;

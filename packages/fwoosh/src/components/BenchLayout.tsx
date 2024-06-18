@@ -1,18 +1,22 @@
 import type { ReactNode } from "react";
-import * as stylex from "@stylexjs/stylex";
+
+import { StoryContext } from "@fwoosh/types";
+import { StoryContextProvider } from "@fwoosh/ui";
+import { Inspector, ResizeHandle, SidebarLayout } from "@fwoosh/ui/app";
 
 import { StoryList } from "./StoryList";
 import { ToolsToolbar } from "./ToolsToolbar";
 import { Panels } from "./Panels";
-import { StoryContext } from "@fwoosh/types";
-import { StoryContextProvider } from "@fwoosh/ui";
-import { gray } from "@fwoosh/ui/colors";
+import { Panel, PanelGroup, PanelResizeHandle } from "./ResizablePanels";
 
-const inspectorStyles = stylex.create({
-  base: {
-    backgroundColor: gray.subtleBg,
-  },
-});
+// NAMAN
+// import { gray } from "@fwoosh/ui/colors";
+
+// const inspectorStyles = stylex.create({
+//   base: {
+//     backgroundColor: gray.subtleBg,
+//   },
+// });
 
 export interface BenchLayoutProps extends StoryContext {
   children: ReactNode;
@@ -21,22 +25,29 @@ export interface BenchLayoutProps extends StoryContext {
 export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
   return (
     <StoryContextProvider page={page} story={story}>
-      <div style={{ display: "flex" }}>
+      <SidebarLayout>
         <aside>
           <StoryList />
         </aside>
-        <main {...stylex.props(inspectorStyles.base)}>
-          <aside>
-            <ToolsToolbar />
-          </aside>
-          <div className="m-6 flex items-center *:min-h-64 *:min-w-64 lg:m-0 lg:min-h-svh lg:justify-center">
-            {children}
-          </div>
-          <aside>
-            <Panels page={page} story={story} />
-          </aside>
-        </main>
-      </div>
+        <Inspector>
+          <PanelGroup id="inspector" direction="vertical">
+            <Panel id="preview" minSize={20}>
+              <ToolsToolbar />
+              <div style={{ height: "100%", width: "100%", overflow: "auto" }}>
+                {children}
+              </div>
+            </Panel>
+            <PanelResizeHandle id="preview-panels-handle">
+              <ResizeHandle />
+            </PanelResizeHandle>
+            <Panel id="panels" minSize={20} collapsible={true}>
+              <aside>
+                <Panels page={page} story={story} />
+              </aside>
+            </Panel>
+          </PanelGroup>
+        </Inspector>
+      </SidebarLayout>
     </StoryContextProvider>
   );
 }

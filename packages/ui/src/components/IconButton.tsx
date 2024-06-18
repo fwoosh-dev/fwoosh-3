@@ -23,7 +23,7 @@ const buttonStyles = stylex.create({
       ":focus-visible": "none",
     },
     border: "none",
-    borderRadius: borderRadius.md,
+    borderRadius: borderRadius.mdInset,
   },
   toolbar: {
     height: 28,
@@ -35,7 +35,7 @@ const focusRingStyles = stylex.create({
   base: {
     position: "absolute",
     inset: "-4px",
-    borderRadius: borderRadius.md,
+    borderRadius: borderRadius.mdInset,
     borderWidth: 2,
     borderColor: blue.hoveredBorder,
     borderStyle: "solid",

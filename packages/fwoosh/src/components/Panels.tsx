@@ -1,7 +1,7 @@
 import { FwooshPanel, StoryContext } from "@fwoosh/types";
 import { importPlugin } from "@fwoosh/pages";
+import { Tab, TabList, TabPanel, Tabs } from "@fwoosh/ui/components";
 import { getConfig } from "../utils/config";
-import path from "path";
 
 export async function Panel({
   panel,
@@ -25,15 +25,17 @@ export async function Panels({ page, story }: StoryContext) {
   }
 
   return (
-    <div>
-      <div>
+    <Tabs>
+      <TabList>
         {panels.map((panel) => (
-          <button>{panel.panelTitle}</button>
+          <Tab id={panel.id}>{panel.panelTitle}</Tab>
         ))}
-      </div>
+      </TabList>
       {panels.map((panel) => (
-        <Panel key={panel.id} panel={panel} page={page} story={story} />
+        <TabPanel id={panel.id}>
+          <Panel key={panel.id} panel={panel} page={page} story={story} />
+        </TabPanel>
       ))}
-    </div>
+    </Tabs>
   );
 }

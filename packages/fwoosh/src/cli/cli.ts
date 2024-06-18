@@ -3,12 +3,14 @@ import { lilconfig } from "lilconfig";
 const findCacheDirectoryPromise = import("find-cache-dir");
 import { promises as fs } from "fs";
 import path from "path";
+import { consola } from "consola";
+
+import { FwooshConfig } from "@fwoosh/types";
 
 import { dev } from "./dev.js";
 import { build } from "./build.js";
 import { start } from "./start.js";
 import { Options } from "./types.js";
-import { FwooshConfig } from "@fwoosh/types";
 
 const explorer = lilconfig("fwoosh", {
   searchPlaces: ["fwoosh.config.ts", "fwoosh.config.js"],
@@ -53,7 +55,7 @@ const fwoosh: MultiCommand = {
 const args = app(fwoosh);
 
 if (args?.error) {
-  console.error(args.error);
+  consola.error(args.error);
   process.exit(1);
 }
 

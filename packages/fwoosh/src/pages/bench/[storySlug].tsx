@@ -8,7 +8,11 @@ export default async function Story({ storySlug }: { storySlug: string }) {
 
   return (
     <BenchLayout page={page} story={story}>
-      <iframe id={storyPreviewId} src={`/iframe/${storySlug}`} />
+      <iframe
+        id={storyPreviewId}
+        src={`/iframe/${storySlug}`}
+        style={{ height: "100%", width: "100%", border: "none" }}
+      />
     </BenchLayout>
   );
 }

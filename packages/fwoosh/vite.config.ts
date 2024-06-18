@@ -8,7 +8,7 @@ const config: UserConfig = {
     // @ts-ignore
     annotateExportPlugin(),
     styleX({
-      libraries: ["@fwoosh/ui/components", "@fwoosh/ui/colors"],
+      libraries: ["@fwoosh/ui/components", "@fwoosh/ui/app"],
     }),
   ],
 };

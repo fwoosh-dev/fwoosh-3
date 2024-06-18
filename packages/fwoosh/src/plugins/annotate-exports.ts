@@ -39,7 +39,9 @@ export function annotateExportPlugin() {
         // Instead of this we could try to use something like es-module-lexer
         // to follow all the imports and exports to the source file.
         const isIncluded = ["!**/*.stories.*", ...docgen].every((glob) =>
-          micromatch.isMatch(id, glob)
+          micromatch.isMatch(id, glob, {
+            cwd: process.env.TARGET_DIRECTORY,
+          })
         );
 
         if (isIncluded) {
@@ -50,26 +52,35 @@ export function annotateExportPlugin() {
               import * as currentModule from "${id}";
               let fwoosh_visited = [];
 
-              function fwoosh_traverseExports(obj) {
-                Object.entries(obj).forEach(([name, ex]) => {
-                  if (
-                    typeof ex === "function" ||
-                    (ex != undefined && typeof ex === "object" && "render" in ex)
-                  ) {
-                    ex.fwoosh_file = "${id}";
-                    ex.displayName = name;
-                  } else if (
-                    typeof ex === "object" && ex !== null &&
-                    Object.values(ex).length > 0 &&
-                    !fwoosh_visited.includes(ex)
-                  ) {
-                    fwoosh_visited.push(ex);
-                    fwoosh_traverseExports(ex);
+              try {
+                function fwoosh_traverseExports(obj) {
+                  if (!obj || typeof obj === "function" || typeof obj !== "object") {
+                    return;
                   }
-                });
-              }
 
-              fwoosh_traverseExports(currentModule);
+                  Object.entries(obj).forEach(([name, ex]) => {
+                    if (
+                      typeof ex === "function" ||
+                      (ex != undefined && typeof ex === "object" && "render" in ex)
+                    ) {
+                      ex.fwoosh_file = "${id}";
+                      ex.displayName = name;
+                    } else if (
+                      typeof ex === "object" && ex !== null &&
+                      Object.values(ex).length > 0 &&
+                      !fwoosh_visited.includes(ex)
+                    ) {
+                      fwoosh_visited.push(ex);
+                      fwoosh_traverseExports(ex);
+                    }
+                  });
+                }
+
+                fwoosh_traverseExports(currentModule);
+              } catch (error) {
+                console.error("COULD NOT ANNOTATE EXPORTS", "${id}");
+                throw error;
+              }
             `
           );
         }

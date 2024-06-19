@@ -22,5 +22,3 @@ export const space = stylex.defineVars({
   4: "8px",
   5: "16px",
 });
-
-export * from "./colors.stylex.js";

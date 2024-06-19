@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import * as stylex from "@stylexjs/stylex";
 
 import { StoryContext } from "@fwoosh/types";
 import { StoryContextProvider } from "@fwoosh/ui";
@@ -9,14 +10,13 @@ import { ToolsToolbar } from "./ToolsToolbar";
 import { Panels } from "./Panels";
 import { Panel, PanelGroup, PanelResizeHandle } from "./ResizablePanels";
 
-// NAMAN
-// import { gray } from "@fwoosh/ui/colors";
+import { gray } from "@fwoosh/ui/colors.stylex";
 
-// const inspectorStyles = stylex.create({
-//   base: {
-//     backgroundColor: gray.subtleBg,
-//   },
-// });
+const inspectorStyles = stylex.create({
+  base: {
+    backgroundColor: gray.subtleBg,
+  },
+});
 
 export interface BenchLayoutProps extends StoryContext {
   children: ReactNode;

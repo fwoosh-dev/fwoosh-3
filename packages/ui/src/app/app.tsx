@@ -1,6 +1,9 @@
+"use client";
+
 import * as stylex from "@stylexjs/stylex";
 import { gray } from "../theme/colors.stylex.js";
 import { borderRadius, space } from "../theme/theme.stylex.js";
+import { useHover, mergeProps } from "react-aria";
 
 const inspectorStyles = stylex.create({
   base: {
@@ -10,6 +13,7 @@ const inspectorStyles = stylex.create({
     backgroundColor: gray.appBg,
     margin: space[5],
     borderRadius: borderRadius.md,
+    overflow: "hidden",
   },
 });
 
@@ -63,9 +67,18 @@ export function InspectorToolbar({ style, ...props }: InspectorToolbarProps) {
 const resizeHandleStyles = stylex.create({
   base: {
     zIndex: 10,
-    height: 0,
     width: "100%",
     position: "relative",
+  },
+  line: {
+    zIndex: 10,
+    position: "absolute",
+    height: 2,
+    width: "100%",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    background: gray.hoveredBorder,
   },
   hitArea: {
     position: "absolute",
@@ -80,11 +93,24 @@ const resizeHandleStyles = stylex.create({
 export interface ResizeHandleProps
   extends Omit<React.ComponentPropsWithoutRef<"div">, "style" | "className"> {
   style?: stylex.StyleXStyles;
+  isDragging: boolean;
 }
 
-export function ResizeHandle({ style, ...props }: ResizeHandleProps) {
+export function ResizeHandle({
+  style,
+  isDragging,
+  ...props
+}: ResizeHandleProps) {
+  let { hoverProps, isHovered } = useHover({});
+
   return (
-    <div {...props} {...stylex.props(resizeHandleStyles.base)}>
+    <div
+      {...mergeProps(props, hoverProps)}
+      {...stylex.props(resizeHandleStyles.base)}
+    >
+      {(isHovered || isDragging) && (
+        <div {...stylex.props(resizeHandleStyles.line)} />
+      )}
       <div {...stylex.props(resizeHandleStyles.hitArea)} />
     </div>
   );

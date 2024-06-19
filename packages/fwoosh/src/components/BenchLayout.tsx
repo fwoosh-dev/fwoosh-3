@@ -1,9 +1,8 @@
 import type { ReactNode } from "react";
-import * as stylex from "@stylexjs/stylex";
 
 import { StoryContext } from "@fwoosh/types";
 import { StoryContextProvider } from "@fwoosh/ui";
-import { Inspector, ResizeHandle, SidebarLayout } from "@fwoosh/ui/app";
+import { Inspector, SidebarLayout } from "@fwoosh/ui/app";
 
 import { StoryList } from "./StoryList";
 import { ToolsToolbar } from "./ToolsToolbar";

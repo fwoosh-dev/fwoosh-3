@@ -1,6 +1,14 @@
 import { StoryContext } from "@fwoosh/types";
 import { importMeta } from "@fwoosh/pages";
-import { TabPanelContent } from "@fwoosh/ui/components";
+import {
+  TabPanelContent,
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@fwoosh/ui/components";
 import docgen from "react-docgen-typescript";
 
 const defaultOptions: docgen.ParserOptions = {
@@ -51,26 +59,24 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
           <>
             {description && <div>{description}</div>}
             {propEntries.length > 0 && (
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Default</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
+              <Table>
+                <TableHeader>
+                  <TableColumn isRowHeader={true}>Name</TableColumn>
+                  <TableColumn>Type</TableColumn>
+                  <TableColumn>Default</TableColumn>
+                  <TableColumn>Description</TableColumn>
+                </TableHeader>
+                <TableBody>
                   {propEntries.map((prop) => (
-                    <tr key={prop.name}>
-                      <td>{prop.name}</td>
-                      <td>{prop.type.name}</td>
-                      <td>{prop.defaultValue}</td>
-                      <td>{prop.description}</td>
-                    </tr>
+                    <TableRow key={prop.name}>
+                      <TableCell>{prop.name}</TableCell>
+                      <TableCell>{prop.type.name}</TableCell>
+                      <TableCell>{prop.defaultValue}</TableCell>
+                      <TableCell>{prop.description}</TableCell>
+                    </TableRow>
                   ))}
-                </tbody>
-              </table>
+                </TableBody>
+              </Table>
             )}
           </>
         );

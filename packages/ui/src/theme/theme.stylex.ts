@@ -24,3 +24,15 @@ export const text = stylex.defineVars({
   base: "1rem",
   lg: "1.125rem",
 });
+
+export const fontWeight = stylex.defineVars({
+  thin: "100",
+  extraLight: "200",
+  light: "300",
+  normal: "400",
+  medium: "500",
+  semibold: "600",
+  bold: "700",
+  heavy: "800",
+  extraHeavy: "900",
+});

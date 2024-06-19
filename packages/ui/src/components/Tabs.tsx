@@ -51,7 +51,6 @@ const tabStyles = stylex.create({
     display: "flex",
     alignItems: "center",
     padding: `${space[3]} ${space[5]}`,
-    boxSizing: "border-box",
     height: space[7],
     fontSize: text.sm,
     cursor: "default",

@@ -1,3 +1,4 @@
 {
-  "extends": "@fwoosh/config-typescript/react.json"
+  "extends": "@fwoosh/config-typescript/react.json",
+  "exclude": ["dist/**/*"]
 }

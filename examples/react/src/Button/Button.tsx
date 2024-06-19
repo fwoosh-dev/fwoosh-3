@@ -2,7 +2,10 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** The size of the button */
   size?: "small" | "medium" | "large";
-  /** The type of button */
+  /**
+   * The type of button
+   * @default primary
+   */
   variant?: "primary" | "secondary" | "tertiary";
 }
 

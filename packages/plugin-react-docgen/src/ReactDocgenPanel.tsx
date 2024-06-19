@@ -1,6 +1,7 @@
 import { StoryContext } from "@fwoosh/types";
 import { importMeta } from "@fwoosh/pages";
 import {
+  InlineCode,
   TabPanelContent,
   Table,
   TableBody,
@@ -59,7 +60,7 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
           <>
             {description && <div>{description}</div>}
             {propEntries.length > 0 && (
-              <Table>
+              <Table selectionMode="single">
                 <TableHeader>
                   <TableColumn isRowHeader={true}>Name</TableColumn>
                   <TableColumn>Type</TableColumn>
@@ -67,14 +68,24 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
                   <TableColumn>Description</TableColumn>
                 </TableHeader>
                 <TableBody>
-                  {propEntries.map((prop) => (
-                    <TableRow key={prop.name}>
-                      <TableCell>{prop.name}</TableCell>
-                      <TableCell>{prop.type.name}</TableCell>
-                      <TableCell>{prop.defaultValue}</TableCell>
-                      <TableCell>{prop.description}</TableCell>
-                    </TableRow>
-                  ))}
+                  {propEntries.map((prop) => {
+                    return (
+                      <TableRow key={prop.name}>
+                        <TableCell>
+                          <InlineCode>{prop.name}</InlineCode>
+                        </TableCell>
+                        <TableCell>
+                          <InlineCode>{prop.type.name}</InlineCode>
+                        </TableCell>
+                        <TableCell>
+                          {prop.defaultValue?.value && (
+                            <InlineCode>{prop.defaultValue?.value}</InlineCode>
+                          )}
+                        </TableCell>
+                        <TableCell>{prop.description}</TableCell>
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             )}

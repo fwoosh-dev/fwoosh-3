@@ -9,15 +9,6 @@ import { ToolsToolbar } from "./ToolsToolbar";
 import { Panels } from "./Panels";
 import { Panel, PanelGroup, PanelResizeHandle } from "./ResizablePanels";
 
-// NAMAN
-// import { gray } from "@fwoosh/ui/colors";
-
-// const inspectorStyles = stylex.create({
-//   base: {
-//     backgroundColor: gray.subtleBg,
-//   },
-// });
-
 export interface BenchLayoutProps extends StoryContext {
   children: ReactNode;
 }

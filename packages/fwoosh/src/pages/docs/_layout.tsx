@@ -1,8 +1,6 @@
-import type { ReactNode } from "react";
-
 import { DocList } from "../../components/DocList";
 
-type RootLayoutProps = { children: ReactNode };
+type RootLayoutProps = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (

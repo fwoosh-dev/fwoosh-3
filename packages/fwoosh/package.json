@@ -23,6 +23,7 @@
     "esbuild-register": "^3.5.0",
     "find-cache-dir": "^5.0.0",
     "glob": "^10.4.1",
+    "inter-ui": "^4.0.2",
     "lilconfig": "^3.1.2",
     "micromatch": "^4.0.7",
     "react": "19.0.0-beta-e7d213dfb0-20240507",

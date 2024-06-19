@@ -2,6 +2,7 @@
   "name": "@fwoosh/ui",
   "description": "",
   "version": "0.1.0",
+  "sideEffects": false,
   "scripts": {
     "build": "tshy",
     "clean": "rimraf dist .tshy",
@@ -32,10 +33,13 @@
     "tsx": "^4.15.5"
   },
   "tshy": {
+    "dialects": [
+      "esm"
+    ],
     "exports": {
       ".": "./src/index.ts",
       "./components": "./src/components/index.ts",
-      "./colors": "./src/theme/colors.stylex.ts",
+      "./colors.stylex": "./src/theme/colors.stylex.ts",
       "./app": "./src/app/app.tsx"
     }
   },
@@ -45,11 +49,6 @@
         "source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "source": "./src/index.ts",
-        "types": "./dist/commonjs/index.d.ts",
-        "default": "./dist/commonjs/index.js"
       }
     },
     "./components": {
@@ -57,23 +56,13 @@
         "source": "./src/components/index.ts",
         "types": "./dist/esm/components/index.d.ts",
         "default": "./dist/esm/components/index.js"
-      },
-      "require": {
-        "source": "./src/components/index.ts",
-        "types": "./dist/commonjs/components/index.d.ts",
-        "default": "./dist/commonjs/components/index.js"
       }
     },
-    "./colors": {
+    "./colors.stylex": {
       "import": {
         "source": "./src/theme/colors.stylex.ts",
         "types": "./dist/esm/theme/colors.stylex.d.ts",
         "default": "./dist/esm/theme/colors.stylex.js"
-      },
-      "require": {
-        "source": "./src/theme/colors.stylex.ts",
-        "types": "./dist/commonjs/theme/colors.stylex.d.ts",
-        "default": "./dist/commonjs/theme/colors.stylex.js"
       }
     },
     "./app": {
@@ -81,15 +70,8 @@
         "source": "./src/app/app.tsx",
         "types": "./dist/esm/app/app.d.ts",
         "default": "./dist/esm/app/app.js"
-      },
-      "require": {
-        "source": "./src/app/app.tsx",
-        "types": "./dist/commonjs/app/app.d.ts",
-        "default": "./dist/commonjs/app/app.js"
       }
     }
   },
-  "main": "./dist/commonjs/index.js",
-  "types": "./dist/commonjs/index.d.ts",
   "type": "module"
 }

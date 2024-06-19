@@ -1,7 +1,7 @@
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
-import { gap } from "../theme/theme.stylex.js";
+import { space } from "../theme/theme.stylex.js";
 
 const styles = stylex.create({
   base: {
@@ -15,10 +15,10 @@ const styles = stylex.create({
   justifyCenter: { justifyContent: "center" },
   justifyBetween: { justifyContent: "space-between" },
   justifyAround: { justifyContent: "space-around" },
-  gapXs: { gap: gap.xs },
-  gapSm: { gap: gap.sm },
-  gapMedium: { gap: gap.md },
-  gapLarge: { gap: gap.lg },
+  gapXs: { gap: space[1] },
+  gapSm: { gap: space[2] },
+  gapMedium: { gap: space[3] },
+  gapLarge: { gap: space[4] },
 });
 
 export interface HStackProps
@@ -26,14 +26,14 @@ export interface HStackProps
   align?: "start" | "center" | "end";
   justify?: "start" | "center" | "end" | "between" | "around";
   style?: stylex.StyleXStyles;
-  gap?: "xs" | "sm" | "md" | "lg";
+  gap?: 1 | 2 | 3 | 4 | 5;
 }
 
 export function HStack({
   align = "center",
   justify = "start",
   style,
-  gap: gapProp = "sm",
+  gap: gapProp = 2,
   ...props
 }: HStackProps) {
   return (
@@ -55,13 +55,13 @@ export function HStack({
           : justify === "around"
           ? styles.justifyAround
           : null,
-        gapProp === "xs"
+        gapProp === 1
           ? styles.gapXs
-          : gapProp === "sm"
+          : gapProp === 2
           ? styles.gapSm
-          : gapProp === "md"
+          : gapProp === 3
           ? styles.gapMedium
-          : gapProp === "lg"
+          : gapProp === 4
           ? styles.gapLarge
           : null,
         style

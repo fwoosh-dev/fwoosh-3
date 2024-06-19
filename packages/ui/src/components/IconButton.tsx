@@ -4,7 +4,8 @@ import * as stylex from "@stylexjs/stylex";
 import { Button, ButtonProps } from "react-aria-components";
 
 import { borderRadius } from "../theme/theme.stylex.js";
-import { blue, gray } from "../theme/colors.stylex.js";
+import { gray } from "../theme/colors.stylex.js";
+import { FocusRing } from "./FocusRing.js";
 
 const buttonStyles = stylex.create({
   base: {
@@ -30,21 +31,6 @@ const buttonStyles = stylex.create({
     width: 28,
   },
 });
-
-const focusRingStyles = stylex.create({
-  base: {
-    position: "absolute",
-    inset: "-4px",
-    borderRadius: borderRadius.mdInset,
-    borderWidth: 2,
-    borderColor: blue.hoveredBorder,
-    borderStyle: "solid",
-  },
-});
-
-function FocusRing() {
-  return <div {...stylex.props(focusRingStyles.base)} />;
-}
 
 export interface IconButtonProps extends Omit<ButtonProps, "children"> {
   variant?: "toolbar";

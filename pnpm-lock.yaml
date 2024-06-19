@@ -81,8 +81,6 @@ importers:
 
   packages/extract-comments/dist/esm: {}
 
-  packages/extract-comments/src: {}
-
   packages/fwoosh:
     dependencies:
       '@fwoosh/extract-comments':
@@ -212,12 +210,13 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
-  packages/plugin-description/dist/commonjs: {}
-
   packages/plugin-description/dist/esm: {}
 
   packages/plugin-react-docgen:
     dependencies:
+      '@fwoosh/ui':
+        specifier: workspace:*
+        version: link:../ui
       '@types/node':
         specifier: ^20.14.2
         version: 20.14.2

@@ -9,6 +9,11 @@
   "keywords": [],
   "author": "Andrew Lisowski",
   "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.14.2",
+    "@fwoosh/ui": "workspace:*",
+    "react-docgen-typescript": "^2.2.2"
+  },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
     "@fwoosh/types": "workspace:*",
@@ -19,6 +24,9 @@
     "tshy": "^1.15.1"
   },
   "tshy": {
+    "dialects": [
+      "esm"
+    ],
     "exports": {
       ".": "./src/index.ts"
     }
@@ -29,19 +37,8 @@
         "source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "source": "./src/index.ts",
-        "types": "./dist/commonjs/index.d.ts",
-        "default": "./dist/commonjs/index.js"
       }
     }
   },
-  "main": "./dist/commonjs/index.js",
-  "types": "./dist/commonjs/index.d.ts",
-  "type": "module",
-  "dependencies": {
-    "@types/node": "^20.14.2",
-    "react-docgen-typescript": "^2.2.2"
-  }
+  "type": "module"
 }

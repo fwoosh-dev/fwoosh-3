@@ -1,9 +1,10 @@
 import { StoryContext } from "@fwoosh/types";
+import { TabPanelContent } from "@fwoosh/ui/components";
 
 export default function DescriptionPanel({ story }: StoryContext) {
   if (!story.description) {
-    return <div>No description for story...</div>;
+    return <TabPanelContent>No description for story...</TabPanelContent>;
   }
 
-  return <div>{story.description}</div>;
+  return <TabPanelContent>{story.description}</TabPanelContent>;
 }

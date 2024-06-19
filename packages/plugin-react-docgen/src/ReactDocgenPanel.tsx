@@ -1,5 +1,6 @@
 import { StoryContext } from "@fwoosh/types";
 import { importMeta } from "@fwoosh/pages";
+import { TabPanelContent } from "@fwoosh/ui/components";
 import docgen from "react-docgen-typescript";
 
 const defaultOptions: docgen.ParserOptions = {
@@ -30,11 +31,13 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
   }
 
   if (!docs.length) {
-    return <div>No documentation found for component</div>;
+    return (
+      <TabPanelContent>No documentation found for component</TabPanelContent>
+    );
   }
 
   return (
-    <div>
+    <TabPanelContent>
       {docs.map((doc) => {
         const { props, description } = doc;
 
@@ -72,6 +75,6 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
           </>
         );
       })}
-    </div>
+    </TabPanelContent>
   );
 }

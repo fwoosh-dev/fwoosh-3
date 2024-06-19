@@ -57,7 +57,7 @@ export default function ZoomToolbarControl() {
   }, [storyPreviewId, zoom]);
 
   return (
-    <HStack gap="md">
+    <HStack gap={3}>
       <IconButton variant="toolbar" onPress={increaseZoom}>
         <PlusIcon />
       </IconButton>

@@ -63,22 +63,17 @@ export function InspectorToolbar({ style, ...props }: InspectorToolbarProps) {
 const resizeHandleStyles = stylex.create({
   base: {
     zIndex: 10,
-    background: {
-      default: gray.subtleBorder,
-      ":hover": gray.hoveredBorder,
-    },
-    height: 1,
+    height: 0,
     width: "100%",
     position: "relative",
   },
-
   hitArea: {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "100%",
-    height: 10,
+    height: 12,
   },
 });
 

@@ -11,7 +11,8 @@ import {
   TabPanelProps,
 } from "react-aria-components";
 import * as stylex from "@stylexjs/stylex";
-import { borders } from "@stylexjs/open-props/lib/borders.stylex";
+// NAMAN UNCOMMENT THIS
+// import { borders } from "@stylexjs/open-props/lib/borders.stylex";
 
 import { space } from "../theme/theme.stylex.js";
 import { gray } from "../theme/colors.stylex.js";
@@ -43,7 +44,7 @@ const tabStyles = stylex.create({
     padding: `${space[2]} ${space[3]}`,
     border: `1px solid ${gray.elementBorder}`,
     backgroundColor: "red",
-    borderRadius: borders.radius2,
+    // borderRadius: borders.radius2,
   },
 });
 

@@ -24,6 +24,9 @@
     "tshy": "^1.15.1"
   },
   "tshy": {
+    "dialects": [
+      "esm"
+    ],
     "exports": {
       ".": "./src/index.ts",
       "./toolbar-control": "./src/ZoomToolbarControl.tsx"
@@ -35,11 +38,6 @@
         "source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "source": "./src/index.ts",
-        "types": "./dist/commonjs/index.d.ts",
-        "default": "./dist/commonjs/index.js"
       }
     },
     "./toolbar-control": {
@@ -47,15 +45,8 @@
         "source": "./src/ZoomToolbarControl.tsx",
         "types": "./dist/esm/ZoomToolbarControl.d.ts",
         "default": "./dist/esm/ZoomToolbarControl.js"
-      },
-      "require": {
-        "source": "./src/ZoomToolbarControl.tsx",
-        "types": "./dist/commonjs/ZoomToolbarControl.d.ts",
-        "default": "./dist/commonjs/ZoomToolbarControl.js"
       }
     }
   },
-  "type": "module",
-  "main": "./dist/commonjs/index.js",
-  "types": "./dist/commonjs/index.d.ts"
+  "type": "module"
 }

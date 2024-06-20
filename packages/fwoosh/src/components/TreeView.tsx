@@ -11,7 +11,7 @@ import { TreeItem2 } from "@mui/x-tree-view/TreeItem2";
 import * as stylex from "@stylexjs/stylex";
 
 import { borderRadius, space, text } from "@fwoosh/ui/theme.stylex";
-import { gray } from "@fwoosh/ui/colors.stylex";
+import { appChrome, primary } from "@fwoosh/ui/colors.stylex";
 import { useRouter_UNSTABLE as useRouter } from "waku";
 
 // import { getAllPageGroups, getStorySlug } from "../utils/stories";
@@ -34,7 +34,7 @@ const treeStyles = stylex.create({
       content: "''",
       borderRadius: borderRadius.sm,
       zIndex: -1,
-      backgroundColor: gray.hover,
+      backgroundColor: appChrome.hover,
       opacity: {
         default: 0,
         ":hover": 1,
@@ -47,6 +47,7 @@ const treeStyles = stylex.create({
   itemSelected: {
     "::before": {
       opacity: 1,
+      backgroundColor: primary.solid,
     },
   },
 });

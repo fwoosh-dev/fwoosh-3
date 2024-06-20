@@ -4,7 +4,7 @@ import * as stylex from "@stylexjs/stylex";
 import { Button, ButtonProps } from "react-aria-components";
 
 import { borderRadius } from "../theme/theme.stylex.js";
-import { gray } from "../theme/colors.stylex.js";
+import { appChrome } from "../theme/colors.stylex.js";
 import { FocusRing } from "./FocusRing.js";
 
 const buttonStyles = stylex.create({
@@ -16,9 +16,9 @@ const buttonStyles = stylex.create({
     alignItems: "center",
     justifyContent: "center",
     background: {
-      default: gray.elementBg,
-      ":hover": gray.hover,
-      ":active": gray.active,
+      default: "transparent",
+      ":hover": appChrome.elementBg,
+      ":active": appChrome.hover,
     },
     outline: {
       ":focus-visible": "none",

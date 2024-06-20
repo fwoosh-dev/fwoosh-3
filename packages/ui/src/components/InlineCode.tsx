@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { borderRadius, space, text } from "../theme/theme.stylex.js";
-import { gray } from "../theme/colors.stylex.js";
+import { appChrome } from "../theme/colors.stylex.js";
 
 export interface InlineCodeProps
   extends Omit<React.HTMLAttributes<HTMLSpanElement>, "style" | "className"> {
@@ -12,8 +12,8 @@ const styles = stylex.create({
     display: "inline-flex",
     fontSize: text.xs,
     padding: `${space[2]} ${space[3]}`,
-    background: gray.hover,
-    color: gray.subtleText,
+    background: appChrome.hover,
+    color: appChrome.subtleText,
     borderRadius: borderRadius.sm,
   },
 });

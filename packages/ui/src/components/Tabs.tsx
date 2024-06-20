@@ -13,7 +13,7 @@ import {
 import * as stylex from "@stylexjs/stylex";
 
 import { borderRadius, space, text } from "../theme/theme.stylex.js";
-import { gray } from "../theme/colors.stylex.js";
+import { appChrome } from "../theme/colors.stylex.js";
 import { FocusRing } from "./FocusRing.js";
 
 const tabRootStyles = stylex.create({
@@ -40,9 +40,9 @@ const tabListStyles = stylex.create({
     display: "flex",
     alignItems: "center",
     gap: space[3],
-    background: gray.subtleBg,
-    borderTop: `1px solid ${gray.subtleBorder}`,
-    borderBottom: `1px solid ${gray.subtleBorder}`,
+    background: appChrome.subtleBg,
+    borderTop: `1px solid ${appChrome.subtleBorder}`,
+    borderBottom: `1px solid ${appChrome.subtleBorder}`,
     paddingTop: space[3],
     paddingBottom: space[3],
     paddingLeft: space[3],
@@ -71,17 +71,17 @@ const tabStyles = stylex.create({
     cursor: "default",
     border: "1px solid transparent",
     borderRadius: borderRadius.md,
-    color: gray.subtleText,
+    color: appChrome.subtleText,
     backgroundColor: {
-      ":hover": gray.hover,
-      ":active": gray.active,
+      ":hover": appChrome.hover,
+      ":active": appChrome.active,
     },
   },
   selected: {
-    backgroundColor: gray.appBg,
+    backgroundColor: appChrome.appBg,
     border: {
-      default: `1px solid ${gray.subtleBorder}`,
-      ":hover": `1px solid ${gray.hoveredBorder}`,
+      default: `1px solid ${appChrome.subtleBorder}`,
+      ":hover": `1px solid ${appChrome.hoveredBorder}`,
     },
   },
   focusRing: {

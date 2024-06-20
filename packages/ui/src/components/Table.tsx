@@ -22,13 +22,13 @@ import {
   space,
   text,
 } from "../theme/theme.stylex.js";
-import { gray } from "../theme/colors.stylex.js";
+import { appChrome } from "../theme/colors.stylex.js";
 import { useState } from "react";
 import { createContext } from "@radix-ui/react-context";
 
 const tableStyles = stylex.create({
   root: {
-    border: `1px solid ${gray.subtleBorder}`,
+    border: `1px solid ${appChrome.subtleBorder}`,
     borderRadius: borderRadius.md,
     margin: `${space[5]} 0`,
     borderSpacing: 0,
@@ -44,7 +44,7 @@ const tableStyles = stylex.create({
       borderRadius: borderRadius.mdInset,
       zIndex: -1,
       content: "''",
-      backgroundColor: gray.elementBg,
+      backgroundColor: appChrome.elementBg,
       position: "absolute",
       inset: 2,
     },
@@ -54,7 +54,7 @@ const tableStyles = stylex.create({
     fontWeight: fontWeight.semibold,
     textAlign: "left",
     padding: `${space[3]} ${space[4]}`,
-    borderBottom: `1px solid ${gray.subtleBorder}`,
+    borderBottom: `1px solid ${appChrome.subtleBorder}`,
   },
   cell: {
     fontSize: text.sm,

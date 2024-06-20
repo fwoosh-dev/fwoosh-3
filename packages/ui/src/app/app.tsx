@@ -1,7 +1,7 @@
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
-import { gray } from "../theme/colors.stylex.js";
+import { appChrome, appChromeA } from "../theme/colors.stylex.js";
 import { borderRadius, space } from "../theme/theme.stylex.js";
 import { useHover, mergeProps } from "react-aria";
 
@@ -9,11 +9,12 @@ const inspectorStyles = stylex.create({
   base: {
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: gray.elementBorder,
-    backgroundColor: gray.appBg,
+    borderColor: appChromeA.elementBorder,
+    backgroundColor: appChrome.appBg,
     margin: space[5],
-    borderRadius: borderRadius.md,
+    borderRadius: borderRadius.lg,
     overflow: "hidden",
+    boxShadow: "rgba(0, 0, 0, 0.16) 0px 2px 4px 0px",
   },
 });
 
@@ -28,7 +29,7 @@ export function Inspector({ style, ...props }: InspectorProps) {
 
 const sidebarLayoutStyles = stylex.create({
   base: {
-    backgroundColor: gray.subtleBg,
+    backgroundColor: appChrome.subtleBg,
     display: "grid",
     gridTemplateColumns: "240px 1fr",
     height: "100vh",
@@ -48,11 +49,13 @@ const InspectorToolbarStyles = stylex.create({
   base: {
     borderBottom: 1,
     borderBottomStyle: "solid",
-    borderBottomColor: gray.elementBorder,
+    borderBottomColor: appChrome.elementBorder,
+    background: appChrome.subtleBg,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     padding: space[2],
+    height: space[7],
   },
 });
 
@@ -79,7 +82,7 @@ const resizeHandleStyles = stylex.create({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    background: gray.hoveredBorder,
+    background: appChrome.hoveredBorder,
   },
   hitArea: {
     position: "absolute",

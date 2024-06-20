@@ -39,6 +39,7 @@
     "exports": {
       ".": "./src/index.ts",
       "./components": "./src/components/index.ts",
+      "./theme.stylex": "./src/theme/theme.stylex.ts",
       "./colors.stylex": "./src/theme/colors.stylex.ts",
       "./app": "./src/app/app.tsx"
     }
@@ -56,6 +57,13 @@
         "source": "./src/components/index.ts",
         "types": "./dist/esm/components/index.d.ts",
         "default": "./dist/esm/components/index.js"
+      }
+    },
+    "./theme.stylex": {
+      "import": {
+        "source": "./src/theme/theme.stylex.ts",
+        "types": "./dist/esm/theme/theme.stylex.d.ts",
+        "default": "./dist/esm/theme/theme.stylex.js"
       }
     },
     "./colors.stylex": {

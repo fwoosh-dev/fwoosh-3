@@ -1,6 +1,6 @@
 {
-  "name": "@fwoosh/plugin-{{kebabCase name}}",
-  "description": "{{description}}",
+  "name": "@fwoosh/plugin-source-panel",
+  "description": "View the source of the story",
   "version": "0.1.0",
   "scripts": {
     "build": "tshy",
@@ -10,13 +10,16 @@
   "author": "Andrew Lisowski",
   "license": "MIT",
   "dependencies": {
-    "@fwoosh/ui": "workspace:*"
+    "@stylexjs/stylex": "^0.6.1",
+    "@shikijs/transformers": "^1.7.0",
+    "@fwoosh/ui": "workspace:*",
+    "shiki": "^1.7.0"
   },
   "devDependencies": {
-    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "@fwoosh/config-typescript": "workspace:*",
     "@fwoosh/types": "workspace:*",
     "@types/react": "18.3.1",
+    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "rimraf": "^5.0.7",
     "tshy": "^1.15.1"
   },
@@ -34,15 +37,8 @@
         "source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "source": "./src/index.ts",
-        "types": "./dist/commonjs/index.d.ts",
-        "default": "./dist/commonjs/index.js"
       }
     }
   },
-  "main": "./dist/commonjs/index.js",
-  "types": "./dist/commonjs/index.d.ts",
   "type": "module"
 }

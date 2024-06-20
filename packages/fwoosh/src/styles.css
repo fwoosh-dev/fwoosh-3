@@ -19,3 +19,7 @@ html {
     font-family: "InterVariable", "system-ui";
   } /* If using the variable font */
 }
+
+pre {
+  margin: 0;
+}

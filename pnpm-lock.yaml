@@ -40,6 +40,9 @@ importers:
       '@fwoosh/plugin-react-docgen':
         specifier: workspace:*
         version: link:../../packages/plugin-react-docgen
+      '@fwoosh/plugin-source-panel':
+        specifier: workspace:*
+        version: link:../../packages/plugin-source-panel
       '@fwoosh/plugin-zoom':
         specifier: workspace:*
         version: link:../../packages/plugin-zoom
@@ -246,9 +249,43 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
-  packages/plugin-react-docgen/dist/commonjs: {}
-
   packages/plugin-react-docgen/dist/esm: {}
+
+  packages/plugin-source-panel:
+    dependencies:
+      '@fwoosh/ui':
+        specifier: workspace:*
+        version: link:../ui
+      '@shikijs/transformers':
+        specifier: ^1.7.0
+        version: 1.7.0
+      '@stylexjs/stylex':
+        specifier: ^0.6.1
+        version: 0.6.1
+      shiki:
+        specifier: ^1.7.0
+        version: 1.7.0
+    devDependencies:
+      '@fwoosh/config-typescript':
+        specifier: workspace:*
+        version: link:../config-typescript
+      '@fwoosh/types':
+        specifier: workspace:*
+        version: link:../types
+      '@types/react':
+        specifier: 18.3.1
+        version: 18.3.1
+      react-server-dom-webpack:
+        specifier: 19.0.0-beta-e7d213dfb0-20240507
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507)(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0)
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      tshy:
+        specifier: ^1.15.1
+        version: 1.15.1
+
+  packages/plugin-source-panel/dist/esm: {}
 
   packages/plugin-zoom:
     dependencies:
@@ -2590,6 +2627,16 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@shikijs/core@1.7.0:
+    resolution: {integrity: sha512-O6j27b7dGmJbR3mjwh/aHH8Ld+GQvA0OQsNO43wKWnqbAae3AYXrhFyScHGX8hXZD6vX2ngjzDFkZY5srtIJbQ==}
+    dev: false
+
+  /@shikijs/transformers@1.7.0:
+    resolution: {integrity: sha512-QX3TP+CS4yYLt4X4Dk7wT0MsC7yweTYHMAAKY+ay+uuR9yRdFae/h+hivny2O+YixJHfZl57xtiZfWSrHdyVhQ==}
+    dependencies:
+      shiki: 1.7.0
+    dev: false
 
   /@sliphua/lilconfig-ts-loader@3.2.2(lilconfig@3.1.2)(typescript@5.4.5):
     resolution: {integrity: sha512-nX2aBwAykiG50fSUzK9eyA5UvWcrEKzA0ZzCq9mLwHMwpKxM+U05YH8PHba1LJrbeZ7R1HSjJagWKMqFyq8cxw==}
@@ -5013,6 +5060,12 @@ packages:
   /shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+
+  /shiki@1.7.0:
+    resolution: {integrity: sha512-H5pMn4JA7ayx8H0qOz1k2qANq6mZVCMl1gKLK6kWIrv1s2Ial4EmD4s4jE8QB5Dw03d/oCQUxc24sotuyR5byA==}
+    dependencies:
+      '@shikijs/core': 1.7.0
+    dev: false
 
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}

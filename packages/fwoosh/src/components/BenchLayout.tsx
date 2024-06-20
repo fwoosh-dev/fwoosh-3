@@ -30,7 +30,7 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
             </Panel>
             <PanelResizeHandle id="preview-panels-handle" />
             <Panel id="panels" minSize={20} collapsible={true}>
-              <aside>
+              <aside style={{ height: "100%", width: "100%" }}>
                 <Panels page={page} story={story} />
               </aside>
             </Panel>

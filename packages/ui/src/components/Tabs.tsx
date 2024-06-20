@@ -2,13 +2,13 @@
 
 import {
   Tabs as TabsPrimitive,
-  TabsProps,
+  TabsProps as TabsPrimitiveProps,
   TabList as TabListPrimitive,
   TabListProps,
   Tab as TabPrimitive,
   TabProps as TabPrimitiveProps,
   TabPanel as TabPanelPrimitive,
-  TabPanelProps,
+  TabPanelProps as TabPanelPrimitiveProps,
 } from "react-aria-components";
 import * as stylex from "@stylexjs/stylex";
 
@@ -16,8 +16,23 @@ import { borderRadius, space, text } from "../theme/theme.stylex.js";
 import { gray } from "../theme/colors.stylex.js";
 import { FocusRing } from "./FocusRing.js";
 
-export function Tabs(props: TabsProps) {
-  return <TabsPrimitive {...props} />;
+const tabRootStyles = stylex.create({
+  base: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+  },
+});
+
+export interface TabsProps
+  extends Omit<TabsPrimitiveProps, "style" | "className"> {
+  style?: stylex.StyleXStyles;
+}
+
+export function Tabs({ style, ...props }: TabsProps) {
+  return (
+    <TabsPrimitive {...props} {...stylex.props(tabRootStyles.base, style)} />
+  );
 }
 
 const tabListStyles = stylex.create({
@@ -95,8 +110,27 @@ export function Tab({ children, ...props }: TabProps) {
   );
 }
 
-export function TabPanel(props: TabPanelProps) {
-  return <TabPanelPrimitive {...props} />;
+const tabPanelStyles = stylex.create({
+  base: {
+    flex: 1,
+    minHeight: 0,
+    overflow: "auto",
+  },
+});
+
+export interface TabPanelProps
+  extends Omit<TabPanelPrimitiveProps, "className" | "style"> {
+  children: React.ReactNode;
+  style?: stylex.StyleXStyles;
+}
+
+export function TabPanel({ style, ...props }: TabPanelProps) {
+  return (
+    <TabPanelPrimitive
+      {...props}
+      {...stylex.props(tabPanelStyles.base, style)}
+    />
+  );
 }
 
 const tabPanelContentStyles = stylex.create({

@@ -18899,6 +18899,7 @@ export const yellowP3A = stylex.defineVars({
   text: "color(display-p3 0.271 0.233 0.137)",
 });
 
-export const appChrome = stylex.defineVars(gray);
-export const appChromeA = stylex.defineVars(grayA);
-export const primary = stylex.defineVars(blue);
+export const appChrome = stylex.defineVars(mauve);
+export const appChromeA = stylex.defineVars(mauveA);
+export const primary = stylex.defineVars(pink);
+export const primaryA = stylex.defineVars(pinkA);

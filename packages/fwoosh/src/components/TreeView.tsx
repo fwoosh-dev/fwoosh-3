@@ -11,7 +11,7 @@ import { TreeItem2 } from "@mui/x-tree-view/TreeItem2";
 import * as stylex from "@stylexjs/stylex";
 
 import { borderRadius, space, text } from "@fwoosh/ui/theme.stylex";
-import { appChrome, primary } from "@fwoosh/ui/colors.stylex";
+import { appChrome, primaryA } from "@fwoosh/ui/colors.stylex";
 import { useRouter_UNSTABLE as useRouter } from "waku";
 
 // import { getAllPageGroups, getStorySlug } from "../utils/stories";
@@ -20,35 +20,22 @@ const treeStyles = stylex.create({
   root: {
     padding: space[8],
   },
-  item: {
+  content: {
     position: "relative",
     zIndex: 0,
     minHeight: space[7],
     padding: `${space[3]} ${space[4]}`,
-    background: "transparent",
+    background: {
+      default: "transparent",
+      ":hover": appChrome.hover,
+      ":is(.Mui-selected)": primaryA.active,
+    },
+    margin: space[1],
     userSelect: "none",
     cursor: "default",
-    "::before": {
-      position: "absolute",
-      inset: 1,
-      content: "''",
-      borderRadius: borderRadius.sm,
-      zIndex: -1,
-      backgroundColor: appChrome.hover,
-      opacity: {
-        default: 0,
-        ":hover": 1,
-      },
-    },
   },
-  itemLabel: {
+  label: {
     fontSize: text.xs,
-  },
-  itemSelected: {
-    "::before": {
-      opacity: 1,
-      backgroundColor: primary.solid,
-    },
   },
 });
 
@@ -69,9 +56,8 @@ function MyTreeItem(props: TreeItemProps) {
     <TreeItem2
       {...props}
       classes={{
-        content: stylex.attrs(treeStyles.item).class,
-        selected: stylex.attrs(treeStyles.itemSelected).class,
-        label: stylex.attrs(treeStyles.itemLabel).class,
+        content: stylex.attrs(treeStyles.content).class,
+        label: stylex.attrs(treeStyles.label).class,
       }}
     />
   );

@@ -19,6 +19,7 @@
     "@fwoosh/config-typescript": "workspace:*",
     "@fwoosh/types": "workspace:*",
     "@types/react": "18.3.1",
+    "react": "19.0.0-beta-e7d213dfb0-20240507",
     "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "rimraf": "^5.0.7",
     "tshy": "^1.15.1"

@@ -1,33 +1,25 @@
-import { Link } from "waku";
+import { StoryContext } from "@fwoosh/types";
 import { getAllPageGroups, getStorySlug } from "../utils/stories";
+import { TreeView } from "./TreeView";
 
-export async function StoryList() {
-  const groups = await getAllPageGroups();
+export async function StoryList({ page, story }: StoryContext) {
+  const pageGroups = await getAllPageGroups();
+  const treeGroups = Object.entries(pageGroups).map(([group, pages]) => {
+    return {
+      id: group,
+      label: group,
+      children: pages.map((page) => ({
+        ...page,
+        id: page.id,
+        label: page.title,
+        children: page.stories.map((story) => ({
+          ...story,
+          id: getStorySlug(page, story),
+          label: story.name,
+        })),
+      })),
+    };
+  });
 
-  return (
-    <ul>
-      {Object.entries(groups).map(([group, pages]) => (
-        <li key={group}>
-          <h2>{group}</h2>
-          <ul>
-            {pages.map((page) => (
-              <li key={page.title}>
-                <div>{page.title}</div>
-
-                <ul>
-                  {page.stories.map((story) => (
-                    <li key={story.name}>
-                      <Link to={`/bench/${getStorySlug(page, story)}`}>
-                        {story.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </li>
-      ))}
-    </ul>
-  );
+  return <TreeView data={treeGroups} activeId={getStorySlug(page, story)} />;
 }

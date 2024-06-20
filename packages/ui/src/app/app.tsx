@@ -51,6 +51,7 @@ const InspectorToolbarStyles = stylex.create({
     borderBottomColor: gray.elementBorder,
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     padding: space[2],
   },
 });

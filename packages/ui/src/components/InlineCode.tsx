@@ -10,7 +10,7 @@ export interface InlineCodeProps
 const styles = stylex.create({
   base: {
     display: "inline-flex",
-    fontSize: text.sm,
+    fontSize: text.xs,
     padding: `${space[2]} ${space[3]}`,
     background: gray.hover,
     color: gray.subtleText,

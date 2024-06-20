@@ -50,19 +50,20 @@ const tableStyles = stylex.create({
     },
   },
   column: {
-    fontSize: text.sm,
+    fontSize: text.xs,
     fontWeight: fontWeight.semibold,
     textAlign: "left",
     padding: `${space[3]} ${space[4]}`,
     borderBottom: `1px solid ${gray.subtleBorder}`,
   },
   cell: {
+    fontSize: text.sm,
     textAlign: "left",
   },
   cellInner: {
     display: "flex",
     alignItems: "center",
-    minHeight: space[8],
+    minHeight: space[7],
     padding: `${space[3]} ${space[4]}`,
   },
   header: {

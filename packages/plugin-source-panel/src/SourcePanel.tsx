@@ -19,7 +19,7 @@ const styles = stylex.create({
     display: "inline-flex",
     backgroundColor: gray.elementBg,
     width: `calc(100% + (${space[4]} * 2))`,
-    borderRadius: borderRadius.md,
+    borderRadius: borderRadius.sm,
     padding: `0 ${space[4]}`,
     margin: `0 calc(${space[4]} * -1)`,
   },

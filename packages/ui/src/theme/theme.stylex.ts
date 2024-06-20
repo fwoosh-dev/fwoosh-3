@@ -20,7 +20,8 @@ export const space = stylex.defineVars({
 });
 
 export const text = stylex.defineVars({
-  sm: "0.75rem",
+  xs: "0.75rem",
+  sm: "0.85rem",
   base: "1rem",
   lg: "1.125rem",
 });

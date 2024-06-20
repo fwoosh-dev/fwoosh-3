@@ -1,6 +1,7 @@
+import { Suspense } from "react";
 import { FwooshPanel, StoryContext } from "@fwoosh/types";
 import { importPlugin } from "@fwoosh/pages";
-import { Tab, TabList, TabPanel, Tabs } from "@fwoosh/ui/components";
+import { Spinner, Tab, TabList, TabPanel, Tabs } from "@fwoosh/ui/components";
 import { getConfig } from "../utils/config";
 
 export async function Panel({
@@ -33,7 +34,9 @@ export async function Panels({ page, story }: StoryContext) {
       </TabList>
       {panels.map((panel) => (
         <TabPanel id={panel.id}>
-          <Panel key={panel.id} panel={panel} page={page} story={story} />
+          <Suspense fallback={<Spinner />}>
+            <Panel key={panel.id} panel={panel} page={page} story={story} />
+          </Suspense>
         </TabPanel>
       ))}
     </Tabs>

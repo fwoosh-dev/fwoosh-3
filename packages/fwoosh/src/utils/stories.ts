@@ -1,14 +1,24 @@
 import { glob } from "glob";
 import { promises as fs } from "fs";
+import crypto from "crypto";
 import { Page, Story } from "@fwoosh/types";
 import { extractComments } from "@fwoosh/extract-comments";
-import { getProdMetaCache } from "./cache.js";
 import { importMeta, importPage } from "@fwoosh/pages";
 
 const changeCasePromise = import("change-case");
 
 export async function getAllPages() {
   return glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
+}
+
+const cache = new Map<string, Page>();
+
+async function calculateChecksum(filePath: string) {
+  const fileBuffer = await fs.readFile(filePath);
+  const hash = crypto.createHash("sha256");
+  hash.update(fileBuffer);
+  const checksum = hash.digest("hex");
+  return checksum;
 }
 
 export const getAllPageGroupsBase = async (): Promise<
@@ -18,16 +28,14 @@ export const getAllPageGroupsBase = async (): Promise<
   const files = await getAllPages();
   const stories = await Promise.all(
     files.map(async (file) => {
-      const fileTitle = file.replace(/\.stories\.tsx$/, "");
+      const checksum = await calculateChecksum(file);
+      const cached = cache.get(checksum);
 
-      // TODO: This doesn't work in build
-      // since the dynamically imported file is not build during the vite build
-      // To fix this we need to make sure that the story files are build during the vite build
-      // and then we need to import those instead of /fwoosh-meta
-      // This specifically can't be the client component and has to be one without `use client`
-      // Cannot import just the file, since that's the source file
-      // since we can precompute all of this during the vite build i think we can just write all this info to a file
-      // and read from that during the production build
+      if (cached) {
+        return cached;
+      }
+
+      const fileTitle = file.replace(/\.stories\.tsx$/, "");
       let { meta: _, ...stories } = await importPage(file);
       let meta = await importMeta(file);
       const contents = await fs.readFile(file, "utf-8");
@@ -42,7 +50,7 @@ export const getAllPageGroupsBase = async (): Promise<
       const id = meta?.title ?? fileTitle;
       let [group, title] = id.includes("/") ? id.split("/") : [, id];
 
-      return {
+      const page = {
         group,
         id: kebabCase(id),
         file,
@@ -54,6 +62,9 @@ export const getAllPageGroupsBase = async (): Promise<
           description: storyToComment[item],
         })),
       };
+
+      cache.set(checksum, page);
+      return page;
     })
   );
 

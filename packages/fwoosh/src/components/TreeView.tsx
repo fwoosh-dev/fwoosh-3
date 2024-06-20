@@ -87,8 +87,8 @@ export function TreeView({ data }: { data: TreeViewBaseItem[] }) {
       defaultExpandedItems={expandedIds}
       items={data}
       selectedItems={defaultSelectedItems}
-      onItemSelectionToggle={(_, itemId: string) => {
-        if (itemId.includes("_")) {
+      onSelectedItemsChange={(_, itemId) => {
+        if (itemId?.includes("_")) {
           router.push(`/bench/${itemId}`);
         }
       }}

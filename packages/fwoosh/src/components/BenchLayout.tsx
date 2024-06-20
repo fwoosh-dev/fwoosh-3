@@ -26,7 +26,7 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
     <StoryContextProvider page={page} story={story}>
       <SidebarLayout>
         <aside {...stylex.props(styles.SidebarLayout)}>
-          <StoryList page={page} story={story} />
+          <StoryList />
         </aside>
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">

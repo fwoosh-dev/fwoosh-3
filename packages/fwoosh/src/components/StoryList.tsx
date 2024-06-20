@@ -1,8 +1,7 @@
-import { StoryContext } from "@fwoosh/types";
 import { getAllPageGroups, getStorySlug } from "../utils/stories";
 import { TreeView } from "./TreeView";
 
-export async function StoryList({ page, story }: StoryContext) {
+export async function StoryList() {
   const pageGroups = await getAllPageGroups();
   const treeGroups = Object.entries(pageGroups).map(([group, pages]) => {
     return {
@@ -21,5 +20,5 @@ export async function StoryList({ page, story }: StoryContext) {
     };
   });
 
-  return <TreeView data={treeGroups} activeId={getStorySlug(page, story)} />;
+  return <TreeView data={treeGroups} />;
 }

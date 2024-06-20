@@ -2,6 +2,7 @@
 // affect anything in the iframe/
 import "inter-ui/inter-latin.css";
 import "../styles.css";
+import "@stylex-dev.css";
 
 import type { ReactNode } from "react";
 import { StoryHMRDetector } from "../components/StoryHMRDetector";

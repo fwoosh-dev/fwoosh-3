@@ -1,7 +1,7 @@
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
-import { space } from "../theme/theme.stylex.js";
+import { space } from "../theme/tokens.stylex.js";
 
 const styles = stylex.create({
   base: {

@@ -21,7 +21,7 @@ import {
   fontWeight,
   space,
   text,
-} from "../theme/theme.stylex.js";
+} from "../theme/tokens.stylex.js";
 import { appChrome } from "../theme/colors.stylex.js";
 import { useState } from "react";
 import { createContext } from "@radix-ui/react-context";

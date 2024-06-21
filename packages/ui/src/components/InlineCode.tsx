@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { borderRadius, space, text } from "../theme/theme.stylex.js";
+import { borderRadius, space, text } from "../theme/tokens.stylex.js";
 import { appChrome } from "../theme/colors.stylex.js";
 
 export interface InlineCodeProps

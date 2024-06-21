@@ -1,7 +1,7 @@
 "use client";
 
 // import { Link } from "waku";
-// import { space } from "@fwoosh/ui/theme.stylex";
+// import { space } from "@fwoosh/ui/tokens.stylex";
 
 import { use, useMemo } from "react";
 import { RichTreeView } from "@mui/x-tree-view/RichTreeView";
@@ -10,7 +10,7 @@ import { TreeItemProps } from "@mui/x-tree-view/TreeItem";
 import { TreeItem2 } from "@mui/x-tree-view/TreeItem2";
 import * as stylex from "@stylexjs/stylex";
 
-import { borderRadius, space, text } from "@fwoosh/ui/theme.stylex";
+import { borderRadius, space, text } from "@fwoosh/ui/tokens.stylex";
 import { appChrome, primaryA } from "@fwoosh/ui/colors.stylex";
 import { useRouter_UNSTABLE as useRouter } from "waku";
 

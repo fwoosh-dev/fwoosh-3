@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { blue } from "../theme/colors.stylex.js";
-import { borderRadius } from "../theme/theme.stylex.js";
+import { borderRadius } from "../theme/tokens.stylex.js";
 
 const focusRingStyles = stylex.create({
   base: {

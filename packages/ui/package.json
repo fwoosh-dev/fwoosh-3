@@ -39,7 +39,7 @@
     "exports": {
       ".": "./src/index.ts",
       "./components": "./src/components/index.ts",
-      "./theme.stylex": "./src/theme/theme.stylex.ts",
+      "./tokens.stylex": "./src/theme/tokens.stylex.ts",
       "./colors.stylex": "./src/theme/colors.stylex.ts",
       "./app": "./src/app/app.tsx"
     }
@@ -59,11 +59,11 @@
         "default": "./dist/esm/components/index.js"
       }
     },
-    "./theme.stylex": {
+    "./tokens.stylex": {
       "import": {
-        "source": "./src/theme/theme.stylex.ts",
-        "types": "./dist/esm/theme/theme.stylex.d.ts",
-        "default": "./dist/esm/theme/theme.stylex.js"
+        "source": "./src/theme/tokens.stylex.ts",
+        "types": "./dist/esm/theme/tokens.stylex.d.ts",
+        "default": "./dist/esm/theme/tokens.stylex.js"
       }
     },
     "./colors.stylex": {

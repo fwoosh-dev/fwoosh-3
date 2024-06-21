@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as stylex from "@stylexjs/stylex";
-import { borderRadius, space, text } from "../theme/theme.stylex.js";
+import { borderRadius, space, text } from "../theme/tokens.stylex.js";
 import { blue, appChrome } from "../theme/colors.stylex.js";
 
 const spin = stylex.keyframes({

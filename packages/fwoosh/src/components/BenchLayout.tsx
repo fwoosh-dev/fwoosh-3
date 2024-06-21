@@ -9,7 +9,7 @@ import { ToolsToolbar } from "./ToolsToolbar";
 import { Panels } from "./Panels";
 import { Panel, PanelGroup, PanelResizeHandle } from "./ResizablePanels";
 import * as stylex from "@stylexjs/stylex";
-import { space } from "@fwoosh/ui/theme.stylex";
+import { space } from "@fwoosh/ui/tokens.stylex";
 
 const styles = stylex.create({
   SidebarLayout: {

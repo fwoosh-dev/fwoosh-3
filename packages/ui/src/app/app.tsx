@@ -2,7 +2,7 @@
 
 import * as stylex from "@stylexjs/stylex";
 import { appChrome, appChromeA } from "../theme/colors.stylex.js";
-import { borderRadius, space } from "../theme/theme.stylex.js";
+import { borderRadius, space } from "../theme/tokens.stylex.js";
 import { useHover, mergeProps } from "react-aria";
 
 const inspectorStyles = stylex.create({

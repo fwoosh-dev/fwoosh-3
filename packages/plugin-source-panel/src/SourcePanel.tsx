@@ -4,7 +4,7 @@ import { codeToHtml } from "shiki";
 import * as stylex from "@stylexjs/stylex";
 
 import { StoryContext } from "@fwoosh/types";
-import { borderRadius, space } from "@fwoosh/ui/theme.stylex";
+import { borderRadius, space } from "@fwoosh/ui/tokens.stylex";
 import { appChrome } from "@fwoosh/ui/colors.stylex";
 
 const styles = stylex.create({

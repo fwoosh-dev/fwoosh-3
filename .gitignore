@@ -9,3 +9,4 @@ dist
 .tshy
 .turbo
 .tshy-build
+**/src/package.json

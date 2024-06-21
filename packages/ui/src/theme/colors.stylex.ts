@@ -2,7 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 /**
  * Each step was designed for at least one specific use case.
  */
-export const amber = stylex.defineVars({
+export const amber = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -72,12 +72,12 @@ export const amber = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#4f3422",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const amberA = stylex.defineVars({
+export const amberA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -147,12 +147,12 @@ export const amberA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#341500dd",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const amberDark = stylex.defineVars({
+export const amberDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -222,12 +222,12 @@ export const amberDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffe7b3",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const amberDarkA = stylex.defineVars({
+export const amberDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -297,12 +297,12 @@ export const amberDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffe7b3",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const amberDarkP3 = stylex.defineVars({
+export const amberDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -372,12 +372,12 @@ export const amberDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.984 0.909 0.726)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const amberDarkP3A = stylex.defineVars({
+export const amberDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -447,12 +447,12 @@ export const amberDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.984 0.909 0.726)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const amberP3 = stylex.defineVars({
+export const amberP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -522,12 +522,12 @@ export const amberP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.294 0.208 0.145)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const amberP3A = stylex.defineVars({
+export const amberP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -597,12 +597,12 @@ export const amberP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.294 0.208 0.145)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blackA = stylex.defineVars({
+export const blackA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -672,12 +672,12 @@ export const blackA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "rgba(0, 0, 0, 0.95)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blackP3A = stylex.defineVars({
+export const blackP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -747,12 +747,12 @@ export const blackP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0 0 0 / 0.95)",
-});
+};
 
 // /**
 //  * Each step was designed for at least one specific use case.
 //  */
-export const blue = stylex.defineVars({
+export const blue = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -822,12 +822,12 @@ export const blue = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#113264",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blueA = stylex.defineVars({
+export const blueA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -897,12 +897,12 @@ export const blueA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#002359ee",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blueDark = stylex.defineVars({
+export const blueDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -972,12 +972,12 @@ export const blueDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#c2e6ff",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blueDarkA = stylex.defineVars({
+export const blueDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1047,12 +1047,12 @@ export const blueDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#c2e6ff",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blueDarkP3 = stylex.defineVars({
+export const blueDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1122,12 +1122,12 @@ export const blueDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.788 0.898 0.99)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blueDarkP3A = stylex.defineVars({
+export const blueDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1197,12 +1197,12 @@ export const blueDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.788 0.898 0.99)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blueP3 = stylex.defineVars({
+export const blueP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1272,12 +1272,12 @@ export const blueP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.102 0.193 0.379)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const blueP3A = stylex.defineVars({
+export const blueP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1347,12 +1347,12 @@ export const blueP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.102 0.193 0.379)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const bronze = stylex.defineVars({
+export const bronze = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1422,12 +1422,12 @@ export const bronze = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#43302b",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const bronzeA = stylex.defineVars({
+export const bronzeA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1497,12 +1497,12 @@ export const bronzeA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#1d0600d4",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const bronzeDark = stylex.defineVars({
+export const bronzeDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1572,12 +1572,12 @@ export const bronzeDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ede0d9",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const bronzeDarkA = stylex.defineVars({
+export const bronzeDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1647,12 +1647,12 @@ export const bronzeDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fff1e9ec",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const bronzeDarkP3 = stylex.defineVars({
+export const bronzeDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1722,12 +1722,12 @@ export const bronzeDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.921 0.88 0.854)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const bronzeDarkP3A = stylex.defineVars({
+export const bronzeDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1797,12 +1797,12 @@ export const bronzeDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.921 0.88 0.854)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const bronzeP3 = stylex.defineVars({
+export const bronzeP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1872,12 +1872,12 @@ export const bronzeP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.251 0.191 0.172)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const bronzeP3A = stylex.defineVars({
+export const bronzeP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -1947,12 +1947,12 @@ export const bronzeP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.251 0.191 0.172)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const brown = stylex.defineVars({
+export const brown = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2022,12 +2022,12 @@ export const brown = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#3e332e",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const brownA = stylex.defineVars({
+export const brownA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2097,12 +2097,12 @@ export const brownA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#140600d1",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const brownDark = stylex.defineVars({
+export const brownDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2172,12 +2172,12 @@ export const brownDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#f2e1ca",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const brownDarkA = stylex.defineVars({
+export const brownDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2247,12 +2247,12 @@ export const brownDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#feecd4f2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const brownDarkP3 = stylex.defineVars({
+export const brownDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2322,12 +2322,12 @@ export const brownDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.938 0.885 0.802)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const brownDarkP3A = stylex.defineVars({
+export const brownDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2397,12 +2397,12 @@ export const brownDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.938 0.885 0.802)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const brownP3 = stylex.defineVars({
+export const brownP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2472,12 +2472,12 @@ export const brownP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.236 0.202 0.183)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const brownP3A = stylex.defineVars({
+export const brownP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2547,12 +2547,12 @@ export const brownP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.236 0.202 0.183)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const crimson = stylex.defineVars({
+export const crimson = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2622,12 +2622,12 @@ export const crimson = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#621639",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const crimsonA = stylex.defineVars({
+export const crimsonA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2697,12 +2697,12 @@ export const crimsonA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#530026e9",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const crimsonDark = stylex.defineVars({
+export const crimsonDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2772,12 +2772,12 @@ export const crimsonDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fdd3e8",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const crimsonDarkA = stylex.defineVars({
+export const crimsonDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2847,12 +2847,12 @@ export const crimsonDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffd5eafd",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const crimsonDarkP3 = stylex.defineVars({
+export const crimsonDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2922,12 +2922,12 @@ export const crimsonDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.966 0.834 0.906)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const crimsonDarkP3A = stylex.defineVars({
+export const crimsonDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -2997,12 +2997,12 @@ export const crimsonDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.966 0.834 0.906)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const crimsonP3 = stylex.defineVars({
+export const crimsonP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3072,12 +3072,12 @@ export const crimsonP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.352 0.111 0.221)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const crimsonP3A = stylex.defineVars({
+export const crimsonP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3147,12 +3147,12 @@ export const crimsonP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.352 0.111 0.221)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const cyan = stylex.defineVars({
+export const cyan = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3222,12 +3222,12 @@ export const cyan = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#0d3c48",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const cyanA = stylex.defineVars({
+export const cyanA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3297,12 +3297,12 @@ export const cyanA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#00323ef2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const cyanDark = stylex.defineVars({
+export const cyanDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3372,12 +3372,12 @@ export const cyanDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#b6ecf7",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const cyanDarkA = stylex.defineVars({
+export const cyanDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3447,12 +3447,12 @@ export const cyanDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#bbf3fef7",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const cyanDarkP3 = stylex.defineVars({
+export const cyanDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3522,12 +3522,12 @@ export const cyanDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.757 0.919 0.962)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const cyanDarkP3A = stylex.defineVars({
+export const cyanDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3597,12 +3597,12 @@ export const cyanDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.757 0.919 0.962)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const cyanP3 = stylex.defineVars({
+export const cyanP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3672,12 +3672,12 @@ export const cyanP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.108 0.232 0.277)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const cyanP3A = stylex.defineVars({
+export const cyanP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3747,12 +3747,12 @@ export const cyanP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.108 0.232 0.277)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const gold = stylex.defineVars({
+export const gold = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3822,12 +3822,12 @@ export const gold = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#3b352b",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const goldA = stylex.defineVars({
+export const goldA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3897,12 +3897,12 @@ export const goldA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#130c00d4",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const goldDark = stylex.defineVars({
+export const goldDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -3972,12 +3972,12 @@ export const goldDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#e8e2d9",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const goldDarkA = stylex.defineVars({
+export const goldDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4047,12 +4047,12 @@ export const goldDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fef7ede7",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const goldDarkP3 = stylex.defineVars({
+export const goldDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4122,12 +4122,12 @@ export const goldDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.906 0.887 0.855)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const goldDarkP3A = stylex.defineVars({
+export const goldDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4197,12 +4197,12 @@ export const goldDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.906 0.887 0.855)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const goldP3 = stylex.defineVars({
+export const goldP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4272,12 +4272,12 @@ export const goldP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.227 0.209 0.173)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const goldP3A = stylex.defineVars({
+export const goldP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4347,12 +4347,12 @@ export const goldP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.227 0.209 0.173)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grass = stylex.defineVars({
+export const grass = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4422,12 +4422,12 @@ export const grass = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#203c25",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grassA = stylex.defineVars({
+export const grassA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4497,12 +4497,12 @@ export const grassA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#002006df",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grassDark = stylex.defineVars({
+export const grassDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4572,12 +4572,12 @@ export const grassDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#c2f0c2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grassDarkA = stylex.defineVars({
+export const grassDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4647,12 +4647,12 @@ export const grassDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ceffceef",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grassDarkP3 = stylex.defineVars({
+export const grassDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4722,12 +4722,12 @@ export const grassDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.797 0.936 0.776)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grassDarkP3A = stylex.defineVars({
+export const grassDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4797,12 +4797,12 @@ export const grassDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.797 0.936 0.776)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grassP3 = stylex.defineVars({
+export const grassP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4872,12 +4872,12 @@ export const grassP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.151 0.233 0.153)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grassP3A = stylex.defineVars({
+export const grassP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -4947,12 +4947,12 @@ export const grassP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.151 0.233 0.153)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const gray = stylex.defineVars({
+export const gray = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5022,12 +5022,12 @@ export const gray = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#202020",
-});
+};
 
 // /**
 //  * Each step was designed for at least one specific use case.
 //  */
-export const grayA = stylex.defineVars({
+export const grayA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5097,12 +5097,12 @@ export const grayA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#000000df",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grayDark = stylex.defineVars({
+export const grayDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5172,12 +5172,12 @@ export const grayDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#eeeeee",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grayDarkA = stylex.defineVars({
+export const grayDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5247,12 +5247,12 @@ export const grayDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffffffed",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grayDarkP3 = stylex.defineVars({
+export const grayDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5322,12 +5322,12 @@ export const grayDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.933 0.933 0.933)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grayDarkP3A = stylex.defineVars({
+export const grayDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5397,12 +5397,12 @@ export const grayDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 1 1 1 / 0.929)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grayP3 = stylex.defineVars({
+export const grayP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5472,12 +5472,12 @@ export const grayP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.125 0.125 0.125)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const grayP3A = stylex.defineVars({
+export const grayP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5547,12 +5547,12 @@ export const grayP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0 0 0 / 0.875)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const green = stylex.defineVars({
+export const green = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5622,12 +5622,12 @@ export const green = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#193b2d",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const greenA = stylex.defineVars({
+export const greenA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5697,12 +5697,12 @@ export const greenA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#002616e6",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const greenDark = stylex.defineVars({
+export const greenDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5772,12 +5772,12 @@ export const greenDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#b1f1cb",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const greenDarkA = stylex.defineVars({
+export const greenDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5847,12 +5847,12 @@ export const greenDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#bbffd7f0",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const greenDarkP3 = stylex.defineVars({
+export const greenDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5922,12 +5922,12 @@ export const greenDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.747 0.938 0.807)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const greenDarkP3A = stylex.defineVars({
+export const greenDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -5997,12 +5997,12 @@ export const greenDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.747 0.938 0.807)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const greenP3 = stylex.defineVars({
+export const greenP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6072,12 +6072,12 @@ export const greenP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.132 0.228 0.18)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const greenP3A = stylex.defineVars({
+export const greenP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6147,12 +6147,12 @@ export const greenP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.132 0.228 0.18)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const indigo = stylex.defineVars({
+export const indigo = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6222,12 +6222,12 @@ export const indigo = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#1f2d5c",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const indigoA = stylex.defineVars({
+export const indigoA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6297,12 +6297,12 @@ export const indigoA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#001046e0",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const indigoDark = stylex.defineVars({
+export const indigoDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6372,12 +6372,12 @@ export const indigoDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#d6e1ff",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const indigoDarkA = stylex.defineVars({
+export const indigoDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6447,12 +6447,12 @@ export const indigoDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#d6e1ff",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const indigoDarkP3 = stylex.defineVars({
+export const indigoDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6522,12 +6522,12 @@ export const indigoDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.848 0.881 0.99)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const indigoDarkP3A = stylex.defineVars({
+export const indigoDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6597,12 +6597,12 @@ export const indigoDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.848 0.881 0.99)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const indigoP3 = stylex.defineVars({
+export const indigoP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6672,12 +6672,12 @@ export const indigoP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.133 0.175 0.348)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const indigoP3A = stylex.defineVars({
+export const indigoP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6747,12 +6747,12 @@ export const indigoP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.133 0.175 0.348)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const iris = stylex.defineVars({
+export const iris = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6822,12 +6822,12 @@ export const iris = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#272962",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const irisA = stylex.defineVars({
+export const irisA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6897,12 +6897,12 @@ export const irisA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#000246d8",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const irisDark = stylex.defineVars({
+export const irisDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -6972,12 +6972,12 @@ export const irisDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#e0dffe",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const irisDarkA = stylex.defineVars({
+export const irisDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7047,12 +7047,12 @@ export const irisDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#e1e0fffe",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const irisDarkP3 = stylex.defineVars({
+export const irisDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7122,12 +7122,12 @@ export const irisDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.878 0.875 0.986)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const irisDarkP3A = stylex.defineVars({
+export const irisDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7197,12 +7197,12 @@ export const irisDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.878 0.875 0.986)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const irisP3 = stylex.defineVars({
+export const irisP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7272,12 +7272,12 @@ export const irisP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.154 0.161 0.371)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const irisP3A = stylex.defineVars({
+export const irisP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7347,12 +7347,12 @@ export const irisP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.154 0.161 0.371)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const jade = stylex.defineVars({
+export const jade = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7422,12 +7422,12 @@ export const jade = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#1d3b31",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const jadeA = stylex.defineVars({
+export const jadeA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7497,12 +7497,12 @@ export const jadeA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#002217e2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const jadeDark = stylex.defineVars({
+export const jadeDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7572,12 +7572,12 @@ export const jadeDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#adf0d4",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const jadeDarkA = stylex.defineVars({
+export const jadeDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7647,12 +7647,12 @@ export const jadeDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#b8ffe1ef",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const jadeDarkP3 = stylex.defineVars({
+export const jadeDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7722,12 +7722,12 @@ export const jadeDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.734 0.934 0.838)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const jadeDarkP3A = stylex.defineVars({
+export const jadeDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7797,12 +7797,12 @@ export const jadeDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.734 0.934 0.838)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const jadeP3 = stylex.defineVars({
+export const jadeP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7872,12 +7872,12 @@ export const jadeP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.142 0.229 0.194)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const jadeP3A = stylex.defineVars({
+export const jadeP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -7947,12 +7947,12 @@ export const jadeP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.142 0.229 0.194)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const lime = stylex.defineVars({
+export const lime = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8022,12 +8022,12 @@ export const lime = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#37401c",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const limeA = stylex.defineVars({
+export const limeA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8097,12 +8097,12 @@ export const limeA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#1e2900e3",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const limeDark = stylex.defineVars({
+export const limeDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8172,12 +8172,12 @@ export const limeDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#e3f7ba",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const limeDarkA = stylex.defineVars({
+export const limeDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8247,12 +8247,12 @@ export const limeDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#e9febff7",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const limeDarkP3 = stylex.defineVars({
+export const limeDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8322,12 +8322,12 @@ export const limeDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.905 0.966 0.753)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const limeDarkP3A = stylex.defineVars({
+export const limeDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8397,12 +8397,12 @@ export const limeDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.905 0.966 0.753)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const limeP3 = stylex.defineVars({
+export const limeP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8472,12 +8472,12 @@ export const limeP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.222 0.25 0.128)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const limeP3A = stylex.defineVars({
+export const limeP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8547,12 +8547,12 @@ export const limeP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.222 0.25 0.128)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mauve = stylex.defineVars({
+export const mauve = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8622,12 +8622,12 @@ export const mauve = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#211f26",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mauveA = stylex.defineVars({
+export const mauveA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8697,12 +8697,12 @@ export const mauveA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#020008e0",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mauveDark = stylex.defineVars({
+export const mauveDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8772,12 +8772,12 @@ export const mauveDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#eeeef0",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mauveDarkA = stylex.defineVars({
+export const mauveDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8847,12 +8847,12 @@ export const mauveDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fdfdffef",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mauveDarkP3 = stylex.defineVars({
+export const mauveDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8922,12 +8922,12 @@ export const mauveDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.933 0.933 0.94)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mauveDarkP3A = stylex.defineVars({
+export const mauveDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -8997,12 +8997,12 @@ export const mauveDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.992 0.992 1 / 0.937)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mauveP3 = stylex.defineVars({
+export const mauveP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9072,12 +9072,12 @@ export const mauveP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.128 0.122 0.147)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mauveP3A = stylex.defineVars({
+export const mauveP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9147,12 +9147,12 @@ export const mauveP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.008 0 0.027 / 0.879)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mint = stylex.defineVars({
+export const mint = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9222,12 +9222,12 @@ export const mint = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#16433c",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mintA = stylex.defineVars({
+export const mintA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9297,12 +9297,12 @@ export const mintA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#00312ae9",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mintDark = stylex.defineVars({
+export const mintDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9372,12 +9372,12 @@ export const mintDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#c4f5e1",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mintDarkA = stylex.defineVars({
+export const mintDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9447,12 +9447,12 @@ export const mintDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#cbfee9f5",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mintDarkP3 = stylex.defineVars({
+export const mintDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9522,12 +9522,12 @@ export const mintDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.807 0.955 0.887)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mintDarkP3A = stylex.defineVars({
+export const mintDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9597,12 +9597,12 @@ export const mintDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.807 0.955 0.887)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mintP3 = stylex.defineVars({
+export const mintP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9672,12 +9672,12 @@ export const mintP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.136 0.259 0.236)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const mintP3A = stylex.defineVars({
+export const mintP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9747,12 +9747,12 @@ export const mintP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.136 0.259 0.236)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const olive = stylex.defineVars({
+export const olive = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9822,12 +9822,12 @@ export const olive = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#1d211c",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const oliveA = stylex.defineVars({
+export const oliveA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9897,12 +9897,12 @@ export const oliveA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#010600e3",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const oliveDark = stylex.defineVars({
+export const oliveDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -9972,12 +9972,12 @@ export const oliveDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#eceeec",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const oliveDarkA = stylex.defineVars({
+export const oliveDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10047,12 +10047,12 @@ export const oliveDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fdfffded",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const oliveDarkP3 = stylex.defineVars({
+export const oliveDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10122,12 +10122,12 @@ export const oliveDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.927 0.933 0.926)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const oliveDarkP3A = stylex.defineVars({
+export const oliveDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10197,12 +10197,12 @@ export const oliveDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.992 1 0.992 / 0.929)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const oliveP3 = stylex.defineVars({
+export const oliveP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10272,12 +10272,12 @@ export const oliveP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.117 0.129 0.111)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const oliveP3A = stylex.defineVars({
+export const oliveP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10347,12 +10347,12 @@ export const oliveP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.008 0.024 0 / 0.891)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const orange = stylex.defineVars({
+export const orange = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10422,12 +10422,12 @@ export const orange = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#582d1d",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const orangeA = stylex.defineVars({
+export const orangeA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10497,12 +10497,12 @@ export const orangeA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#431200e2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const orangeDark = stylex.defineVars({
+export const orangeDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10572,12 +10572,12 @@ export const orangeDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffe0c2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const orangeDarkA = stylex.defineVars({
+export const orangeDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10647,12 +10647,12 @@ export const orangeDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffe0c2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const orangeDarkP3 = stylex.defineVars({
+export const orangeDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10722,12 +10722,12 @@ export const orangeDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.98 0.883 0.775)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const orangeDarkP3A = stylex.defineVars({
+export const orangeDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10797,12 +10797,12 @@ export const orangeDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.98 0.883 0.775)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const orangeP3 = stylex.defineVars({
+export const orangeP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10872,12 +10872,12 @@ export const orangeP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.323 0.185 0.127)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const orangeP3A = stylex.defineVars({
+export const orangeP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -10947,12 +10947,12 @@ export const orangeP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.323 0.185 0.127)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const pink = stylex.defineVars({
+export const pink = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11022,12 +11022,12 @@ export const pink = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#651249",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const pinkA = stylex.defineVars({
+export const pinkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11097,12 +11097,12 @@ export const pinkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#59003bed",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const pinkDark = stylex.defineVars({
+export const pinkDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11172,12 +11172,12 @@ export const pinkDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fdd1ea",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const pinkDarkA = stylex.defineVars({
+export const pinkDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11247,12 +11247,12 @@ export const pinkDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffd3ecfd",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const pinkDarkP3 = stylex.defineVars({
+export const pinkDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11322,12 +11322,12 @@ export const pinkDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.964 0.826 0.912)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const pinkDarkP3A = stylex.defineVars({
+export const pinkDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11397,12 +11397,12 @@ export const pinkDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.964 0.826 0.912)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const pinkP3 = stylex.defineVars({
+export const pinkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11472,12 +11472,12 @@ export const pinkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.363 0.101 0.279)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const pinkP3A = stylex.defineVars({
+export const pinkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11547,12 +11547,12 @@ export const pinkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.363 0.101 0.279)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const plum = stylex.defineVars({
+export const plum = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11622,12 +11622,12 @@ export const plum = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#53195d",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const plumA = stylex.defineVars({
+export const plumA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11697,12 +11697,12 @@ export const plumA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#40004be6",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const plumDark = stylex.defineVars({
+export const plumDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11772,12 +11772,12 @@ export const plumDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#f4d4f4",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const plumDarkA = stylex.defineVars({
+export const plumDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11847,12 +11847,12 @@ export const plumDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#feddfef4",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const plumDarkP3 = stylex.defineVars({
+export const plumDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11922,12 +11922,12 @@ export const plumDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.936 0.836 0.949)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const plumDarkP3A = stylex.defineVars({
+export const plumDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -11997,12 +11997,12 @@ export const plumDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.936 0.836 0.949)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const plumP3 = stylex.defineVars({
+export const plumP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12072,12 +12072,12 @@ export const plumP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.299 0.114 0.352)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const plumP3A = stylex.defineVars({
+export const plumP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12147,12 +12147,12 @@ export const plumP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.299 0.114 0.352)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const purple = stylex.defineVars({
+export const purple = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12222,12 +12222,12 @@ export const purple = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#402060",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const purpleA = stylex.defineVars({
+export const purpleA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12297,12 +12297,12 @@ export const purpleA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#250049df",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const purpleDark = stylex.defineVars({
+export const purpleDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12372,12 +12372,12 @@ export const purpleDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ecd9fa",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const purpleDarkA = stylex.defineVars({
+export const purpleDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12447,12 +12447,12 @@ export const purpleDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#f1ddfffa",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const purpleDarkP3 = stylex.defineVars({
+export const purpleDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12522,12 +12522,12 @@ export const purpleDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.913 0.854 0.971)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const purpleDarkP3A = stylex.defineVars({
+export const purpleDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12597,12 +12597,12 @@ export const purpleDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.913 0.854 0.971)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const purpleP3 = stylex.defineVars({
+export const purpleP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12672,12 +12672,12 @@ export const purpleP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.234 0.132 0.363)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const purpleP3A = stylex.defineVars({
+export const purpleP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12747,12 +12747,12 @@ export const purpleP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.234 0.132 0.363)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const red = stylex.defineVars({
+export const red = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12822,12 +12822,12 @@ export const red = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#641723",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const redA = stylex.defineVars({
+export const redA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12897,12 +12897,12 @@ export const redA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#55000de8",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const redDark = stylex.defineVars({
+export const redDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -12972,12 +12972,12 @@ export const redDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffd1d9",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const redDarkA = stylex.defineVars({
+export const redDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13047,12 +13047,12 @@ export const redDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffd1d9",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const redDarkP3 = stylex.defineVars({
+export const redDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13122,12 +13122,12 @@ export const redDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.971 0.826 0.852)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const redDarkP3A = stylex.defineVars({
+export const redDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13197,12 +13197,12 @@ export const redDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.971 0.826 0.852)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const redP3 = stylex.defineVars({
+export const redP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13272,12 +13272,12 @@ export const redP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.36 0.115 0.143)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const redP3A = stylex.defineVars({
+export const redP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13347,12 +13347,12 @@ export const redP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.36 0.115 0.143)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const ruby = stylex.defineVars({
+export const ruby = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13422,12 +13422,12 @@ export const ruby = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#64172b",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const rubyA = stylex.defineVars({
+export const rubyA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13497,12 +13497,12 @@ export const rubyA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#550016e8",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const rubyDark = stylex.defineVars({
+export const rubyDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13572,12 +13572,12 @@ export const rubyDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fed2e1",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const rubyDarkA = stylex.defineVars({
+export const rubyDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13647,12 +13647,12 @@ export const rubyDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffd3e2fe",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const rubyDarkP3 = stylex.defineVars({
+export const rubyDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13722,12 +13722,12 @@ export const rubyDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.968 0.83 0.88)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const rubyDarkP3A = stylex.defineVars({
+export const rubyDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13797,12 +13797,12 @@ export const rubyDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.968 0.83 0.88)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const rubyP3 = stylex.defineVars({
+export const rubyP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13872,12 +13872,12 @@ export const rubyP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.36 0.115 0.171)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const rubyP3A = stylex.defineVars({
+export const rubyP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -13947,12 +13947,12 @@ export const rubyP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.36 0.115 0.171)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sage = stylex.defineVars({
+export const sage = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14022,12 +14022,12 @@ export const sage = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#1a211e",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sageA = stylex.defineVars({
+export const sageA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14097,12 +14097,12 @@ export const sageA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#000805e5",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sageDark = stylex.defineVars({
+export const sageDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14172,12 +14172,12 @@ export const sageDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#eceeed",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sageDarkA = stylex.defineVars({
+export const sageDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14247,12 +14247,12 @@ export const sageDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fdfffeed",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sageDarkP3 = stylex.defineVars({
+export const sageDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14322,12 +14322,12 @@ export const sageDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.927 0.933 0.93)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sageDarkP3A = stylex.defineVars({
+export const sageDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14397,12 +14397,12 @@ export const sageDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.992 1 0.996 / 0.929)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sageP3 = stylex.defineVars({
+export const sageP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14472,12 +14472,12 @@ export const sageP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.107 0.129 0.118)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sageP3A = stylex.defineVars({
+export const sageP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14547,12 +14547,12 @@ export const sageP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0 0.027 0.012 / 0.895)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sand = stylex.defineVars({
+export const sand = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14622,12 +14622,12 @@ export const sand = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#21201c",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sandA = stylex.defineVars({
+export const sandA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14697,12 +14697,12 @@ export const sandA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#060500e3",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sandDark = stylex.defineVars({
+export const sandDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14772,12 +14772,12 @@ export const sandDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#eeeeec",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sandDarkA = stylex.defineVars({
+export const sandDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14847,12 +14847,12 @@ export const sandDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fffffded",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sandDarkP3 = stylex.defineVars({
+export const sandDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14922,12 +14922,12 @@ export const sandDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.933 0.933 0.926)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sandDarkP3A = stylex.defineVars({
+export const sandDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -14997,12 +14997,12 @@ export const sandDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 1 1 0.992 / 0.929)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sandP3 = stylex.defineVars({
+export const sandP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15072,12 +15072,12 @@ export const sandP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.129 0.126 0.111)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sandP3A = stylex.defineVars({
+export const sandP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15147,12 +15147,12 @@ export const sandP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.024 0.02 0 / 0.891)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const sky = stylex.defineVars({
+export const sky = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15222,12 +15222,12 @@ export const sky = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#1d3e56",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const skyA = stylex.defineVars({
+export const skyA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15297,12 +15297,12 @@ export const skyA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#002540e2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const skyDark = stylex.defineVars({
+export const skyDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15372,12 +15372,12 @@ export const skyDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#c2f3ff",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const skyDarkA = stylex.defineVars({
+export const skyDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15447,12 +15447,12 @@ export const skyDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#c2f3ff",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const skyDarkP3 = stylex.defineVars({
+export const skyDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15522,12 +15522,12 @@ export const skyDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.799 0.947 0.993)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const skyDarkP3A = stylex.defineVars({
+export const skyDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15597,12 +15597,12 @@ export const skyDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.799 0.947 0.993)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const skyP3 = stylex.defineVars({
+export const skyP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15672,12 +15672,12 @@ export const skyP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.145 0.241 0.329)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const skyP3A = stylex.defineVars({
+export const skyP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15747,12 +15747,12 @@ export const skyP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.145 0.241 0.329)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const slate = stylex.defineVars({
+export const slate = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15822,12 +15822,12 @@ export const slate = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#1c2024",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const slateA = stylex.defineVars({
+export const slateA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15897,12 +15897,12 @@ export const slateA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#000509e3",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const slateDark = stylex.defineVars({
+export const slateDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -15972,12 +15972,12 @@ export const slateDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#edeef0",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const slateDarkA = stylex.defineVars({
+export const slateDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16047,12 +16047,12 @@ export const slateDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fcfdffef",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const slateDarkP3 = stylex.defineVars({
+export const slateDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16122,12 +16122,12 @@ export const slateDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.93 0.933 0.94)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const slateDarkP3A = stylex.defineVars({
+export const slateDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16197,12 +16197,12 @@ export const slateDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.988 0.992 1 / 0.937)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const slateP3 = stylex.defineVars({
+export const slateP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16272,12 +16272,12 @@ export const slateP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.113 0.125 0.14)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const slateP3A = stylex.defineVars({
+export const slateP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16347,12 +16347,12 @@ export const slateP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0 0.012 0.031 / 0.887)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const teal = stylex.defineVars({
+export const teal = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16422,12 +16422,12 @@ export const teal = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#0d3d38",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tealA = stylex.defineVars({
+export const tealA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16497,12 +16497,12 @@ export const tealA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#00332df2",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tealDark = stylex.defineVars({
+export const tealDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16572,12 +16572,12 @@ export const tealDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#adf0dd",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tealDarkA = stylex.defineVars({
+export const tealDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16647,12 +16647,12 @@ export const tealDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#b8ffebef",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tealDarkP3 = stylex.defineVars({
+export const tealDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16722,12 +16722,12 @@ export const tealDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.734 0.934 0.87)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tealDarkP3A = stylex.defineVars({
+export const tealDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16797,12 +16797,12 @@ export const tealDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.734 0.934 0.87)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tealP3 = stylex.defineVars({
+export const tealP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16872,12 +16872,12 @@ export const tealP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.11 0.235 0.219)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tealP3A = stylex.defineVars({
+export const tealP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -16947,12 +16947,12 @@ export const tealP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.11 0.235 0.219)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tomato = stylex.defineVars({
+export const tomato = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17022,12 +17022,12 @@ export const tomato = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#5c271f",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tomatoA = stylex.defineVars({
+export const tomatoA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17097,12 +17097,12 @@ export const tomatoA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#460900e0",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tomatoDark = stylex.defineVars({
+export const tomatoDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17172,12 +17172,12 @@ export const tomatoDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fbd3cb",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tomatoDarkA = stylex.defineVars({
+export const tomatoDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17247,12 +17247,12 @@ export const tomatoDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#ffd6cefb",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tomatoDarkP3 = stylex.defineVars({
+export const tomatoDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17322,12 +17322,12 @@ export const tomatoDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.959 0.833 0.802)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tomatoDarkP3A = stylex.defineVars({
+export const tomatoDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17397,12 +17397,12 @@ export const tomatoDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.959 0.833 0.802)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tomatoP3 = stylex.defineVars({
+export const tomatoP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17472,12 +17472,12 @@ export const tomatoP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.335 0.165 0.132)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const tomatoP3A = stylex.defineVars({
+export const tomatoP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17547,12 +17547,12 @@ export const tomatoP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.335 0.165 0.132)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const violet = stylex.defineVars({
+export const violet = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17622,12 +17622,12 @@ export const violet = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#2f265f",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const violetA = stylex.defineVars({
+export const violetA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17697,12 +17697,12 @@ export const violetA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#0b0043d9",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const violetDark = stylex.defineVars({
+export const violetDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17772,12 +17772,12 @@ export const violetDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#e2ddfe",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const violetDarkA = stylex.defineVars({
+export const violetDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17847,12 +17847,12 @@ export const violetDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#e3defffe",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const violetDarkP3 = stylex.defineVars({
+export const violetDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17922,12 +17922,12 @@ export const violetDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.883 0.867 0.986)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const violetDarkP3A = stylex.defineVars({
+export const violetDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -17997,12 +17997,12 @@ export const violetDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.883 0.867 0.986)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const violetP3 = stylex.defineVars({
+export const violetP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18072,12 +18072,12 @@ export const violetP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.179 0.15 0.359)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const violetP3A = stylex.defineVars({
+export const violetP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18147,12 +18147,12 @@ export const violetP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.179 0.15 0.359)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const whiteA = stylex.defineVars({
+export const whiteA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18222,12 +18222,12 @@ export const whiteA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "rgba(255, 255, 255, 0.95)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const whiteP3A = stylex.defineVars({
+export const whiteP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18297,12 +18297,12 @@ export const whiteP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 1 1 1 / 0.95)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const yellow = stylex.defineVars({
+export const yellow = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18372,12 +18372,12 @@ export const yellow = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#473b1f",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const yellowA = stylex.defineVars({
+export const yellowA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18447,12 +18447,12 @@ export const yellowA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#2e2000e0",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const yellowDark = stylex.defineVars({
+export const yellowDark = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18522,12 +18522,12 @@ export const yellowDark = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#f6eeb4",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const yellowDarkA = stylex.defineVars({
+export const yellowDarkA = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18597,12 +18597,12 @@ export const yellowDarkA = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "#fef6baf6",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const yellowDarkP3 = stylex.defineVars({
+export const yellowDarkP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18672,12 +18672,12 @@ export const yellowDarkP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.959 0.934 0.731)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const yellowDarkP3A = stylex.defineVars({
+export const yellowDarkP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18747,12 +18747,12 @@ export const yellowDarkP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.959 0.934 0.731)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const yellowP3 = stylex.defineVars({
+export const yellowP3 = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18822,12 +18822,12 @@ export const yellowP3 = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.271 0.233 0.137)",
-});
+};
 
 /**
  * Each step was designed for at least one specific use case.
  */
-export const yellowP3A = stylex.defineVars({
+export const yellowP3A = {
   /**
    * Step 1: App background
    * Steps `appBg` and `subtleBg\' are designed for app backgrounds and subtle component backgrounds.
@@ -18897,9 +18897,14 @@ export const yellowP3A = stylex.defineVars({
    * Designed for high-contrast text.
    */
   text: "color(display-p3 0.271 0.233 0.137)",
-});
+};
 
 export const appChrome = stylex.defineVars(mauve);
 export const appChromeA = stylex.defineVars(mauveA);
 export const primary = stylex.defineVars(pink);
 export const primaryA = stylex.defineVars(pinkA);
+
+export const appChromeDark = stylex.defineVars(mauveDark);
+export const appChromeDarkA = stylex.defineVars(mauveDarkA);
+export const primaryDark = stylex.defineVars(pinkDark);
+export const primaryDarkA = stylex.defineVars(pinkDarkA);

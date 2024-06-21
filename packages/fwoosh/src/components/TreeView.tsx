@@ -25,6 +25,10 @@ const treeStyles = stylex.create({
     zIndex: 0,
     minHeight: space[7],
     padding: `${space[3]} ${space[4]}`,
+    color: {
+      default: appChrome.subtleText,
+      ":is(.Mui-selected)": appChrome.text,
+    },
     background: {
       default: "transparent",
       ":hover": appChrome.hover,

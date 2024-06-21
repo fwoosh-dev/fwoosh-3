@@ -136,6 +136,7 @@ export function TabPanel({ style, ...props }: TabPanelProps) {
 const tabPanelContentStyles = stylex.create({
   base: {
     padding: space[5],
+    color: appChrome.text,
   },
 });
 

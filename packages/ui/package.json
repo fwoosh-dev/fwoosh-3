@@ -40,6 +40,7 @@
       ".": "./src/index.ts",
       "./components": "./src/components/index.ts",
       "./tokens.stylex": "./src/theme/tokens.stylex.ts",
+      "./theme.stylex": "./src/theme/theme.stylex.ts",
       "./colors.stylex": "./src/theme/colors.stylex.ts",
       "./app": "./src/app/app.tsx"
     }
@@ -64,6 +65,13 @@
         "source": "./src/theme/tokens.stylex.ts",
         "types": "./dist/esm/theme/tokens.stylex.d.ts",
         "default": "./dist/esm/theme/tokens.stylex.js"
+      }
+    },
+    "./theme.stylex": {
+      "import": {
+        "source": "./src/theme/theme.stylex.ts",
+        "types": "./dist/esm/theme/theme.stylex.d.ts",
+        "default": "./dist/esm/theme/theme.stylex.js"
       }
     },
     "./colors.stylex": {

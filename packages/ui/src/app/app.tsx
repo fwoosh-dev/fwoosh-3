@@ -5,11 +5,16 @@ import { appChrome, appChromeA } from "../theme/colors.stylex.js";
 import { borderRadius, space } from "../theme/tokens.stylex.js";
 import { useHover, mergeProps } from "react-aria";
 
+const DARK = "@media (prefers-color-scheme: dark)";
+
 const inspectorStyles = stylex.create({
   base: {
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: appChromeA.elementBorder,
+    borderColor: {
+      default: appChromeA.elementBorder,
+      [DARK]: appChromeA.subtleBorder,
+    },
     backgroundColor: appChrome.appBg,
     margin: space[5],
     borderRadius: borderRadius.lg,
@@ -38,18 +43,21 @@ const sidebarLayoutStyles = stylex.create({
 
 export interface SidebarLayoutProps
   extends Omit<React.ComponentPropsWithoutRef<"div">, "style" | "className"> {
-  style?: stylex.StyleXStyles;
+  style?: stylex.StyleXStyles | stylex.Theme<any> | stylex.Theme<any>[];
 }
 
 export function SidebarLayout({ style, ...props }: SidebarLayoutProps) {
-  return <main {...props} {...stylex.props(sidebarLayoutStyles.base)} />;
+  return <main {...props} {...stylex.props(style, sidebarLayoutStyles.base)} />;
 }
 
 const InspectorToolbarStyles = stylex.create({
   base: {
     borderBottom: 1,
     borderBottomStyle: "solid",
-    borderBottomColor: appChrome.elementBorder,
+    borderColor: {
+      default: appChrome.elementBorder,
+      [DARK]: appChrome.subtleBorder,
+    },
     background: appChrome.subtleBg,
     display: "flex",
     alignItems: "center",
@@ -64,7 +72,9 @@ export interface InspectorToolbarProps
 }
 
 export function InspectorToolbar({ style, ...props }: InspectorToolbarProps) {
-  return <div {...props} {...stylex.props(InspectorToolbarStyles.base)} />;
+  return (
+    <div {...props} {...stylex.props(style, InspectorToolbarStyles.base)} />
+  );
 }
 
 const resizeHandleStyles = stylex.create({

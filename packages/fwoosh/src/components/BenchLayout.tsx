@@ -10,6 +10,12 @@ import { Panels } from "./Panels";
 import { Panel, PanelGroup, PanelResizeHandle } from "./ResizablePanels";
 import * as stylex from "@stylexjs/stylex";
 import { space } from "@fwoosh/ui/tokens.stylex";
+import {
+  appChromeTheme,
+  appChromeATheme,
+  primaryTheme,
+  primaryATheme,
+} from "@fwoosh/ui/theme.stylex";
 
 const styles = stylex.create({
   SidebarLayout: {
@@ -24,7 +30,9 @@ export interface BenchLayoutProps extends StoryContext {
 export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
   return (
     <StoryContextProvider page={page} story={story}>
-      <SidebarLayout>
+      <SidebarLayout
+        style={[appChromeTheme, appChromeATheme, primaryTheme, primaryATheme]}
+      >
         <aside {...stylex.props(styles.SidebarLayout)}>
           <StoryList />
         </aside>

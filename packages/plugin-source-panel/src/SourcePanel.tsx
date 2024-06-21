@@ -14,6 +14,7 @@ const styles = stylex.create({
   pre: {
     height: "100%",
     padding: space[5],
+    lineHeight: 1.2,
   },
   highlight: {
     display: "inline-flex",

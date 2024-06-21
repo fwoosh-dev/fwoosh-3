@@ -31,7 +31,7 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">
             <Panel id="preview" minSize={20}>
-              <ToolsToolbar />
+              <ToolsToolbar page={page} story={story} />
               <div style={{ height: "100%", width: "100%", overflow: "auto" }}>
                 {children}
               </div>

@@ -1,0 +1,39 @@
+{
+  "name": "@fwoosh/log",
+  "description": "Isomorphic logger. Browser and node, pretty too!",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tshy",
+    "clean": "rimraf dist .tshy"
+  },
+  "keywords": [],
+  "author": "Andrew Lisowski",
+  "license": "MIT",
+  "devDependencies": {
+    "@fwoosh/config-typescript": "workspace:*",
+    "rimraf": "^5.0.7",
+    "tshy": "^1.15.1"
+  },
+  "tshy": {
+    "exports": {
+      ".": "./src/index.ts"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "source": "./src/index.ts",
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "source": "./src/index.ts",
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    }
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "type": "module"
+}

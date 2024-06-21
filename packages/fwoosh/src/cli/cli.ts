@@ -3,6 +3,7 @@ import { lilconfig } from "lilconfig";
 const findCacheDirectoryPromise = import("find-cache-dir");
 import { promises as fs } from "fs";
 import path from "path";
+import { logger } from "@fwoosh/log";
 
 import { FwooshConfig } from "@fwoosh/types";
 
@@ -71,10 +72,11 @@ async function main() {
     throw new Error("Could not find cache directory");
   }
 
-  await fs.writeFile(
-    path.join(cacheDir, "fwoosh.config.json"),
-    JSON.stringify(fwooshConfig)
-  );
+  const cachedPath = path.join(cacheDir, "fwoosh.config.json");
+  const configString = JSON.stringify(fwooshConfig, null, 2);
+  await fs.writeFile(cachedPath, configString);
+  logger.debug("Wrote fwoosh config to cache", cachedPath);
+  logger.debug(configString);
 
   const mergeOptions = {
     ...options,

@@ -1,7 +1,7 @@
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
-import { Button, ButtonProps } from "react-aria-components";
+import { Button, ButtonProps, Link, LinkProps } from "react-aria-components";
 
 import { borderRadius } from "../theme/theme.stylex.js";
 import { appChrome } from "../theme/colors.stylex.js";
@@ -15,6 +15,7 @@ const buttonStyles = stylex.create({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
+    color: appChrome.text,
     background: {
       default: "transparent",
       ":hover": appChrome.elementBg,
@@ -55,5 +56,31 @@ export function IconButton({ variant, children, ...props }: IconButtonProps) {
         );
       }}
     </Button>
+  );
+}
+
+export interface IconLinkProps extends Omit<LinkProps, "children"> {
+  variant?: "toolbar";
+  children: React.ReactNode;
+}
+
+export function IconLink({ variant, children, ...props }: IconLinkProps) {
+  return (
+    <Link
+      {...props}
+      {...stylex.props(
+        buttonStyles.base,
+        variant === "toolbar" && buttonStyles.toolbar
+      )}
+    >
+      {({ isFocusVisible }) => {
+        return (
+          <>
+            {isFocusVisible && <FocusRing />}
+            {children}
+          </>
+        );
+      }}
+    </Link>
   );
 }

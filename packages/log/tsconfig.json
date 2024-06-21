@@ -1,0 +1,3 @@
+{
+  "extends": "@fwoosh/config-typescript/base.json"
+}

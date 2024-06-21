@@ -1,0 +1,43 @@
+{
+  "name": "@fwoosh/plugin-repo-link",
+  "description": "Add a toolbar button to link to your repo.",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tshy",
+    "clean": "rimraf dist .tshy"
+  },
+  "keywords": [],
+  "author": "Andrew Lisowski",
+  "license": "MIT",
+  "dependencies": {
+    "@fwoosh/ui": "workspace:*",
+    "@radix-ui/react-icons": "^1.3.0"
+  },
+  "devDependencies": {
+    "@fwoosh/config-typescript": "workspace:*",
+    "@fwoosh/types": "workspace:*",
+    "@types/react": "18.3.1",
+    "react": "19.0.0-beta-e7d213dfb0-20240507",
+    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
+    "rimraf": "^5.0.7",
+    "tshy": "^1.15.1"
+  },
+  "tshy": {
+    "dialects": [
+      "esm"
+    ],
+    "exports": {
+      ".": "./src/index.ts"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "source": "./src/index.ts",
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    }
+  },
+  "type": "module"
+}

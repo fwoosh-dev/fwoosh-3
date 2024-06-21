@@ -53,8 +53,7 @@ const InspectorToolbarStyles = stylex.create({
     background: appChrome.subtleBg,
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
-    padding: space[2],
+    padding: `${space[2]} ${space[4]}`,
     height: space[7],
   },
 });

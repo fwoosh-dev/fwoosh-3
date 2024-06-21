@@ -1,5 +1,16 @@
 import { FwooshPluginConfig } from "@fwoosh/types";
+import { resolveFile } from "@fwoosh/types/resolve-file";
+import { {{pascalCase name}}Options } from "./types.js";
 
-export function {{pascalCase name}}(): FwooshPluginConfig {
-  return {};
+export function {{camelCase name}}(options: {{pascalCase name}}Options): FwooshPluginConfig {
+  return {
+    tools: [
+      {
+        type: "",
+        id: "{{kebabCase name}}",
+        filepath: resolveFile("{{pascalCase name}}.tsx"),
+        options,
+      },
+    ],
+  };
 }

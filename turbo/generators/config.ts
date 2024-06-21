@@ -75,6 +75,16 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         path: "packages/plugin-{{kebabCase name}}/src/index.ts",
         templateFile: "templates/plugin/index.hbs",
       },
+      {
+        type: "add",
+        path: "packages/plugin-{{kebabCase name}}/src/types.ts",
+        templateFile: "templates/plugin/types.hbs",
+      },
+      {
+        type: "add",
+        path: "packages/plugin-{{kebabCase name}}/src/{{pascalCase name}}.tsx",
+        templateFile: "templates/plugin/component.hbs",
+      },
       runInstallAction,
     ],
   });

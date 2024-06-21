@@ -1,10 +1,13 @@
 declare module "@fwoosh/pages" {
-  import { RuntimeMeta, StoryContext } from "@fwoosh/types";
+  import { RuntimeMeta, StoryContext, FwooshPluginProps } from "@fwoosh/types";
+
   export function importPage(filename: string): Promise<{
     [key: string]: () => JSX.Element;
   }>;
+
   export function importMeta(filename: string): Promise<RuntimeMeta>;
+
   export function importPlugin(
     filename: string
-  ): Promise<(props: StoryContext) => JSX.Element>;
+  ): Promise<(props: FwooshPluginProps) => JSX.Element>;
 }

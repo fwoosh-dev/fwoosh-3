@@ -13,6 +13,7 @@
   "dependencies": {
     "@fwoosh/extract-comments": "workspace:*",
     "@fwoosh/types": "workspace:*",
+    "@fwoosh/log": "workspace:*",
     "@fwoosh/ui": "workspace:*",
     "@mui/x-tree-view": "^7.7.0",
     "@sliphua/lilconfig-ts-loader": "^3.2.2",

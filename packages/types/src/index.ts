@@ -1,6 +1,7 @@
 interface FwooshToolBase {
   id: string;
   filepath: string;
+  options?: object;
   // TODO: add something like "params" so a tool can be configured with different parameters
   // for pages and stories
   // paramKey?: string;
@@ -23,8 +24,11 @@ export interface FwooshPluginConfig {
 }
 
 export interface FwooshConfig {
+  /** A list of files to consider for docgen */
   docgen: string[];
+  /** The output directory for the build */
   out?: string;
+  /** A list of plugins that add tools to fwoosh */
   plugins?: FwooshPluginConfig[];
 }
 
@@ -46,6 +50,10 @@ export interface Page {
 export interface StoryContext {
   page: Page;
   story: Story;
+}
+
+export interface FwooshPluginProps<T> extends StoryContext {
+  options?: T;
 }
 
 export interface Meta<T = Object> {

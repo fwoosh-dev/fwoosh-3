@@ -1,5 +1,5 @@
 import { FwooshPluginProps } from "@fwoosh/types";
-import { IconLink } from "@fwoosh/ui/components";
+import { IconLink, Tooltip, TooltipTrigger } from "@fwoosh/ui/components";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { RepoLinkOptions } from "./types.js";
 
@@ -17,8 +17,11 @@ export default function RepoLinkToolbarControl({
   }
 
   return (
-    <IconLink variant="toolbar" href={repoUrl}>
-      <GitHubLogoIcon />
-    </IconLink>
+    <TooltipTrigger>
+      <IconLink variant="toolbar" href={repoUrl}>
+        <GitHubLogoIcon />
+      </IconLink>
+      <Tooltip>Open on GitHub</Tooltip>
+    </TooltipTrigger>
   );
 }

@@ -11,3 +11,9 @@ export default async function FirstPage() {
 
   return <Doc page={firstPage} />;
 }
+
+export const getConfig = async () => {
+  return {
+    render: "static",
+  };
+};

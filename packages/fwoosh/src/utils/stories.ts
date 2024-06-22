@@ -21,9 +21,7 @@ async function calculateChecksum(filePath: string) {
   return checksum;
 }
 
-export const getAllPageGroupsBase = async (): Promise<
-  Record<string, Page[]>
-> => {
+export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
   const { kebabCase } = await changeCasePromise;
   const files = await getAllPages();
   const stories = await Promise.all(
@@ -95,8 +93,13 @@ export const getAllPageGroupsBase = async (): Promise<
   );
 };
 
-export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
-  return getAllPageGroupsBase();
+export const getAllStorySlugs = async (): Promise<string[]> => {
+  const data = await getAllPageGroups();
+
+  return Object.values(data)
+    .flat()
+    .map((page) => page.stories.map((story) => getStorySlug(page, story)))
+    .flat();
 };
 
 export async function getPageById(id: string) {

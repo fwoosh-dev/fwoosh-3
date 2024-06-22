@@ -1,7 +1,7 @@
 import { storyPreviewId } from "@fwoosh/types";
 
 import { BenchLayout } from "../../components/BenchLayout";
-import { getStoryBySlug } from "../../utils/stories";
+import { getAllStorySlugs, getStoryBySlug } from "../../utils/stories";
 
 export default async function Story({ storySlug }: { storySlug: string }) {
   const { page, story } = await getStoryBySlug(storySlug);
@@ -16,3 +16,10 @@ export default async function Story({ storySlug }: { storySlug: string }) {
     </BenchLayout>
   );
 }
+
+export const getConfig = async () => {
+  return {
+    render: "static",
+    staticPaths: await getAllStorySlugs(),
+  };
+};

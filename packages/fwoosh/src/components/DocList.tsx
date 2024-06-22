@@ -6,11 +6,11 @@ export async function DocList() {
 
   return (
     <ul>
-      {Object.entries(data).map(([group, stories]) => (
+      {Object.entries(data).map(([group, pages]) => (
         <li key={group}>
           <h2>{group}</h2>
           <ul>
-            {stories.map(({ title, id }) => (
+            {pages.map(({ title, id }) => (
               <li key={id}>
                 <Link to={`/docs/${id}`}>{title}</Link>
               </li>

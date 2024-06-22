@@ -1,5 +1,5 @@
 import { importPage } from "@fwoosh/pages";
-import { getStoryBySlug } from "../../utils/stories";
+import { getAllStorySlugs, getStoryBySlug } from "../../utils/stories";
 
 export default async function Iframe({ storySlug }: { storySlug: string }) {
   try {
@@ -16,3 +16,10 @@ export default async function Iframe({ storySlug }: { storySlug: string }) {
     console.error(error);
   }
 }
+
+export const getConfig = async () => {
+  return {
+    render: "static",
+    staticPaths: await getAllStorySlugs(),
+  };
+};

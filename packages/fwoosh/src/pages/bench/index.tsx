@@ -17,3 +17,9 @@ export default async function FirstStory() {
 
   return <Story storySlug={getStorySlug(page, firstStory)} />;
 }
+
+export const getConfig = async () => {
+  return {
+    render: "static",
+  };
+};

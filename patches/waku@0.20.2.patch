@@ -1,0 +1,23 @@
+diff --git a/dist/cli.js b/dist/cli.js
+index a1106c2cca7c7dc4ed4eb5e308e8865c49fc261f..091f3aae83cbf657a26ada83611f30c9d158bd3e 100644
+--- a/dist/cli.js
++++ b/dist/cli.js
+@@ -78,7 +78,7 @@ if (values.version) {
+             await runBuild();
+             break;
+         case 'start':
+-            await runStart({});
++            await runStart();
+             break;
+         default:
+             if (cmd) {
+@@ -109,7 +109,8 @@ async function runBuild() {
+         deploy: (values['with-vercel'] ?? !!process.env.VERCEL ? values['with-vercel-static'] ? 'vercel-static' : 'vercel-serverless' : undefined) || (values['with-netlify'] ?? !!process.env.NETLIFY ? values['with-netlify-static'] ? 'netlify-static' : 'netlify-functions' : undefined) || (values['with-cloudflare'] ? 'cloudflare' : undefined) || (values['with-partykit'] ? 'partykit' : undefined) || (values['with-deno'] ? 'deno' : undefined) || (values['with-aws-lambda'] ? 'aws-lambda' : undefined)
+     });
+ }
+-async function runStart({ distDir = 'dist' }) {
++async function runStart() {
++    const { distDir = 'dist' } = await loadConfig();
+     const loadEntries = ()=>import(pathToFileURL(path.resolve(distDir, DIST_ENTRIES_JS)).toString());
+     const app = new Hono();
+     app.use('*', serveStatic({

@@ -9,6 +9,7 @@
 - [ ] Screen size decorators
 - [ ] logo in sidebar
 - [ ] color theme config
+- [ ] code highlighting config
 - [ ] improve docs view
 - [ ] document... everything
 - [ ] testing library built on playwright

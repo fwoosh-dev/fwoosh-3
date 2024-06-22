@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "Andrew Lisowski",
   "license": "MIT",
+  "dependencies": {
+    "invariant": "^2.2.4"
+  },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
     "@types/invariant": "^2.2.37",
@@ -52,8 +55,5 @@
   },
   "type": "module",
   "main": "./dist/commonjs/index.js",
-  "types": "./dist/commonjs/index.d.ts",
-  "dependencies": {
-    "invariant": "^2.2.4"
-  }
+  "types": "./dist/commonjs/index.d.ts"
 }

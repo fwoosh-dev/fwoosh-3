@@ -7,7 +7,6 @@ export async function Panel({
   panel,
   ...props
 }: { panel: FwooshPanel } & StoryContext) {
-  await new Promise((resolve) => setTimeout(resolve, 10000));
   const Component = await importPlugin(panel.filepath);
   return <Component {...props} />;
 }

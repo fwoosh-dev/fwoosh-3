@@ -1,31 +1,15 @@
 import path from "path";
 import { promises as fs } from "fs";
-import { codeToHtml } from "shiki";
 import * as stylex from "@stylexjs/stylex";
 
 import { StoryContext } from "@fwoosh/types";
-import { borderRadius, space } from "@fwoosh/ui/tokens.stylex";
-import { appChrome } from "@fwoosh/ui/tokens.stylex";
+import { highlightSyntax } from "@fwoosh/ui/highlight-syntax";
 
 const styles = stylex.create({
   base: {
     height: "100%",
   },
-  pre: {
-    height: "100%",
-    lineHeight: 1.2,
-    padding: space[5],
-  },
-  highlight: {
-    backgroundColor: appChrome.elementBg,
-    borderRadius: borderRadius.sm,
-    display: "inline-flex",
-    margin: `0 calc(${space[4]} * -1)`,
-    padding: `0 ${space[4]}`,
-    width: `calc(100% + (${space[4]} * 2))`,
-  },
 });
-const highlightAttrs = stylex.attrs(styles.highlight);
 
 export default async function SourcePanel({ page, story }: StoryContext) {
   const contents = await fs.readFile(page.file, "utf-8");
@@ -35,23 +19,12 @@ export default async function SourcePanel({ page, story }: StoryContext) {
   const end = lines[start]?.includes("{")
     ? lines.slice(start).findIndex((i) => i.match(/^};?$/))
     : start;
-  const html = await codeToHtml(contents, {
-    meta: stylex.attrs(styles.pre),
-    transformers: [
-      {
-        name: "test",
-        line(hast, line) {
-          if (line >= start && line <= end && highlightAttrs.class) {
-            this.addClassToHast(hast, highlightAttrs.class);
-          }
-        },
-      },
-    ],
+  const highlightLines = new Array(end - start + 1)
+    .fill(start)
+    .map((base, i) => base + i);
+  const html = await highlightSyntax(contents, {
+    highlightLines,
     lang: path.extname(page.file).slice(1),
-    themes: {
-      light: "github-light",
-      dark: "github-dark",
-    },
   });
 
   return (

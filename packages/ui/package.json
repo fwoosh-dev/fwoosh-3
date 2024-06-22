@@ -17,12 +17,20 @@
     "@stylexjs/open-props": "^0.6.1",
     "@stylexjs/stylex": "^0.6.1",
     "lucide-react": "^0.395.0",
+    "mdast": "^3.0.0",
     "react-aria": "^3.33.1",
-    "react-aria-components": "^1.2.1"
+    "react-aria-components": "^1.2.1",
+    "remark-emoji": "^5.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-unwrap-images": "^4.0.0",
+    "shiki": "^1.7.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
     "@fwoosh/types": "workspace:*",
+    "@types/mdast": "^4.0.4",
     "@types/node": "^20.14.2",
     "@types/react": "18.3.1",
     "dedent": "^1.5.3",
@@ -41,7 +49,8 @@
       "./components": "./src/components/index.ts",
       "./tokens.stylex": "./src/theme/tokens.stylex.ts",
       "./theme.stylex": "./src/theme/theme.stylex.ts",
-      "./app": "./src/app/app.tsx"
+      "./app": "./src/app/app.tsx",
+      "./highlight-syntax": "./src/utils/highlightSyntax.ts"
     }
   },
   "exports": {
@@ -78,6 +87,13 @@
         "source": "./src/app/app.tsx",
         "types": "./dist/esm/app/app.d.ts",
         "default": "./dist/esm/app/app.js"
+      }
+    },
+    "./highlight-syntax": {
+      "import": {
+        "source": "./src/utils/highlightSyntax.ts",
+        "types": "./dist/esm/utils/highlightSyntax.d.ts",
+        "default": "./dist/esm/utils/highlightSyntax.js"
       }
     }
   },

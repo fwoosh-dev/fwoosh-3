@@ -21,7 +21,10 @@ export function extractComments(code: string) {
       continue;
     }
 
-    const comment = parse(token.value)[0]?.description || token.value;
+    const comment =
+      parse(token.value, {
+        spacing: "preserve",
+      })[0]?.description || token.value;
 
     let code = "";
     let entity = "";
@@ -43,6 +46,7 @@ export function extractComments(code: string) {
         if (code) {
           break;
         } else {
+          code += nextToken.value;
           continue;
         }
       }

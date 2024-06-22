@@ -9,8 +9,10 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  Markdown,
 } from "@fwoosh/ui/components";
 import docgen from "react-docgen-typescript";
+import { highlightSyntax } from "@fwoosh/ui/highlight-syntax";
 
 const defaultOptions: docgen.ParserOptions = {
   propFilter: (prop) => {
@@ -20,6 +22,17 @@ const defaultOptions: docgen.ParserOptions = {
       : true;
   },
 };
+
+async function TypeCell({ type }: { type: string }) {
+  const html = await highlightSyntax(type, {
+    lang: "ts",
+    meta: {
+      class: "code",
+    },
+  });
+
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+}
 
 export default async function ReactDocgenPanel({ page }: StoryContext) {
   const { component = [] } = await importMeta(page.file);
@@ -58,7 +71,9 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
 
         return (
           <>
-            {description && <div>{description}</div>}
+            {/* @ts-expect-error Server Component */}
+            {description && <Markdown>{description}</Markdown>}
+
             {propEntries.length > 0 && (
               <Table selectionMode="single">
                 <TableHeader>
@@ -75,14 +90,20 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
                           <InlineCode>{prop.name}</InlineCode>
                         </TableCell>
                         <TableCell>
-                          <InlineCode>{prop.type.name}</InlineCode>
+                          <InlineCode>
+                            {/* @ts-expect-error Server Component */}
+                            <TypeCell type={prop.type.name} />
+                          </InlineCode>
                         </TableCell>
                         <TableCell>
                           {prop.defaultValue?.value && (
                             <InlineCode>{prop.defaultValue?.value}</InlineCode>
                           )}
                         </TableCell>
-                        <TableCell>{prop.description}</TableCell>
+                        <TableCell>
+                          {/* @ts-expect-error Server Component */}
+                          <Markdown>{prop.description}</Markdown>
+                        </TableCell>
                       </TableRow>
                     );
                   })}

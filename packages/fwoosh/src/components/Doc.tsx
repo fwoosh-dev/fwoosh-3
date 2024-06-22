@@ -1,5 +1,6 @@
 import { Page } from "@fwoosh/types";
 import { importPage } from "@fwoosh/pages";
+import { Markdown } from "@fwoosh/ui/components";
 
 async function DocExample({ page, name }: { page: Page; name: string }) {
   try {
@@ -25,12 +26,14 @@ export async function Doc({ page }: { page: Page }) {
   return (
     <div>
       <h1>{page.title}</h1>
-      <p>{page.description}</p>
+      {/* @ts-expect-error Server Component */}
+      <Markdown>{page.description}</Markdown>
 
       {page.stories.map(({ name, description }) => (
         <div key={name}>
           <h2>{name}</h2>
-          <p>{description}</p>
+          {/* @ts-expect-error Server Component */}
+          <Markdown>{description}</Markdown>
           <DocExample page={page} name={name} />
         </div>
       ))}

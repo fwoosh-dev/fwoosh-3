@@ -9,7 +9,16 @@ export const meta: Meta = {
   description: "A button is something that can be clicked",
 };
 
-/** Use a button to trigger an action */
+/**
+ * Use a button to trigger an action
+ *
+ * - A list
+ * - of things
+ *
+ * ```tsx
+ * <Button>Even code</Button>
+ * ```
+ */
 export const Primary = () => <Button>Click me</Button>;
 
 /** A button can be disabled */

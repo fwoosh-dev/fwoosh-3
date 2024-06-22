@@ -11,9 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@stylexjs/stylex": "^0.6.1",
-    "@shikijs/transformers": "^1.7.0",
-    "@fwoosh/ui": "workspace:*",
-    "shiki": "^1.7.0"
+    "@fwoosh/ui": "workspace:*"
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",

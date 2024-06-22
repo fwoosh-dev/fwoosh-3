@@ -13,10 +13,10 @@ function getAllPages() {
 
 // this needs to also be a custom loader for node
 // this will only run for client side code
-export function annotateExportPlugin(): NonNullable<UserConfig["plugins"]>[0] {
-  const {
-    config: { docgen, plugins = [] },
-  } = getConfig();
+export async function annotateExportPlugin(): Promise<
+  NonNullable<UserConfig["plugins"]>[0]
+> {
+  const { docgen, plugins = [] } = await getConfig();
 
   const activeStoryFiles = new Set<string>();
 

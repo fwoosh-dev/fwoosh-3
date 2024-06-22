@@ -12,8 +12,6 @@ export default defineConfig({
     descriptionPlugin(),
     reactDocgen(),
     sourcePanel(),
-    repoLink({
-      repo: "fwoosh-dev/fwoosh-3",
-    }),
+    repoLink({ repo: "fwoosh-dev/fwoosh-3" }),
   ],
 });

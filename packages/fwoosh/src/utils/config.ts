@@ -1,20 +1,12 @@
 import { FwooshConfig } from "@fwoosh/types";
-import fs from "fs";
-import findCacheDirectory from "find-cache-dir";
-import path from "path";
+import invariant from "invariant";
 
-export function getConfig() {
-  const cacheDir = findCacheDirectory({
-    name: "fwoosh",
-    cwd: process.env.TARGET_DIRECTORY ?? process.cwd(),
-  });
+export async function getConfig(): Promise<FwooshConfig> {
+  const configPath = process.env.FWOOSH_CONFIG;
 
-  if (!cacheDir) {
-    throw new Error("Could not find cache directory");
-  }
+  invariant(configPath, "Could not find fwoosh config");
 
-  const configPath = path.join(cacheDir, "fwoosh.config.json");
-  const config = fs.readFileSync(configPath, "utf-8");
+  const config = await import(configPath).then((mod) => mod.default);
 
-  return JSON.parse(config) as { config: FwooshConfig; filepath: string };
+  return config;
 }

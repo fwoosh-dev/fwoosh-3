@@ -40,7 +40,7 @@ export async function ToolsToolbarTool({
 }
 
 export async function ToolsToolbar(props: StoryContext) {
-  const { config } = getConfig();
+  const config = await getConfig();
   const tools = config.plugins?.map((plugin) => plugin.tools).flat() || [];
   const toolbarTools = tools.filter((tool): tool is FwooshToolbarButton =>
     Boolean(tool && tool.type === "toolbar")

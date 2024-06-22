@@ -14,7 +14,7 @@ export async function Panel({
 }
 
 export async function Panels({ page, story }: StoryContext) {
-  const { config } = getConfig();
+  const config = await getConfig();
   const panels = config.plugins
     ?.map((plugin) => plugin.tools)
     .flat()

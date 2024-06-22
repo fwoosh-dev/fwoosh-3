@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@fwoosh/extract-comments": "workspace:*",
-    "@fwoosh/types": "workspace:*",
     "@fwoosh/log": "workspace:*",
+    "@fwoosh/types": "workspace:*",
     "@fwoosh/ui": "workspace:*",
     "@mui/x-tree-view": "^7.7.0",
     "@sliphua/lilconfig-ts-loader": "^3.2.2",
@@ -23,9 +23,9 @@
     "dedent": "^1.5.3",
     "esbuild": "^0.21.5",
     "esbuild-register": "^3.5.0",
-    "find-cache-dir": "^5.0.0",
     "glob": "^10.4.1",
     "inter-ui": "^4.0.2",
+    "invariant": "^2.2.4",
     "lilconfig": "^3.1.2",
     "micromatch": "^4.0.7",
     "react": "19.0.0-beta-e7d213dfb0-20240507",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
+    "@types/invariant": "^2.2.37",
     "@types/micromatch": "^4.0.7",
     "@types/node": "^20.14.2",
     "@types/react": "18.3.1",

@@ -5,7 +5,7 @@ import {
   Tooltip as TooltipPrimitive,
 } from "react-aria-components";
 import * as stylex from "@stylexjs/stylex";
-import { appChrome } from "../theme/colors.stylex.js";
+import { appChrome } from "../theme/tokens.stylex.js";
 import { borderRadius, space, text } from "../theme/tokens.stylex.js";
 
 const styles = stylex.create({

@@ -22,7 +22,7 @@ import {
   space,
   text,
 } from "../theme/tokens.stylex.js";
-import { appChrome } from "../theme/colors.stylex.js";
+import { appChrome } from "../theme/tokens.stylex.js";
 import { useState } from "react";
 import { createContext } from "@radix-ui/react-context";
 

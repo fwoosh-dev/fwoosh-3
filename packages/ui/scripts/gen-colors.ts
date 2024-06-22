@@ -6,20 +6,15 @@ import { promises as fs } from "fs";
 import path from "path";
 
 async function main() {
-  let file = dedent`
-    import * as stylex from "@stylexjs/stylex";
-
-  `;
-
   for (const [name, color] of Object.entries(colors)) {
     if (name === "__esModule" || name === "default") {
       continue;
     }
 
     const colorArray = Object.values(color);
+    const contents = dedent`
+      import * as stylex from "@stylexjs/stylex";
 
-    file += "\n";
-    file += dedent`
       /**
        * Each step was designed for at least one specific use case.
        */
@@ -95,11 +90,10 @@ async function main() {
         text: "${colorArray[11]}",
       });
     `;
-    file += "\n";
-  }
 
-  const dir = path.join(process.cwd(), "src/theme/colors.stylex.ts");
-  await fs.writeFile(dir, file);
+    const dir = path.join(process.cwd(), `src/theme/colors/${name}.stylex.ts`);
+    await fs.writeFile(dir, contents);
+  }
 }
 
 main();

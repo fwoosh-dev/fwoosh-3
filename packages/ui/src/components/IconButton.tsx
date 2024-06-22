@@ -4,7 +4,7 @@ import * as stylex from "@stylexjs/stylex";
 import { Button, ButtonProps, Link, LinkProps } from "react-aria-components";
 
 import { borderRadius } from "../theme/tokens.stylex.js";
-import { appChrome } from "../theme/colors.stylex.js";
+import { appChrome } from "../theme/tokens.stylex.js";
 import { FocusRing } from "./FocusRing.js";
 
 const buttonStyles = stylex.create({

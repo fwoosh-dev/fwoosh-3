@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { borderRadius, space, text } from "../theme/tokens.stylex.js";
-import { appChrome } from "../theme/colors.stylex.js";
+import { appChrome } from "../theme/tokens.stylex.js";
 
 export interface InlineCodeProps
   extends Omit<React.HTMLAttributes<HTMLSpanElement>, "style" | "className"> {

@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as stylex from "@stylexjs/stylex";
 import { borderRadius, space, text } from "../theme/tokens.stylex.js";
-import { blue, appChrome } from "../theme/colors.stylex.js";
+import { primary, appChrome } from "../theme/tokens.stylex.js";
 
 const spin = stylex.keyframes({
   from: {
@@ -22,7 +22,7 @@ const spinnerStyles = stylex.create({
     borderTop: `.3rem solid ${appChrome.subtleBorder}`,
     borderRight: `.3rem solid ${appChrome.subtleBorder}`,
     borderBottom: `.3rem solid ${appChrome.subtleBorder}`,
-    borderLeft: `.3rem solid ${blue.solid}`,
+    borderLeft: `.3rem solid ${primary.solid}`,
     transform: "translateZ(0)",
     animation: `${spin} 1.1s infinite linear`,
 

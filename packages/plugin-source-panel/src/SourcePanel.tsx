@@ -5,7 +5,7 @@ import * as stylex from "@stylexjs/stylex";
 
 import { StoryContext } from "@fwoosh/types";
 import { borderRadius, space } from "@fwoosh/ui/tokens.stylex";
-import { appChrome } from "@fwoosh/ui/colors.stylex";
+import { appChrome } from "@fwoosh/ui/tokens.stylex";
 
 const styles = stylex.create({
   base: {

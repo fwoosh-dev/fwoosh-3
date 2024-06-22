@@ -8,7 +8,7 @@ import {
   primaryA,
   primaryDark,
   primaryDarkA,
-} from "./colors.stylex.js";
+} from "./tokens.stylex.js";
 
 const DARK = "@media (prefers-color-scheme: dark)";
 

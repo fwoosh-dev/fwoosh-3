@@ -2,12 +2,27 @@ import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkUnwrapImages from "remark-unwrap-images";
 import remarkEmoji from "remark-emoji";
-import { Code, Parent, Root, RootContent } from "mdast";
+import {
+  Code,
+  Heading,
+  Parent,
+  Root,
+  RootContent,
+  Table as TableType,
+} from "mdast";
 import { unified } from "unified";
 import * as stylex from "@stylexjs/stylex";
 
 import { highlightSyntax } from "../utils/highlightSyntax.js";
 import { appChrome, borderRadius, space } from "../theme/tokens.stylex.js";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "./Table.js";
 
 const styles = stylex.create({
   codeBlock: {
@@ -71,101 +86,99 @@ async function HighlightedCode({ node }: { node: Code }) {
   );
 }
 
+function MarkdownHeading({ node }: { node: Heading }) {
+  const Component = `h${node.depth}` as keyof JSX.IntrinsicElements;
+
+  return (
+    <Component {...node.data}>
+      <MarkdownNodeChildren node={node} />
+    </Component>
+  );
+}
+
+function UnimplementedNode({ node }: { node: RootContent }): JSX.Element {
+  throw new Error(`Unsupported node type: ${node.type}`);
+}
+
+const nodeTypeToComponent = {
+  blockquote: "blockquote",
+  break: "br",
+  code: HighlightedCode,
+  delete: "del",
+  emphasis: "em",
+  heading: MarkdownHeading,
+  image: "img",
+  inlineCode: "code",
+  link: "a",
+  list: "ul",
+  listItem: "li",
+  paragraph: "p",
+  strong: "strong",
+  table: ({ node, ...props }: { node: TableType }) => {
+    const [head, ...rows] = node.children;
+
+    return (
+      <Table {...props}>
+        <TableHeader>
+          {head?.children.map((cell, index) => (
+            <TableColumn isRowHeader key={`${node.type}-${cell.type}-${index}`}>
+              <MarkdownNodeChildren node={cell} />
+            </TableColumn>
+          ))}
+        </TableHeader>
+
+        <TableBody>
+          <MarkdownNodeChildren node={{ ...node, children: rows }} />
+        </TableBody>
+      </Table>
+    );
+  },
+  tableCell: TableCell,
+  tableRow: TableRow,
+  text: "span",
+  thematicBreak: "hr",
+  definition: UnimplementedNode,
+  footnoteDefinition: UnimplementedNode,
+  footnoteReference: UnimplementedNode,
+  html: UnimplementedNode,
+  yaml: UnimplementedNode,
+  imageReference: UnimplementedNode,
+  linkReference: UnimplementedNode,
+} satisfies Record<RootContent["type"], React.ElementType>;
+
 function MarkdownNode({ node }: { node: Root | RootContent }) {
   if (node.type === "root") {
     return <MarkdownNodeChildren node={node} />;
   }
 
-  switch (node.type) {
-    case "paragraph":
-      return (
-        <p {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </p>
-      );
-    case "code":
-      return <HighlightedCode node={node} />;
-    case "text":
-      return <span {...node.data}>{node.value}</span>;
-    case "emphasis":
-      return (
-        <em {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </em>
-      );
-    case "strong":
-      return (
-        <strong {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </strong>
-      );
-    case "delete":
-      return (
-        <del {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </del>
-      );
-    case "inlineCode":
-      return <code {...node.data}>{node.value}</code>;
-    case "link":
-      return (
-        <a {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </a>
-      );
-    case "image":
-      return <img {...node.data} />;
-    case "list":
-      return (
-        <ul {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </ul>
-      );
-    case "listItem":
-      return (
-        <li {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </li>
-      );
-    case "heading": {
-      const Component = `h${node.depth}` as keyof JSX.IntrinsicElements;
+  const Component = nodeTypeToComponent[node.type];
 
-      return (
-        <Component {...node.data}>
+  console.log(node.type);
+  if (typeof Component === "string") {
+    return (
+      <Component {...node.data}>
+        {"children" in node ? (
           <MarkdownNodeChildren node={node} />
-        </Component>
-      );
-    }
-    case "blockquote":
-      return (
-        <blockquote {...node.data}>
+        ) : "value" in node ? (
+          node.value
+        ) : (
+          ""
+        )}
+      </Component>
+    );
+  } else {
+    console.log(node);
+    return (
+      <Component node={node as never}>
+        {"children" in node ? (
           <MarkdownNodeChildren node={node} />
-        </blockquote>
-      );
-    case "thematicBreak":
-      return <hr {...node.data} />;
-    case "table":
-      return (
-        <table {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </table>
-      );
-    case "tableRow":
-      return (
-        <tr {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </tr>
-      );
-    case "tableCell":
-      return (
-        <td {...node.data}>
-          <MarkdownNodeChildren node={node} />
-        </td>
-      );
-    case "break":
-      return <br {...node.data} />;
-    default:
-      throw new Error(`Unknown node type: ${node.type}`);
+        ) : "value" in node ? (
+          node.value
+        ) : (
+          ""
+        )}
+      </Component>
+    );
   }
 }
 

@@ -15,7 +15,7 @@ import { Options } from "./types.js";
 const explorer = lilconfig("fwoosh", {
   searchPlaces: ["fwoosh.config.ts", "fwoosh.config.js"],
   loaders: {
-    ".ts": async (filepath: string, content: string) => {
+    ".ts": async (filepath: string) => {
       const config = await import(filepath).then(
         (mod) => mod.default?.default || mod.default
       );
@@ -62,8 +62,6 @@ if (args?.error) {
 const options = args as Options;
 
 async function main() {
-  // @ts-ignore
-  // await import("tsx");
   const fwooshConfig = await explorer.search();
   const findCacheDirectory = (await findCacheDirectoryPromise).default;
   const cacheDir = findCacheDirectory({ name: "fwoosh", create: true });

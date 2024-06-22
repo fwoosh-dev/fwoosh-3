@@ -5,7 +5,6 @@ import { annotateExportPlugin } from "./src/plugins/annotate-exports";
 
 const config: UserConfig = {
   plugins: [
-    // @ts-ignore
     annotateExportPlugin(),
     styleX({
       libraries: ["@fwoosh/ui/components", "@fwoosh/ui/app"],

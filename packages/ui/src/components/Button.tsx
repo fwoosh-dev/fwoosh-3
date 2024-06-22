@@ -4,10 +4,10 @@ import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
   base: {
+    backgroundColor: "green",
+    color: "rgb(60,60,60)",
     fontSize: 16,
     lineHeight: 1.5,
-    color: "rgb(60,60,60)",
-    background: "green",
   },
 });
 

@@ -28,10 +28,12 @@ import { createContext } from "@radix-ui/react-context";
 
 const tableStyles = stylex.create({
   root: {
-    border: `1px solid ${appChrome.subtleBorder}`,
+    borderColor: appChrome.subtleBorder,
     borderRadius: borderRadius.md,
-    margin: `${space[5]} 0`,
     borderSpacing: 0,
+    borderStyle: "solid",
+    borderWidth: 1,
+    margin: `${space[5]} 0`,
   },
   body: {},
   row: {
@@ -40,29 +42,31 @@ const tableStyles = stylex.create({
   },
   rowHover: {
     "::before": {
-      display: "block",
-      borderRadius: borderRadius.mdInset,
-      zIndex: -1,
-      content: "''",
       backgroundColor: appChrome.elementBg,
-      position: "absolute",
+      borderRadius: borderRadius.mdInset,
+      content: "''",
+      display: "block",
       inset: 2,
+      position: "absolute",
+      zIndex: -1,
     },
   },
   column: {
+    borderBottomColor: appChrome.subtleBorder,
+    borderBottomStyle: "solid",
+    borderBottomWidth: 1,
     fontSize: text.xs,
     fontWeight: fontWeight.semibold,
-    textAlign: "left",
     padding: `${space[3]} ${space[4]}`,
-    borderBottom: `1px solid ${appChrome.subtleBorder}`,
+    textAlign: "left",
   },
   cell: {
     fontSize: text.sm,
     textAlign: "left",
   },
   cellInner: {
-    display: "flex",
     alignItems: "center",
+    display: "flex",
     minHeight: space[7],
     padding: `${space[3]} ${space[4]}`,
   },

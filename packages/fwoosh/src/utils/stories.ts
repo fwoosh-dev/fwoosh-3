@@ -34,8 +34,8 @@ export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
       }
 
       const fileTitle = file.replace(/\.stories\.tsx$/, "");
-      let { meta: _, ...stories } = await importPage(file);
-      let meta = await importMeta(file);
+      const { meta: _, ...stories } = await importPage(file);
+      const meta = await importMeta(file);
       const contents = await fs.readFile(file, "utf-8");
       const comments = extractComments(contents);
       const storyToComment = comments.reduce((acc, comment) => {
@@ -46,7 +46,7 @@ export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
       }, {} as Record<string, string>);
 
       const id = meta?.title ?? fileTitle;
-      let [group, title] = id.includes("/") ? id.split("/") : [, id];
+      const [group, title] = id.includes("/") ? id.split("/") : ["", id];
 
       const page = {
         group,

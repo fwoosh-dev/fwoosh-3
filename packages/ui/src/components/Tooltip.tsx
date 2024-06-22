@@ -11,10 +11,10 @@ import { borderRadius, space, text } from "../theme/tokens.stylex.js";
 const styles = stylex.create({
   tooltip: {
     backgroundColor: appChrome.text,
+    borderRadius: borderRadius.sm,
     color: appChrome.appBg,
     fontSize: text.xs,
     padding: `${space[4]} ${space[5]}`,
-    borderRadius: borderRadius.sm,
   },
 });
 

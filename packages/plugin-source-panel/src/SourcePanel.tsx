@@ -13,16 +13,16 @@ const styles = stylex.create({
   },
   pre: {
     height: "100%",
-    padding: space[5],
     lineHeight: 1.2,
+    padding: space[5],
   },
   highlight: {
-    display: "inline-flex",
     backgroundColor: appChrome.elementBg,
-    width: `calc(100% + (${space[4]} * 2))`,
     borderRadius: borderRadius.sm,
-    padding: `0 ${space[4]}`,
+    display: "inline-flex",
     margin: `0 calc(${space[4]} * -1)`,
+    padding: `0 ${space[4]}`,
+    width: `calc(100% + (${space[4]} * 2))`,
   },
 });
 const highlightAttrs = stylex.attrs(styles.highlight);

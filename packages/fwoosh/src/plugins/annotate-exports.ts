@@ -2,10 +2,10 @@ import micromatch from "micromatch";
 import dedent from "dedent";
 import { promises as fs } from "fs";
 import path from "path";
-import { getProdMetaCache } from "../utils/cache.js";
 import { glob } from "glob";
 import { getConfig } from "../utils/config.js";
 import { FwooshTool } from "@fwoosh/types";
+import { UserConfig } from "vite";
 
 function getAllPages() {
   return glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
@@ -13,7 +13,7 @@ function getAllPages() {
 
 // this needs to also be a custom loader for node
 // this will only run for client side code
-export function annotateExportPlugin() {
+export function annotateExportPlugin(): NonNullable<UserConfig["plugins"]>[0] {
   const {
     config: { docgen, plugins = [] },
   } = getConfig();
@@ -23,7 +23,7 @@ export function annotateExportPlugin() {
   return [
     {
       name: "inject-filename",
-      transform(src: string, id: string) {
+      transform(src, id) {
         if (src.includes("__filename")) {
           return `const __filename = "${id}";\n` + src;
         }
@@ -34,7 +34,7 @@ export function annotateExportPlugin() {
     // globs.
     {
       name: "annotate-exports",
-      async transform(src: string, id: string) {
+      async transform(src, id) {
         // Only match some files cause doing all of them is too slow
         // Instead of this we could try to use something like es-module-lexer
         // to follow all the imports and exports to the source file.
@@ -94,13 +94,13 @@ export function annotateExportPlugin() {
     // We do this mainly to be able to access the `meta` object.
     {
       name: "fwoosh-meta",
-      resolveId: (name: string) => {
+      resolveId: (name) => {
         // Match any import that starts with /fwoosh-meta
         if (name.startsWith("/fwoosh-meta")) {
           return name;
         }
       },
-      load: async (id: string) => {
+      load: async (id) => {
         if (id.startsWith("/fwoosh-meta")) {
           const actualFile = id.replace("/fwoosh-meta?file=", "");
           const contents = await fs
@@ -111,7 +111,7 @@ export function annotateExportPlugin() {
           return contents;
         }
       },
-      transform(code: string, id: string) {
+      transform(code, id) {
         if (id.startsWith("/fwoosh-meta")) {
           const actualFile = id.replace("/fwoosh-meta?file=", "");
           const dir = path.dirname(actualFile);
@@ -138,15 +138,7 @@ export function annotateExportPlugin() {
           };
         }
       },
-      handleHotUpdate({
-        server,
-        file,
-        modules,
-      }: {
-        server: { moduleGraph: { getModuleById: (id: string) => any } };
-        file: string;
-        modules: string[];
-      }) {
+      handleHotUpdate({ server, file, modules }) {
         if (activeStoryFiles.has(file)) {
           const virtualModule = server.moduleGraph.getModuleById(
             `/fwoosh-meta?file=${file}`
@@ -160,12 +152,12 @@ export function annotateExportPlugin() {
     },
     {
       name: "@fwoosh/pages",
-      resolveId: (name: string) => {
+      resolveId: (name) => {
         if (name === "@fwoosh/pages") {
           return name;
         }
       },
-      load: async (id: string) => {
+      load: async (id) => {
         if (id === "@fwoosh/pages") {
           const pages = await getAllPages();
 

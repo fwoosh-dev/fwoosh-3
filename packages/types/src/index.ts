@@ -39,11 +39,11 @@ export interface Story {
 }
 
 export interface Page {
-  group: any;
+  group: string;
   id: string;
   file: string;
-  title: any;
-  description?: any;
+  title: string;
+  description?: string;
   stories: Story[];
 }
 
@@ -56,7 +56,7 @@ export interface FwooshPluginProps<T> extends StoryContext {
   options?: T;
 }
 
-export interface Meta<T = Object> {
+export interface Meta<T = object> {
   /** The title of the stories. This is used to created the sidebar. */
   title: string;
   /** The component to generate documentation for. This can be a single component or an array of components. */
@@ -67,10 +67,10 @@ export interface Meta<T = Object> {
 
 // We add extra properties to the component so that we can
 // use the component in the story context
-type RuntimeComponent = {} & {
+interface RuntimeComponent {
   fwoosh_file: string;
   displayName: string;
-};
+}
 
 export type RuntimeMeta = Meta<RuntimeComponent>;
 

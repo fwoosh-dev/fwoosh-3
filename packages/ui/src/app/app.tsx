@@ -9,17 +9,17 @@ const DARK = "@media (prefers-color-scheme: dark)";
 
 const inspectorStyles = stylex.create({
   base: {
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: {
-      default: appChromeA.elementBorder,
-      [DARK]: appChromeA.subtleBorder,
-    },
     backgroundColor: appChrome.appBg,
-    margin: space[5],
+    borderColor: {
+      [DARK]: appChromeA.subtleBorder,
+      default: appChromeA.elementBorder,
+    },
     borderRadius: borderRadius.lg,
-    overflow: "hidden",
+    borderStyle: "solid",
+    borderWidth: 1,
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 2px 4px 0px",
+    margin: space[5],
+    overflow: "hidden",
   },
 });
 
@@ -29,7 +29,7 @@ export interface InspectorProps
 }
 
 export function Inspector({ style, ...props }: InspectorProps) {
-  return <main {...props} {...stylex.props(inspectorStyles.base)} />;
+  return <main {...props} {...stylex.props(inspectorStyles.base, style)} />;
 }
 
 const sidebarLayoutStyles = stylex.create({
@@ -43,26 +43,27 @@ const sidebarLayoutStyles = stylex.create({
 
 export interface SidebarLayoutProps
   extends Omit<React.ComponentPropsWithoutRef<"div">, "style" | "className"> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   style?: stylex.StyleXStyles | stylex.Theme<any> | stylex.Theme<any>[];
 }
 
 export function SidebarLayout({ style, ...props }: SidebarLayoutProps) {
-  return <main {...props} {...stylex.props(style, sidebarLayoutStyles.base)} />;
+  return <main {...props} {...stylex.props(sidebarLayoutStyles.base, style)} />;
 }
 
 const InspectorToolbarStyles = stylex.create({
   base: {
-    borderBottom: 1,
-    borderBottomStyle: "solid",
-    borderColor: {
-      default: appChrome.elementBorder,
-      [DARK]: appChrome.subtleBorder,
-    },
-    background: appChrome.subtleBg,
-    display: "flex",
     alignItems: "center",
-    padding: `${space[2]} ${space[4]}`,
+    backgroundColor: appChrome.subtleBg,
+    borderBottomStyle: "solid",
+    borderBottomWidth: 1,
+    borderColor: {
+      [DARK]: appChrome.subtleBorder,
+      default: appChrome.elementBorder,
+    },
+    display: "flex",
     height: space[7],
+    padding: `${space[2]} ${space[4]}`,
   },
 });
 
@@ -77,29 +78,31 @@ export function InspectorToolbar({ style, ...props }: InspectorToolbarProps) {
   );
 }
 
+appChrome.hoveredBorder;
+
 const resizeHandleStyles = stylex.create({
   base: {
-    zIndex: 10,
-    width: "100%",
     position: "relative",
+    width: "100%",
+    zIndex: 10,
   },
   line: {
-    zIndex: 10,
-    position: "absolute",
+    backgroundColor: appChrome.hoveredBorder,
     height: 2,
-    width: "100%",
-    top: "50%",
     left: "50%",
+    position: "absolute",
+    top: "50%",
     transform: "translate(-50%, -50%)",
-    background: appChrome.hoveredBorder,
+    width: "100%",
+    zIndex: 10,
   },
   hitArea: {
+    height: 12,
+    left: "50%",
     position: "absolute",
     top: "50%",
-    left: "50%",
     transform: "translate(-50%, -50%)",
     width: "100%",
-    height: 12,
   },
 });
 
@@ -114,12 +117,12 @@ export function ResizeHandle({
   isDragging,
   ...props
 }: ResizeHandleProps) {
-  let { hoverProps, isHovered } = useHover({});
+  const { hoverProps, isHovered } = useHover({});
 
   return (
     <div
       {...mergeProps(props, hoverProps)}
-      {...stylex.props(resizeHandleStyles.base)}
+      {...stylex.props(resizeHandleStyles.base, style)}
     >
       {(isHovered || isDragging) && (
         <div {...stylex.props(resizeHandleStyles.line)} />

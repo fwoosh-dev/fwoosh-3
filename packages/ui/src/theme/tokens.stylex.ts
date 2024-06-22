@@ -154,13 +154,13 @@ export const text = stylex.defineVars({
 });
 
 export const fontWeight = stylex.defineVars({
-  thin: "100",
-  extraLight: "200",
-  light: "300",
-  normal: "400",
-  medium: "500",
-  semibold: "600",
-  bold: "700",
-  heavy: "800",
-  extraHeavy: "900",
+  thin: 100,
+  extraLight: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  heavy: 800,
+  extraHeavy: 900,
 });

@@ -9,23 +9,25 @@ import { FocusRing } from "./FocusRing.js";
 
 const buttonStyles = stylex.create({
   base: {
-    position: "relative",
-    height: 32,
-    width: 32,
-    display: "inline-flex",
     alignItems: "center",
+    display: "inline-flex",
     justifyContent: "center",
-    color: appChrome.text,
-    background: {
+
+    backgroundColor: {
       default: "transparent",
       ":hover": appChrome.elementBg,
       ":active": appChrome.hover,
     },
+    borderRadius: borderRadius.mdInset,
+    borderWidth: 0,
+    color: appChrome.text,
     outline: {
       ":focus-visible": "none",
     },
-    border: "none",
-    borderRadius: borderRadius.mdInset,
+    position: "relative",
+
+    height: 32,
+    width: 32,
   },
   toolbar: {
     height: 28,

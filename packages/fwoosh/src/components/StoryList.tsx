@@ -1,7 +1,7 @@
 import { getAllPageGroups, getStorySlug } from "../utils/stories";
 import { TreeView } from "./TreeView";
 
-export async function StoryList({ defaultActive }: { defaultActive: string }) {
+export async function StoryList({ active }: { active: string }) {
   const pageGroups = await getAllPageGroups();
   const treeGroups = Object.entries(pageGroups).map(([group, pages]) => {
     return {
@@ -20,5 +20,5 @@ export async function StoryList({ defaultActive }: { defaultActive: string }) {
     };
   });
 
-  return <TreeView data={treeGroups} defaultActive={defaultActive} />;
+  return <TreeView data={treeGroups} active={active} />;
 }

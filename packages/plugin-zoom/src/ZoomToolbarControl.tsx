@@ -17,7 +17,7 @@ function browserSupportsCssZoom(): boolean {
       global.document.implementation.createHTMLDocument("").body.style.zoom !==
       undefined
     );
-  } catch (error) {
+  } catch {
     return false;
   }
 }
@@ -59,7 +59,7 @@ export default function ZoomToolbarControl() {
         }
       }
     }
-  }, [storyPreviewId, zoom]);
+  }, [zoom]);
 
   return (
     <HStack gap={3}>

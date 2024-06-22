@@ -35,7 +35,7 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
         style={[appChromeTheme, appChromeATheme, primaryTheme, primaryATheme]}
       >
         <aside {...stylex.props(styles.SidebarLayout)}>
-          <StoryList defaultActive={getStorySlug(page, story)} />
+          <StoryList active={getStorySlug(page, story)} />
         </aside>
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">

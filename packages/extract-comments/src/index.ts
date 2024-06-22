@@ -1,5 +1,6 @@
 import jsTokens from "js-tokens";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { parse } from "comment-parser";
 
@@ -26,7 +27,6 @@ export function extractComments(code: string) {
     let entity = "";
     let hasSeenFirstLine = false;
 
-    // @ts-ignore
     for (; i < tokens.length; i++) {
       const nextToken = tokens[i];
 

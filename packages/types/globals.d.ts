@@ -1,5 +1,5 @@
 declare module "@fwoosh/pages" {
-  import { RuntimeMeta, StoryContext, FwooshPluginProps } from "@fwoosh/types";
+  import { RuntimeMeta, FwooshPluginProps } from "@fwoosh/types";
 
   export function importPage(filename: string): Promise<{
     [key: string]: () => JSX.Element;

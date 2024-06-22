@@ -16,37 +16,39 @@ const spin = stylex.keyframes({
 
 const spinnerStyles = stylex.create({
   root: {
-    opacity: 0,
-    borderRadius: borderRadius.round,
-    position: "relative",
-    borderTop: `.3rem solid ${appChrome.subtleBorder}`,
-    borderRight: `.3rem solid ${appChrome.subtleBorder}`,
-    borderBottom: `.3rem solid ${appChrome.subtleBorder}`,
-    borderLeft: `.3rem solid ${primary.solid}`,
-    transform: "translateZ(0)",
-    animation: `${spin} 1.1s infinite linear`,
+    animationDuration: "1.1s",
+    animationIterationCount: "infinite",
+    animationName: spin,
+    animationTimingFunction: "linear",
 
-    ":after": {
-      borderRadius: borderRadius.round,
-      width: 40,
-      height: 40,
-    },
+    borderBottomColor: appChrome.subtleBorder,
+    borderLeftColor: primary.solid,
+    borderRightColor: appChrome.subtleBorder,
+    borderTopColor: appChrome.subtleBorder,
+
+    borderRadius: borderRadius.round,
+    borderStyle: "solid",
+    borderWidth: "0.3rem",
+
+    opacity: 0,
+    position: "relative",
+    transform: "translateZ(0)",
   },
   message: {
-    font: text.sm,
+    fontSize: text.sm,
     opacity: 0,
   },
   show: {
     opacity: 1,
   },
   wrapper: {
-    height: "100%",
-    width: "100%",
+    alignItems: "center",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
     gap: space[2],
+    height: "100%",
+    justifyContent: "center",
+    width: "100%",
   },
 });
 

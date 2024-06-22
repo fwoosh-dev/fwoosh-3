@@ -18,9 +18,9 @@ import { FocusRing } from "./FocusRing.js";
 
 const tabRootStyles = stylex.create({
   base: {
-    height: "100%",
     display: "flex",
     flexDirection: "column",
+    height: "100%",
   },
 });
 
@@ -37,21 +37,24 @@ export function Tabs({ style, ...props }: TabsProps) {
 
 const tabListStyles = stylex.create({
   base: {
-    display: "flex",
     alignItems: "center",
+    backgroundColor: appChrome.subtleBg,
+    borderColor: appChrome.subtleBorder,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderStyle: "solid",
+    borderWidth: 1,
+    display: "flex",
     gap: space[3],
-    background: appChrome.subtleBg,
-    borderTop: `1px solid ${appChrome.subtleBorder}`,
-    borderBottom: `1px solid ${appChrome.subtleBorder}`,
-    paddingTop: space[3],
     paddingBottom: space[3],
     paddingLeft: space[3],
     paddingRight: space[3],
+    paddingTop: space[3],
   },
 });
 
 export function TabList<T>(props: TabListProps<T>) {
-  // @ts-ignore
+  // @ts-expect-error Couldn't get the generics to work
   return <TabListPrimitive {...props} {...stylex.props(tabListStyles.base)} />;
 }
 
@@ -62,26 +65,28 @@ const tabStyles = stylex.create({
     },
   },
   base: {
-    position: "relative",
-    display: "flex",
     alignItems: "center",
-    padding: `${space[3]} ${space[5]}`,
-    height: space[7],
-    fontSize: text.xs,
-    cursor: "default",
-    border: "1px solid transparent",
-    borderRadius: borderRadius.md,
-    color: appChrome.subtleText,
     backgroundColor: {
       ":hover": appChrome.hover,
       ":active": appChrome.active,
     },
+    borderColor: "transparent",
+    borderRadius: borderRadius.md,
+    borderStyle: "solid",
+    borderWidth: 1,
+    color: appChrome.subtleText,
+    cursor: "default",
+    display: "flex",
+    fontSize: text.xs,
+    height: space[7],
+    padding: `${space[3]} ${space[5]}`,
+    position: "relative",
   },
   selected: {
     backgroundColor: appChrome.appBg,
-    border: {
-      default: `1px solid ${appChrome.subtleBorder}`,
-      ":hover": `1px solid ${appChrome.hoveredBorder}`,
+    borderColor: {
+      default: appChrome.subtleBorder,
+      ":hover": appChrome.hoveredBorder,
     },
   },
   focusRing: {
@@ -112,7 +117,7 @@ export function Tab({ children, ...props }: TabProps) {
 
 const tabPanelStyles = stylex.create({
   base: {
-    flex: 1,
+    flexGrow: 1,
     minHeight: 0,
     overflow: "auto",
   },
@@ -135,8 +140,8 @@ export function TabPanel({ style, ...props }: TabPanelProps) {
 
 const tabPanelContentStyles = stylex.create({
   base: {
-    padding: space[5],
     color: appChrome.text,
+    padding: space[5],
   },
 });
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { startTransition, useMemo, useOptimistic } from "react";
 import { RichTreeView } from "@mui/x-tree-view/RichTreeView";
 import { TreeViewBaseItem } from "@mui/x-tree-view/models";
 import { TreeItemProps } from "@mui/x-tree-view/TreeItem";
@@ -16,22 +16,22 @@ const treeStyles = stylex.create({
     padding: space[8],
   },
   content: {
-    position: "relative",
-    zIndex: 0,
-    minHeight: space[7],
-    padding: `${space[3]} ${space[4]}`,
+    backgroundColor: {
+      default: "transparent",
+      ":is(.Mui-selected)": primaryA.active,
+      ":hover": appChrome.hover,
+    },
     color: {
       default: appChrome.subtleText,
       ":is(.Mui-selected)": appChrome.text,
     },
-    background: {
-      default: "transparent",
-      ":hover": appChrome.hover,
-      ":is(.Mui-selected)": primaryA.active,
-    },
-    margin: space[1],
-    userSelect: "none",
     cursor: "default",
+    margin: space[1],
+    minHeight: space[7],
+    padding: `${space[3]} ${space[4]}`,
+    position: "relative",
+    userSelect: "none",
+    zIndex: 0,
   },
   label: {
     fontSize: text.xs,
@@ -64,25 +64,27 @@ function MyTreeItem(props: TreeItemProps) {
 
 export function TreeView({
   data,
-  defaultActive,
+  active,
 }: {
   data: TreeViewBaseItem[];
-  defaultActive: string;
+  active: string;
 }) {
   const expandedIds = useMemo(() => getIds(data), [data]);
   const router = useRouter();
-  const defaultSelectedItems =
-    router.path.split("/").slice(2).join("/") || defaultActive;
+  const [optimisticActive, setActiveOptimistic] = useOptimistic(active);
 
   return (
     <RichTreeView
       slots={{ item: MyTreeItem }}
       defaultExpandedItems={expandedIds}
       items={data}
-      selectedItems={defaultSelectedItems}
+      selectedItems={optimisticActive}
       onSelectedItemsChange={(_, itemId) => {
         if (itemId?.includes("_")) {
-          router.push(`/bench/${itemId}`);
+          setActiveOptimistic(itemId);
+          startTransition(() => {
+            router.push(`/bench/${itemId}`);
+          });
         }
       }}
     />

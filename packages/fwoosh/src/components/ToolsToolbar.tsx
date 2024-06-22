@@ -7,7 +7,7 @@ import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
   section: {
-    flex: 1,
+    flexGrow: 1,
   },
   shrinkingArea: {
     flexGrow: 1,

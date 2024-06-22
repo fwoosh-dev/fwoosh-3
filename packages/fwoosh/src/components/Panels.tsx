@@ -8,6 +8,7 @@ export async function Panel({
   panel,
   ...props
 }: { panel: FwooshPanel } & StoryContext) {
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   const Component = await importPlugin(panel.filepath);
   return <Component {...props} />;
 }
@@ -29,11 +30,13 @@ export async function Panels({ page, story }: StoryContext) {
     <Tabs>
       <TabList>
         {panels.map((panel) => (
-          <Tab id={panel.id}>{panel.panelTitle}</Tab>
+          <Tab key={panel.id} id={panel.id}>
+            {panel.panelTitle}
+          </Tab>
         ))}
       </TabList>
       {panels.map((panel) => (
-        <TabPanel id={panel.id}>
+        <TabPanel key={panel.id} id={panel.id}>
           <Suspense fallback={<Spinner />}>
             <Panel key={panel.id} panel={panel} page={page} story={story} />
           </Suspense>

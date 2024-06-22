@@ -5,9 +5,9 @@ import { space } from "../theme/tokens.stylex.js";
 
 const styles = stylex.create({
   base: {
+    alignItems: "center",
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
   },
   alignStart: { alignItems: "flex-start" },
   alignEnd: { alignItems: "flex-end" },

@@ -9,12 +9,12 @@ export interface InlineCodeProps
 
 const styles = stylex.create({
   base: {
+    backgroundColor: appChrome.hover,
+    borderRadius: borderRadius.sm,
+    color: appChrome.subtleText,
     display: "inline-flex",
     fontSize: text.xs,
     padding: `${space[2]} ${space[3]}`,
-    background: appChrome.hover,
-    color: appChrome.subtleText,
-    borderRadius: borderRadius.sm,
   },
 });
 

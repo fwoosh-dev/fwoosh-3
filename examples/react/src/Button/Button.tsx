@@ -11,5 +11,7 @@ export interface ButtonProps
 
 /** A button */
 export const Button = (props: ButtonProps) => {
-  return <button style={{ background: "blue", color: "white" }} {...props} />;
+  return (
+    <button style={{ backgroundColor: "blue", color: "white" }} {...props} />
+  );
 };

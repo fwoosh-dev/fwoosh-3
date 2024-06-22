@@ -417,10 +417,17 @@ importers:
   packages/plugin-zoom/dist/esm: {}
 
   packages/types:
+    dependencies:
+      invariant:
+        specifier: ^2.2.4
+        version: 2.2.4
     devDependencies:
       '@fwoosh/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
+      '@types/invariant':
+        specifier: ^2.2.37
+        version: 2.2.37
       '@types/node':
         specifier: ^20.14.2
         version: 20.14.2

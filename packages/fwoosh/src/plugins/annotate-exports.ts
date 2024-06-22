@@ -3,8 +3,7 @@ import dedent from "dedent";
 import { promises as fs } from "fs";
 import path from "path";
 import { glob } from "glob";
-import { getConfig } from "../utils/config.js";
-import { FwooshTool } from "@fwoosh/types";
+import { FwooshTool, getConfig } from "@fwoosh/types";
 import { UserConfig } from "vite";
 
 function getAllPages() {

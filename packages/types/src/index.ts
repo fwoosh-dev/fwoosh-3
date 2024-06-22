@@ -75,3 +75,4 @@ interface RuntimeComponent {
 export type RuntimeMeta = Meta<RuntimeComponent>;
 
 export const storyPreviewId = "story-preview";
+export { getConfig } from "./config.js";

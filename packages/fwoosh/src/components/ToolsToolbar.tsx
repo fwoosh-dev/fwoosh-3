@@ -1,5 +1,4 @@
-import { FwooshToolbarButton, StoryContext } from "@fwoosh/types";
-import { getConfig } from "../utils/config";
+import { FwooshToolbarButton, StoryContext, getConfig } from "@fwoosh/types";
 import { importPlugin } from "@fwoosh/pages";
 import { InspectorToolbar } from "@fwoosh/ui/app";
 import { HStack, HStackProps } from "@fwoosh/ui/components";

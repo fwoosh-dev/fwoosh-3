@@ -11,6 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
+    "@types/invariant": "^2.2.37",
     "@types/node": "^20.14.2",
     "rimraf": "^5.0.7",
     "tshy": "^1.15.1"
@@ -51,5 +52,8 @@
   },
   "type": "module",
   "main": "./dist/commonjs/index.js",
-  "types": "./dist/commonjs/index.d.ts"
+  "types": "./dist/commonjs/index.d.ts",
+  "dependencies": {
+    "invariant": "^2.2.4"
+  }
 }

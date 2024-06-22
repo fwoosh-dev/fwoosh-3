@@ -16,6 +16,7 @@ import {
   primaryTheme,
   primaryATheme,
 } from "@fwoosh/ui/theme.stylex";
+import { getStorySlug } from "../utils/stories";
 
 const styles = stylex.create({
   SidebarLayout: {
@@ -34,7 +35,7 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
         style={[appChromeTheme, appChromeATheme, primaryTheme, primaryATheme]}
       >
         <aside {...stylex.props(styles.SidebarLayout)}>
-          <StoryList />
+          <StoryList defaultActive={getStorySlug(page, story)} />
         </aside>
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">

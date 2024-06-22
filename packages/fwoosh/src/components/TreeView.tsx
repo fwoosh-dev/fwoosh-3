@@ -11,8 +11,6 @@ import { space, text } from "@fwoosh/ui/tokens.stylex";
 import { appChrome, primaryA } from "@fwoosh/ui/tokens.stylex";
 import { useRouter_UNSTABLE as useRouter } from "waku";
 
-// import { getAllPageGroups, getStorySlug } from "../utils/stories";
-
 const treeStyles = stylex.create({
   root: {
     padding: space[8],
@@ -64,10 +62,17 @@ function MyTreeItem(props: TreeItemProps) {
   );
 }
 
-export function TreeView({ data }: { data: TreeViewBaseItem[] }) {
+export function TreeView({
+  data,
+  defaultActive,
+}: {
+  data: TreeViewBaseItem[];
+  defaultActive: string;
+}) {
   const expandedIds = useMemo(() => getIds(data), [data]);
   const router = useRouter();
-  const defaultSelectedItems = router.path.split("/").slice(2).join("/");
+  const defaultSelectedItems =
+    router.path.split("/").slice(2).join("/") || defaultActive;
 
   return (
     <RichTreeView

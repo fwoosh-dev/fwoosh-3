@@ -1,35 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @stylex stylesheet;
 
-* {
+html,
+body {
+  height: 100vh;
+}
+
+.app * {
   box-sizing: border-box;
   cursor: default;
 }
 
+.app pre,
 body {
   margin: 0;
 }
 
-p:first-child {
+.app p:first-child {
   margin-top: 0;
 }
 
-p:only-child {
+.app p:only-child {
   margin: 0;
 }
 
-html {
+.app {
   font-family: "Inter", "system-ui";
 }
 
 @supports (font-variation-settings: normal) {
-  html {
+  .app {
     font-family: "InterVariable", "system-ui";
   } /* If using the variable font */
-}
-
-pre {
-  margin: 0;
 }
 
 @media (prefers-color-scheme: dark) {

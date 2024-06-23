@@ -48,7 +48,14 @@ export interface SidebarLayoutProps
 }
 
 export function SidebarLayout({ style, ...props }: SidebarLayoutProps) {
-  return <main {...props} {...stylex.props(sidebarLayoutStyles.base, style)} />;
+  return (
+    <main
+      {...props}
+      {...mergeProps(stylex.props(sidebarLayoutStyles.base, style), {
+        className: "app",
+      })}
+    />
+  );
 }
 
 const InspectorToolbarStyles = stylex.create({

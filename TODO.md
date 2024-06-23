@@ -1,8 +1,9 @@
 # TODO
 
+- [x] isolate styles for Iframe
+
 - [ ] figure out dev mode errors
   - [ ] maybe it's doing too much? rsc seems slow even though the build is fast
-- [ ] isolate styles for Iframe
 - [ ] source panel bugs
 - [ ] Decorators
 - [ ] Centered decorators
@@ -14,6 +15,7 @@
 - [ ] document... everything
 - [ ] testing library built on playwright
 - [ ] sidebar sorting
+- [ ] link into adding a cache to Markdown transforms
 - [ ] MDX only pages
 - [ ] View docs button
 - [ ] Render the jSDOc as markdown

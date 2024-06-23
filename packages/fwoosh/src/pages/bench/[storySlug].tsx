@@ -3,6 +3,17 @@ import { storyPreviewId } from "@fwoosh/types";
 import { BenchLayout } from "../../components/BenchLayout";
 import { getAllStorySlugs, getStoryBySlug } from "../../utils/stories";
 
+import * as stylex from "@stylexjs/stylex";
+
+const styles = stylex.create({
+  iframe: {
+    borderWidth: 0,
+    display: "flex",
+    height: "100%",
+    width: "100%",
+  },
+});
+
 export default async function Story({ storySlug }: { storySlug: string }) {
   const { page, story } = await getStoryBySlug(storySlug);
 
@@ -11,7 +22,7 @@ export default async function Story({ storySlug }: { storySlug: string }) {
       <iframe
         id={storyPreviewId}
         src={`/iframe/${storySlug}`}
-        style={{ height: "100%", width: "100%", border: "none" }}
+        {...stylex.props(styles.iframe)}
       />
     </BenchLayout>
   );

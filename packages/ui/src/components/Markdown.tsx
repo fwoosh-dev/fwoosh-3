@@ -153,7 +153,6 @@ function MarkdownNode({ node }: { node: Root | RootContent }) {
 
   const Component = nodeTypeToComponent[node.type];
 
-  console.log(node.type);
   if (typeof Component === "string") {
     return (
       <Component {...node.data}>

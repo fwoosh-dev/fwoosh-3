@@ -2,17 +2,18 @@ import { getConfig } from "@fwoosh/types";
 import { Link } from "waku";
 import * as stylex from "@stylexjs/stylex";
 import { primary, space } from "@fwoosh/ui/tokens.stylex";
+import path from "path";
 
 const styles = stylex.create({
   base: {
     display: "flex",
     justifyContent: "space-between",
-    padding: space[5],
   },
   link: {
     color: {
       default: primary.subtleText,
     },
+    padding: space[5],
     textDecoration: {
       default: "none",
       ":hover": "underline",
@@ -21,16 +22,31 @@ const styles = stylex.create({
       ":hover": "wavy",
     },
   },
+  logo: {
+    maxHeight: 100,
+    maxWidth: "100%",
+  },
 });
 
 export async function SidebarHeader() {
   const config = await getConfig();
+  const logo = config.logo ? path.basename(config.logo) : null;
 
   return (
     <h2 {...stylex.props(styles.base)}>
-      <Link to="/" {...stylex.props(styles.link)}>
-        {config.name}
-      </Link>
+      {logo ? (
+        <Link to="/">
+          <img
+            src={`/public/${logo}`}
+            alt={`${config.name} components`}
+            {...stylex.props(styles.logo)}
+          />
+        </Link>
+      ) : (
+        <Link to="/" {...stylex.props(styles.link)}>
+          {config.name}
+        </Link>
+      )}
     </h2>
   );
 }

@@ -33,6 +33,7 @@
     "react-resizable-panels": "^2.0.19",
     "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "tsx": "^4.15.5",
+    "vite-plugin-static-copy": "^1.0.5",
     "waku": "0.20.2"
   },
   "devDependencies": {

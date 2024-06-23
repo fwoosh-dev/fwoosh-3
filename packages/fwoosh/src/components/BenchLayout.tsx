@@ -4,6 +4,7 @@ import { StoryContext } from "@fwoosh/types";
 import { StoryContextProvider } from "@fwoosh/ui";
 import { Inspector, SidebarLayout } from "@fwoosh/ui/app";
 
+import { SidebarHeader } from "./SidebarHeader";
 import { StoryList } from "./StoryList";
 import { ToolsToolbar } from "./ToolsToolbar";
 import { Panels } from "./Panels";
@@ -20,6 +21,8 @@ import { getStorySlug } from "../utils/stories";
 
 const styles = stylex.create({
   SidebarLayout: {
+    display: "flex",
+    flexDirection: "column",
     padding: space[5],
   },
 });

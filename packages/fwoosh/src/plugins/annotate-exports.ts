@@ -5,6 +5,7 @@ import path from "path";
 import { glob } from "glob";
 import { FwooshTool, defaultConfig, getConfig } from "@fwoosh/types";
 import { UserConfig } from "vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 function getAllPages() {
   return glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
@@ -15,7 +16,7 @@ function getAllPages() {
 export async function annotateExportPlugin(): Promise<
   NonNullable<UserConfig["plugins"]>[0]
 > {
-  const { docgen, plugins = [], theme } = await getConfig();
+  const { docgen, plugins = [], theme, logo } = await getConfig();
 
   const activeStoryFiles = new Set<string>();
 
@@ -251,5 +252,12 @@ export async function annotateExportPlugin(): Promise<
         }
       },
     },
+    ...(logo
+      ? [
+          viteStaticCopy({
+            targets: [{ src: logo, dest: "public" }],
+          }),
+        ]
+      : []),
   ];
 }

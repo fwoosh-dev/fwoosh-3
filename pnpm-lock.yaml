@@ -189,6 +189,9 @@ importers:
       tsx:
         specifier: ^4.15.5
         version: 4.15.5
+      vite-plugin-static-copy:
+        specifier: ^1.0.5
+        version: 1.0.5(vite@5.3.1(@types/node@20.14.2)(terser@5.31.1))
       waku:
         specifier: 0.20.2
         version: 0.20.2(patch_hash=qbgzvnraoavltfbat7oiiug6o4)(@swc/helpers@0.5.11)(@types/node@20.14.2)(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5)))(react@19.0.0-beta-e7d213dfb0-20240507)(terser@5.31.1)
@@ -4280,6 +4283,12 @@ packages:
 
   vfile@6.0.1:
     resolution: {integrity: sha512-1bYqc7pt6NIADBJ98UiG0Bn/CHIVOoZ/IyEkqIruLg0mE1BKzkOXY2D6CSqQIcKqgadppE5lrxgWXJmXd7zZJw==}
+
+  vite-plugin-static-copy@1.0.5:
+    resolution: {integrity: sha512-02k0Rox+buYdEOfeilKZSgs1gXfPf9RjVztZEIYZgVIxjsVZi6AXssjzdi+qW6zYt00d3bq+tpP2voVXN2fKLw==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      vite: ^5.0.0
 
   vite-plugin-stylex-dev@0.7.5:
     resolution: {integrity: sha512-MY4kuBDP6zVvcqepCZ/yG8njjXCXgxkceD7Ma4+CqSd+yBrIU5CF5dAdITbb69cG4oq9gmsV+zIXl+/5V9HN/w==}
@@ -9222,6 +9231,14 @@ snapshots:
       '@types/unist': 3.0.2
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
+
+  vite-plugin-static-copy@1.0.5(vite@5.3.1(@types/node@20.14.2)(terser@5.31.1)):
+    dependencies:
+      chokidar: 3.6.0
+      fast-glob: 3.3.2
+      fs-extra: 11.2.0
+      picocolors: 1.0.1
+      vite: 5.3.1(@types/node@20.14.2)(terser@5.31.1)
 
   vite-plugin-stylex-dev@0.7.5(rollup@4.18.0):
     dependencies:

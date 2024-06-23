@@ -10,3 +10,4 @@ dist
 .turbo
 .tshy-build
 **/src/package.json
+packages/fwoosh/public/logo.*

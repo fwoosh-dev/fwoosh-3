@@ -1,14 +1,14 @@
 # TODO
 
 - [x] isolate styles for Iframe
+- [x] source panel bugs
+- [x] logo in sidebar
 
 - [ ] figure out dev mode errors
   - [ ] maybe it's doing too much? rsc seems slow even though the build is fast
-- [ ] source panel bugs
 - [ ] Decorators
 - [ ] Centered decorators
 - [ ] Screen size decorators
-- [ ] logo in sidebar
 - [ ] color theme config
 - [ ] code highlighting config
 - [ ] improve docs view

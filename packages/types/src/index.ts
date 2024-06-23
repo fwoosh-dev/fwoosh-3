@@ -79,6 +79,8 @@ interface CodeTheme {
 export interface FwooshConfig {
   /** The name of the project */
   name: string;
+  /** The logo to display in the sidebar */
+  logo?: string;
   /** A list of files to consider for docgen */
   docgen: string[];
   /** The output directory for the build */

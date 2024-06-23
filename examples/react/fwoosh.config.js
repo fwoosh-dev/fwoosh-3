@@ -7,6 +7,7 @@ import { repoLink } from "@fwoosh/plugin-repo-link";
 
 export default defineConfig({
   name: "React Example",
+  logo: "./images/logo.png",
   theme: {
     chrome: "mauve",
     primary: "crimson",

@@ -7,7 +7,7 @@ import { TreeItemProps } from "@mui/x-tree-view/TreeItem";
 import { TreeItem2 } from "@mui/x-tree-view/TreeItem2";
 import * as stylex from "@stylexjs/stylex";
 
-import { primary, space, text } from "@fwoosh/ui/tokens.stylex";
+import { space, text } from "@fwoosh/ui/tokens.stylex";
 import { appChrome, primaryA } from "@fwoosh/ui/tokens.stylex";
 import { useRouter_UNSTABLE as useRouter } from "waku";
 

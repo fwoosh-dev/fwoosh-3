@@ -6,9 +6,10 @@ import { sourcePanel } from "@fwoosh/plugin-source-panel";
 import { repoLink } from "@fwoosh/plugin-repo-link";
 
 export default defineConfig({
+  name: "React Example",
   theme: {
-    chrome: "sand",
-    primary: "orange",
+    chrome: "mauve",
+    primary: "crimson",
     code: {
       light: "catppuccin-latte",
       dark: "catppuccin-frappe",

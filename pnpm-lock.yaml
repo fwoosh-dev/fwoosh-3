@@ -119,6 +119,8 @@ importers:
 
   packages/extract-comments/dist/esm: {}
 
+  packages/extract-comments/src: {}
+
   packages/fwoosh:
     dependencies:
       '@fwoosh/extract-comments':
@@ -225,6 +227,8 @@ importers:
         specifier: ^0.7.5
         version: 0.7.5(rollup@4.18.0)
 
+  packages/fwoosh/dist/commonjs: {}
+
   packages/fwoosh/dist/esm: {}
 
   packages/log:
@@ -242,6 +246,8 @@ importers:
   packages/log/dist/commonjs: {}
 
   packages/log/dist/esm: {}
+
+  packages/log/src: {}
 
   packages/plugin-description:
     dependencies:
@@ -435,6 +441,8 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
+
+  packages/types/dist/commonjs: {}
 
   packages/types/dist/esm: {}
 

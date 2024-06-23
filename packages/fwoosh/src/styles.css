@@ -1,31 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@stylex stylesheet;
 
 html,
 body {
   height: 100vh;
 }
 
-.app * {
-  box-sizing: border-box;
-  cursor: default;
-}
+@layer base {
+  .app * {
+    box-sizing: border-box;
+    cursor: default;
+  }
 
-.app pre,
-body {
-  margin: 0;
-}
+  .app pre,
+  body {
+    margin: 0;
+  }
 
-.app p:first-child {
-  margin-top: 0;
-}
+  .app p:first-child {
+    margin-top: 0;
+  }
 
-.app p:only-child {
-  margin: 0;
-}
+  .app p:only-child {
+    margin: 0;
+  }
 
-.app {
-  font-family: "Inter", "system-ui";
+  .app {
+    font-family: "Inter", "system-ui";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
 }
 
 @supports (font-variation-settings: normal) {

@@ -35,18 +35,19 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
         style={[appChromeTheme, appChromeATheme, primaryTheme, primaryATheme]}
       >
         <aside {...stylex.props(styles.SidebarLayout)}>
+          <SidebarHeader />
           <StoryList active={getStorySlug(page, story)} />
         </aside>
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">
-            <Panel id="preview" minSize={20}>
-              <ToolsToolbar page={page} story={story} />
+            <Panel defaultSize={75} id="preview" minSize={20}>
+              {/* <ToolsToolbar page={page} story={story} /> */}
               <div style={{ height: "100%", width: "100%", overflow: "auto" }}>
                 {children}
               </div>
             </Panel>
             <PanelResizeHandle id="preview-panels-handle" />
-            <Panel id="panels" minSize={20} collapsible={true}>
+            <Panel defaultSize={25} id="panels" minSize={20} collapsible={true}>
               <aside style={{ height: "100%", width: "100%" }}>
                 <Panels page={page} story={story} />
               </aside>

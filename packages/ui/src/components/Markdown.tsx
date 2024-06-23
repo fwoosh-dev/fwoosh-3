@@ -166,7 +166,6 @@ function MarkdownNode({ node }: { node: Root | RootContent }) {
       </Component>
     );
   } else {
-    console.log(node);
     return (
       <Component node={node as never}>
         {"children" in node ? (

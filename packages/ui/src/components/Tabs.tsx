@@ -40,10 +40,13 @@ const tabListStyles = stylex.create({
     alignItems: "center",
     backgroundColor: appChrome.subtleBg,
     borderColor: appChrome.subtleBorder,
+
+    borderBottomWidth: 1,
     borderLeftWidth: 0,
     borderRightWidth: 0,
+    borderTopWidth: 1,
+
     borderStyle: "solid",
-    borderWidth: 1,
     display: "flex",
     gap: space[3],
     paddingBottom: space[3],

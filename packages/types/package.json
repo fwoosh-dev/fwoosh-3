@@ -10,7 +10,8 @@
   "author": "Andrew Lisowski",
   "license": "MIT",
   "dependencies": {
-    "invariant": "^2.2.4"
+    "invariant": "^2.2.4",
+    "shiki": "^1.7.0"
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
@@ -20,6 +21,9 @@
     "tshy": "^1.15.1"
   },
   "tshy": {
+    "dialects": [
+      "esm"
+    ],
     "exports": {
       ".": "./src/index.ts",
       "./globals": "./globals.d.ts",
@@ -32,11 +36,6 @@
         "source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "source": "./src/index.ts",
-        "types": "./dist/commonjs/index.d.ts",
-        "default": "./dist/commonjs/index.js"
       }
     },
     "./globals": "./globals.d.ts",
@@ -45,15 +44,8 @@
         "source": "./src/resolveFile.ts",
         "types": "./dist/esm/resolveFile.d.ts",
         "default": "./dist/esm/resolveFile.js"
-      },
-      "require": {
-        "source": "./src/resolveFile.ts",
-        "types": "./dist/commonjs/resolveFile.d.ts",
-        "default": "./dist/commonjs/resolveFile.js"
       }
     }
   },
-  "type": "module",
-  "main": "./dist/commonjs/index.js",
-  "types": "./dist/commonjs/index.d.ts"
+  "type": "module"
 }

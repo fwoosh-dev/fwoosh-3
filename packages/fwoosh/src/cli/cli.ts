@@ -1,9 +1,8 @@
 import { app, MultiCommand } from "command-line-application";
 import { lilconfig } from "lilconfig";
 import path from "path";
-import { logger } from "@fwoosh/log";
 
-import { FwooshConfig } from "@fwoosh/types";
+import { defaultConfig, FwooshConfig } from "@fwoosh/types";
 
 import { dev } from "./dev.js";
 import { build } from "./build.js";
@@ -31,7 +30,7 @@ const fwoosh: MultiCommand = {
       alias: "o",
       description: "The output directory for the build",
       type: String,
-      defaultValue: "out",
+      defaultValue: defaultConfig.out,
     },
   ],
   commands: [
@@ -66,16 +65,12 @@ async function main() {
     throw new Error("Could not find fwoosh config");
   }
 
+  const config = fwooshConfig.config as FwooshConfig;
   process.env.FWOOSH_CONFIG = fwooshConfig.filepath;
-
-  // logger.debug(JSON.stringify(fwooshConfig.config, null, 2));
 
   const mergeOptions = {
     ...options,
-    out: path.join(
-      process.cwd(),
-      (fwooshConfig?.config as FwooshConfig).out || options.out
-    ),
+    out: path.join(process.cwd(), config.out || options.out),
   };
 
   if (mergeOptions._command === "build") {

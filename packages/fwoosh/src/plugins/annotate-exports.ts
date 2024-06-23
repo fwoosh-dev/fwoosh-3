@@ -3,7 +3,7 @@ import dedent from "dedent";
 import { promises as fs } from "fs";
 import path from "path";
 import { glob } from "glob";
-import { FwooshTool, getConfig } from "@fwoosh/types";
+import { FwooshTool, defaultConfig, getConfig } from "@fwoosh/types";
 import { UserConfig } from "vite";
 
 function getAllPages() {
@@ -15,11 +15,12 @@ function getAllPages() {
 export async function annotateExportPlugin(): Promise<
   NonNullable<UserConfig["plugins"]>[0]
 > {
-  const { docgen, plugins = [] } = await getConfig();
+  const { docgen, plugins = [], theme } = await getConfig();
 
   const activeStoryFiles = new Set<string>();
 
   return [
+    // For compat replace defined __filename for ESM.
     {
       name: "inject-filename",
       transform(src, id) {
@@ -149,6 +150,8 @@ export async function annotateExportPlugin(): Promise<
         }
       },
     },
+    // This defined a virtual module that makes it to dynamically import
+    // all of the pages, meta, and plugins.
     {
       name: "@fwoosh/pages",
       resolveId: (name) => {
@@ -160,12 +163,12 @@ export async function annotateExportPlugin(): Promise<
         if (id === "@fwoosh/pages") {
           const pages = await getAllPages();
 
+          // During development keep it simple and just use the dynamic import.
+          // This way we don't have to worry about HMR and reloading the virtual file
           if (process.env.NODE_ENV === "development") {
             return dedent`
               import path from "path";
 
-              // During development keep it simple and just use the dynamic import.
-              // This way we don't have to worry about HMR and reloading the virtual file
               export const importPage = (filename) => import(/* @vite-ignore */ filename);
 
               export const importPlugin = (filename) => {
@@ -185,11 +188,11 @@ export async function annotateExportPlugin(): Promise<
             .flat()
             .map((item) => item.filepath);
 
+          // During production we want all the things to be available
+          // so we need to generate this imports. The resulting file
+          // will contain references to all the files and they'll be
+          // included in the bundle
           return dedent`
-            // During production we want all the pages to be available
-            // so we need to generate this imports. The resulting file
-            // will contain references to all the pages and they'll be
-            // included in the bundle
             export function importPage(filename) {
               switch (filename) {
                 ${pages
@@ -235,6 +238,16 @@ export async function annotateExportPlugin(): Promise<
               }
             }
           `;
+        }
+      },
+    },
+    {
+      name: "fwoosh-theme",
+      transform(src, id) {
+        if (theme && id.endsWith("theme/tokens.stylex.js")) {
+          return src
+            .replaceAll(defaultConfig.theme.chrome, theme.chrome)
+            .replaceAll(defaultConfig.theme.primary, theme.primary);
         }
       },
     },

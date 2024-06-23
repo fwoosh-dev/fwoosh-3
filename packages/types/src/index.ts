@@ -1,3 +1,5 @@
+import type { BundledTheme } from "shiki/themes";
+
 interface FwooshToolBase {
   id: string;
   filepath: string;
@@ -23,6 +25,57 @@ export interface FwooshPluginConfig {
   tools?: FwooshTool[];
 }
 
+interface GrayTheme {
+  chrome: "gray";
+  primary: "bronze" | "gold" | "brown" | "orange" | "tomato" | "red" | "ruby";
+}
+
+interface MauveTheme {
+  chrome: "mauve";
+  primary:
+    | "tomato"
+    | "red"
+    | "ruby"
+    | "crimson"
+    | "pink"
+    | "plum"
+    | "purple"
+    | "violet";
+}
+
+interface SlateTheme {
+  chrome: "slate";
+  primary: "iris" | "indigo" | "blue" | "sky" | "cyan";
+}
+
+interface SageTheme {
+  chrome: "sage";
+  primary: "mint" | "teal" | "jade" | "green";
+}
+
+interface OliveTheme {
+  chrome: "olive";
+  primary: "grass" | "lime";
+}
+
+interface SandTheme {
+  chrome: "sand";
+  primary: "yellow" | "amber" | "orange" | "brown";
+}
+
+type AppTheme =
+  | GrayTheme
+  | MauveTheme
+  | SlateTheme
+  | SageTheme
+  | OliveTheme
+  | SandTheme;
+
+interface CodeTheme {
+  light?: BundledTheme;
+  dark?: BundledTheme;
+}
+
 export interface FwooshConfig {
   /** A list of files to consider for docgen */
   docgen: string[];
@@ -30,7 +83,23 @@ export interface FwooshConfig {
   out?: string;
   /** A list of plugins that add tools to fwoosh */
   plugins?: FwooshPluginConfig[];
+  /** Theme the colors of the app */
+  theme?: AppTheme & { code?: CodeTheme };
 }
+
+export const defaultConfig = {
+  docgen: ["**/*.stories.tsx"],
+  out: "out",
+  plugins: [],
+  theme: {
+    chrome: "mauve",
+    primary: "pink",
+    code: {
+      light: "github-light",
+      dark: "github-dark",
+    },
+  },
+} satisfies FwooshConfig;
 
 export interface Story {
   id: string;

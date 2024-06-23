@@ -7,7 +7,7 @@ import { TreeItemProps } from "@mui/x-tree-view/TreeItem";
 import { TreeItem2 } from "@mui/x-tree-view/TreeItem2";
 import * as stylex from "@stylexjs/stylex";
 
-import { space, text } from "@fwoosh/ui/tokens.stylex";
+import { primary, space, text } from "@fwoosh/ui/tokens.stylex";
 import { appChrome, primaryA } from "@fwoosh/ui/tokens.stylex";
 import { useRouter_UNSTABLE as useRouter } from "waku";
 
@@ -18,12 +18,17 @@ const treeStyles = stylex.create({
   content: {
     backgroundColor: {
       default: "transparent",
-      ":is(.Mui-selected)": primaryA.active,
+      // eslint-disable-next-line @stylexjs/valid-styles
+      ":is(.Mui-selected)": {
+        default: primaryA.active,
+        ":hover": primaryA.hoveredBorder,
+      },
       ":hover": appChrome.hover,
     },
     color: {
       default: appChrome.subtleText,
       ":is(.Mui-selected)": appChrome.text,
+      ":hover": appChrome.text,
     },
     cursor: "default",
     margin: space[1],

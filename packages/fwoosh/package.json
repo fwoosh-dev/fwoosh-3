@@ -2,7 +2,7 @@
   "name": "fwoosh",
   "version": "0.1.0",
   "private": true,
-  "bin": "./dist/commonjs/cli/cli.js",
+  "bin": "./dist/esm/cli/cli.js",
   "scripts": {
     "dev:docs": "waku dev",
     "build:docs": "waku build",
@@ -49,6 +49,9 @@
     "vite-plugin-stylex-dev": "^0.7.5"
   },
   "tshy": {
+    "dialects": [
+      "esm"
+    ],
     "exclude": [
       "src/components/**/*",
       "src/plugins/**/*",
@@ -66,11 +69,6 @@
         "source": "./src/api/api.ts",
         "types": "./dist/esm/api/api.d.ts",
         "default": "./dist/esm/api/api.js"
-      },
-      "require": {
-        "source": "./src/api/api.ts",
-        "types": "./dist/commonjs/api/api.d.ts",
-        "default": "./dist/commonjs/api/api.js"
       }
     },
     "./cli": {
@@ -78,15 +76,8 @@
         "source": "./src/cli/cli.ts",
         "types": "./dist/esm/cli/cli.d.ts",
         "default": "./dist/esm/cli/cli.js"
-      },
-      "require": {
-        "source": "./src/cli/cli.ts",
-        "types": "./dist/commonjs/cli/cli.d.ts",
-        "default": "./dist/commonjs/cli/cli.js"
       }
     }
   },
-  "main": "./dist/commonjs/api/api.js",
-  "types": "./dist/commonjs/api/api.d.ts",
   "type": "module"
 }

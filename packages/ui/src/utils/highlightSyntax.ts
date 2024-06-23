@@ -6,6 +6,7 @@ import {
 } from "shiki";
 import * as stylex from "@stylexjs/stylex";
 import { appChrome, borderRadius, space } from "../theme/tokens.stylex.js";
+import { defaultConfig, getConfig } from "@fwoosh/types";
 
 const styles = stylex.create({
   base: {
@@ -36,7 +37,15 @@ export async function highlightSyntax(
     highlightLines?: number[];
   }
 ) {
+  const themes = await getConfig().then(
+    (c) => c.theme?.code || defaultConfig.theme.code
+  );
+
   return await codeToHtml(code, {
+    themes: {
+      light: themes.light,
+      dark: themes.dark,
+    },
     meta: {
       style: stylex.attrs(styles.pre).style,
       class: `${stylex.attrs(styles.pre).class} code`,
@@ -52,9 +61,5 @@ export async function highlightSyntax(
         },
       },
     ],
-    themes: {
-      light: "github-light",
-      dark: "github-dark",
-    },
   });
 }

@@ -15,6 +15,7 @@
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
     "@fwoosh/plugin-description": "workspace:*",
+    "@fwoosh/plugin-centered-decorator": "workspace:*",
     "@fwoosh/plugin-react-docgen": "workspace:*",
     "@fwoosh/plugin-source-panel": "workspace:*",
     "@fwoosh/plugin-repo-link": "workspace:*",

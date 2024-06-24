@@ -3,7 +3,12 @@ import dedent from "dedent";
 import { promises as fs } from "fs";
 import path from "path";
 import { glob } from "glob";
-import { FwooshTool, defaultConfig, getConfig } from "@fwoosh/types";
+import {
+  FwooshConfig,
+  FwooshTool,
+  defaultConfig,
+  getConfig,
+} from "@fwoosh/types";
 import { UserConfig } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
@@ -16,7 +21,18 @@ function getAllPages() {
 export async function annotateExportPlugin(): Promise<
   NonNullable<UserConfig["plugins"]>[0]
 > {
-  const { docgen, plugins = [], theme, logo } = await getConfig();
+  const {
+    docgen,
+    plugins = [],
+    theme,
+    logo,
+  } = (await import(process.env.FWOOSH_CONFIG!).then((mod) => {
+    // TODO: ....idk
+    if ("default" in mod.default) {
+      return mod.default.default;
+    }
+    return mod.default;
+  })) as FwooshConfig;
 
   const activeStoryFiles = new Set<string>();
 
@@ -242,6 +258,8 @@ export async function annotateExportPlugin(): Promise<
         }
       },
     },
+    // Stylex doesn't support dynamic imports so we need to modify the
+    // tokens file to inject the user defined theme.
     {
       name: "fwoosh-theme",
       transform(src, id) {
@@ -252,6 +270,9 @@ export async function annotateExportPlugin(): Promise<
         }
       },
     },
+    // Vite/Waku only supports static assets in the public/
+    // We could probably figure out a way to fake them into using
+    // as user defined public/
     ...(logo
       ? [
           viteStaticCopy({

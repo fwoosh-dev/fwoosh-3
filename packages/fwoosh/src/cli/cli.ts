@@ -1,6 +1,7 @@
 import { app, MultiCommand } from "command-line-application";
 import { lilconfig } from "lilconfig";
 import path from "path";
+import esbuild from "esbuild";
 
 import { defaultConfig, FwooshConfig } from "@fwoosh/types";
 
@@ -8,14 +9,29 @@ import { dev } from "./dev.js";
 import { build } from "./build.js";
 import { start } from "./start.js";
 import { Options } from "./types.js";
+import findCacheDir from "find-cache-dir";
 
 const explorer = lilconfig("fwoosh", {
   searchPlaces: ["fwoosh.config.ts", "fwoosh.config.js"],
   loaders: {
     ".ts": async (filepath: string) => {
+      // @ts-expect-error They don't have a types file
+      await import("tsx");
       const config = await import(filepath).then(
         (mod) => mod.default?.default || mod.default
       );
+      const cacheDir = findCacheDir({ name: "fwoosh", create: true })!;
+      process.env.FWOOSH_CONFIG = path.join(cacheDir, "fwoosh.config.mjs");
+
+      await esbuild.build({
+        entryPoints: [filepath],
+        outdir: cacheDir,
+        outExtension: { ".js": ".mjs" },
+        target: "es2020",
+        platform: "node",
+        format: "esm",
+      });
+
       return config;
     },
   },
@@ -66,7 +82,7 @@ async function main() {
   }
 
   const config = fwooshConfig.config as FwooshConfig;
-  process.env.FWOOSH_CONFIG = fwooshConfig.filepath;
+  process.env.FWOOSH_CONFIG ||= fwooshConfig.filepath;
 
   const mergeOptions = {
     ...options,

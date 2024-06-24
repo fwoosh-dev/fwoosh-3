@@ -25,6 +25,16 @@ const styles = stylex.create({
     flexDirection: "column",
     padding: space[5],
   },
+  iframeWrapper: {
+    backgroundColor: "white",
+    height: "100%",
+    overflow: "auto",
+    width: "100%",
+  },
+  panelWrapper: {
+    height: "100%",
+    width: "100%",
+  },
 });
 
 export interface BenchLayoutProps extends StoryContext {
@@ -45,13 +55,11 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
           <PanelGroup id="inspector" direction="vertical">
             <Panel defaultSize={75} id="preview" minSize={20}>
               {/* <ToolsToolbar page={page} story={story} /> */}
-              <div style={{ height: "100%", width: "100%", overflow: "auto" }}>
-                {children}
-              </div>
+              <div {...stylex.props(styles.iframeWrapper)}>{children}</div>
             </Panel>
             <PanelResizeHandle id="preview-panels-handle" />
             <Panel defaultSize={25} id="panels" minSize={20} collapsible={true}>
-              <aside style={{ height: "100%", width: "100%" }}>
+              <aside {...stylex.props(styles.panelWrapper)}>
                 <Panels page={page} story={story} />
               </aside>
             </Panel>

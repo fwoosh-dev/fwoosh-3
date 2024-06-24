@@ -1,6 +1,6 @@
 {
-  "name": "@fwoosh/types",
-  "description": "Shared types for fwoosh",
+  "name": "@fwoosh/plugin-centered-decorator",
+  "description": "Center the content of your stories",
   "version": "0.1.0",
   "scripts": {
     "build": "tshy",
@@ -10,14 +10,15 @@
   "author": "Andrew Lisowski",
   "license": "MIT",
   "dependencies": {
-    "invariant": "^2.2.4",
-    "shiki": "^1.7.0",
-    "type-fest": "^4.20.1"
+    "@fwoosh/ui": "workspace:*",
+    "@stylexjs/stylex": "^0.6.1"
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
-    "@types/invariant": "^2.2.37",
-    "@types/node": "^20.14.2",
+    "@fwoosh/types": "workspace:*",
+    "@types/react": "18.3.1",
+    "react": "19.0.0-beta-e7d213dfb0-20240507",
+    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "rimraf": "^5.0.7",
     "tshy": "^1.15.1"
   },
@@ -26,9 +27,7 @@
       "esm"
     ],
     "exports": {
-      ".": "./src/index.ts",
-      "./globals": "./globals.d.ts",
-      "./resolve-file": "./src/resolveFile.ts"
+      ".": "./src/index.ts"
     }
   },
   "exports": {
@@ -37,14 +36,6 @@
         "source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
-      }
-    },
-    "./globals": "./globals.d.ts",
-    "./resolve-file": {
-      "import": {
-        "source": "./src/resolveFile.ts",
-        "types": "./dist/esm/resolveFile.d.ts",
-        "default": "./dist/esm/resolveFile.js"
       }
     }
   },

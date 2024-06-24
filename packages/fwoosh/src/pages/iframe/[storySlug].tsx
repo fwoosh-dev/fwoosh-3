@@ -1,5 +1,6 @@
-import { importPage } from "@fwoosh/pages";
+import { importPage, importPlugin } from "@fwoosh/pages";
 import { getAllStorySlugs, getStoryBySlug } from "../../utils/stories";
+import { getConfig as getFwooshConfig } from "@fwoosh/types";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
@@ -19,11 +20,32 @@ export default async function Iframe({ storySlug }: { storySlug: string }) {
       throw new Error("Could not find example");
     }
 
-    return (
-      <div {...stylex.props(styles.base)}>
-        <Example />
-      </div>
+    const decorators = await getFwooshConfig().then(({ plugins = [] }) =>
+      plugins
+        .map(({ tools = [] }) => tools)
+        .flat()
+        .filter((plugin) => plugin.type === "decorator")
     );
+
+    let example = <Example />;
+
+    if (decorators.length !== 0) {
+      const decoratorComponents = await Promise.all(
+        decorators.map(({ filepath }) => importPlugin(filepath))
+      );
+
+      example = decoratorComponents.reduceRight((acc, Decorator, index) => {
+        const decorator = decorators[index]!;
+
+        return (
+          <Decorator key={decorator.id} options={decorator.options}>
+            {acc}
+          </Decorator>
+        );
+      }, example);
+    }
+
+    return <div {...stylex.props(styles.base)}>{example}</div>;
   } catch (error) {
     console.error("COULD NOT LOAD STORY IN IFRAME");
     console.error(error);

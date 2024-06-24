@@ -1,9 +1,10 @@
 import type { BundledTheme } from "shiki/themes";
+import { UnionToIntersection } from "type-fest";
 
-interface FwooshToolBase {
+interface FwooshToolBase<Options extends object = object> {
   id: string;
   filepath: string;
-  options?: object;
+  options?: Options;
   // TODO: add something like "params" so a tool can be configured with different parameters
   // for pages and stories
   // paramKey?: string;
@@ -19,7 +20,11 @@ export interface FwooshPanel extends FwooshToolBase {
   panelTitle?: string;
 }
 
-export type FwooshTool = FwooshToolbarButton | FwooshPanel;
+export interface FwooshDecorator extends FwooshToolBase {
+  type: "decorator";
+}
+
+export type FwooshTool = FwooshToolbarButton | FwooshPanel | FwooshDecorator;
 
 export interface FwooshPluginConfig {
   tools?: FwooshTool[];
@@ -76,7 +81,9 @@ interface CodeTheme {
   dark?: BundledTheme;
 }
 
-export interface FwooshConfig {
+export interface FwooshConfig<
+  Plugins extends FwooshPluginConfig[] = FwooshPluginConfig[]
+> {
   /** The name of the project */
   name: string;
   /** The logo to display in the sidebar */
@@ -86,7 +93,7 @@ export interface FwooshConfig {
   /** The output directory for the build */
   out?: string;
   /** A list of plugins that add tools to fwoosh */
-  plugins?: FwooshPluginConfig[];
+  plugins?: Plugins;
   /** Theme the colors of the app */
   theme?: AppTheme & { code?: CodeTheme };
 }
@@ -105,6 +112,18 @@ export const defaultConfig = {
     },
   },
 } satisfies FwooshConfig;
+
+type PluginOptions<T extends FwooshConfig> = T extends FwooshConfig<infer P>
+  ? P[number]["tools"] extends Array<infer C>
+    ? C extends FwooshTool
+      ? Partial<Record<C["id"], C["options"]>>
+      : never
+    : never
+  : never;
+
+export type MetaOf<T extends FwooshConfig> = {
+  options: UnionToIntersection<PluginOptions<T>>;
+};
 
 export interface Story {
   id: string;

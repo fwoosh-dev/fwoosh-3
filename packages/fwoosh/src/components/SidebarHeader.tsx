@@ -24,7 +24,7 @@ const styles = stylex.create({
   },
   logo: {
     maxHeight: 100,
-    maxWidth: "100%",
+    width: "100%",
   },
 });
 
@@ -37,7 +37,7 @@ export async function SidebarHeader() {
       {logo ? (
         <Link to="/">
           <img
-            src={`/public/${logo}`}
+            src={`/${logo}`}
             alt={`${config.name} components`}
             {...stylex.props(styles.logo)}
           />

@@ -1,15 +1,15 @@
 import { FwooshPluginConfig } from "@fwoosh/types";
 import { resolveFile } from "@fwoosh/types/resolve-file";
 
-export function zoomPlugin(): FwooshPluginConfig {
+export function zoomPlugin() {
   return {
     tools: [
       {
-        id: "zoom",
+        id: "zoom" as const,
         type: "toolbar",
         scope: "story",
         filepath: resolveFile("ZoomToolbarControl.js"),
       },
     ],
-  };
+  } satisfies FwooshPluginConfig;
 }

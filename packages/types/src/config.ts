@@ -6,7 +6,14 @@ export async function getConfig(): Promise<FwooshConfig> {
 
   invariant(configPath, "Could not find fwoosh config");
 
-  const config = await import(configPath).then((mod) => mod.default);
+  const config = await import(configPath).then((mod) => {
+    // TODO: ....idk
+    if ("default" in mod.default) {
+      return mod.default.default;
+    }
+
+    return mod.default;
+  });
 
   return config;
 }

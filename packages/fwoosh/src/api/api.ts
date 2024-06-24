@@ -1,7 +1,7 @@
-import { FwooshConfig } from "@fwoosh/types";
+import { FwooshConfig, Meta, MetaOf } from "@fwoosh/types";
 
 export * from "@fwoosh/types";
 
-export function defineConfig(config: FwooshConfig) {
-  return config;
+export function defineConfig<T extends FwooshConfig>(config: T) {
+  return config as unknown as MetaOf<T> & Meta;
 }

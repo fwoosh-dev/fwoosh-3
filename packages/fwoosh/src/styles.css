@@ -9,6 +9,7 @@ body {
   .app * {
     box-sizing: border-box;
     cursor: default;
+    font-family: "Inter", "system-ui";
   }
 
   .app pre,
@@ -25,7 +26,6 @@ body {
   }
 
   .app {
-    font-family: "Inter", "system-ui";
   }
 
   h1,
@@ -36,10 +36,22 @@ body {
   h6 {
     margin: 0;
   }
+
+  @property --logo-text-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #070056;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    path {
+      --logo-text-color: ;
+    }
+  }
 }
 
 @supports (font-variation-settings: normal) {
-  .app {
+  .app * {
     font-family: "InterVariable", "system-ui";
   } /* If using the variable font */
 }

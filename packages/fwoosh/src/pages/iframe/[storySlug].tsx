@@ -1,4 +1,4 @@
-import { importPage, importPlugin } from "@fwoosh/pages";
+import { importMeta, importPage, importPlugin } from "@fwoosh/pages";
 import { getAllStorySlugs, getStoryBySlug } from "../../utils/stories";
 import { getConfig as getFwooshConfig } from "@fwoosh/types";
 import * as stylex from "@stylexjs/stylex";
@@ -20,6 +20,7 @@ export default async function Iframe({ storySlug }: { storySlug: string }) {
       throw new Error("Could not find example");
     }
 
+    const { meta, ...stories } = await importMeta(page.file);
     const decorators = await getFwooshConfig().then(({ plugins = [] }) =>
       plugins
         .map(({ tools = [] }) => tools)
@@ -36,9 +37,24 @@ export default async function Iframe({ storySlug }: { storySlug: string }) {
 
       example = decoratorComponents.reduceRight((acc, Decorator, index) => {
         const decorator = decorators[index]!;
+        const globalDecoratorOptions = decorator.options;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const pageLevelDecoratorOptions = (meta?.options as any)?.[
+          decorator.id
+        ] as object | undefined;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const storyLevelDecoratorOptions = (stories[story.name] as any).story
+          ?.options?.[decorator.id];
 
         return (
-          <Decorator key={decorator.id} options={decorator.options}>
+          <Decorator
+            key={decorator.id}
+            options={{
+              ...globalDecoratorOptions,
+              ...pageLevelDecoratorOptions,
+              ...storyLevelDecoratorOptions,
+            }}
+          >
             {acc}
           </Decorator>
         );

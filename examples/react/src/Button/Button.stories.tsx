@@ -1,9 +1,9 @@
 "use client";
 
-import { Meta } from "fwoosh";
-import { Button } from "./Button";
+import { PageMeta } from "fwoosh";
+import { Button } from "./Button.js";
 
-export const meta: Meta = {
+export const meta: PageMeta = {
   title: "Components/Button",
   component: Button,
   description: "A button is something that can be clicked",
@@ -27,3 +27,11 @@ export const Primary = () => <Button>Click me</Button>;
 
 /** A button can be disabled */
 export const Disabled = () => <Button disabled>Disabled</Button>;
+
+Disabled.story = {
+  options: {
+    centered: {
+      enabled: false,
+    },
+  },
+} satisfies { options?: PageMeta["options"] };

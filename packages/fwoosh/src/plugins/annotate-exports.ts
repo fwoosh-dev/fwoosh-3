@@ -195,7 +195,6 @@ export async function annotateExportPlugin(): Promise<
 
               export const importMeta = (filename) => 
                 import(/* @vite-ignore */ \`/fwoosh-meta?file=\${filename}\`)
-                  .then((mod) => mod.meta)
             `;
           }
 
@@ -246,7 +245,7 @@ export async function annotateExportPlugin(): Promise<
                   .map((page) => {
                     return dedent`
                     case '${page}':
-                      return import('/fwoosh-meta?file=${page}').then((mod) => mod.meta);
+                      return import('/fwoosh-meta?file=${page}')
                   `;
                   })
                   .join("\n")}

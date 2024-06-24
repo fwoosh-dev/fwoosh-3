@@ -122,7 +122,7 @@ type PluginOptions<T extends FwooshConfig> = T extends FwooshConfig<infer P>
   : never;
 
 export type MetaOf<T extends FwooshConfig> = {
-  options: UnionToIntersection<PluginOptions<T>>;
+  options?: UnionToIntersection<PluginOptions<T>>;
 };
 
 export interface Story {
@@ -157,6 +157,10 @@ export interface Meta<T = object> {
   /** A top level description for the component. */
   description?: string;
 }
+
+export type DummyMeta = Meta<object> & {
+  options?: object;
+};
 
 // We add extra properties to the component so that we can
 // use the component in the story context

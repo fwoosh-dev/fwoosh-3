@@ -7,7 +7,6 @@ import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
   iframe: {
-    borderWidth: 0,
     display: "flex",
     height: "100%",
     width: "100%",
@@ -23,6 +22,7 @@ export default async function Story({ storySlug }: { storySlug: string }) {
         id={storyPreviewId}
         src={`/iframe/${storySlug}`}
         {...stylex.props(styles.iframe)}
+        style={{ border: "none" }}
       />
     </BenchLayout>
   );

@@ -23,7 +23,7 @@ const styles = stylex.create({
     },
   },
   logo: {
-    maxHeight: 100,
+    maxHeight: 80,
     width: "100%",
   },
 });

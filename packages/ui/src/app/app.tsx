@@ -18,7 +18,8 @@ const inspectorStyles = stylex.create({
     borderStyle: "solid",
     borderWidth: 1,
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 2px 4px 0px",
-    margin: space[5],
+    height: `calc(100% - ${space[4]} * 2)`,
+    margin: space[4],
     overflow: "hidden",
   },
 });

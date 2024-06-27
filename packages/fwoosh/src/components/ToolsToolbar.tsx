@@ -1,7 +1,7 @@
 import { FwooshToolbarButton, StoryContext, getConfig } from "@fwoosh/types";
 import { importPlugin } from "@fwoosh/pages";
 import { InspectorToolbar } from "@fwoosh/ui/app";
-import { HStack, HStackProps } from "@fwoosh/ui/components";
+import { HStack, HStackProps } from "@fwoosh/ui/components/HStack";
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({

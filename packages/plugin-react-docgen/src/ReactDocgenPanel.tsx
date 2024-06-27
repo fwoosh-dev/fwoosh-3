@@ -1,18 +1,18 @@
 import { StoryContext } from "@fwoosh/types";
 import { importMeta } from "@fwoosh/pages";
 import {
-  InlineCode,
-  TabPanelContent,
   Table,
   TableBody,
   TableCell,
   TableColumn,
   TableHeader,
   TableRow,
-  Markdown,
-} from "@fwoosh/ui/components";
+} from "@fwoosh/ui/components/Table";
+import { InlineCode } from "@fwoosh/ui/components/InlineCode";
+import { TabPanelContent } from "@fwoosh/ui/components/Tabs";
+import { Markdown } from "@fwoosh/ui/components/Markdown";
 import docgen from "react-docgen-typescript";
-import { highlightSyntax } from "@fwoosh/ui/highlight-syntax";
+import { highlightSyntax } from "@fwoosh/ui/utils/highlightSyntax";
 
 const defaultOptions: docgen.ParserOptions = {
   propFilter: (prop) => {

@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import { FwooshPanel, StoryContext, getConfig } from "@fwoosh/types";
 import { importPlugin } from "@fwoosh/pages";
-import { Spinner, Tab, TabList, TabPanel, Tabs } from "@fwoosh/ui/components";
+import { Tab, TabList, TabPanel, Tabs } from "@fwoosh/ui/components/Tabs";
+import { Spinner } from "@fwoosh/ui/components/Spinner";
 
 export async function Panel({
   panel,

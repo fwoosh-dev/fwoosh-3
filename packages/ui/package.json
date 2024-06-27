@@ -44,16 +44,92 @@
     "dialects": [
       "esm"
     ],
-    "exports": {
-      ".": "./src/index.ts",
-      "./components": "./src/components/index.ts",
-      "./tokens.stylex": "./src/theme/tokens.stylex.ts",
-      "./theme.stylex": "./src/theme/theme.stylex.ts",
-      "./app": "./src/app/app.tsx",
-      "./highlight-syntax": "./src/utils/highlightSyntax.ts"
-    }
+    "exports": [
+      "src/index.ts",
+      "src/app.tsx",
+      "src/components/**",
+      "src/theme/*.stylex.ts",
+      "src/utils/*.ts"
+    ]
   },
   "exports": {
+    "./app": {
+      "import": {
+        "source": "./src/app.tsx",
+        "types": "./dist/esm/app.d.ts",
+        "default": "./dist/esm/app.js"
+      }
+    },
+    "./components/Button": {
+      "import": {
+        "source": "./src/components/Button.tsx",
+        "types": "./dist/esm/components/Button.d.ts",
+        "default": "./dist/esm/components/Button.js"
+      }
+    },
+    "./components/FocusRing": {
+      "import": {
+        "source": "./src/components/FocusRing.tsx",
+        "types": "./dist/esm/components/FocusRing.d.ts",
+        "default": "./dist/esm/components/FocusRing.js"
+      }
+    },
+    "./components/HStack": {
+      "import": {
+        "source": "./src/components/HStack.tsx",
+        "types": "./dist/esm/components/HStack.d.ts",
+        "default": "./dist/esm/components/HStack.js"
+      }
+    },
+    "./components/IconButton": {
+      "import": {
+        "source": "./src/components/IconButton.tsx",
+        "types": "./dist/esm/components/IconButton.d.ts",
+        "default": "./dist/esm/components/IconButton.js"
+      }
+    },
+    "./components/InlineCode": {
+      "import": {
+        "source": "./src/components/InlineCode.tsx",
+        "types": "./dist/esm/components/InlineCode.d.ts",
+        "default": "./dist/esm/components/InlineCode.js"
+      }
+    },
+    "./components/Markdown": {
+      "import": {
+        "source": "./src/components/Markdown.tsx",
+        "types": "./dist/esm/components/Markdown.d.ts",
+        "default": "./dist/esm/components/Markdown.js"
+      }
+    },
+    "./components/Spinner": {
+      "import": {
+        "source": "./src/components/Spinner.tsx",
+        "types": "./dist/esm/components/Spinner.d.ts",
+        "default": "./dist/esm/components/Spinner.js"
+      }
+    },
+    "./components/Table": {
+      "import": {
+        "source": "./src/components/Table.tsx",
+        "types": "./dist/esm/components/Table.d.ts",
+        "default": "./dist/esm/components/Table.js"
+      }
+    },
+    "./components/Tabs": {
+      "import": {
+        "source": "./src/components/Tabs.tsx",
+        "types": "./dist/esm/components/Tabs.d.ts",
+        "default": "./dist/esm/components/Tabs.js"
+      }
+    },
+    "./components/Tooltip": {
+      "import": {
+        "source": "./src/components/Tooltip.tsx",
+        "types": "./dist/esm/components/Tooltip.d.ts",
+        "default": "./dist/esm/components/Tooltip.js"
+      }
+    },
     ".": {
       "import": {
         "source": "./src/index.ts",
@@ -61,41 +137,28 @@
         "default": "./dist/esm/index.js"
       }
     },
-    "./components": {
-      "import": {
-        "source": "./src/components/index.ts",
-        "types": "./dist/esm/components/index.d.ts",
-        "default": "./dist/esm/components/index.js"
-      }
-    },
-    "./tokens.stylex": {
-      "import": {
-        "source": "./src/theme/tokens.stylex.ts",
-        "types": "./dist/esm/theme/tokens.stylex.d.ts",
-        "default": "./dist/esm/theme/tokens.stylex.js"
-      }
-    },
-    "./theme.stylex": {
+    "./theme/theme.stylex": {
       "import": {
         "source": "./src/theme/theme.stylex.ts",
         "types": "./dist/esm/theme/theme.stylex.d.ts",
         "default": "./dist/esm/theme/theme.stylex.js"
       }
     },
-    "./app": {
+    "./theme/tokens.stylex": {
       "import": {
-        "source": "./src/app/app.tsx",
-        "types": "./dist/esm/app/app.d.ts",
-        "default": "./dist/esm/app/app.js"
+        "source": "./src/theme/tokens.stylex.ts",
+        "types": "./dist/esm/theme/tokens.stylex.d.ts",
+        "default": "./dist/esm/theme/tokens.stylex.js"
       }
     },
-    "./highlight-syntax": {
+    "./utils/highlightSyntax": {
       "import": {
         "source": "./src/utils/highlightSyntax.ts",
         "types": "./dist/esm/utils/highlightSyntax.d.ts",
         "default": "./dist/esm/utils/highlightSyntax.js"
       }
-    }
+    },
+    "./package.json": "./package.json"
   },
   "type": "module"
 }

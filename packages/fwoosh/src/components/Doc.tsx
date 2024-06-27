@@ -1,6 +1,6 @@
 import { Page } from "@fwoosh/types";
 import { importPage } from "@fwoosh/pages";
-import { Markdown } from "@fwoosh/ui/components";
+import { Markdown } from "@fwoosh/ui/components/Markdown";
 
 async function DocExample({ page, name }: { page: Page; name: string }) {
   try {

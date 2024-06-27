@@ -1,8 +1,8 @@
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
-import { appChrome, appChromeA } from "../theme/tokens.stylex.js";
-import { borderRadius, space } from "../theme/tokens.stylex.js";
+import { appChrome, appChromeA } from "./theme/tokens.stylex.js";
+import { borderRadius, space } from "./theme/tokens.stylex.js";
 import { useHover, mergeProps } from "react-aria";
 
 const DARK = "@media (prefers-color-scheme: dark)";

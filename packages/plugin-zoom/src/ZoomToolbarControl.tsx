@@ -2,12 +2,9 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { storyPreviewId } from "@fwoosh/types";
-import {
-  HStack,
-  IconButton,
-  Tooltip,
-  TooltipTrigger,
-} from "@fwoosh/ui/components";
+import { HStack } from "@fwoosh/ui/components/HStack";
+import { IconButton } from "@fwoosh/ui/components/IconButton";
+import { Tooltip, TooltipTrigger } from "@fwoosh/ui/components/Tooltip";
 import { PlusIcon, MinusIcon, ResetIcon } from "@radix-ui/react-icons";
 
 function browserSupportsCssZoom(): boolean {

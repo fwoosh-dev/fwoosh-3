@@ -10,13 +10,13 @@ import { ToolsToolbar } from "./ToolsToolbar";
 import { Panels } from "./Panels";
 import { Panel, PanelGroup, PanelResizeHandle } from "./ResizablePanels";
 import * as stylex from "@stylexjs/stylex";
-import { space } from "@fwoosh/ui/tokens.stylex";
+import { space } from "@fwoosh/ui/theme/tokens.stylex";
 import {
   appChromeTheme,
   appChromeATheme,
   primaryTheme,
   primaryATheme,
-} from "@fwoosh/ui/theme.stylex";
+} from "@fwoosh/ui/theme/theme.stylex";
 import { getStorySlug } from "../utils/stories";
 
 const styles = stylex.create({
@@ -51,10 +51,11 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
           <SidebarHeader />
           <StoryList active={getStorySlug(page, story)} />
         </aside>
+
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">
             <Panel defaultSize={75} id="preview" minSize={20}>
-              {/* <ToolsToolbar page={page} story={story} /> */}
+              <ToolsToolbar page={page} story={story} />
               <div {...stylex.props(styles.iframeWrapper)}>{children}</div>
             </Panel>
             <PanelResizeHandle id="preview-panels-handle" />

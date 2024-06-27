@@ -236,8 +236,6 @@ importers:
 
   packages/fwoosh/dist/esm: {}
 
-  packages/fwoosh/src: {}
-
   packages/log:
     devDependencies:
       '@fwoosh/config-typescript':
@@ -287,7 +285,35 @@ importers:
 
   packages/plugin-centered-decorator/dist/esm: {}
 
-  packages/plugin-centered-decorator/src: {}
+  packages/plugin-controls-panel:
+    dependencies:
+      '@fwoosh/ui':
+        specifier: workspace:*
+        version: link:../ui
+    devDependencies:
+      '@fwoosh/config-typescript':
+        specifier: workspace:*
+        version: link:../config-typescript
+      '@fwoosh/types':
+        specifier: workspace:*
+        version: link:../types
+      '@types/react':
+        specifier: 18.3.1
+        version: 18.3.1
+      react:
+        specifier: 19.0.0-beta-e7d213dfb0-20240507
+        version: 19.0.0-beta-e7d213dfb0-20240507
+      react-server-dom-webpack:
+        specifier: 19.0.0-beta-e7d213dfb0-20240507
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      tshy:
+        specifier: ^1.15.1
+        version: 1.15.1
+
+  packages/plugin-controls/dist/esm: {}
 
   packages/plugin-description:
     dependencies:
@@ -355,8 +381,6 @@ importers:
 
   packages/plugin-react-docgen/dist/esm: {}
 
-  packages/plugin-react-docgen/src: {}
-
   packages/plugin-repo-link:
     dependencies:
       '@fwoosh/ui':
@@ -423,8 +447,6 @@ importers:
 
   packages/plugin-source-panel/dist/esm: {}
 
-  packages/plugin-source-panel/src: {}
-
   packages/plugin-zoom:
     dependencies:
       '@fwoosh/ui':
@@ -460,8 +482,6 @@ importers:
         version: 1.15.1
 
   packages/plugin-zoom/dist/esm: {}
-
-  packages/plugin-zoom/src: {}
 
   packages/types:
     dependencies:

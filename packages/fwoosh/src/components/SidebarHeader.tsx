@@ -1,7 +1,7 @@
 import { getConfig } from "@fwoosh/types";
 import { Link } from "waku";
 import * as stylex from "@stylexjs/stylex";
-import { primary, space } from "@fwoosh/ui/tokens.stylex";
+import { primary, space } from "@fwoosh/ui/theme/tokens.stylex";
 import path from "path";
 
 const styles = stylex.create({

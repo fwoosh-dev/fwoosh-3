@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 import * as stylex from "@stylexjs/stylex";
 
 import { StoryContext } from "@fwoosh/types";
-import { highlightSyntax } from "@fwoosh/ui/highlight-syntax";
+import { highlightSyntax } from "@fwoosh/ui/utils/highlightSyntax";
 
 const styles = stylex.create({
   base: {

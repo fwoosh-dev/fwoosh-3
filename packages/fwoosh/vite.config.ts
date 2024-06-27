@@ -7,7 +7,7 @@ const config = defineConfig({
   plugins: [
     annotateExportPlugin(),
     styleX({
-      libraries: ["@fwoosh/ui/components", "@fwoosh/ui/app"],
+      libraries: ["@fwoosh/ui/components/*", "@fwoosh/ui/app"],
     }),
   ],
 });

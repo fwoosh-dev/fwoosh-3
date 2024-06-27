@@ -1,5 +1,6 @@
 import { FwooshPluginProps } from "@fwoosh/types";
-import { IconLink, Tooltip, TooltipTrigger } from "@fwoosh/ui/components";
+import { IconLink } from "@fwoosh/ui/components/IconButton";
+import { Tooltip, TooltipTrigger } from "@fwoosh/ui/components/Tooltip";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { RepoLinkOptions } from "./types.js";
 

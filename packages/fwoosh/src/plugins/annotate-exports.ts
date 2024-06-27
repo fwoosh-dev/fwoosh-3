@@ -3,12 +3,7 @@ import dedent from "dedent";
 import { promises as fs } from "fs";
 import path from "path";
 import { glob } from "glob";
-import {
-  FwooshConfig,
-  FwooshTool,
-  defaultConfig,
-  getConfig,
-} from "@fwoosh/types";
+import { FwooshConfig, FwooshTool, defaultConfig } from "@fwoosh/types";
 import { UserConfig } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
@@ -112,47 +107,23 @@ export async function annotateExportPlugin(): Promise<
     {
       name: "fwoosh-meta",
       resolveId: (name) => {
-        // Match any import that starts with /fwoosh-meta
+        // Vite only accepts virtual modules with the identifier at the
+        // start (aka /fwoosh-meta) but to get the vite transforms/optimize deps
+        // to work it needs to be a real path so we can resolve all of the deps
+        // appropriately. That's why it changes to a query string.
         if (name.startsWith("/fwoosh-meta")) {
-          return name;
+          return name.replace("/fwoosh-meta?file=", "") + "?meta=true";
         }
       },
       load: async (id) => {
-        if (id.startsWith("/fwoosh-meta")) {
-          const actualFile = id.replace("/fwoosh-meta?file=", "");
+        if (id.endsWith("?meta=true")) {
+          const actualFile = id.replace("?meta=true", "");
           const contents = await fs
             .readFile(actualFile, "utf-8")
             // Remove the `use client` line so that the file can be evaluated in the server
             .then((c) => c.replace(/['"`]use client['"`]/, ""));
 
           return contents;
-        }
-      },
-      transform(code, id) {
-        if (id.startsWith("/fwoosh-meta")) {
-          const actualFile = id.replace("/fwoosh-meta?file=", "");
-          const dir = path.dirname(actualFile);
-          activeStoryFiles.add(actualFile);
-
-          // Update the relative paths in the file to be absolute
-          // I couldn't find another way of making it seem like this file is
-          // resolved from the same place as the original file.
-          const modifiedCode = code.replace(
-            /from\s+['"](.+)['"]/g,
-            (_, importPath) => {
-              if (importPath.startsWith(".")) {
-                const resolvedImportPath = path.join(dir, importPath);
-                return `from '${resolvedImportPath}'`;
-              }
-
-              return `from '${importPath}'`;
-            }
-          );
-
-          return {
-            code: modifiedCode,
-            map: null,
-          };
         }
       },
       handleHotUpdate({ server, file, modules }) {

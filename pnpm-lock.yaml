@@ -8,11 +8,6 @@ overrides:
   react: 19.0.0-beta-e7d213dfb0-20240507
   react-dom: 19.0.0-beta-e7d213dfb0-20240507
 
-patchedDependencies:
-  waku@0.20.2:
-    hash: qbgzvnraoavltfbat7oiiug6o4
-    path: patches/waku@0.20.2.patch
-
 importers:
 
   .:
@@ -28,7 +23,7 @@ importers:
         version: 0.6.1
       '@turbo/gen':
         specifier: ^2.0.4
-        version: 2.0.4(@swc/core@1.4.17)(@types/node@20.14.2)(typescript@5.4.5)
+        version: 2.0.4(@swc/core@1.5.24)(@types/node@20.14.2)(typescript@5.4.5)
       eslint:
         specifier: 9.x
         version: 9.5.0
@@ -69,6 +64,9 @@ importers:
       '@fwoosh/plugin-centered-decorator':
         specifier: workspace:*
         version: link:../../packages/plugin-centered-decorator
+      '@fwoosh/plugin-control-panel':
+        specifier: workspace:*
+        version: link:../../packages/plugin-control-panel
       '@fwoosh/plugin-description':
         specifier: workspace:*
         version: link:../../packages/plugin-description
@@ -95,7 +93,7 @@ importers:
         version: link:../../packages/fwoosh
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
 
   packages/config-typescript: {}
 
@@ -189,7 +187,7 @@ importers:
         version: 2.0.19(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24)(esbuild@0.21.5))
       tsx:
         specifier: ^4.15.5
         version: 4.15.5
@@ -197,8 +195,8 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5(vite@5.3.1(@types/node@20.14.2)(terser@5.31.1))
       waku:
-        specifier: 0.20.2
-        version: 0.20.2(patch_hash=qbgzvnraoavltfbat7oiiug6o4)(@swc/helpers@0.5.11)(@types/node@20.14.2)(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5)))(react@19.0.0-beta-e7d213dfb0-20240507)(terser@5.31.1)
+        specifier: 0.21.0-alpha.2
+        version: 0.21.0-alpha.2(@swc/helpers@0.5.11)(@types/node@20.14.2)(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24)(esbuild@0.21.5)))(react@19.0.0-beta-e7d213dfb0-20240507)(terser@5.31.1)
     devDependencies:
       '@fwoosh/config-typescript':
         specifier: workspace:*
@@ -275,7 +273,7 @@ importers:
         version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -285,11 +283,14 @@ importers:
 
   packages/plugin-centered-decorator/dist/esm: {}
 
-  packages/plugin-controls-panel:
+  packages/plugin-control-panel:
     dependencies:
       '@fwoosh/ui':
         specifier: workspace:*
         version: link:../ui
+      tinybase:
+        specifier: ^4.8.15
+        version: 4.8.15(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)
     devDependencies:
       '@fwoosh/config-typescript':
         specifier: workspace:*
@@ -305,13 +306,15 @@ importers:
         version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
+
+  packages/plugin-control-panel/dist/esm: {}
 
   packages/plugin-controls/dist/esm: {}
 
@@ -335,7 +338,7 @@ importers:
         version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -371,7 +374,7 @@ importers:
         version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -404,7 +407,7 @@ importers:
         version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -437,7 +440,7 @@ importers:
         version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -473,7 +476,7 @@ importers:
         version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -581,7 +584,7 @@ importers:
         version: 19.0.0-beta-e7d213dfb0-20240507
       react-server-dom-webpack:
         specifier: 19.0.0-beta-e7d213dfb0-20240507
-        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17))
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -1105,8 +1108,8 @@ packages:
   '@formatjs/intl-localematcher@0.5.4':
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
 
-  '@hono/node-server@1.11.1':
-    resolution: {integrity: sha512-GW1Iomhmm1o4Z+X57xGby8A35Cu9UZLL7pSMdqDBkD99U5cywff8F+8hLk5aBTzNubnsFAvWQ/fZjNwPsEn9lA==}
+  '@hono/node-server@1.11.2':
+    resolution: {integrity: sha512-JhX0nUC66GeDxpIdMKWDRMEwtQBa64CY907iAF1sYqb4m2p2PdSU7zkbnNhAZLg/6IjSlTuj6CF307JlBXVvpg==}
     engines: {node: '>=18.14.1'}
 
   '@humanwhocodes/module-importer@1.0.1':
@@ -1915,71 +1918,71 @@ packages:
   '@stylexjs/stylex@0.6.1':
     resolution: {integrity: sha512-1dKZG4VA8qxNf8LqiDWM0JL2YIFpLlblRivv0fabpc+PY02FqwOMdKRWscNCZy2dHGrUOGjjUvkPIU/doAqGzg==}
 
-  '@swc/core-darwin-arm64@1.4.17':
-    resolution: {integrity: sha512-HVl+W4LezoqHBAYg2JCqR+s9ife9yPfgWSj37iIawLWzOmuuJ7jVdIB7Ee2B75bEisSEKyxRlTl6Y1Oq3owBgw==}
+  '@swc/core-darwin-arm64@1.5.24':
+    resolution: {integrity: sha512-M7oLOcC0sw+UTyAuL/9uyB9GeO4ZpaBbH76JSH6g1m0/yg7LYJZGRmplhDmwVSDAR5Fq4Sjoi1CksmmGkgihGA==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@swc/core-darwin-x64@1.4.17':
-    resolution: {integrity: sha512-WYRO9Fdzq4S/he8zjW5I95G1zcvyd9yyD3Tgi4/ic84P5XDlSMpBDpBLbr/dCPjmSg7aUXxNQqKqGkl6dQxYlA==}
+  '@swc/core-darwin-x64@1.5.24':
+    resolution: {integrity: sha512-MfcFjGGYognpSBSos2pYUNYJSmqEhuw5ceGr6qAdME7ddbjGXliza4W6FggsM+JnWwpqa31+e7/R+GetW4WkaQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [darwin]
 
-  '@swc/core-linux-arm-gnueabihf@1.4.17':
-    resolution: {integrity: sha512-cgbvpWOvtMH0XFjvwppUCR+Y+nf6QPaGu6AQ5hqCP+5Lv2zO5PG0RfasC4zBIjF53xgwEaaWmGP5/361P30X8Q==}
+  '@swc/core-linux-arm-gnueabihf@1.5.24':
+    resolution: {integrity: sha512-amI2pwtcWV3E/m/nf+AQtn1LWDzKLZyjCmWd3ms7QjEueWYrY8cU1Y4Wp7wNNsxIoPOi8zek1Uj2wwFD/pttNQ==}
     engines: {node: '>=10'}
     cpu: [arm]
     os: [linux]
 
-  '@swc/core-linux-arm64-gnu@1.4.17':
-    resolution: {integrity: sha512-l7zHgaIY24cF9dyQ/FOWbmZDsEj2a9gRFbmgx2u19e3FzOPuOnaopFj0fRYXXKCmtdx+anD750iBIYnTR+pq/Q==}
+  '@swc/core-linux-arm64-gnu@1.5.24':
+    resolution: {integrity: sha512-sTSvmqMmgT1ynH/nP75Pc51s+iT4crZagHBiDOf5cq+kudUYjda9lWMs7xkXB/TUKFHPCRK0HGunl8bkwiIbuw==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
 
-  '@swc/core-linux-arm64-musl@1.4.17':
-    resolution: {integrity: sha512-qhH4gr9gAlVk8MBtzXbzTP3BJyqbAfUOATGkyUtohh85fPXQYuzVlbExix3FZXTwFHNidGHY8C+ocscI7uDaYw==}
+  '@swc/core-linux-arm64-musl@1.5.24':
+    resolution: {integrity: sha512-vd2/hfOBGbrX21FxsFdXCUaffjkHvlZkeE2UMRajdXifwv79jqOHIJg3jXG1F3ZrhCghCzirFts4tAZgcG8XWg==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
 
-  '@swc/core-linux-x64-gnu@1.4.17':
-    resolution: {integrity: sha512-vRDFATL1oN5oZMImkwbgSHEkp8xG1ofEASBypze01W1Tqto8t+yo6gsp69wzCZBlxldsvPpvFZW55Jq0Rn+UnA==}
+  '@swc/core-linux-x64-gnu@1.5.24':
+    resolution: {integrity: sha512-Zrdzi7NqzQxm2BvAG5KyOSBEggQ7ayrxh599AqqevJmsUXJ8o2nMiWQOBvgCGp7ye+Biz3pvZn1EnRzAp+TpUg==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
 
-  '@swc/core-linux-x64-musl@1.4.17':
-    resolution: {integrity: sha512-zQNPXAXn3nmPqv54JVEN8k2JMEcMTQ6veVuU0p5O+A7KscJq+AGle/7ZQXzpXSfUCXlLMX4wvd+rwfGhh3J4cw==}
+  '@swc/core-linux-x64-musl@1.5.24':
+    resolution: {integrity: sha512-1F8z9NRi52jdZQCGc5sflwYSctL6omxiVmIFVp8TC9nngjQKc00TtX/JC2Eo2HwvgupkFVl5YQJidAck9YtmJw==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
 
-  '@swc/core-win32-arm64-msvc@1.4.17':
-    resolution: {integrity: sha512-z86n7EhOwyzxwm+DLE5NoLkxCTme2lq7QZlDjbQyfCxOt6isWz8rkW5QowTX8w9Rdmk34ncrjSLvnHOeLY17+w==}
+  '@swc/core-win32-arm64-msvc@1.5.24':
+    resolution: {integrity: sha512-cKpP7KvS6Xr0jFSTBXY53HZX/YfomK5EMQYpCVDOvfsZeYHN20sQSKXfpVLvA/q2igVt1zzy1XJcOhpJcgiKLg==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [win32]
 
-  '@swc/core-win32-ia32-msvc@1.4.17':
-    resolution: {integrity: sha512-JBwuSTJIgiJJX6wtr4wmXbfvOswHFj223AumUrK544QV69k60FJ9q2adPW9Csk+a8wm1hLxq4HKa2K334UHJ/g==}
+  '@swc/core-win32-ia32-msvc@1.5.24':
+    resolution: {integrity: sha512-IoPWfi0iwqjZuf7gE223+B97/ZwkKbu7qL5KzGP7g3hJrGSKAvv7eC5Y9r2iKKtLKyv5R/T6Ho0kFR/usi7rHw==}
     engines: {node: '>=10'}
     cpu: [ia32]
     os: [win32]
 
-  '@swc/core-win32-x64-msvc@1.4.17':
-    resolution: {integrity: sha512-jFkOnGQamtVDBm3MF5Kq1lgW8vx4Rm1UvJWRUfg+0gx7Uc3Jp3QMFeMNw/rDNQYRDYPG3yunCC+2463ycd5+dg==}
+  '@swc/core-win32-x64-msvc@1.5.24':
+    resolution: {integrity: sha512-zHgF2k1uVJL8KIW+PnVz1To4a3Cz9THbh2z2lbehaF/gKHugH4c3djBozU4das1v35KOqf5jWIEviBLql2wDLQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [win32]
 
-  '@swc/core@1.4.17':
-    resolution: {integrity: sha512-tq+mdWvodMBNBBZbwFIMTVGYHe9N7zvEaycVVjfvAx20k1XozHbHhRv+9pEVFJjwRxLdXmtvFZd3QZHRAOpoNQ==}
+  '@swc/core@1.5.24':
+    resolution: {integrity: sha512-Eph9zvO4xvqWZGVzTdtdEJ0Vqf0VIML/o/e4Qd2RLOqtfgnlRi7avmMu5C0oqciJ0tk+hqdUKVUZ4JPoPaiGvQ==}
     engines: {node: '>=10'}
     peerDependencies:
-      '@swc/helpers': ^0.5.0
+      '@swc/helpers': '*'
     peerDependenciesMeta:
       '@swc/helpers':
         optional: true
@@ -2161,8 +2164,8 @@ packages:
     resolution: {integrity: sha512-k/Bfne7lrP7hcb7m9zSsgcBmo+8eicqqfNAJ7uUY+jkTFpKeH2FSkWpFRtimBxgkyvqfu9jTPRbYOvud6isdXA==}
     engines: {node: ^18.18.0 || >=20.0.0}
 
-  '@vitejs/plugin-react@4.2.1':
-    resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
+  '@vitejs/plugin-react@4.3.0':
+    resolution: {integrity: sha512-KcEbMsn4Dpk+LIbHMj7gDPRKaTMStxxWRkRmxsg/jVdFdJCZWt1SchZcf0M4t8lIKdwwMsEyzhrcOXRrDPtOBw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
@@ -3018,8 +3021,8 @@ packages:
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
-  hono@4.3.2:
-    resolution: {integrity: sha512-wiZcF5N06tc232U11DnqW6hP8DNoypjsrxslKXfvOqOAkTdh7K1HLZJH/92Mf+urxUTGi96f1w4xx/1Qozoqiw==}
+  hono@4.4.2:
+    resolution: {integrity: sha512-bRhZ+BM9r04lRN2i9wiZ18yQNbZxHsmmRIItoAb43nRkHnIDsFhFh4mJ0seEs06FvenibpAgSVNHQ8ZzcDQx2A==}
     engines: {node: '>=16.0.0'}
 
   http-proxy-agent@7.0.2:
@@ -4158,6 +4161,54 @@ packages:
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
+  tinybase@4.8.15:
+    resolution: {integrity: sha512-mw0+R+IbMDGvxpH2G6/QPDzJATkPQc6NY6qW5RX6xqZiES57SX0ubpF9QGeAtuYwSjMN67rE1aNCRdqRkmc4XA==}
+    hasBin: true
+    peerDependencies:
+      '@automerge/automerge-repo': ^1.1.12
+      '@journeyapps/powersync-sdk-common': ^1.6.0
+      '@libsql/client': ^0.6.2
+      '@sqlite.org/sqlite-wasm': ^3.46.0-build2
+      '@vlcn.io/crsqlite-wasm': ^0.16.0
+      electric-sql: ^0.12.1
+      expo-sqlite: 13.2.1
+      partykit: ^0.0.107
+      partysocket: ^1.0.1
+      prettier: ^3.3.2
+      react: 19.0.0-beta-e7d213dfb0-20240507
+      react-dom: 19.0.0-beta-e7d213dfb0-20240507
+      sqlite3: ^5.1.7
+      yjs: ^13.6.18
+    peerDependenciesMeta:
+      '@automerge/automerge-repo':
+        optional: true
+      '@journeyapps/powersync-sdk-common':
+        optional: true
+      '@libsql/client':
+        optional: true
+      '@sqlite.org/sqlite-wasm':
+        optional: true
+      '@vlcn.io/crsqlite-wasm':
+        optional: true
+      electric-sql:
+        optional: true
+      expo-sqlite:
+        optional: true
+      partykit:
+        optional: true
+      partysocket:
+        optional: true
+      prettier:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      sqlite3:
+        optional: true
+      yjs:
+        optional: true
+
   tinycolor2@1.6.0:
     resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
 
@@ -4392,8 +4443,8 @@ packages:
   vite-plugin-stylex-dev@0.7.5:
     resolution: {integrity: sha512-MY4kuBDP6zVvcqepCZ/yG8njjXCXgxkceD7Ma4+CqSd+yBrIU5CF5dAdITbb69cG4oq9gmsV+zIXl+/5V9HN/w==}
 
-  vite@5.2.11:
-    resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
+  vite@5.2.12:
+    resolution: {integrity: sha512-/gC8GxzxMK5ntBwb48pR32GGhENnjtY30G4A0jemunsBkiEZFw60s8InGpN8gkhHEkjnRK1aSAxeQgwvFhUHAA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -4448,14 +4499,14 @@ packages:
       terser:
         optional: true
 
-  waku@0.20.2:
-    resolution: {integrity: sha512-Usk2QMq3kr85O3Pq+OqBpg3TgLXZbB+jE7Hwoe52qn+YQNgXAjlmHKtLnMsuT6HX+VD/wEBfyHOJp3X8aQ28RQ==}
+  waku@0.21.0-alpha.2:
+    resolution: {integrity: sha512-dwCm9F89vuNWqUTi9BqWvzcXOQgmh1zvDaVQLI9dGx1C4a/1Iwyrbz5SbqjSxZaw7XDtIBG1AQ7Jpgut+Me2uw==}
     engines: {node: ^20.8.0 || ^18.17.0}
     hasBin: true
     peerDependencies:
       react: 19.0.0-beta-e7d213dfb0-20240507
       react-dom: 19.0.0-beta-e7d213dfb0-20240507
-      react-server-dom-webpack: 19.0.0-beta-e7d213dfb0-20240507
+      react-server-dom-webpack: 19.0.0-rc.0
 
   walk-up-path@3.0.1:
     resolution: {integrity: sha512-9YlCL/ynK3CTlrSRrDxZvUauLzAswPCrsaCgilqFevUYpeEW0/3ScEjaa3kbW/T0ghhkEr7mv+fpjqn1Y1YuTA==}
@@ -5011,7 +5062,7 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
-  '@hono/node-server@1.11.1': {}
+  '@hono/node-server@1.11.2': {}
 
   '@humanwhocodes/module-importer@1.0.1': {}
 
@@ -6224,51 +6275,51 @@ snapshots:
       invariant: 2.2.4
       styleq: 0.1.3
 
-  '@swc/core-darwin-arm64@1.4.17':
+  '@swc/core-darwin-arm64@1.5.24':
     optional: true
 
-  '@swc/core-darwin-x64@1.4.17':
+  '@swc/core-darwin-x64@1.5.24':
     optional: true
 
-  '@swc/core-linux-arm-gnueabihf@1.4.17':
+  '@swc/core-linux-arm-gnueabihf@1.5.24':
     optional: true
 
-  '@swc/core-linux-arm64-gnu@1.4.17':
+  '@swc/core-linux-arm64-gnu@1.5.24':
     optional: true
 
-  '@swc/core-linux-arm64-musl@1.4.17':
+  '@swc/core-linux-arm64-musl@1.5.24':
     optional: true
 
-  '@swc/core-linux-x64-gnu@1.4.17':
+  '@swc/core-linux-x64-gnu@1.5.24':
     optional: true
 
-  '@swc/core-linux-x64-musl@1.4.17':
+  '@swc/core-linux-x64-musl@1.5.24':
     optional: true
 
-  '@swc/core-win32-arm64-msvc@1.4.17':
+  '@swc/core-win32-arm64-msvc@1.5.24':
     optional: true
 
-  '@swc/core-win32-ia32-msvc@1.4.17':
+  '@swc/core-win32-ia32-msvc@1.5.24':
     optional: true
 
-  '@swc/core-win32-x64-msvc@1.4.17':
+  '@swc/core-win32-x64-msvc@1.5.24':
     optional: true
 
-  '@swc/core@1.4.17(@swc/helpers@0.5.11)':
+  '@swc/core@1.5.24(@swc/helpers@0.5.11)':
     dependencies:
       '@swc/counter': 0.1.3
       '@swc/types': 0.1.8
     optionalDependencies:
-      '@swc/core-darwin-arm64': 1.4.17
-      '@swc/core-darwin-x64': 1.4.17
-      '@swc/core-linux-arm-gnueabihf': 1.4.17
-      '@swc/core-linux-arm64-gnu': 1.4.17
-      '@swc/core-linux-arm64-musl': 1.4.17
-      '@swc/core-linux-x64-gnu': 1.4.17
-      '@swc/core-linux-x64-musl': 1.4.17
-      '@swc/core-win32-arm64-msvc': 1.4.17
-      '@swc/core-win32-ia32-msvc': 1.4.17
-      '@swc/core-win32-x64-msvc': 1.4.17
+      '@swc/core-darwin-arm64': 1.5.24
+      '@swc/core-darwin-x64': 1.5.24
+      '@swc/core-linux-arm-gnueabihf': 1.5.24
+      '@swc/core-linux-arm64-gnu': 1.5.24
+      '@swc/core-linux-arm64-musl': 1.5.24
+      '@swc/core-linux-x64-gnu': 1.5.24
+      '@swc/core-linux-x64-musl': 1.5.24
+      '@swc/core-win32-arm64-msvc': 1.5.24
+      '@swc/core-win32-ia32-msvc': 1.5.24
+      '@swc/core-win32-x64-msvc': 1.5.24
       '@swc/helpers': 0.5.11
 
   '@swc/counter@0.1.3': {}
@@ -6291,7 +6342,7 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@turbo/gen@2.0.4(@swc/core@1.4.17)(@types/node@20.14.2)(typescript@5.4.5)':
+  '@turbo/gen@2.0.4(@swc/core@1.5.24)(@types/node@20.14.2)(typescript@5.4.5)':
     dependencies:
       '@turbo/workspaces': 2.0.4
       chalk: 2.4.2
@@ -6301,7 +6352,7 @@ snapshots:
       minimatch: 9.0.4
       node-plop: 0.26.3
       proxy-agent: 6.4.0
-      ts-node: 10.9.2(@swc/core@1.4.17)(@types/node@20.14.2)(typescript@5.4.5)
+      ts-node: 10.9.2(@swc/core@1.5.24)(@types/node@20.14.2)(typescript@5.4.5)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -6509,14 +6560,14 @@ snapshots:
       '@typescript-eslint/types': 7.13.1
       eslint-visitor-keys: 3.4.3
 
-  '@vitejs/plugin-react@4.2.1(vite@5.2.11(@types/node@20.14.2)(terser@5.31.1))':
+  '@vitejs/plugin-react@4.3.0(vite@5.2.12(@types/node@20.14.2)(terser@5.31.1))':
     dependencies:
       '@babel/core': 7.24.7
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.24.7)
       '@babel/plugin-transform-react-jsx-source': 7.24.7(@babel/core@7.24.7)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.11(@types/node@20.14.2)(terser@5.31.1)
+      vite: 5.2.12(@types/node@20.14.2)(terser@5.31.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -7619,7 +7670,7 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
-  hono@4.3.2: {}
+  hono@4.4.2: {}
 
   http-proxy-agent@7.0.2:
     dependencies:
@@ -8651,21 +8702,21 @@ snapshots:
       react: 19.0.0-beta-e7d213dfb0-20240507
       react-dom: 19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507)
 
-  react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5)):
+  react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24)(esbuild@0.21.5)):
     dependencies:
       acorn-loose: 8.4.0
       neo-async: 2.6.2
       react: 19.0.0-beta-e7d213dfb0-20240507
       react-dom: 19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507)
-      webpack: 5.92.0(@swc/core@1.4.17)(esbuild@0.21.5)
+      webpack: 5.92.0(@swc/core@1.5.24)(esbuild@0.21.5)
 
-  react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17)):
+  react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24)):
     dependencies:
       acorn-loose: 8.4.0
       neo-async: 2.6.2
       react: 19.0.0-beta-e7d213dfb0-20240507
       react-dom: 19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507)
-      webpack: 5.92.0(@swc/core@1.4.17)
+      webpack: 5.92.0(@swc/core@1.5.24)
 
   react-stately@3.31.1(react@19.0.0-beta-e7d213dfb0-20240507):
     dependencies:
@@ -9079,28 +9130,28 @@ snapshots:
 
   tapable@2.2.1: {}
 
-  terser-webpack-plugin@5.3.10(@swc/core@1.4.17)(esbuild@0.21.5)(webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5)):
+  terser-webpack-plugin@5.3.10(@swc/core@1.5.24)(esbuild@0.21.5)(webpack@5.92.0(@swc/core@1.5.24)(esbuild@0.21.5)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.31.1
-      webpack: 5.92.0(@swc/core@1.4.17)(esbuild@0.21.5)
+      webpack: 5.92.0(@swc/core@1.5.24)(esbuild@0.21.5)
     optionalDependencies:
-      '@swc/core': 1.4.17(@swc/helpers@0.5.11)
+      '@swc/core': 1.5.24(@swc/helpers@0.5.11)
       esbuild: 0.21.5
 
-  terser-webpack-plugin@5.3.10(@swc/core@1.4.17)(webpack@5.92.0(@swc/core@1.4.17)):
+  terser-webpack-plugin@5.3.10(@swc/core@1.5.24)(webpack@5.92.0(@swc/core@1.5.24)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.31.1
-      webpack: 5.92.0(@swc/core@1.4.17)
+      webpack: 5.92.0(@swc/core@1.5.24)
     optionalDependencies:
-      '@swc/core': 1.4.17(@swc/helpers@0.5.11)
+      '@swc/core': 1.5.24(@swc/helpers@0.5.11)
 
   terser@5.31.1:
     dependencies:
@@ -9112,6 +9163,11 @@ snapshots:
   text-table@0.2.0: {}
 
   through@2.3.8: {}
+
+  tinybase@4.8.15(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507):
+    optionalDependencies:
+      react: 19.0.0-beta-e7d213dfb0-20240507
+      react-dom: 19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507)
 
   tinycolor2@1.6.0: {}
 
@@ -9141,7 +9197,7 @@ snapshots:
     dependencies:
       typescript: 5.4.5
 
-  ts-node@10.9.2(@swc/core@1.4.17)(@types/node@20.14.2)(typescript@5.4.5):
+  ts-node@10.9.2(@swc/core@1.5.24)(@types/node@20.14.2)(typescript@5.4.5):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -9159,7 +9215,7 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     optionalDependencies:
-      '@swc/core': 1.4.17(@swc/helpers@0.5.11)
+      '@swc/core': 1.5.24(@swc/helpers@0.5.11)
 
   ts-node@9.1.1(typescript@5.4.5):
     dependencies:
@@ -9385,7 +9441,7 @@ snapshots:
       - rollup
       - supports-color
 
-  vite@5.2.11(@types/node@20.14.2)(terser@5.31.1):
+  vite@5.2.12(@types/node@20.14.2)(terser@5.31.1):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
@@ -9405,18 +9461,18 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.31.1
 
-  waku@0.20.2(patch_hash=qbgzvnraoavltfbat7oiiug6o4)(@swc/helpers@0.5.11)(@types/node@20.14.2)(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5)))(react@19.0.0-beta-e7d213dfb0-20240507)(terser@5.31.1):
+  waku@0.21.0-alpha.2(@swc/helpers@0.5.11)(@types/node@20.14.2)(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react-server-dom-webpack@19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24)(esbuild@0.21.5)))(react@19.0.0-beta-e7d213dfb0-20240507)(terser@5.31.1):
     dependencies:
-      '@hono/node-server': 1.11.1
-      '@swc/core': 1.4.17(@swc/helpers@0.5.11)
-      '@vitejs/plugin-react': 4.2.1(vite@5.2.11(@types/node@20.14.2)(terser@5.31.1))
+      '@hono/node-server': 1.11.2
+      '@swc/core': 1.5.24(@swc/helpers@0.5.11)
+      '@vitejs/plugin-react': 4.3.0(vite@5.2.12(@types/node@20.14.2)(terser@5.31.1))
       dotenv: 16.4.5
-      hono: 4.3.2
+      hono: 4.4.2
       react: 19.0.0-beta-e7d213dfb0-20240507
       react-dom: 19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507)
-      react-server-dom-webpack: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5))
+      react-server-dom-webpack: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24)(esbuild@0.21.5))
       rsc-html-stream: 0.0.3
-      vite: 5.2.11(@types/node@20.14.2)(terser@5.31.1)
+      vite: 5.2.12(@types/node@20.14.2)(terser@5.31.1)
     transitivePeerDependencies:
       - '@swc/helpers'
       - '@types/node'
@@ -9441,7 +9497,7 @@ snapshots:
 
   webpack-sources@3.2.3: {}
 
-  webpack@5.92.0(@swc/core@1.4.17):
+  webpack@5.92.0(@swc/core@1.5.24):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.5
@@ -9464,7 +9520,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(@swc/core@1.4.17)(webpack@5.92.0(@swc/core@1.4.17))
+      terser-webpack-plugin: 5.3.10(@swc/core@1.5.24)(webpack@5.92.0(@swc/core@1.5.24))
       watchpack: 2.4.1
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -9472,7 +9528,7 @@ snapshots:
       - esbuild
       - uglify-js
 
-  webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5):
+  webpack@5.92.0(@swc/core@1.5.24)(esbuild@0.21.5):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.5
@@ -9495,7 +9551,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(@swc/core@1.4.17)(esbuild@0.21.5)(webpack@5.92.0(@swc/core@1.4.17)(esbuild@0.21.5))
+      terser-webpack-plugin: 5.3.10(@swc/core@1.5.24)(esbuild@0.21.5)(webpack@5.92.0(@swc/core@1.5.24)(esbuild@0.21.5))
       watchpack: 2.4.1
       webpack-sources: 3.2.3
     transitivePeerDependencies:

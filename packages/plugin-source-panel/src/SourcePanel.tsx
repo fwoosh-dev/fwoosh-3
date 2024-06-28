@@ -17,7 +17,6 @@ export default async function SourcePanel({ page }: StoryContext) {
     lang: path.extname(page.file).slice(1),
   });
 
-  console.log({ html });
   return (
     <div
       dangerouslySetInnerHTML={{ __html: html }}

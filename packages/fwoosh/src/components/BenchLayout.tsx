@@ -34,6 +34,10 @@ const styles = stylex.create({
     height: "100%",
     width: "100%",
   },
+  storyArea: {
+    display: "flex",
+    flexDirection: "column",
+  },
 });
 
 export interface BenchLayoutProps extends StoryContext {
@@ -53,7 +57,12 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
 
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">
-            <Panel defaultSize={50} id="preview" minSize={20}>
+            <Panel
+              defaultSize={50}
+              id="preview"
+              minSize={20}
+              {...stylex.props(styles.storyArea)}
+            >
               <ToolsToolbar page={page} story={story} />
               <div {...stylex.props(styles.iframeWrapper)}>{children}</div>
             </Panel>

@@ -11,9 +11,9 @@
 - [x] figure out dev mode errors
 - [x] control panel
 - [x] Highlight current story in source panel
+- [x] Improve how zoom works
 
 - [ ] Dark mode toggle toolbar control
-- [ ] Improve how zoom works
 - [ ] Screen size decorators
 - [ ] improve docs view
 - [ ] View docs button

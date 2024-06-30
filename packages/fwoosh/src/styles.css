@@ -51,7 +51,8 @@ body {
 }
 
 @supports (font-variation-settings: normal) {
-  .app * {
+  .app *,
+  .inter {
     font-family: "InterVariable", "system-ui";
   } /* If using the variable font */
 }

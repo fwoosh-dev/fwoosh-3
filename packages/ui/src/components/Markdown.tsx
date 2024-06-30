@@ -2,7 +2,7 @@ import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkUnwrapImages from "remark-unwrap-images";
 import remarkEmoji from "remark-emoji";
-import {
+import type {
   Code,
   Heading,
   Parent,

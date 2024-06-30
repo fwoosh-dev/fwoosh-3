@@ -5,13 +5,14 @@ import { reactDocgen } from "@fwoosh/plugin-react-docgen";
 import { sourcePanel } from "@fwoosh/plugin-source-panel";
 import { repoLink } from "@fwoosh/plugin-repo-link";
 import { centeredDecorator } from "@fwoosh/plugin-centered-decorator";
+import { controlPanel } from "@fwoosh/plugin-control-panel";
 
 const config = defineConfig({
   name: "React Example",
   logo: "./images/logo.png",
   theme: {
-    chrome: "mauve",
-    primary: "crimson",
+    chrome: "sage",
+    primary: "jade",
     code: {
       light: "catppuccin-latte",
       dark: "catppuccin-frappe",
@@ -25,6 +26,7 @@ const config = defineConfig({
     sourcePanel(),
     repoLink({ repo: "fwoosh-dev/fwoosh-3" }),
     centeredDecorator(),
+    controlPanel(),
   ],
 });
 

@@ -13,13 +13,14 @@
   "license": "MIT",
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-context": "^1.0.1",
     "@stylexjs/open-props": "^0.6.1",
     "@stylexjs/stylex": "^0.6.1",
     "lucide-react": "^0.395.0",
-    "mdast": "^3.0.0",
     "react-aria": "^3.33.1",
     "react-aria-components": "^1.2.1",
+    "remark": "^15.0.1",
     "remark-emoji": "^5.0.0",
     "remark-gfm": "^4.0.0",
     "remark-parse": "^11.0.0",
@@ -95,11 +96,32 @@
         "default": "./dist/esm/components/InlineCode.js"
       }
     },
+    "./components/Label": {
+      "import": {
+        "source": "./src/components/Label.tsx",
+        "types": "./dist/esm/components/Label.d.ts",
+        "default": "./dist/esm/components/Label.js"
+      }
+    },
     "./components/Markdown": {
       "import": {
         "source": "./src/components/Markdown.tsx",
         "types": "./dist/esm/components/Markdown.d.ts",
         "default": "./dist/esm/components/Markdown.js"
+      }
+    },
+    "./components/Popover": {
+      "import": {
+        "source": "./src/components/Popover.tsx",
+        "types": "./dist/esm/components/Popover.d.ts",
+        "default": "./dist/esm/components/Popover.js"
+      }
+    },
+    "./components/Select": {
+      "import": {
+        "source": "./src/components/Select.tsx",
+        "types": "./dist/esm/components/Select.d.ts",
+        "default": "./dist/esm/components/Select.js"
       }
     },
     "./components/Spinner": {
@@ -121,6 +143,13 @@
         "source": "./src/components/Tabs.tsx",
         "types": "./dist/esm/components/Tabs.d.ts",
         "default": "./dist/esm/components/Tabs.js"
+      }
+    },
+    "./components/TextField": {
+      "import": {
+        "source": "./src/components/TextField.tsx",
+        "types": "./dist/esm/components/TextField.d.ts",
+        "default": "./dist/esm/components/TextField.js"
       }
     },
     "./components/Tooltip": {

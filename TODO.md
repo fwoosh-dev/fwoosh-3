@@ -9,7 +9,9 @@
 - [x] code highlighting config
 - [x] Render the jSDOc as markdown
 - [x] figure out dev mode errors
+- [x] control panel
 
+- [ ] Highlight current story in source panel
 - [ ] Screen size decorators
 - [ ] improve docs view
 - [ ] View docs button

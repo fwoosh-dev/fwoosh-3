@@ -1,6 +1,8 @@
 "use client";
 
 import { PageMeta } from "fwoosh";
+import { useControl } from "@fwoosh/plugin-control-panel/react";
+
 import { Button } from "./Button.js";
 
 export const meta: PageMeta = {
@@ -23,7 +25,21 @@ export const meta: PageMeta = {
  * | -------- | -------- | -------- |
  * | Row 1    | Row 2    | Row 3    |
  */
-export const Primary = () => <Button>Click me</Button>;
+export const Primary = () => {
+  const [label] = useControl({
+    type: "text",
+    label: "Label",
+    value: "Click me",
+  });
+  const [size] = useControl({
+    type: "select",
+    label: "Size",
+    options: ["small", "medium", "large"] as const,
+    value: "medium" as const,
+  });
+
+  return <Button size={size}>{label}</Button>;
+};
 
 /** A button can be disabled */
 export const Disabled = () => <Button disabled>Disabled</Button>;

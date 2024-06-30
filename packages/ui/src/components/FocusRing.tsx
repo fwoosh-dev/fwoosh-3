@@ -9,6 +9,7 @@ const focusRingStyles = stylex.create({
     borderWidth: 2,
     inset: "-4px",
     position: "absolute",
+    zIndex: 10,
   },
 });
 

@@ -18,8 +18,20 @@ export interface ButtonProps
  * <Button>Even code</Button>
  * ```
  */
-export const Button = (props: ButtonProps) => {
+export const Button = ({ size, ...props }: ButtonProps) => {
   return (
-    <button style={{ backgroundColor: "blue", color: "white" }} {...props} />
+    <button
+      style={{
+        backgroundColor: "blue",
+        color: "white",
+        padding:
+          size === "small"
+            ? "4px 8px"
+            : size === "medium"
+            ? "8px 16px"
+            : "16px 24px",
+      }}
+      {...props}
+    />
   );
 };

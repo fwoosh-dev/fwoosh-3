@@ -1,0 +1,52 @@
+{
+  "name": "@fwoosh/plugin-control-panel",
+  "description": "Adds a panel to control parts of the story.",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tshy",
+    "clean": "rimraf dist .tshy"
+  },
+  "keywords": [],
+  "author": "Andrew Lisowski",
+  "license": "MIT",
+  "dependencies": {
+    "@fwoosh/ui": "workspace:*",
+    "@stylexjs/stylex": "^0.6.1",
+    "tinybase": "^4.8.15"
+  },
+  "devDependencies": {
+    "@fwoosh/config-typescript": "workspace:*",
+    "@fwoosh/types": "workspace:*",
+    "@types/react": "18.3.1",
+    "react": "19.0.0-beta-e7d213dfb0-20240507",
+    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
+    "rimraf": "^5.0.7",
+    "tshy": "^1.15.1"
+  },
+  "tshy": {
+    "dialects": [
+      "esm"
+    ],
+    "exports": {
+      ".": "./src/index.ts",
+      "./react": "./src/react.ts"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "source": "./src/index.ts",
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    },
+    "./react": {
+      "import": {
+        "source": "./src/react.ts",
+        "types": "./dist/esm/react.d.ts",
+        "default": "./dist/esm/react.js"
+      }
+    }
+  },
+  "type": "module"
+}

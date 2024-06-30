@@ -15,14 +15,14 @@
     "@eslint/compat": "^1.1.0",
     "@eslint/js": "^9.5.0",
     "@stylexjs/eslint-plugin": "^0.6.1",
-    "@turbo/gen": "^2.0.4",
+    "@turbo/gen": "^2.0.6",
     "eslint": "9.x",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "globals": "^15.6.0",
     "tsx": "^4.15.5",
-    "turbo": "^2.0.4",
-    "typescript-eslint": "^7.13.1"
+    "turbo": "^2.0.6",
+    "typescript-eslint": "^7.14.1"
   },
   "resolutions": {
     "react": "19.0.0-beta-e7d213dfb0-20240507",

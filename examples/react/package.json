@@ -17,6 +17,7 @@
     "@fwoosh/plugin-description": "workspace:*",
     "@fwoosh/plugin-centered-decorator": "workspace:*",
     "@fwoosh/plugin-react-docgen": "workspace:*",
+    "@fwoosh/plugin-control-panel": "workspace:*",
     "@fwoosh/plugin-source-panel": "workspace:*",
     "@fwoosh/plugin-repo-link": "workspace:*",
     "@fwoosh/plugin-zoom": "workspace:*",

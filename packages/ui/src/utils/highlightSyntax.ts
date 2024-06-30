@@ -19,14 +19,26 @@ const styles = stylex.create({
   },
   highlight: {
     backgroundColor: appChrome.elementBg,
-    borderRadius: borderRadius.sm,
     display: "inline-flex",
     margin: `0 calc(${space[4]} * -1)`,
+    // minHeight: "1.2rem",
     padding: `0 ${space[4]}`,
     width: `calc(100% + (${space[4]} * 2))`,
   },
+  firstLineOfHighlight: {
+    borderTopLeftRadius: borderRadius.sm,
+    borderTopRightRadius: borderRadius.sm,
+    scrollMarginTop: space[4],
+  },
+  lastLineOfHighlight: {
+    borderBottomLeftRadius: borderRadius.sm,
+    borderBottomRightRadius: borderRadius.sm,
+  },
+  emptyLine: {
+    height: "1.3rem",
+    marginBottom: -5,
+  },
 });
-const highlightAttrs = stylex.attrs(styles.highlight);
 
 export async function highlightSyntax(
   code: string,
@@ -55,8 +67,24 @@ export async function highlightSyntax(
       {
         name: "test",
         line(hast, line) {
-          if (highlightLines?.includes(line) && highlightAttrs.class) {
-            this.addClassToHast(hast, highlightAttrs.class);
+          if (highlightLines?.includes(line)) {
+            const highlightAttrs = stylex.attrs(
+              styles.highlight,
+              line === highlightLines[0] && styles.firstLineOfHighlight,
+              line === highlightLines[highlightLines.length - 1] &&
+                styles.lastLineOfHighlight,
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              this.code.children[line - 1]?.value === "\n" && styles.emptyLine
+            );
+
+            if (highlightAttrs.class) {
+              this.addClassToHast(hast, highlightAttrs.class);
+
+              if (line === highlightLines[0]) {
+                this.addClassToHast(hast, "first-line");
+              }
+            }
           }
         },
       },

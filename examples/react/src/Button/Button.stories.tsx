@@ -42,7 +42,9 @@ export const Primary = () => {
 };
 
 /** A button can be disabled */
-export const Disabled = () => <Button disabled>Disabled</Button>;
+export function Disabled() {
+  return <Button disabled>Disabled</Button>;
+}
 
 Disabled.story = {
   displayName: "Disabled",

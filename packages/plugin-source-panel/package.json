@@ -10,8 +10,11 @@
   "author": "Andrew Lisowski",
   "license": "MIT",
   "dependencies": {
-    "@stylexjs/stylex": "^0.6.1",
-    "@fwoosh/ui": "workspace:*"
+    "@fwoosh/ui": "workspace:*",
+    "@stylexjs/stylex": "^0.6.1"
+  },
+  "optionalDependencies": {
+    "typescript": ">=5"
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
@@ -20,7 +23,8 @@
     "react": "19.0.0-beta-e7d213dfb0-20240507",
     "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
     "rimraf": "^5.0.7",
-    "tshy": "^1.15.1"
+    "tshy": "^1.15.1",
+    "typescript": "5.4.5"
   },
   "tshy": {
     "dialects": [

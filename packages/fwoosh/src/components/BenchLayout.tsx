@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-import { StoryContext } from "@fwoosh/types";
-import { StoryContextProvider, getStorySlug } from "@fwoosh/ui";
+import { StoryContext, getStorySlug } from "@fwoosh/types";
+import { StoryContextProvider } from "@fwoosh/ui";
 import { Inspector, SidebarLayout } from "@fwoosh/ui/app";
 
 import { SidebarHeader } from "./SidebarHeader";
@@ -53,12 +53,12 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
 
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">
-            <Panel defaultSize={75} id="preview" minSize={20}>
+            <Panel defaultSize={50} id="preview" minSize={20}>
               <ToolsToolbar page={page} story={story} />
               <div {...stylex.props(styles.iframeWrapper)}>{children}</div>
             </Panel>
             <PanelResizeHandle id="preview-panels-handle" />
-            <Panel defaultSize={25} id="panels" minSize={20} collapsible={true}>
+            <Panel defaultSize={50} id="panels" minSize={20} collapsible={true}>
               <aside {...stylex.props(styles.panelWrapper)}>
                 <Panels page={page} story={story} />
               </aside>

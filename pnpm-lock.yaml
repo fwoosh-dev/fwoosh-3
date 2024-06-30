@@ -319,8 +319,6 @@ importers:
 
   packages/plugin-control-panel/dist/esm: {}
 
-  packages/plugin-controls/dist/esm: {}
-
   packages/plugin-description:
     dependencies:
       '@fwoosh/ui':
@@ -428,6 +426,10 @@ importers:
       '@stylexjs/stylex':
         specifier: ^0.6.1
         version: 0.6.1
+    optionalDependencies:
+      typescript:
+        specifier: '>=5'
+        version: 5.4.5
     devDependencies:
       '@fwoosh/config-typescript':
         specifier: workspace:*
@@ -602,8 +604,6 @@ importers:
         version: 4.15.5
 
   packages/ui/dist/esm: {}
-
-  packages/ui/src: {}
 
 packages:
 

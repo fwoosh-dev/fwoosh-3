@@ -34,8 +34,8 @@ export const Primary = () => {
   const [size] = useControl({
     type: "select",
     label: "Size",
-    options: ["small", "medium", "large"] as const,
-    value: "medium" as const,
+    options: ["small", "medium", "large"],
+    value: "medium",
   });
 
   return <Button size={size}>{label}</Button>;

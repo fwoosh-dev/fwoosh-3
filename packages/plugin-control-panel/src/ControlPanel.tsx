@@ -24,17 +24,17 @@ const styles = stylex.create({
   },
 });
 
-function TextControlComponent({
+function TextControlComponent<T>({
   label,
   value: initialValue,
-}: TextControl<string>) {
+}: TextControl<T>) {
   const [value, setValue] = useState(initialValue);
 
   const onChange = useCallback(
     (newValue: string) => {
       const id = `controls_${"STORY_ID"}`;
 
-      setValue(newValue);
+      setValue(newValue as T);
       setItem({
         scope: "app",
         id,
@@ -53,7 +53,7 @@ function TextControlComponent({
       <Label>{label}</Label>
       <Input
         type="text"
-        value={value}
+        value={value as string}
         onChange={(e) => onChange(e.target.value)}
       />
     </TextField>
@@ -77,7 +77,7 @@ function SelectControlComponent({
         id,
         value: {
           type: "select",
-          value: newValue,
+          value: newValue as string,
           label,
           options,
         },
@@ -132,10 +132,7 @@ export default function ControlPanel() {
       <div {...stylex.props(styles.list)}>
         {controls.map(([, value]) =>
           value.type === "text" ? (
-            <TextControlComponent
-              key={value.label}
-              {...(value as TextControl<string>)}
-            />
+            <TextControlComponent key={value.label} {...value} />
           ) : value.type === "select" ? (
             <SelectControlComponent
               key={value.label}

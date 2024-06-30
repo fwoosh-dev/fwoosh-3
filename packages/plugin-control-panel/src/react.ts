@@ -36,7 +36,7 @@ function useStoryUpdate<T>({
   }, [storyId, label, onUpdate, value]);
 }
 
-export function useControl<T>(props: Control<T>) {
+export function useControl<const T>(props: Control<T>) {
   const [value, setValue] = useState(props.value);
   const storyId = `controls_${"STORY_ID"}`;
 

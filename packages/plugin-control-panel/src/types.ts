@@ -6,7 +6,7 @@ export interface TextControl<T> {
 
 export interface SelectControl<T> {
   label: string;
-  value: T;
+  value: NoInfer<T>;
   type: "select";
   options: T[];
 }

@@ -12,6 +12,8 @@
 - [x] control panel
 
 - [ ] Highlight current story in source panel
+- [ ] Dark mode toggle toolbar control
+- [ ] Improve how zoom works
 - [ ] Screen size decorators
 - [ ] improve docs view
 - [ ] View docs button

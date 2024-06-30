@@ -1,11 +1,9 @@
 "use client";
 
-import type {
+import {
   ListBoxItemProps,
   SelectProps as SelectPropsPrimitive,
   ValidationResult,
-} from "react-aria-components";
-import {
   Button,
   FieldError,
   ListBox,

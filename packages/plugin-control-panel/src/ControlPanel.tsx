@@ -11,6 +11,7 @@ import { Select, SelectOption } from "@fwoosh/ui/components/Select";
 import { setItem } from "./store.js";
 import { Control, SelectControl, TextControl } from "./types.js";
 import { space } from "@fwoosh/ui/theme/tokens.stylex";
+import { StoryContext, getStorySlug } from "@fwoosh/types";
 
 const styles = stylex.create({
   list: {
@@ -27,17 +28,16 @@ const styles = stylex.create({
 function TextControlComponent<T>({
   label,
   value: initialValue,
-}: TextControl<T>) {
+  storyId,
+}: TextControl<T> & { storyId: string }) {
   const [value, setValue] = useState(initialValue);
 
   const onChange = useCallback(
     (newValue: string) => {
-      const id = `controls_${"STORY_ID"}`;
-
       setValue(newValue as T);
       setItem({
         scope: "app",
-        id,
+        id: storyId,
         value: {
           type: "text",
           value: newValue,
@@ -45,7 +45,7 @@ function TextControlComponent<T>({
         },
       });
     },
-    [label]
+    [label, storyId]
   );
 
   return (
@@ -64,17 +64,16 @@ function SelectControlComponent({
   label,
   value: initialValue,
   options,
-}: SelectControl<string>) {
+  storyId,
+}: SelectControl<string> & { storyId: string }) {
   const [value, setValue] = useState(initialValue);
 
   const onChange = useCallback(
     (newValue: Key) => {
-      const id = `controls_${"STORY_ID"}`;
-
       setValue(newValue as string);
       setItem({
         scope: "app",
-        id,
+        id: storyId,
         value: {
           type: "select",
           value: newValue as string,
@@ -83,7 +82,7 @@ function SelectControlComponent({
         },
       });
     },
-    [label, options]
+    [label, options, storyId]
   );
 
   return (
@@ -99,14 +98,15 @@ function SelectControlComponent({
   );
 }
 
-export default function ControlPanel() {
+function ControlPanelRenderer({ page, story }: StoryContext) {
   const [controls, setControls] = useState<Array<[string, Control<unknown>]>>(
     []
   );
+  const storyId = `controls_${getStorySlug(page, story)}`;
 
   useEffect(() => {
     function onUpdate() {
-      const stored = localStorage.getItem(`controls_${"STORY_ID"}`);
+      const stored = localStorage.getItem(storyId);
 
       if (!stored) {
         return;
@@ -125,17 +125,26 @@ export default function ControlPanel() {
     return () => {
       window.document.removeEventListener("controls-updated", onUpdate);
     };
-  }, []);
+  }, [storyId]);
+
+  if (!controls.length) {
+    return <TabPanelContent>No controls found for story</TabPanelContent>;
+  }
 
   return (
     <TabPanelContent>
       <div {...stylex.props(styles.list)}>
         {controls.map(([, value]) =>
           value.type === "text" ? (
-            <TextControlComponent key={value.label} {...value} />
+            <TextControlComponent
+              key={value.label}
+              storyId={storyId}
+              {...value}
+            />
           ) : value.type === "select" ? (
             <SelectControlComponent
               key={value.label}
+              storyId={storyId}
               {...(value as SelectControl<string>)}
             />
           ) : null
@@ -143,4 +152,9 @@ export default function ControlPanel() {
       </div>
     </TabPanelContent>
   );
+}
+
+export default function ControlPanel({ page, story }: StoryContext) {
+  const key = getStorySlug(page, story);
+  return <ControlPanelRenderer key={key} page={page} story={story} />;
 }

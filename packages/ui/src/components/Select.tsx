@@ -30,6 +30,10 @@ import {
 import { mergeProps } from "react-aria";
 import { FocusRing } from "./FocusRing.js";
 
+interface SelectVariant {
+  variant?: "toolbar";
+}
+
 const triggerStyles = stylex.create({
   trigger: {
     alignItems: "center",
@@ -56,6 +60,16 @@ const triggerStyles = stylex.create({
     position: "relative",
     textTransform: "capitalize",
   },
+  triggerToolbar: {
+    backgroundColor: {
+      default: appChrome.subtleBg,
+      ":is([aria-expanded=true])": appChrome.appBg,
+      ":hover": appChrome.elementBg,
+    },
+    borderRadius: borderRadius.sm,
+    gap: space[2],
+    height: space[6],
+  },
   triggerFocus: {
     backgroundColor: appChrome.subtleBg,
     borderColor: appChrome.elementBorder,
@@ -69,13 +83,14 @@ const triggerStyles = stylex.create({
   },
 });
 
-function SelectTrigger() {
+function SelectTrigger({ variant }: SelectVariant) {
   return (
     <Button
       className={({ isFocusVisible }) => {
         const { className = "" } = stylex.props(
           triggerStyles.trigger,
-          isFocusVisible && triggerStyles.triggerFocus
+          isFocusVisible && triggerStyles.triggerFocus,
+          variant === "toolbar" && triggerStyles.triggerToolbar
         );
 
         return className;
@@ -101,12 +116,15 @@ const selectStyles = stylex.create({
     gap: space[4],
   },
   popover: {
+    minWidth: "max-content",
+    overflow: "auto",
     width: "var(--trigger-width)",
   },
 });
 
 interface SelectProps<T extends object>
-  extends Omit<SelectPropsPrimitive<T>, "children" | "style" | "className"> {
+  extends Omit<SelectPropsPrimitive<T>, "children" | "style" | "className">,
+    SelectVariant {
   label?: string;
   description?: string;
   errorMessage?: string | ((validation: ValidationResult) => string);
@@ -122,14 +140,15 @@ export function Select<T extends object>({
   children,
   items,
   style,
+  variant,
   ...props
 }: SelectProps<T>) {
   return (
     <SelectPrimitive
       {...mergeProps(props, stylex.props(selectStyles.select, style))}
     >
-      <Label>{label}</Label>
-      <SelectTrigger />
+      {label && <Label>{label}</Label>}
+      <SelectTrigger variant={variant} />
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
       <Popover {...stylex.props(selectStyles.popover)}>

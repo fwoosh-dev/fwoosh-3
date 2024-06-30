@@ -7,6 +7,7 @@ import {
 import * as stylex from "@stylexjs/stylex";
 import { appChrome } from "../theme/tokens.stylex.js";
 import { borderRadius, space, text } from "../theme/tokens.stylex.js";
+import { mergeProps } from "react-aria";
 
 const styles = stylex.create({
   tooltip: {
@@ -33,8 +34,9 @@ export function Tooltip({
   return (
     <TooltipPrimitive
       offset={offset}
-      {...props}
-      {...stylex.props(styles.tooltip, style)}
+      {...mergeProps(props, stylex.props(styles.tooltip, style), {
+        className: "inter",
+      })}
     >
       {children}
     </TooltipPrimitive>

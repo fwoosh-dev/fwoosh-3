@@ -70,6 +70,7 @@ const InspectorToolbarStyles = stylex.create({
       default: appChrome.elementBorder,
     },
     display: "flex",
+    gap: space[3],
     height: space[7],
     padding: `${space[2]} ${space[4]}`,
   },

@@ -24,7 +24,15 @@ export interface FwooshDecorator extends FwooshToolBase {
   type: "decorator";
 }
 
-export type FwooshTool = FwooshToolbarButton | FwooshPanel | FwooshDecorator;
+export interface PanelWrapper extends FwooshToolBase {
+  type: "frame-wrapper";
+}
+
+export type FwooshTool =
+  | FwooshToolbarButton
+  | FwooshPanel
+  | FwooshDecorator
+  | PanelWrapper;
 
 export interface FwooshPluginConfig {
   tools?: FwooshTool[];

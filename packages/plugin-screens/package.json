@@ -1,0 +1,45 @@
+{
+  "name": "@fwoosh/plugin-screens",
+  "description": "Test your story at different screen sizes",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tshy",
+    "clean": "rimraf dist .tshy"
+  },
+  "keywords": [],
+  "author": "Andrew Lisowski",
+  "license": "MIT",
+  "dependencies": {
+    "@fwoosh/ui": "workspace:*",
+    "@stylexjs/stylex": "^0.6.1",
+    "@radix-ui/react-icons": "^1.3.0",
+    "tinybase": "^4.8.15"
+  },
+  "devDependencies": {
+    "@fwoosh/config-typescript": "workspace:*",
+    "@fwoosh/types": "workspace:*",
+    "@types/react": "18.3.1",
+    "react": "19.0.0-beta-e7d213dfb0-20240507",
+    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
+    "rimraf": "^5.0.7",
+    "tshy": "^1.15.1"
+  },
+  "tshy": {
+    "dialects": [
+      "esm"
+    ],
+    "exports": {
+      ".": "./src/index.ts"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "source": "./src/index.ts",
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    }
+  },
+  "type": "module"
+}

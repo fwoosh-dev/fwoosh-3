@@ -24,22 +24,34 @@ export default function ZoomToolbarControl() {
 
   useEffect(() => {
     const storyPreview = document.getElementById(storyPreviewId);
+    const zoomTarget = document.getElementById("zoom-target") || storyPreview;
+    const zoomContainer =
+      document.getElementById("zoom-container") || storyPreview;
 
-    if (!storyPreview) {
+    if (!zoomTarget || !zoomContainer) {
       return;
     }
 
-    storyPreview.style.transformOrigin = "top left";
+    const scale = zoom / 100;
 
-    if (zoom === 100) {
-      storyPreview.style.transform = "none";
-      storyPreview.style.width = "100%";
-      storyPreview.style.height = "100%";
+    if (zoomTarget === storyPreview) {
+      zoomContainer.style.transformOrigin = "top left";
+
+      if (zoom === 100) {
+        zoomTarget.style.transform = "none";
+        zoomContainer.style.width = "100%";
+        zoomContainer.style.height = "100%";
+      } else {
+        zoomTarget.style.transform = `scale(${scale})`;
+        zoomContainer.style.width = `calc(100% * ${1 / scale})`;
+        zoomContainer.style.height = `calc(100% * ${1 / scale})`;
+      }
     } else {
-      const scale = zoom / 100;
-      storyPreview.style.transform = `scale(${scale})`;
-      storyPreview.style.width = `calc(100% * ${1 / scale})`;
-      storyPreview.style.height = `calc(100% * ${1 / scale})`;
+      if (zoom === 100) {
+        zoomContainer.style.setProperty("--zoom", "1");
+      } else {
+        zoomContainer.style.setProperty("--zoom", scale.toString());
+      }
     }
   }, [zoom]);
 

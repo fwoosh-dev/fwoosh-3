@@ -1,4 +1,4 @@
-import { defineConfig, StoryMetaBase } from "fwoosh";
+import { defineConfig } from "fwoosh";
 import { zoomPlugin } from "@fwoosh/plugin-zoom";
 import { descriptionPlugin } from "@fwoosh/plugin-description";
 import { reactDocgen } from "@fwoosh/plugin-react-docgen";
@@ -6,6 +6,7 @@ import { sourcePanel } from "@fwoosh/plugin-source-panel";
 import { repoLink } from "@fwoosh/plugin-repo-link";
 import { centeredDecorator } from "@fwoosh/plugin-centered-decorator";
 import { controlPanel } from "@fwoosh/plugin-control-panel";
+import { screens } from "@fwoosh/plugin-screens";
 
 const config = defineConfig({
   name: "React Example",
@@ -27,6 +28,7 @@ const config = defineConfig({
     repoLink({ repo: "fwoosh-dev/fwoosh-3" }),
     centeredDecorator(),
     controlPanel(),
+    screens(),
   ],
 });
 

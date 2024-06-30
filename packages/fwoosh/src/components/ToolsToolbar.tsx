@@ -3,10 +3,14 @@ import { importPlugin } from "@fwoosh/pages";
 import { InspectorToolbar } from "@fwoosh/ui/app";
 import { HStack, HStackProps } from "@fwoosh/ui/components/HStack";
 import * as stylex from "@stylexjs/stylex";
+import { space } from "@fwoosh/ui/theme/tokens.stylex";
 
 const styles = stylex.create({
   section: {
+    alignItems: "center",
+    display: "flex",
     flexGrow: 1,
+    gap: space[4],
   },
   shrinkingArea: {
     flexGrow: 1,

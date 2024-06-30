@@ -61,6 +61,9 @@ importers:
       '@fwoosh/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
+      '@fwoosh/plugin-a11y':
+        specifier: workspace:*
+        version: link:../../packages/plugin-a11y
       '@fwoosh/plugin-centered-decorator':
         specifier: workspace:*
         version: link:../../packages/plugin-centered-decorator
@@ -252,6 +255,48 @@ importers:
   packages/log/dist/commonjs: {}
 
   packages/log/dist/esm: {}
+
+  packages/plugin-a11y:
+    dependencies:
+      '@fwoosh/ui':
+        specifier: workspace:*
+        version: link:../ui
+      '@radix-ui/react-icons':
+        specifier: ^1.3.0
+        version: 1.3.0(react@19.0.0-beta-e7d213dfb0-20240507)
+      '@stylexjs/stylex':
+        specifier: ^0.6.1
+        version: 0.6.1
+      axe-core:
+        specifier: ^4.9.1
+        version: 4.9.1
+      react-aria-components:
+        specifier: ^1.2.1
+        version: 1.2.1(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)
+    devDependencies:
+      '@fwoosh/config-typescript':
+        specifier: workspace:*
+        version: link:../config-typescript
+      '@fwoosh/types':
+        specifier: workspace:*
+        version: link:../types
+      '@types/react':
+        specifier: 18.3.1
+        version: 18.3.1
+      react:
+        specifier: 19.0.0-beta-e7d213dfb0-20240507
+        version: 19.0.0-beta-e7d213dfb0-20240507
+      react-server-dom-webpack:
+        specifier: 19.0.0-beta-e7d213dfb0-20240507
+        version: 19.0.0-beta-e7d213dfb0-20240507(react-dom@19.0.0-beta-e7d213dfb0-20240507(react@19.0.0-beta-e7d213dfb0-20240507))(react@19.0.0-beta-e7d213dfb0-20240507)(webpack@5.92.0(@swc/core@1.5.24))
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      tshy:
+        specifier: ^1.15.1
+        version: 1.15.1
+
+  packages/plugin-a11y/dist/esm: {}
 
   packages/plugin-centered-decorator:
     dependencies:
@@ -2463,6 +2508,10 @@ packages:
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
+
+  axe-core@4.9.1:
+    resolution: {integrity: sha512-QbUdXJVTpvUTHU7871ppZkdOLBeGUKBQWHkHrvN2V9IQWGMt61zf3B45BtzjxEJzYuj0JBjBZP/hmYS/R9pmAw==}
+    engines: {node: '>=4'}
 
   babel-plugin-macros@3.1.0:
     resolution: {integrity: sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==}
@@ -6959,6 +7008,8 @@ snapshots:
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.0.0
+
+  axe-core@4.9.1: {}
 
   babel-plugin-macros@3.1.0:
     dependencies:

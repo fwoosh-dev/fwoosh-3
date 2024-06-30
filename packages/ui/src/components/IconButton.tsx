@@ -13,11 +13,6 @@ const buttonStyles = stylex.create({
     display: "inline-flex",
     justifyContent: "center",
 
-    backgroundColor: {
-      default: "transparent",
-      ":hover": appChrome.elementBg,
-      ":active": appChrome.hover,
-    },
     borderRadius: borderRadius.mdInset,
     borderWidth: 0,
     color: appChrome.text,
@@ -28,6 +23,13 @@ const buttonStyles = stylex.create({
 
     height: 32,
     width: 32,
+  },
+  button: {
+    backgroundColor: {
+      default: "transparent",
+      ":hover": appChrome.elementBg,
+      ":active": appChrome.hover,
+    },
   },
   toolbar: {
     height: 28,
@@ -46,6 +48,7 @@ export function IconButton({ variant, children, ...props }: IconButtonProps) {
       {...props}
       {...stylex.props(
         buttonStyles.base,
+        buttonStyles.button,
         variant === "toolbar" && buttonStyles.toolbar
       )}
     >
@@ -72,6 +75,7 @@ export function IconLink({ variant, children, ...props }: IconLinkProps) {
       {...props}
       {...stylex.props(
         buttonStyles.base,
+        buttonStyles.button,
         variant === "toolbar" && buttonStyles.toolbar
       )}
     >
@@ -85,4 +89,14 @@ export function IconLink({ variant, children, ...props }: IconLinkProps) {
       }}
     </Link>
   );
+}
+
+export function IconWrapper({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: stylex.StyleXStyles;
+}) {
+  return <div {...stylex.props(buttonStyles.base, style)}>{children}</div>;
 }

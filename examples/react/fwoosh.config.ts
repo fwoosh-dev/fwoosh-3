@@ -7,6 +7,7 @@ import { repoLink } from "@fwoosh/plugin-repo-link";
 import { centeredDecorator } from "@fwoosh/plugin-centered-decorator";
 import { controlPanel } from "@fwoosh/plugin-control-panel";
 import { screens } from "@fwoosh/plugin-screens";
+import { a11y } from "@fwoosh/plugin-a11y";
 
 const config = defineConfig({
   name: "React Example",
@@ -29,6 +30,7 @@ const config = defineConfig({
     centeredDecorator(),
     controlPanel(),
     screens(),
+    a11y(),
   ],
 });
 

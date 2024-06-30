@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",
+    "@fwoosh/plugin-a11y": "workspace:*",
     "@fwoosh/plugin-description": "workspace:*",
     "@fwoosh/plugin-centered-decorator": "workspace:*",
     "@fwoosh/plugin-react-docgen": "workspace:*",

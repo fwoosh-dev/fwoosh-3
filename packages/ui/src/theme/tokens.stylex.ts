@@ -8,6 +8,10 @@ import { mauveDarkA } from "./colors/mauveDarkA.stylex.js";
 import { pinkDark } from "./colors/pinkDark.stylex.js";
 import { pinkDarkA } from "./colors/pinkDarkA.stylex.js";
 import { blue } from "./colors/blue.stylex.js";
+import { red } from "./colors/red.stylex.js";
+import { green } from "./colors/green.stylex.js";
+import { greenDark } from "./colors/greenDark.stylex.js";
+import { redDark } from "./colors/redDark.stylex.js";
 
 export const appChrome = stylex.defineVars({
   appBg: mauve.appBg,
@@ -125,6 +129,20 @@ export const primaryDarkA = stylex.defineVars({
 
 export const focusRing = stylex.defineVars({
   color: blue.hoveredBorder,
+});
+
+export const error = stylex.defineVars({
+  solid: red.solid,
+});
+export const errorDark = stylex.defineVars({
+  solid: redDark.solid,
+});
+
+export const success = stylex.defineVars({
+  solid: green.solid,
+});
+export const successDark = stylex.defineVars({
+  solid: greenDark.solid,
 });
 
 export const borderRadius = stylex.defineVars({

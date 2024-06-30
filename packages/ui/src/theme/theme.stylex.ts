@@ -8,6 +8,10 @@ import {
   primaryA,
   primaryDark,
   primaryDarkA,
+  success,
+  successDark,
+  error,
+  errorDark,
 } from "./tokens.stylex.js";
 
 const DARK = "@media (prefers-color-scheme: dark)";
@@ -133,4 +137,12 @@ export const primaryATheme = stylex.createTheme(primaryA, {
     [DARK]: primaryDarkA.subtleText,
   },
   text: { default: primaryA.text, [DARK]: primaryDarkA.text },
+});
+
+export const errorTheme = stylex.createTheme(error, {
+  solid: { default: error.solid, [DARK]: errorDark.solid },
+});
+
+export const successTheme = stylex.createTheme(success, {
+  solid: { default: success.solid, [DARK]: successDark.solid },
 });

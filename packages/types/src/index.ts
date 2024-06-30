@@ -125,6 +125,10 @@ export type MetaOf<T extends FwooshConfig> = {
   options?: UnionToIntersection<PluginOptions<T>>;
 };
 
+export type StoryMetaOf<T extends FwooshConfig> = {
+  options?: MetaOf<T>["options"];
+};
+
 export interface Story {
   id: string;
   name: string;
@@ -173,3 +177,8 @@ export type RuntimeMeta = Meta<RuntimeComponent>;
 
 export const storyPreviewId = "story-preview";
 export { getConfig } from "./config.js";
+
+export interface StoryMeta {
+  /** An alternative name for the story */
+  displayName?: string;
+}

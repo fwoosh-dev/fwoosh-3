@@ -2,7 +2,7 @@ import { FwooshPluginConfig } from "@fwoosh/types";
 import { resolveFile } from "@fwoosh/types/resolve-file";
 import { {{pascalCase name}}Options } from "./types.js";
 
-export function {{camelCase name}}(options: {{pascalCase name}}Options): FwooshPluginConfig {
+export function {{camelCase name}}(options: {{pascalCase name}}Options) {
   return {
     tools: [
       {
@@ -12,5 +12,5 @@ export function {{camelCase name}}(options: {{pascalCase name}}Options): FwooshP
         options,
       },
     ],
-  };
+  } satisfies FwooshPluginConfig;
 }

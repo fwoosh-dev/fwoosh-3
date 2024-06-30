@@ -1,6 +1,6 @@
 "use client";
 
-import { PageMeta } from "fwoosh";
+import { PageMeta, StoryMeta } from "fwoosh";
 import { useControl } from "@fwoosh/plugin-control-panel/react";
 
 import { Button } from "./Button.js";
@@ -45,9 +45,10 @@ export const Primary = () => {
 export const Disabled = () => <Button disabled>Disabled</Button>;
 
 Disabled.story = {
+  displayName: "Disabled",
   options: {
     centered: {
       enabled: false,
     },
   },
-} satisfies { options?: PageMeta["options"] };
+} satisfies StoryMeta;

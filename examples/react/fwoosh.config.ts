@@ -1,4 +1,4 @@
-import { defineConfig } from "fwoosh";
+import { defineConfig, StoryMetaBase } from "fwoosh";
 import { zoomPlugin } from "@fwoosh/plugin-zoom";
 import { descriptionPlugin } from "@fwoosh/plugin-description";
 import { reactDocgen } from "@fwoosh/plugin-react-docgen";
@@ -32,6 +32,10 @@ const config = defineConfig({
 
 declare module "fwoosh" {
   type PageMeta = typeof config;
+
+  interface StoryMeta {
+    options?: PageMeta["options"];
+  }
 }
 
 export default config;

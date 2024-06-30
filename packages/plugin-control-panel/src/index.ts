@@ -1,7 +1,7 @@
 import { FwooshPluginConfig } from "@fwoosh/types";
 import { resolveFile } from "@fwoosh/types/resolve-file";
 
-export function controlPanel(): FwooshPluginConfig {
+export function controlPanel() {
   return {
     tools: [
       {
@@ -11,5 +11,5 @@ export function controlPanel(): FwooshPluginConfig {
         filepath: resolveFile("ControlPanel.js"),
       },
     ],
-  };
+  } satisfies FwooshPluginConfig;
 }

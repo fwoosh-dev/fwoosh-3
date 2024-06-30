@@ -118,7 +118,7 @@ const nodeTypeToComponent = {
     const [head, ...rows] = node.children;
 
     return (
-      <Table {...props}>
+      <Table aria-label="Markdown table" {...props}>
         <TableHeader>
           {head?.children.map((cell, index) => (
             <TableColumn isRowHeader key={`${node.type}-${cell.type}-${index}`}>

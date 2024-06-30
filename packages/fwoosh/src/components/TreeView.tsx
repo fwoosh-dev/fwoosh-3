@@ -86,8 +86,8 @@ export function TreeView({
       selectedItems={optimisticActive}
       onSelectedItemsChange={(_, itemId) => {
         if (itemId?.includes("_")) {
-          setActiveOptimistic(itemId);
           startTransition(() => {
+            setActiveOptimistic(itemId);
             router.push(`/bench/${itemId}`);
           });
         }

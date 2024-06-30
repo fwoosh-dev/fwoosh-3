@@ -63,7 +63,7 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
   return (
     <TabPanelContent>
       {docs.map((doc) => {
-        const { props, description } = doc;
+        const { props, description, displayName } = doc;
 
         if (!props || !description) {
           return null;
@@ -77,7 +77,10 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
             {description && <Markdown>{description}</Markdown>}
 
             {propEntries.length > 0 && (
-              <Table selectionMode="single">
+              <Table
+                aria-label={`Props for ${displayName}`}
+                selectionMode="single"
+              >
                 <TableHeader>
                   <TableColumn isRowHeader={true}>Name</TableColumn>
                   <TableColumn>Type</TableColumn>

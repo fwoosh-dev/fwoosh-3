@@ -22,12 +22,15 @@ export default function ScreensTool({
       <Select
         variant="toolbar"
         placeholder="Default"
+        aria-label="Screen size"
         selectedKey={typeof device === "string" ? device : "default"}
         onSelectionChange={(key) => store.setValue("device", key)}
       >
         <SelectOption id="default">Default</SelectOption>
         {Object.entries(sizes).map((item) => (
-          <SelectOption id={item[0]}>{item[0]}</SelectOption>
+          <SelectOption key={item[0]} id={item[0]}>
+            {item[0]}
+          </SelectOption>
         ))}
       </Select>
 

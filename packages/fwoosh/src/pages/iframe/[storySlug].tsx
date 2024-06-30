@@ -2,6 +2,7 @@ import { importMeta, importPage, importPlugin } from "@fwoosh/pages";
 import { getAllStorySlugs, getStoryBySlug } from "../../utils/stories";
 import { getConfig as getFwooshConfig } from "@fwoosh/types";
 import * as stylex from "@stylexjs/stylex";
+import { StoryContextProvider } from "@fwoosh/ui";
 
 const styles = stylex.create({
   base: {
@@ -61,7 +62,11 @@ export default async function Iframe({ storySlug }: { storySlug: string }) {
       }, example);
     }
 
-    return <div {...stylex.props(styles.base)}>{example}</div>;
+    return (
+      <StoryContextProvider page={page} story={story}>
+        <div {...stylex.props(styles.base)}>{example}</div>
+      </StoryContextProvider>
+    );
   } catch (error) {
     console.error("COULD NOT LOAD STORY IN IFRAME");
     console.error(error);

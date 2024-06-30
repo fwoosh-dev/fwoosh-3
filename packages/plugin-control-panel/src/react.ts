@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useState } from "react";
+import { getStorySlug } from "@fwoosh/types";
+import { useStoryContext } from "@fwoosh/ui";
+
 import { setItem } from "./store.js";
 import { Control } from "./types.js";
 
@@ -38,7 +41,11 @@ function useStoryUpdate<T>({
 
 export function useControl<const T>(props: Control<T>) {
   const [value, setValue] = useState(props.value);
-  const storyId = `controls_${"STORY_ID"}`;
+  const storyContext = useStoryContext(`controls_${props.label}`);
+  const storyId = `controls_${getStorySlug(
+    storyContext.page,
+    storyContext.story
+  )}`;
 
   useStoryUpdate({ label: props.label, value, storyId, onUpdate: setValue });
 

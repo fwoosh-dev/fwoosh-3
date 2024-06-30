@@ -182,3 +182,7 @@ export interface StoryMeta {
   /** An alternative name for the story */
   displayName?: string;
 }
+
+export function getStorySlug(page: Page, story: Story) {
+  return `${page.id}_${story.id}`;
+}

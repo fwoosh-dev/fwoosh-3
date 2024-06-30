@@ -1,7 +1,7 @@
 import { glob } from "glob";
 import { promises as fs } from "fs";
 import crypto from "crypto";
-import { Page, Story } from "@fwoosh/types";
+import { Page, getStorySlug } from "@fwoosh/types";
 import { extractComments } from "@fwoosh/extract-comments";
 import { importMeta, importPage } from "@fwoosh/pages";
 
@@ -110,10 +110,6 @@ export async function getPageById(id: string) {
       return story;
     }
   }
-}
-
-export function getStorySlug(page: Page, story: Story) {
-  return `${page.id}_${story.id}`;
 }
 
 export function parseStorySlug(slug: string) {

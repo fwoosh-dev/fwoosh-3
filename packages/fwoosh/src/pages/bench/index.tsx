@@ -1,4 +1,6 @@
-import { getAllPageGroups, getStorySlug } from "../../utils/stories";
+import { getStorySlug } from "@fwoosh/types";
+
+import { getAllPageGroups } from "../../utils/stories";
 import Story from "./[storySlug]";
 
 export default async function FirstStory() {

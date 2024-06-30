@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { StoryContext } from "@fwoosh/types";
-import { StoryContextProvider } from "@fwoosh/ui";
+import { StoryContextProvider, getStorySlug } from "@fwoosh/ui";
 import { Inspector, SidebarLayout } from "@fwoosh/ui/app";
 
 import { SidebarHeader } from "./SidebarHeader";
@@ -17,7 +17,6 @@ import {
   primaryTheme,
   primaryATheme,
 } from "@fwoosh/ui/theme/theme.stylex";
-import { getStorySlug } from "../utils/stories";
 
 const styles = stylex.create({
   SidebarLayout: {

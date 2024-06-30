@@ -34,13 +34,23 @@ export default async function Story({ storySlug }: { storySlug: string }) {
   );
 
   if (wrappers.length !== 0) {
-    const decoratorComponents = await Promise.all(
+    const wrapperComponents = await Promise.all(
       wrappers.map(({ filepath }) => importPlugin(filepath))
     );
 
-    frame = decoratorComponents.reduceRight((acc, Wrapper, index) => {
+    frame = wrapperComponents.reduceRight((acc, Wrapper, index) => {
       const wrapper = wrappers[index]!;
-      return <Wrapper key={wrapper.id}>{acc}</Wrapper>;
+
+      return (
+        <Wrapper
+          key={wrapper.id}
+          page={page}
+          story={story}
+          options={wrapper.options}
+        >
+          {acc}
+        </Wrapper>
+      );
     }, frame);
   }
 

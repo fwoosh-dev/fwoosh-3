@@ -50,6 +50,8 @@ export default async function Iframe({ storySlug }: { storySlug: string }) {
         return (
           <Decorator
             key={decorator.id}
+            page={page}
+            story={story}
             options={{
               ...globalDecoratorOptions,
               ...pageLevelDecoratorOptions,

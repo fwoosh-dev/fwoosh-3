@@ -4,8 +4,10 @@ import { appChrome, space } from "@fwoosh/ui/theme/tokens.stylex";
 import * as stylex from "@stylexjs/stylex";
 import { useValue } from "tinybase/ui-react";
 
-import { sizes, ScreenSize } from "./sizes.js";
+import { defaultSizes, ScreenSize } from "./default-sizes.js";
 import { canUseOrientation, store } from "./store.js";
+import { FwooshPluginProps } from "@fwoosh/types";
+import { ScreensOptions } from "./types.js";
 
 const styles = stylex.create({
   wrapper: {
@@ -24,8 +26,9 @@ const styles = stylex.create({
 });
 
 export default function ScreensFrameWrapper({
+  options: { sizes = defaultSizes } = {},
   children,
-}: {
+}: FwooshPluginProps<ScreensOptions> & {
   children: React.ReactNode;
 }) {
   const deviceName = useValue("device", store);

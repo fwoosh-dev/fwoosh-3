@@ -1,7 +1,6 @@
 import micromatch from "micromatch";
 import dedent from "dedent";
 import { promises as fs } from "fs";
-import path from "path";
 import { glob } from "glob";
 import { FwooshConfig, FwooshTool, defaultConfig } from "@fwoosh/types";
 import { UserConfig } from "vite";

@@ -13,7 +13,11 @@ declare module "@fwoosh/pages" {
     };
   }>;
 
-  export function importPlugin(
+  export function importPlugin<T>(
     filename: string
-  ): Promise<(props: FwooshPluginProps) => JSX.Element>;
+  ): Promise<
+    (
+      props: Required<FwooshPluginProps<T>> & { children?: React.ReactNode }
+    ) => JSX.Element
+  >;
 }

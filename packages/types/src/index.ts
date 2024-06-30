@@ -158,7 +158,7 @@ export interface StoryContext {
 }
 
 export interface FwooshPluginProps<T> extends StoryContext {
-  options?: T;
+  options?: T | undefined;
 }
 
 export interface Meta<T = object> {

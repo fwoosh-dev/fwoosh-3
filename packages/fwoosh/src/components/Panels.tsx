@@ -9,7 +9,7 @@ export async function Panel({
   ...props
 }: { panel: FwooshPanel } & StoryContext) {
   const Component = await importPlugin(panel.filepath);
-  return <Component {...props} />;
+  return <Component {...props} options={panel.options} />;
 }
 
 export async function Panels({ page, story }: StoryContext) {

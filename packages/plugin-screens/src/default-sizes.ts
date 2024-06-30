@@ -1,4 +1,4 @@
-export const sizes = {
+export const defaultSizes = {
   Desktop: {
     width: 1024,
     height: 768,
@@ -69,4 +69,4 @@ export const sizes = {
   },
 };
 
-export type ScreenSize = keyof typeof sizes;
+export type ScreenSize = keyof typeof defaultSizes;

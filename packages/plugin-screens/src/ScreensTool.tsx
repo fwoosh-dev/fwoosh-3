@@ -6,10 +6,14 @@ import { useValue } from "tinybase/ui-react";
 import { MobileIcon } from "@radix-ui/react-icons";
 import { Tooltip, TooltipTrigger } from "@fwoosh/ui/components/Tooltip";
 
-import { sizes } from "./sizes.js";
+import { defaultSizes } from "./default-sizes.js";
 import { canUseOrientation, store } from "./store.js";
+import { FwooshPluginProps } from "@fwoosh/types";
+import { ScreensOptions } from "./types.js";
 
-export default function ScreensTool() {
+export default function ScreensTool({
+  options: { sizes = defaultSizes } = {},
+}: FwooshPluginProps<ScreensOptions>) {
   const device = useValue("device", store);
   const orientation = useValue("orientation", store);
 

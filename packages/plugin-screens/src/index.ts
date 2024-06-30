@@ -2,6 +2,7 @@ import { FwooshPluginConfig } from "@fwoosh/types";
 import { resolveFile } from "@fwoosh/types/resolve-file";
 import { ScreensOptions } from "./types.js";
 
+export { ScreensOptions } from "./types.js";
 export function screens(options?: ScreensOptions) {
   return {
     tools: [

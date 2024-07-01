@@ -29,13 +29,13 @@
     "invariant": "^2.2.4",
     "lilconfig": "^3.1.2",
     "micromatch": "^4.0.7",
-    "react": "19.0.0-beta-e7d213dfb0-20240507",
-    "react-dom": "19.0.0-beta-e7d213dfb0-20240507",
+    "react": "19.0.0-rc.0",
+    "react-dom": "19.0.0-rc.0",
     "react-resizable-panels": "^2.0.19",
-    "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",
+    "react-server-dom-webpack": "19.0.0-rc.0",
     "tsx": "^4.15.5",
     "vite-plugin-static-copy": "^1.0.5",
-    "waku": "^0.20.2"
+    "waku": "^0.21.0-beta.0"
   },
   "devDependencies": {
     "@fwoosh/config-typescript": "workspace:*",

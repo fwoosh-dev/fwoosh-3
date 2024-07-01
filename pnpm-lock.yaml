@@ -91,9 +91,15 @@ importers:
       '@fwoosh/plugin-zoom':
         specifier: workspace:*
         version: link:../../packages/plugin-zoom
+      '@fwoosh/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@fwoosh/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@types/node':
+        specifier: ^20.14.2
+        version: 20.14.2
       '@types/react':
         specifier: 18.3.1
         version: 18.3.1

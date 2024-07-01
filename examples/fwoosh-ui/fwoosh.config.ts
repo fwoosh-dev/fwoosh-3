@@ -35,6 +35,15 @@ const config = defineConfig({
     controlPanel(),
     screens(),
     a11y(),
+    {
+      tools: [
+        {
+          id: "app-decorator",
+          type: "decorator",
+          filepath: "./fwoosh/AppDecorator.tsx",
+        },
+      ],
+    },
   ],
 });
 

@@ -5,6 +5,7 @@ import { glob } from "glob";
 import { FwooshConfig, FwooshTool, defaultConfig } from "@fwoosh/types";
 import { UserConfig } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import path from "path";
 
 function getAllPages() {
   return glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
@@ -159,8 +160,13 @@ export async function annotateExportPlugin(): Promise<
               export const importPage = (filename) => import(/* @vite-ignore */ filename);
 
               export const importPlugin = (filename) => {
-                const esmPath = path.join(filename.replace("commonjs", "esm"));
-                return import(/* @vite-ignore */ esmPath).then((mod) => mod.default);
+                let finalPath = filename.replace("commonjs", "esm");
+
+                if (finalPath.startsWith("./")) {
+                  finalPath = path.join("${process.env.TARGET_DIRECTORY}", finalPath);
+                }
+
+                return import(/* @vite-ignore */ finalPath).then((mod) => mod.default);
               };
 
               export const importMeta = (filename) => 
@@ -198,6 +204,10 @@ export async function annotateExportPlugin(): Promise<
               switch (filename) {
                 ${pluginPaths
                   .map((plugin) => {
+                    if (plugin.startsWith("./")) {
+                      plugin = path.join(process.env.TARGET_DIRECTORY!, plugin);
+                    }
+
                     return dedent`
                     case '${plugin}':
                       return import("${plugin}").then((mod) => mod.default);

@@ -1,3 +1,6 @@
 {
-  "extends": "@fwoosh/config-typescript/react.json"
+  "extends": "@fwoosh/config-typescript/react.json",
+  "compilerOptions": {
+    "types": ["react/experimental", "node"]
+  }
 }

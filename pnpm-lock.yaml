@@ -125,6 +125,10 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
+  packages/extract-comments/dist/commonjs: {}
+
+  packages/extract-comments/dist/esm: {}
+
   packages/fwoosh:
     dependencies:
       '@fwoosh/extract-comments':
@@ -237,6 +241,8 @@ importers:
         specifier: ^0.7.5
         version: 0.7.5(rollup@4.18.0)
 
+  packages/fwoosh/dist/esm: {}
+
   packages/log:
     devDependencies:
       '@fwoosh/config-typescript':
@@ -248,6 +254,10 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
+
+  packages/log/dist/commonjs: {}
+
+  packages/log/dist/esm: {}
 
   packages/plugin-a11y:
     dependencies:
@@ -289,6 +299,8 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
+  packages/plugin-a11y/dist/esm: {}
+
   packages/plugin-centered-decorator:
     dependencies:
       '@fwoosh/ui':
@@ -319,6 +331,8 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
+
+  packages/plugin-centered-decorator/dist/esm: {}
 
   packages/plugin-control-panel:
     dependencies:
@@ -354,6 +368,8 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
+  packages/plugin-control-panel/dist/esm: {}
+
   packages/plugin-description:
     dependencies:
       '@fwoosh/ui':
@@ -381,6 +397,8 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
+
+  packages/plugin-description/dist/esm: {}
 
   packages/plugin-react-docgen:
     dependencies:
@@ -416,6 +434,8 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
+  packages/plugin-react-docgen/dist/esm: {}
+
   packages/plugin-repo-link:
     dependencies:
       '@fwoosh/ui':
@@ -446,6 +466,8 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
+
+  packages/plugin-repo-link/dist/esm: {}
 
   packages/plugin-screens:
     dependencies:
@@ -484,6 +506,8 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
+  packages/plugin-screens/dist/esm: {}
+
   packages/plugin-source-panel:
     dependencies:
       '@fwoosh/ui':
@@ -519,6 +543,8 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
+  packages/plugin-source-panel/dist/esm: {}
+
   packages/plugin-zoom:
     dependencies:
       '@fwoosh/ui':
@@ -553,14 +579,16 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
+  packages/plugin-zoom/dist/esm: {}
+
   packages/types:
     dependencies:
       invariant:
         specifier: ^2.2.4
         version: 2.2.4
       shiki:
-        specifier: ^1.7.0
-        version: 1.7.0
+        specifier: ^1.10.0
+        version: 1.10.0
       type-fest:
         specifier: ^4.20.1
         version: 4.20.1
@@ -580,6 +608,8 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
+
+  packages/types/dist/esm: {}
 
   packages/ui:
     dependencies:
@@ -623,8 +653,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       shiki:
-        specifier: ^1.7.0
-        version: 1.7.0
+        specifier: ^1.10.0
+        version: 1.10.0
       unified:
         specifier: ^11.0.5
         version: 11.0.5
@@ -662,6 +692,8 @@ importers:
       tsx:
         specifier: ^4.15.5
         version: 4.15.5
+
+  packages/ui/dist/esm: {}
 
 packages:
 
@@ -1950,8 +1982,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@1.7.0':
-    resolution: {integrity: sha512-O6j27b7dGmJbR3mjwh/aHH8Ld+GQvA0OQsNO43wKWnqbAae3AYXrhFyScHGX8hXZD6vX2ngjzDFkZY5srtIJbQ==}
+  '@shikijs/core@1.10.0':
+    resolution: {integrity: sha512-BZcr6FCmPfP6TXaekvujZcnkFmJHZ/Yglu97r/9VjzVndQA56/F4WjUKtJRQUnK59Wi7p/UTAOekMfCJv7jnYg==}
 
   '@sindresorhus/is@4.6.0':
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
@@ -4061,8 +4093,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki@1.7.0:
-    resolution: {integrity: sha512-H5pMn4JA7ayx8H0qOz1k2qANq6mZVCMl1gKLK6kWIrv1s2Ial4EmD4s4jE8QB5Dw03d/oCQUxc24sotuyR5byA==}
+  shiki@1.10.0:
+    resolution: {integrity: sha512-YD2sXQ+TMD/F9BimV9Jn0wj35pqOvywvOG/3PB6hGHyGKlM7TJ9tyJ02jOb2kF8F0HfJwKNYrh3sW7jEcuRlXA==}
 
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -6289,7 +6321,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
-  '@shikijs/core@1.7.0': {}
+  '@shikijs/core@1.10.0': {}
 
   '@sindresorhus/is@4.6.0': {}
 
@@ -9050,9 +9082,9 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki@1.7.0:
+  shiki@1.10.0:
     dependencies:
-      '@shikijs/core': 1.7.0
+      '@shikijs/core': 1.10.0
 
   side-channel@1.0.6:
     dependencies:

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect } from "yet-another-react-lightbox";
+import { useLayoutEffect } from "react";
 
 export function ScrollToHighlight({ target }: { target: string }) {
   useLayoutEffect(() => {

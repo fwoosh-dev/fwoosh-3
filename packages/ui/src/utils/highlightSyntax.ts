@@ -3,7 +3,7 @@ import {
   BundledTheme,
   CodeToHastOptions,
   codeToHtml,
-} from "shiki";
+} from "shiki/bundle/full";
 import * as stylex from "@stylexjs/stylex";
 import { appChrome, borderRadius, space } from "../theme/tokens.stylex.js";
 import { defaultConfig, getConfig } from "@fwoosh/types";

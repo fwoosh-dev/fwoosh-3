@@ -4,6 +4,14 @@ export interface TextControl<T> {
   type: "text";
 }
 
+export interface NumberControl<T> {
+  label: string;
+  value: T;
+  type: "number";
+  min?: number;
+  max?: number;
+}
+
 export interface SelectControl<T> {
   label: string;
   value: NoInfer<T>;
@@ -11,4 +19,4 @@ export interface SelectControl<T> {
   options: T[];
 }
 
-export type Control<T> = TextControl<T> | SelectControl<T>;
+export type Control<T> = TextControl<T> | SelectControl<T> | NumberControl<T>;

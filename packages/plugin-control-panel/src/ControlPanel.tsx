@@ -6,10 +6,11 @@ import * as stylex from "@stylexjs/stylex";
 import { TabPanelContent } from "@fwoosh/ui/components/Tabs";
 import { Label } from "@fwoosh/ui/components/Label";
 import { Input, TextField } from "@fwoosh/ui/components/TextField";
+import { NumberField } from "@fwoosh/ui/components/NumberField";
 import { Select, SelectOption } from "@fwoosh/ui/components/Select";
 
 import { setItem } from "./store.js";
-import { Control, SelectControl, TextControl } from "./types.js";
+import { Control, NumberControl, SelectControl, TextControl } from "./types.js";
 import { space } from "@fwoosh/ui/theme/tokens.stylex";
 import { StoryContext, getStorySlug } from "@fwoosh/types";
 
@@ -57,6 +58,45 @@ function TextControlComponent<T>({
         onChange={(e) => onChange(e.target.value)}
       />
     </TextField>
+  );
+}
+
+function NumberControlComponent<T extends number>({
+  label,
+  value: initialValue,
+  storyId,
+  max,
+  min,
+}: NumberControl<T> & { storyId: string }) {
+  const [value, setValue] = useState(initialValue);
+
+  const onChange = useCallback(
+    (newValue: number) => {
+      setValue(newValue as T);
+      setItem({
+        scope: "app",
+        id: storyId,
+        value: {
+          type: "number",
+          value: newValue,
+          label,
+          max,
+          min,
+        },
+      });
+    },
+    [label, storyId, max, min]
+  );
+
+  return (
+    <NumberField
+      style={styles.row}
+      label={label}
+      value={value}
+      minValue={min}
+      maxValue={max}
+      onChange={onChange}
+    />
   );
 }
 
@@ -146,6 +186,12 @@ function ControlPanelRenderer({ page, story }: StoryContext) {
               key={value.label}
               storyId={storyId}
               {...(value as SelectControl<string>)}
+            />
+          ) : value.type === "number" ? (
+            <NumberControlComponent
+              key={value.label}
+              storyId={storyId}
+              {...(value as NumberControl<number>)}
             />
           ) : null
         )}

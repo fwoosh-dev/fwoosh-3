@@ -27,6 +27,7 @@ import {
 } from "../theme/tokens.stylex.js";
 import { mergeProps } from "react-aria";
 import { FocusRing } from "./FocusRing.js";
+import { IconWrapper } from "./IconButton.js";
 
 interface SelectVariant {
   variant?: "toolbar";
@@ -55,6 +56,8 @@ const triggerStyles = stylex.create({
     outline: {
       ":focus-visible": "none",
     },
+    paddingLeft: space[4],
+    paddingRight: space[2],
     position: "relative",
     textTransform: "capitalize",
   },
@@ -99,7 +102,9 @@ function SelectTrigger({ variant }: SelectVariant) {
           <>
             {isFocusVisible && <FocusRing style={triggerStyles.focusRing} />}
             <SelectValue {...stylex.props(triggerStyles.label)} />
-            <ChevronDownIcon />
+            <IconWrapper variant="toolbar">
+              <ChevronDownIcon />
+            </IconWrapper>
           </>
         );
       }}

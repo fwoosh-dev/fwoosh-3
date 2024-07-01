@@ -48,9 +48,10 @@ export const Basic = () => {
     value: "center",
   });
   const [gap] = useControl({
-    type: "select",
+    type: "number",
     label: "Gap",
-    options: [0, 1, 2, 3, 4, 5],
+    min: 0,
+    max: 5,
     value: 0,
   });
 

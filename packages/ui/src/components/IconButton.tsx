@@ -3,7 +3,7 @@
 import * as stylex from "@stylexjs/stylex";
 import { Button, ButtonProps, Link, LinkProps } from "react-aria-components";
 
-import { borderRadius } from "../theme/tokens.stylex.js";
+import { appChromeA, borderRadius } from "../theme/tokens.stylex.js";
 import { appChrome } from "../theme/tokens.stylex.js";
 import { FocusRing } from "./FocusRing.js";
 
@@ -27,8 +27,8 @@ const buttonStyles = stylex.create({
   button: {
     backgroundColor: {
       default: "transparent",
-      ":hover": appChrome.elementBg,
-      ":active": appChrome.hover,
+      ":hover": appChromeA.elementBg,
+      ":active": appChromeA.hover,
     },
   },
   toolbar: {
@@ -37,19 +37,27 @@ const buttonStyles = stylex.create({
   },
 });
 
-export interface IconButtonProps extends Omit<ButtonProps, "children"> {
+export interface IconButtonProps
+  extends Omit<ButtonProps, "children" | "style" | "className"> {
   variant?: "toolbar";
   children: React.ReactNode;
+  style?: stylex.StyleXStyles;
 }
 
-export function IconButton({ variant, children, ...props }: IconButtonProps) {
+export function IconButton({
+  variant,
+  children,
+  style,
+  ...props
+}: IconButtonProps) {
   return (
     <Button
       {...props}
       {...stylex.props(
         buttonStyles.base,
         buttonStyles.button,
-        variant === "toolbar" && buttonStyles.toolbar
+        variant === "toolbar" && buttonStyles.toolbar,
+        style
       )}
     >
       {({ isFocusVisible }) => {
@@ -94,9 +102,21 @@ export function IconLink({ variant, children, ...props }: IconLinkProps) {
 export function IconWrapper({
   children,
   style,
+  variant,
 }: {
   children: React.ReactNode;
   style?: stylex.StyleXStyles;
+  variant?: "toolbar";
 }) {
-  return <div {...stylex.props(buttonStyles.base, style)}>{children}</div>;
+  return (
+    <div
+      {...stylex.props(
+        buttonStyles.base,
+        variant === "toolbar" && buttonStyles.toolbar,
+        style
+      )}
+    >
+      {children}
+    </div>
+  );
 }

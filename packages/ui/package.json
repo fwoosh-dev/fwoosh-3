@@ -103,6 +103,13 @@
         "default": "./dist/esm/components/Markdown.js"
       }
     },
+    "./components/NumberField": {
+      "import": {
+        "source": "./src/components/NumberField.tsx",
+        "types": "./dist/esm/components/NumberField.d.ts",
+        "default": "./dist/esm/components/NumberField.js"
+      }
+    },
     "./components/Popover": {
       "import": {
         "source": "./src/components/Popover.tsx",

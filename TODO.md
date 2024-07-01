@@ -15,10 +15,12 @@
 - [x] Screen size decorators
 - [x] AXE Plugin
 
-- [ ] Dark mode toggle toolbar control
+- [ ] Dark mode toggle toolbar control for app chrome
+- [ ] Backgrounds/color theme mode toggle toolbar control
+- [ ] Grid toolbar control
+- [ ] MDX only pages
 - [ ] improve docs view
 - [ ] View docs button
-- [ ] MDX only pages
 - [ ] Style MD components more
 - [ ] sidebar sorting
 - [ ] Remember initial layout in ssr friendly way

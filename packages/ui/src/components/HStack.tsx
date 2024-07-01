@@ -19,6 +19,7 @@ const styles = stylex.create({
   gapSm: { gap: space[2] },
   gapMedium: { gap: space[3] },
   gapLarge: { gap: space[4] },
+  gapXl: { gap: space[5] },
 });
 
 export interface HStackProps
@@ -26,7 +27,7 @@ export interface HStackProps
   align?: "start" | "center" | "end";
   justify?: "start" | "center" | "end" | "between" | "around";
   style?: stylex.StyleXStyles;
-  gap?: 1 | 2 | 3 | 4 | 5;
+  gap?: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
 export function HStack({
@@ -63,6 +64,8 @@ export function HStack({
           ? styles.gapMedium
           : gapProp === 4
           ? styles.gapLarge
+          : gapProp === 5
+          ? styles.gapXl
           : null,
         style
       )}

@@ -61,13 +61,6 @@
         "default": "./dist/esm/app.js"
       }
     },
-    "./components/Button": {
-      "import": {
-        "source": "./src/components/Button.tsx",
-        "types": "./dist/esm/components/Button.d.ts",
-        "default": "./dist/esm/components/Button.js"
-      }
-    },
     "./components/FocusRing": {
       "import": {
         "source": "./src/components/FocusRing.tsx",

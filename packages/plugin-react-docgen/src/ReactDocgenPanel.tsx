@@ -39,11 +39,14 @@ export default async function ReactDocgenPanel({ page }: StoryContext) {
     (mod) => mod.meta
   );
   const components = Array.isArray(component) ? component : [component];
-  const fwooshFiles = new Set(components.map((c) => c.fwoosh_file));
+  const fwooshFiles = new Set(
+    components.map((c) => c.fwoosh_file).filter(Boolean)
+  );
   const docComponents = new Set(components.map((c) => c.displayName));
   const docs: docgen.ComponentDoc[] = [];
 
   for (const fwooshFile of fwooshFiles) {
+    console.log({ fwooshFile });
     const doc = docgen.parse(fwooshFile, defaultOptions);
     const docWithFile = doc.find((d) => docComponents.has(d.displayName));
 

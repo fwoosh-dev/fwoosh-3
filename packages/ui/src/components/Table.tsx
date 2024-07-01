@@ -99,7 +99,7 @@ export function TableRow<T extends object>({ ...props }: TableRowProps<T>) {
   );
 }
 
-interface TableCellProps
+export interface TableCellProps
   extends Omit<CellProps, "className" | "style" | "children"> {
   children: React.ReactNode;
 }

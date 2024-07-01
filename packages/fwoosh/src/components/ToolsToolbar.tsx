@@ -38,8 +38,14 @@ export async function ToolsToolbarTool({
   tool,
   ...props
 }: ToolsToolbarToolProps) {
-  const Component = await importPlugin(tool.filepath);
-  return <Component {...props} options={tool.options} />;
+  try {
+    const Component = await importPlugin(tool.filepath);
+    return <Component {...props} options={tool.options} />;
+  } catch (error) {
+    console.error("COULD NOT LOAD TOOL");
+    console.error(error);
+    return null;
+  }
 }
 
 export async function ToolsToolbar(props: StoryContext) {

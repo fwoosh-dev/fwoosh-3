@@ -1,7 +1,7 @@
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkUnwrapImages from "remark-unwrap-images";
-import remarkEmoji from "remark-emoji";
+// import remarkEmoji from "remark-emoji";
 import type {
   Code,
   Heading,
@@ -42,7 +42,7 @@ export async function getAst(text: string): Promise<Root> {
     .use(remarkParse, {})
     // Markdown plugins
     .use(remarkGfm)
-    .use(remarkEmoji)
+    // .use(remarkEmoji)
     .use(remarkUnwrapImages)
     // Caput the AST
     .use(function process() {
@@ -114,7 +114,7 @@ const nodeTypeToComponent = {
   listItem: "li",
   paragraph: "p",
   strong: "strong",
-  table: ({ node, ...props }: { node: TableType }) => {
+  table: function MarkdownTable({ node, ...props }: { node: TableType }) {
     const [head, ...rows] = node.children;
 
     return (
@@ -133,7 +133,8 @@ const nodeTypeToComponent = {
       </Table>
     );
   },
-  tableCell: TableCell,
+  tableCell: "td",
+  // tableCell: TableCell,
   tableRow: TableRow,
   text: "span",
   thematicBreak: "hr",
@@ -152,6 +153,8 @@ function MarkdownNode({ node }: { node: Root | RootContent }) {
   }
 
   const Component = nodeTypeToComponent[node.type];
+
+  console.log({ Component, type: node.type });
 
   if (typeof Component === "string") {
     return (
@@ -182,5 +185,8 @@ function MarkdownNode({ node }: { node: Root | RootContent }) {
 
 export async function Markdown({ children }: { children: string }) {
   const ast = await getAst(children);
-  return <MarkdownNode node={ast} />;
+  console.log(ast);
+  const ret = <MarkdownNode node={ast} />;
+  console.log("DONE");
+  return ret;
 }

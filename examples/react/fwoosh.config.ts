@@ -23,14 +23,14 @@ const config = defineConfig({
   docgen: ["**/*.tsx"],
   plugins: [
     // zoomPlugin(),
-    // descriptionPlugin(),
+    descriptionPlugin(),
     // reactDocgen(),
     // sourcePanel(),
     // repoLink({ repo: "fwoosh-dev/fwoosh-3" }),
     // centeredDecorator(),
     // controlPanel(),
     // screens(),
-    a11y(),
+    // a11y(),
   ],
 });
 

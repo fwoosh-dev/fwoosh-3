@@ -8,8 +8,14 @@ export async function Panel({
   panel,
   ...props
 }: { panel: FwooshPanel } & StoryContext) {
-  const Component = await importPlugin(panel.filepath);
-  return <Component {...props} options={panel.options} />;
+  try {
+    const Component = await importPlugin(panel.filepath);
+    return <Component {...props} options={panel.options} />;
+  } catch (error) {
+    console.error("COULD NOT LOAD PANEL");
+    console.error(error);
+    return null;
+  }
 }
 
 export async function Panels({ page, story }: StoryContext) {

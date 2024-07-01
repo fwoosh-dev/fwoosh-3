@@ -8,7 +8,7 @@
     "build:docs": "waku build",
     "start:docs": "waku start",
     "build": "tshy",
-    "clean": "rimraf dist .tshy"
+    "clean": "rimraf dist .tshy .turbo out"
   },
   "dependencies": {
     "@fwoosh/extract-comments": "workspace:*",

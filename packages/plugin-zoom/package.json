@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "tshy",
-    "clean": "rimraf dist .tshy"
+    "clean": "rimraf dist .tshy .turbo out"
   },
   "keywords": [],
   "author": "Andrew Lisowski",

@@ -36,6 +36,9 @@ importers:
       globals:
         specifier: ^15.6.0
         version: 15.6.0
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
       tsx:
         specifier: ^4.15.5
         version: 4.15.5
@@ -121,10 +124,6 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
-
-  packages/extract-comments/dist/commonjs: {}
-
-  packages/extract-comments/dist/esm: {}
 
   packages/fwoosh:
     dependencies:
@@ -238,8 +237,6 @@ importers:
         specifier: ^0.7.5
         version: 0.7.5(rollup@4.18.0)
 
-  packages/fwoosh/dist/esm: {}
-
   packages/log:
     devDependencies:
       '@fwoosh/config-typescript':
@@ -251,10 +248,6 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
-
-  packages/log/dist/commonjs: {}
-
-  packages/log/dist/esm: {}
 
   packages/plugin-a11y:
     dependencies:
@@ -296,8 +289,6 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
-  packages/plugin-a11y/dist/esm: {}
-
   packages/plugin-centered-decorator:
     dependencies:
       '@fwoosh/ui':
@@ -328,8 +319,6 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
-
-  packages/plugin-centered-decorator/dist/esm: {}
 
   packages/plugin-control-panel:
     dependencies:
@@ -365,8 +354,6 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
-  packages/plugin-control-panel/dist/esm: {}
-
   packages/plugin-description:
     dependencies:
       '@fwoosh/ui':
@@ -394,8 +381,6 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
-
-  packages/plugin-description/dist/esm: {}
 
   packages/plugin-react-docgen:
     dependencies:
@@ -431,8 +416,6 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
-  packages/plugin-react-docgen/dist/esm: {}
-
   packages/plugin-repo-link:
     dependencies:
       '@fwoosh/ui':
@@ -463,8 +446,6 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
-
-  packages/plugin-repo-link/dist/esm: {}
 
   packages/plugin-screens:
     dependencies:
@@ -503,8 +484,6 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
-  packages/plugin-screens/dist/esm: {}
-
   packages/plugin-source-panel:
     dependencies:
       '@fwoosh/ui':
@@ -540,8 +519,6 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
-  packages/plugin-source-panel/dist/esm: {}
-
   packages/plugin-zoom:
     dependencies:
       '@fwoosh/ui':
@@ -576,8 +553,6 @@ importers:
         specifier: ^1.15.1
         version: 1.15.1
 
-  packages/plugin-zoom/dist/esm: {}
-
   packages/types:
     dependencies:
       invariant:
@@ -605,8 +580,6 @@ importers:
       tshy:
         specifier: ^1.15.1
         version: 1.15.1
-
-  packages/types/dist/esm: {}
 
   packages/ui:
     dependencies:
@@ -689,8 +662,6 @@ importers:
       tsx:
         specifier: ^4.15.5
         version: 4.15.5
-
-  packages/ui/dist/esm: {}
 
 packages:
 

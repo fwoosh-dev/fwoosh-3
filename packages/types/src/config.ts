@@ -1,4 +1,4 @@
-import { FwooshConfig } from "@fwoosh/types";
+import { FwooshConfig } from "./index.js";
 import invariant from "invariant";
 
 export async function getConfig(): Promise<FwooshConfig> {

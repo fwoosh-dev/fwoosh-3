@@ -5,6 +5,9 @@
       "dependsOn": ["^build"],
       "inputs": ["src/**/*"],
       "outputs": ["dist/**/*", ".tshy/**/*", ".tshy-build/**/*"]
+    },
+    "clean": {
+      "dependsOn": ["^clean"]
     }
   }
 }

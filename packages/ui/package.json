@@ -5,7 +5,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "tshy",
-    "clean": "rimraf dist .tshy",
+    "clean": "rimraf dist .tshy .turbo out",
     "gen-colors": "tsx scripts/gen-colors.ts"
   },
   "keywords": [],

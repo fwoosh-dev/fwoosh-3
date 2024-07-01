@@ -48,7 +48,7 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
   return (
     <StoryContextProvider page={page} story={story}>
       <SidebarLayout
-        style={[appChromeTheme, appChromeATheme, primaryTheme, primaryATheme]}
+      // style={[appChromeTheme, appChromeATheme, primaryTheme, primaryATheme]}
       >
         <aside {...stylex.props(styles.SidebarLayout)}>
           <SidebarHeader />

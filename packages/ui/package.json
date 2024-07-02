@@ -13,8 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
-    "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-context": "^1.0.1",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-scroll-area": "^1.1.0",
     "@stylexjs/open-props": "^0.6.1",
     "@stylexjs/stylex": "^0.6.1",
     "lucide-react": "^0.395.0",
@@ -115,6 +116,13 @@
         "source": "./src/components/Popover.tsx",
         "types": "./dist/esm/components/Popover.d.ts",
         "default": "./dist/esm/components/Popover.js"
+      }
+    },
+    "./components/Scroller": {
+      "import": {
+        "source": "./src/components/Scroller.tsx",
+        "types": "./dist/esm/components/Scroller.d.ts",
+        "default": "./dist/esm/components/Scroller.js"
       }
     },
     "./components/Select": {

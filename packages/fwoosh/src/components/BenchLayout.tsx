@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { StoryContext, getStorySlug } from "@fwoosh/types";
 import { StoryContextProvider } from "@fwoosh/ui";
 import { Inspector, SidebarLayout } from "@fwoosh/ui/app";
+import { Scroller } from "@fwoosh/ui/components/Scroller";
 
 import { SidebarHeader } from "./SidebarHeader";
 import { StoryList } from "./StoryList";
@@ -19,16 +20,13 @@ import {
 } from "@fwoosh/ui/theme/theme.stylex";
 
 const styles = stylex.create({
+  scrollWrapper: {
+    width: "calc(100% + 6px)",
+  },
   SidebarLayout: {
     display: "flex",
     flexDirection: "column",
     padding: space[5],
-  },
-  iframeWrapper: {
-    backgroundColor: "white",
-    height: "100%",
-    overflow: "auto",
-    width: "100%",
   },
   panelWrapper: {
     height: "100%",
@@ -50,10 +48,12 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
       <SidebarLayout
       // style={[appChromeTheme, appChromeATheme, primaryTheme, primaryATheme]}
       >
-        <aside {...stylex.props(styles.SidebarLayout)}>
-          <SidebarHeader />
-          <StoryList active={getStorySlug(page, story)} />
-        </aside>
+        <Scroller style={styles.scrollWrapper}>
+          <aside {...stylex.props(styles.SidebarLayout)}>
+            <SidebarHeader />
+            <StoryList active={getStorySlug(page, story)} />
+          </aside>
+        </Scroller>
 
         <Inspector>
           <PanelGroup id="inspector" direction="vertical">
@@ -64,7 +64,7 @@ export async function BenchLayout({ children, page, story }: BenchLayoutProps) {
               {...stylex.props(styles.storyArea)}
             >
               <ToolsToolbar page={page} story={story} />
-              <div {...stylex.props(styles.iframeWrapper)}>{children}</div>
+              {children}
             </Panel>
             <PanelResizeHandle id="preview-panels-handle" />
             <Panel defaultSize={50} id="panels" minSize={20} collapsible={true}>

@@ -8,6 +8,7 @@ const styles = stylex.create({
     display: "flex",
     height: "100%",
     justifyContent: "center",
+    overflow: "auto",
     width: "100%",
   },
 });

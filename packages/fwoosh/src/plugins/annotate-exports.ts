@@ -204,13 +204,18 @@ export async function annotateExportPlugin(): Promise<
               switch (filename) {
                 ${pluginPaths
                   .map((plugin) => {
-                    if (plugin.startsWith("./")) {
-                      plugin = path.join(process.env.TARGET_DIRECTORY!, plugin);
+                    let realPath = plugin;
+
+                    if (realPath.startsWith("./")) {
+                      realPath = path.join(
+                        process.env.TARGET_DIRECTORY!,
+                        plugin
+                      );
                     }
 
                     return dedent`
                     case '${plugin}':
-                      return import("${plugin}").then((mod) => mod.default);
+                      return import("${realPath}").then((mod) => mod.default);
                   `;
                   })
                   .join("\n")}

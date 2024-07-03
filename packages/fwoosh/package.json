@@ -30,6 +30,7 @@
     "lilconfig": "^3.1.2",
     "micromatch": "^4.0.7",
     "react": "19.0.0-beta-e7d213dfb0-20240507",
+    "react-aria": "^3.33.1",
     "react-dom": "19.0.0-beta-e7d213dfb0-20240507",
     "react-resizable-panels": "^2.0.19",
     "react-server-dom-webpack": "19.0.0-beta-e7d213dfb0-20240507",

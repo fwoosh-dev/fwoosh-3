@@ -6,7 +6,7 @@ const focusRingStyles = stylex.create({
     borderColor: focusRing.color,
     borderRadius: borderRadius.mdInset,
     borderStyle: "solid",
-    borderWidth: 2,
+    borderWidth: 4,
     inset: "-4px",
     position: "absolute",
     zIndex: 10,

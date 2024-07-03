@@ -21,7 +21,7 @@ import {
 
 const styles = stylex.create({
   scrollWrapper: {
-    width: "calc(100% + 6px)",
+    width: "calc(100% + 4px)",
   },
   SidebarLayout: {
     display: "flex",

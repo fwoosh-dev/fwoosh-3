@@ -7,7 +7,6 @@ body {
 
 @layer base {
   .app * {
-    box-sizing: border-box;
     cursor: default;
     font-family: "Inter", "system-ui";
   }

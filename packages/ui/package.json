@@ -16,6 +16,7 @@
     "@radix-ui/react-context": "^1.0.1",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-scroll-area": "^1.1.0",
+    "@react-hook/resize-observer": "^2.0.1",
     "@stylexjs/open-props": "^0.6.1",
     "@stylexjs/stylex": "^0.6.1",
     "lucide-react": "^0.395.0",
@@ -193,6 +194,13 @@
         "source": "./src/utils/highlightSyntax.ts",
         "types": "./dist/esm/utils/highlightSyntax.d.ts",
         "default": "./dist/esm/utils/highlightSyntax.js"
+      }
+    },
+    "./utils/useResizeObserver": {
+      "import": {
+        "source": "./src/utils/useResizeObserver.ts",
+        "types": "./dist/esm/utils/useResizeObserver.d.ts",
+        "default": "./dist/esm/utils/useResizeObserver.js"
       }
     },
     "./package.json": "./package.json"

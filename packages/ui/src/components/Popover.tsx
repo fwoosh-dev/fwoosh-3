@@ -8,6 +8,7 @@ import * as stylex from "@stylexjs/stylex";
 import { mergeProps } from "react-aria";
 
 import { appChrome, borderRadius } from "../theme/tokens.stylex.js";
+import { forwardRef } from "react";
 
 const styles = stylex.create({
   popover: {
@@ -19,8 +20,10 @@ const styles = stylex.create({
   },
 });
 
-export function Popover(props: PopoverProps) {
-  return (
-    <PopoverPrimitive {...mergeProps(props, stylex.props(styles.popover))} />
-  );
-}
+export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
+  (props, ref) => (
+    <PopoverPrimitive
+      {...mergeProps(props, stylex.props(styles.popover), { ref })}
+    />
+  )
+);

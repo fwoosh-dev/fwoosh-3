@@ -2,7 +2,12 @@
 
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 import * as stylex from "@stylexjs/stylex";
-import { appChromeA, borderRadius, space } from "../theme/tokens.stylex.js";
+import {
+  appChromeA,
+  borderRadius,
+  focusRing,
+  space,
+} from "../theme/tokens.stylex.js";
 import { mergeProps } from "react-aria";
 
 const styles = stylex.create({
@@ -12,8 +17,22 @@ const styles = stylex.create({
   viewport: {
     height: "100%",
     width: "100%",
+
+    borderColor: {
+      default: "transparent",
+      ":focus": focusRing.color,
+    },
+    borderRadius: borderRadius.md,
+    borderStyle: "solid",
+    borderWidth: 4,
+    boxSizing: "border-box",
+    outline: {
+      ":focus-visible": "none",
+      ":focus": "none",
+    },
   },
   bar: {
+    boxSizing: "border-box",
     display: "flex",
     padding: space[2],
     touchAction: "none",
@@ -88,10 +107,10 @@ export interface ScrollerProps {
   style?: stylex.StyleXStyles;
 }
 
-export function Scroller({ children, style }: ScrollerProps) {
+export function Scroller({ children, ...props }: ScrollRootProps) {
   return (
-    <ScrollRoot style={style}>
-      <ScrollViewport>{children}</ScrollViewport>
+    <ScrollRoot {...props}>
+      <ScrollViewport tabIndex={0}>{children}</ScrollViewport>
       <ScrollBars />
     </ScrollRoot>
   );

@@ -2,6 +2,7 @@
 
 import { FwooshPluginProps, getStorySlug, storyPreviewId } from "@fwoosh/types";
 import { TabPanelContent } from "@fwoosh/ui/components/Tabs";
+import { FocusRing } from "@fwoosh/ui/components/FocusRing";
 import { IconWrapper } from "@fwoosh/ui/components/IconButton";
 import { Spinner } from "@fwoosh/ui/components/Spinner";
 import * as stylex from "@stylexjs/stylex";
@@ -16,6 +17,8 @@ import {
   success,
   error,
 } from "@fwoosh/ui/theme/tokens.stylex";
+import axe from "axe-core";
+import { mergeProps, useFocusRing } from "react-aria";
 
 const styles = stylex.create({
   loader: {
@@ -25,11 +28,16 @@ const styles = stylex.create({
     alignItems: "center",
     cursor: "pointer",
     display: "flex",
+    position: "relative",
     textDecoration: "none",
 
     color: {
       default: appChrome.subtleText,
       ":hover": appChrome.text,
+    },
+    outline: {
+      ":focus-visible": "none",
+      ":focus": "none",
     },
   },
   errorIcon: {
@@ -45,6 +53,31 @@ const styles = stylex.create({
     paddingRight: space[2],
   },
 });
+
+function ResultLink({ result, pass }: { result: axe.Result; pass: boolean }) {
+  const { isFocusVisible, focusProps } = useFocusRing();
+
+  return (
+    <a
+      href={result.helpUrl}
+      target="_blank"
+      key={result.id}
+      {...mergeProps(focusProps, stylex.props(styles.row))}
+    >
+      {isFocusVisible && <FocusRing />}
+      {pass ? (
+        <IconWrapper style={styles.successIcon}>
+          <CheckCircledIcon />
+        </IconWrapper>
+      ) : (
+        <IconWrapper style={styles.errorIcon}>
+          <CrossCircledIcon />
+        </IconWrapper>
+      )}
+      <span {...stylex.props(styles.label)}>{result.help}</span>
+    </a>
+  );
+}
 
 function Results({ slug }: { slug: string }) {
   const [results, setResults] = useState<AxeResults | undefined>();
@@ -94,30 +127,10 @@ function Results({ slug }: { slug: string }) {
   return (
     <TabPanelContent>
       {results.violations.map((violation) => (
-        <a
-          href={violation.helpUrl}
-          target="_blank"
-          key={violation.id}
-          {...stylex.props(styles.row)}
-        >
-          <IconWrapper style={styles.errorIcon}>
-            <CrossCircledIcon />
-          </IconWrapper>
-          <span {...stylex.props(styles.label)}>{violation.help}</span>
-        </a>
+        <ResultLink key={violation.id} result={violation} pass={false} />
       ))}
       {results.passes.map((pass) => (
-        <a
-          href={pass.helpUrl}
-          target="_blank"
-          key={pass.id}
-          {...stylex.props(styles.row)}
-        >
-          <IconWrapper style={styles.successIcon}>
-            <CheckCircledIcon />
-          </IconWrapper>
-          <span {...stylex.props(styles.label)}>{pass.help}</span>
-        </a>
+        <ResultLink key={pass.id} result={pass} pass={true} />
       ))}
     </TabPanelContent>
   );

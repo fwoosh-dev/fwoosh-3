@@ -28,6 +28,8 @@ import {
 import { mergeProps } from "react-aria";
 import { FocusRing } from "./FocusRing.js";
 import { IconWrapper } from "./IconButton.js";
+import { Scroller } from "./Scroller.js";
+import { useRef, useState } from "react";
 
 interface SelectVariant {
   variant?: "toolbar";
@@ -119,9 +121,14 @@ const selectStyles = stylex.create({
     gap: space[4],
   },
   popover: {
+    display: "flex",
+    flexDirection: "column",
     minWidth: "max-content",
-    overflow: "auto",
     width: "var(--trigger-width)",
+  },
+  scroller: {
+    flexGrow: 1,
+    minHeight: 0,
   },
 });
 
@@ -146,16 +153,42 @@ export function Select<T extends object>({
   variant,
   ...props
 }: SelectProps<T>) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState<number | undefined>(undefined);
+
+  const onOpenChange = (isOpen: boolean) => {
+    if (isOpen) {
+      requestAnimationFrame(() => {
+        if (!ref.current) {
+          return;
+        }
+
+        const rect = ref.current.getBoundingClientRect();
+        setHeight(rect.height);
+      });
+    } else {
+      setHeight(undefined);
+    }
+  };
+
   return (
     <SelectPrimitive
       {...mergeProps(props, stylex.props(selectStyles.select, style))}
+      onOpenChange={onOpenChange}
     >
       {label && <Label>{label}</Label>}
       <SelectTrigger variant={variant} />
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
-      <Popover {...stylex.props(selectStyles.popover)}>
-        <ListBox items={items}>{children}</ListBox>
+      <Popover
+        ref={ref}
+        {...mergeProps(stylex.props(selectStyles.popover), {
+          style: { height },
+        })}
+      >
+        <Scroller style={selectStyles.scroller}>
+          <ListBox items={items}>{children}</ListBox>
+        </Scroller>
       </Popover>
     </SelectPrimitive>
   );
@@ -208,7 +241,7 @@ const optionStyles = stylex.create({
   },
   focusRing: {
     borderRadius: borderRadius.md,
-    boxShadow: `0 0 0 2px ${focusRing.color}`,
+    boxShadow: `inset 0 0 0 2px ${focusRing.color}`,
   },
 });
 

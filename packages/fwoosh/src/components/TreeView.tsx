@@ -6,8 +6,14 @@ import { TreeViewBaseItem } from "@mui/x-tree-view/models";
 import { TreeItemProps } from "@mui/x-tree-view/TreeItem";
 import { TreeItem2 } from "@mui/x-tree-view/TreeItem2";
 import * as stylex from "@stylexjs/stylex";
+import { useFocusVisible } from "react-aria";
 
-import { space, text } from "@fwoosh/ui/theme/tokens.stylex";
+import {
+  borderRadius,
+  focusRing,
+  space,
+  text,
+} from "@fwoosh/ui/theme/tokens.stylex";
 import { appChrome, primaryA } from "@fwoosh/ui/theme/tokens.stylex";
 import { useRouter_UNSTABLE as useRouter } from "waku";
 
@@ -37,6 +43,25 @@ const treeStyles = stylex.create({
     position: "relative",
     userSelect: "none",
     zIndex: 0,
+
+    "::before": {
+      borderColor: focusRing.color,
+      borderRadius: borderRadius.md,
+      borderStyle: "solid",
+      borderWidth: 4,
+      content: "''",
+      inset: -6,
+      opacity: 0,
+      position: "absolute",
+      transition: "opacity 0.1s",
+      zIndex: -1,
+    },
+  },
+  focused: {
+    borderRadius: borderRadius.mdInset,
+    "::before": {
+      opacity: 1,
+    },
   },
   label: {
     fontSize: text.xs,
@@ -56,12 +81,15 @@ function getIds(items: TreeViewBaseItem[]): string[] {
 }
 
 function MyTreeItem(props: TreeItemProps) {
+  const { isFocusVisible } = useFocusVisible();
+
   return (
     <TreeItem2
       {...props}
       classes={{
         content: stylex.attrs(treeStyles.content).class,
         label: stylex.attrs(treeStyles.label).class,
+        focused: isFocusVisible ? stylex.attrs(treeStyles.focused).class : "",
       }}
     />
   );

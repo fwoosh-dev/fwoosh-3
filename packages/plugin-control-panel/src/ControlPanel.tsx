@@ -5,12 +5,18 @@ import * as stylex from "@stylexjs/stylex";
 
 import { TabPanelContent } from "@fwoosh/ui/components/Tabs";
 import { Label } from "@fwoosh/ui/components/Label";
-import { Input, TextField } from "@fwoosh/ui/components/TextField";
+import { Input, TextArea, TextField } from "@fwoosh/ui/components/TextField";
 import { NumberField } from "@fwoosh/ui/components/NumberField";
 import { Select, SelectOption } from "@fwoosh/ui/components/Select";
 
 import { setItem } from "./store.js";
-import { Control, NumberControl, SelectControl, TextControl } from "./types.js";
+import {
+  Control,
+  NumberControl,
+  SelectControl,
+  TextAreaControl,
+  TextControl,
+} from "./types.js";
 import { space } from "@fwoosh/ui/theme/tokens.stylex";
 import { StoryContext, getStorySlug } from "@fwoosh/types";
 
@@ -56,6 +62,43 @@ function TextControlComponent<T>({
         type="text"
         value={value as string}
         onChange={(e) => onChange(e.target.value)}
+      />
+    </TextField>
+  );
+}
+
+function TextAreaControlComponent<T>({
+  label,
+  value: initialValue,
+  storyId,
+  rows,
+}: TextAreaControl<T> & { storyId: string }) {
+  const [value, setValue] = useState(initialValue);
+
+  const onChange = useCallback(
+    (newValue: string) => {
+      setValue(newValue as T);
+      setItem({
+        scope: "app",
+        id: storyId,
+        value: {
+          type: "textarea",
+          value: newValue,
+          label,
+          rows,
+        },
+      });
+    },
+    [label, storyId, rows]
+  );
+
+  return (
+    <TextField style={styles.row}>
+      <Label>{label}</Label>
+      <TextArea
+        value={value as string}
+        onChange={(e) => onChange(e.target.value)}
+        rows={rows}
       />
     </TextField>
   );
@@ -192,6 +235,12 @@ function ControlPanelRenderer({ page, story }: StoryContext) {
               key={value.label}
               storyId={storyId}
               {...(value as NumberControl<number>)}
+            />
+          ) : value.type === "textarea" ? (
+            <TextAreaControlComponent
+              key={value.label}
+              storyId={storyId}
+              {...(value as TextAreaControl<string>)}
             />
           ) : null
         )}

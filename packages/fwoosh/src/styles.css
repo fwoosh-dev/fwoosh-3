@@ -11,6 +11,10 @@ body {
     font-family: "Inter", "system-ui";
   }
 
+  .app [data-radix-scroll-area-viewport] > div {
+    height: 100%;
+  }
+
   .app pre,
   body {
     margin: 0;

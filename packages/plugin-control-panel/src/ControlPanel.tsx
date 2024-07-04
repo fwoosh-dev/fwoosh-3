@@ -28,7 +28,12 @@ const styles = stylex.create({
     gridTemplateColumns: "max-content minmax(max-content, 1fr)",
   },
   row: {
-    display: "contents",
+    alignItems: "center",
+    display: "grid",
+    gap: space[5],
+    gridColumn: "1/3",
+    gridTemplateColumns: "subgrid",
+    gridTemplateRows: "subgrid",
   },
 });
 

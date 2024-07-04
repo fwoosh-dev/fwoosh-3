@@ -1,3 +1,5 @@
+"use client";
+
 import {
   NumberFieldProps as NumberFieldPropsPrimitive,
   ValidationResult,
@@ -57,6 +59,17 @@ const styles = stylex.create({
   dimmedButton: {
     color: appChrome.subtleText,
   },
+  horizontalField: {
+    alignItems: "center",
+    display: "flex",
+    gap: space[4],
+  },
+  verticalField: {
+    alignItems: "flex-start",
+    display: "flex",
+    flexDirection: "column",
+    gap: space[4],
+  },
 });
 
 export interface NumberFieldProps
@@ -65,6 +78,7 @@ export interface NumberFieldProps
   description?: string;
   errorMessage?: string | ((validation: ValidationResult) => string);
   style?: stylex.StyleXStyles;
+  orientation?: "horizontal" | "vertical";
 }
 
 export function NumberField({
@@ -72,6 +86,7 @@ export function NumberField({
   description,
   errorMessage,
   style,
+  orientation = "horizontal",
   ...props
 }: NumberFieldProps) {
   const { isFocused, focusProps } = useFocusRing({
@@ -79,7 +94,17 @@ export function NumberField({
   });
 
   return (
-    <NumberFieldPrimitive {...mergeProps(props, stylex.props(style))}>
+    <NumberFieldPrimitive
+      {...mergeProps(
+        props,
+        stylex.props(
+          orientation === "vertical"
+            ? styles.verticalField
+            : styles.horizontalField,
+          style
+        )
+      )}
+    >
       <Label>{label}</Label>
       <Group {...stylex.props(styles.group)}>
         {isFocused && <FocusRing style={styles.focusRing} />}

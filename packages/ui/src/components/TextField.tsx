@@ -128,10 +128,10 @@ export function TextField({
     <TextFieldPrimitive
       {...props}
       {...stylex.props(
-        style,
         orientation === "vertical"
           ? styles.verticalField
-          : styles.horizontalField
+          : styles.horizontalField,
+        style
       )}
     >
       {children}

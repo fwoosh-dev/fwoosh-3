@@ -34,6 +34,7 @@ const styles = stylex.create({
     borderRadius: borderRadius.md,
     borderStyle: "solid",
     borderWidth: 1,
+    boxSizing: "border-box",
     height: space[7],
     padding: space[2],
   },

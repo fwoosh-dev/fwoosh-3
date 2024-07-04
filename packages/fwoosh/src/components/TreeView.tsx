@@ -48,7 +48,7 @@ const treeStyles = stylex.create({
       borderColor: focusRing.color,
       borderRadius: borderRadius.md,
       borderStyle: "solid",
-      borderWidth: 4,
+      borderWidth: focusRing.width,
       content: "''",
       inset: -6,
       opacity: 0,

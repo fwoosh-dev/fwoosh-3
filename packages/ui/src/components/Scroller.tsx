@@ -8,7 +8,7 @@ import {
   focusRing,
   space,
 } from "../theme/tokens.stylex.js";
-import { mergeProps } from "react-aria";
+import { mergeProps, useFocusRing } from "react-aria";
 
 const styles = stylex.create({
   root: {
@@ -18,18 +18,17 @@ const styles = stylex.create({
     height: "100%",
     width: "100%",
 
-    borderColor: {
-      default: "transparent",
-      ":focus": focusRing.color,
-    },
-    borderRadius: borderRadius.md,
+    borderColor: "transparent",
     borderStyle: "solid",
-    borderWidth: 4,
+    borderWidth: focusRing.width,
     boxSizing: "border-box",
     outline: {
       ":focus-visible": "none",
       ":focus": "none",
     },
+  },
+  viewportFocused: {
+    borderColor: focusRing.color,
   },
   bar: {
     boxSizing: "border-box",
@@ -71,12 +70,34 @@ export function ScrollRoot({ children, style, ...props }: ScrollRootProps) {
   );
 }
 
+export interface ScrollViewportProps
+  extends Omit<
+    React.ComponentProps<typeof ScrollAreaPrimitive.Viewport>,
+    "style" | "className"
+  > {
+  style?: stylex.StyleXStyles;
+}
+
 export function ScrollViewport({
   children,
+  style,
   ...props
-}: React.ComponentProps<typeof ScrollAreaPrimitive.Viewport>) {
+}: ScrollViewportProps) {
+  const { isFocusVisible, focusProps } = useFocusRing();
+
   return (
-    <ScrollAreaPrimitive.Viewport {...props} {...stylex.props(styles.viewport)}>
+    <ScrollAreaPrimitive.Viewport
+      tabIndex={0}
+      {...mergeProps(
+        props,
+        focusProps,
+        stylex.props(
+          styles.viewport,
+          isFocusVisible && styles.viewportFocused,
+          style
+        )
+      )}
+    >
       {children}
     </ScrollAreaPrimitive.Viewport>
   );
@@ -110,7 +131,7 @@ export interface ScrollerProps {
 export function Scroller({ children, ...props }: ScrollRootProps) {
   return (
     <ScrollRoot {...props}>
-      <ScrollViewport tabIndex={0}>{children}</ScrollViewport>
+      <ScrollViewport>{children}</ScrollViewport>
       <ScrollBars />
     </ScrollRoot>
   );

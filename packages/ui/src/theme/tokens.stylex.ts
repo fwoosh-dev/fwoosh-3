@@ -129,6 +129,7 @@ export const primaryDarkA = stylex.defineVars({
 
 export const focusRing = stylex.defineVars({
   color: blue.hoveredBorder,
+  width: 2,
 });
 
 export const error = stylex.defineVars({

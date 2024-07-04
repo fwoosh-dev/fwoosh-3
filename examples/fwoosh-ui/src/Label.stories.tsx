@@ -3,6 +3,7 @@
 import { PageMeta } from "fwoosh";
 
 import { Label } from "@fwoosh/ui/components/Label";
+import { useControl } from "@fwoosh/plugin-control-panel/react";
 
 export const meta: PageMeta = {
   title: "Components/Label",
@@ -11,5 +12,10 @@ export const meta: PageMeta = {
 };
 
 export const Basic = () => {
-  return <Label>Username</Label>;
+  const [label] = useControl({
+    type: "text",
+    label: "Label",
+    value: "Username",
+  });
+  return <Label>{label}</Label>;
 };

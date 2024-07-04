@@ -4,10 +4,11 @@ import { borderRadius, focusRing } from "../theme/tokens.stylex.js";
 const focusRingStyles = stylex.create({
   base: {
     borderColor: focusRing.color,
-    borderRadius: borderRadius.mdInset,
+    borderRadius: borderRadius.md,
     borderStyle: "solid",
-    borderWidth: 4,
-    inset: "-4px",
+    borderWidth: focusRing.width,
+    inset: -6,
+    pointerEvents: "none",
     position: "absolute",
     zIndex: 10,
   },

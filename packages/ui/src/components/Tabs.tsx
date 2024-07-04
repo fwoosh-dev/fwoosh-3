@@ -16,7 +16,12 @@ import { borderRadius, space, text } from "../theme/tokens.stylex.js";
 import { appChrome } from "../theme/tokens.stylex.js";
 import { FocusRing } from "./FocusRing.js";
 import { mergeProps } from "react-aria";
-import { Scroller } from "./Scroller.js";
+import {
+  ScrollBars,
+  ScrollRoot,
+  ScrollViewport,
+  Scroller,
+} from "./Scroller.js";
 
 const tabRootStyles = stylex.create({
   base: {
@@ -130,6 +135,10 @@ const tabPanelStyles = stylex.create({
   scroller: {
     height: "100%",
   },
+  scrollViewport: {
+    borderBottomLeftRadius: borderRadius.lg,
+    borderBottomRightRadius: borderRadius.lg,
+  },
 });
 
 export interface TabPanelProps
@@ -143,7 +152,12 @@ export function TabPanel({ style, children, ...props }: TabPanelProps) {
     <TabPanelPrimitive
       {...mergeProps(props, stylex.props(tabPanelStyles.base, style))}
     >
-      <Scroller style={tabPanelStyles.scroller}>{children}</Scroller>
+      <ScrollRoot style={tabPanelStyles.scroller}>
+        <ScrollViewport style={tabPanelStyles.scrollViewport}>
+          {children}
+        </ScrollViewport>
+        <ScrollBars />
+      </ScrollRoot>
     </TabPanelPrimitive>
   );
 }

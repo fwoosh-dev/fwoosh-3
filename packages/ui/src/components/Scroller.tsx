@@ -136,17 +136,31 @@ export function Scroller({
   const [height, setHeight] = useState<number | undefined>();
 
   useEffect(() => {
-    requestAnimationFrame(() => {
+    function setSize() {
       if (!ref.current) {
         return;
       }
 
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
-    });
+    }
+
+    const frame = requestAnimationFrame(setSize);
+    let setSizeTimeout: ReturnType<typeof setTimeout> | undefined;
+
+    function onDocumentResize() {
+      cancelAnimationFrame(frame);
+      clearTimeout(setSizeTimeout);
+      setHeight(undefined);
+      setSizeTimeout = setTimeout(setSize, 1000);
+    }
+
+    window.addEventListener("resize", onDocumentResize);
 
     return () => {
       setHeight(undefined);
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", onDocumentResize);
     };
   }, [setHeightOnMount]);
 

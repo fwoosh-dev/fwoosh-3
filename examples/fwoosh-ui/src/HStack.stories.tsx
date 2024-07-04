@@ -57,16 +57,16 @@ export const Basic = () => {
 
   return (
     <HStack align={align} justify={justify} gap={gap} style={styles.wrapper}>
-      <IconButton>
+      <IconButton aria-label="Archive">
         <ArchiveIcon />
       </IconButton>
-      <IconButton>
+      <IconButton aria-label="Bar chart">
         <BarChartIcon />
       </IconButton>
-      <IconButton>
+      <IconButton aria-label="Calendar">
         <CalendarIcon />
       </IconButton>
-      <IconButton>
+      <IconButton aria-label="GitHub">
         <GitHubLogoIcon />
       </IconButton>
     </HStack>

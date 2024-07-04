@@ -22,7 +22,7 @@ export const Basic = () => {
   });
   return (
     <TooltipTrigger>
-      <IconButton>
+      <IconButton aria-label="Show tooltip">
         <CookieIcon />
       </IconButton>
       <Tooltip>{label}</Tooltip>
@@ -55,7 +55,7 @@ export const Customized = () => {
 
   return (
     <TooltipTrigger isOpen={true}>
-      <IconButton>
+      <IconButton aria-label="Show tooltip">
         <CookieIcon />
       </IconButton>
       <Tooltip placement={placement} offset={offset} crossOffset={crossOffset}>

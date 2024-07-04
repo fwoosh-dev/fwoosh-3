@@ -38,6 +38,7 @@ export default function ScreensTool({
         <TooltipTrigger>
           <IconButton
             variant="toolbar"
+            aria-label="Toggle orientation"
             onPress={() =>
               store.setValue(
                 "orientation",

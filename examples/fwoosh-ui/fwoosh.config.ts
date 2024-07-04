@@ -13,8 +13,8 @@ const config = defineConfig({
   name: "React Example",
   logo: "./images/logo.png",
   theme: {
-    chrome: "sage",
-    primary: "jade",
+    chrome: "mauve",
+    primary: "tomato",
     code: {
       light: "catppuccin-latte",
       dark: "catppuccin-frappe",

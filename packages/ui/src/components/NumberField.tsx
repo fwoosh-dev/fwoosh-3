@@ -112,6 +112,7 @@ export function NumberField({
           style={isFocused ? undefined : styles.dimmedButton}
           variant="toolbar"
           slot="decrement"
+          aria-label="Decrement"
         >
           -
         </IconButton>
@@ -120,6 +121,7 @@ export function NumberField({
           style={isFocused ? undefined : styles.dimmedButton}
           variant="toolbar"
           slot="increment"
+          aria-label="Increment"
         >
           +
         </IconButton>

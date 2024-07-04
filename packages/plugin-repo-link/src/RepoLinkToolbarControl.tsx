@@ -19,7 +19,7 @@ export default function RepoLinkToolbarControl({
 
   return (
     <TooltipTrigger>
-      <IconLink variant="toolbar" href={repoUrl}>
+      <IconLink variant="toolbar" href={repoUrl} aria-label="Open on GitHub">
         <GitHubLogoIcon />
       </IconLink>
       <Tooltip>Open on GitHub</Tooltip>

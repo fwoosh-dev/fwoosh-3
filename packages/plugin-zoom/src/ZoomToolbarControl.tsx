@@ -58,19 +58,31 @@ export default function ZoomToolbarControl() {
   return (
     <HStack gap={3}>
       <TooltipTrigger>
-        <IconButton variant="toolbar" onPress={increaseZoom}>
+        <IconButton
+          variant="toolbar"
+          onPress={increaseZoom}
+          aria-label="Zoom in"
+        >
           <PlusIcon />
         </IconButton>
         <Tooltip>Zoom in</Tooltip>
       </TooltipTrigger>
       <TooltipTrigger>
-        <IconButton variant="toolbar" onPress={decreaseZoom}>
+        <IconButton
+          variant="toolbar"
+          onPress={decreaseZoom}
+          aria-label="Zoom out"
+        >
           <MinusIcon />
         </IconButton>
         <Tooltip>Zoom out</Tooltip>
       </TooltipTrigger>
       <TooltipTrigger>
-        <IconButton variant="toolbar" onPress={resetZoom}>
+        <IconButton
+          variant="toolbar"
+          onPress={resetZoom}
+          aria-label="Reset zoom"
+        >
           <ResetIcon />
         </IconButton>
         <Tooltip>Reset zoom</Tooltip>

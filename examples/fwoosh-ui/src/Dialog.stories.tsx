@@ -23,7 +23,7 @@ export const meta: PageMeta = {
 export const AsPopover = () => {
   return (
     <DialogTrigger>
-      <IconButton>
+      <IconButton aria-label="Open popover">
         <FaceIcon />
       </IconButton>
       <DialogPopover>
@@ -39,7 +39,7 @@ export const AsPopover = () => {
 export const AsModal = () => {
   return (
     <DialogTrigger>
-      <IconButton>
+      <IconButton aria-label="Open modal">
         <FaceIcon />
       </IconButton>
       <DialogModal size="small">

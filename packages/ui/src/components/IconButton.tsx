@@ -42,6 +42,7 @@ export interface IconButtonProps
   variant?: "toolbar";
   children: React.ReactNode;
   style?: stylex.StyleXStyles;
+  "aria-label": string;
 }
 
 export function IconButton({
@@ -75,6 +76,7 @@ export function IconButton({
 export interface IconLinkProps extends Omit<LinkProps, "children"> {
   variant?: "toolbar";
   children: React.ReactNode;
+  "aria-label": string;
 }
 
 export function IconLink({ variant, children, ...props }: IconLinkProps) {

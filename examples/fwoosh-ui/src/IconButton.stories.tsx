@@ -25,7 +25,7 @@ export const meta: PageMeta = {
  */
 export const Basic = () => {
   return (
-    <IconButton>
+    <IconButton aria-label="Archive">
       <ArchiveIcon />
     </IconButton>
   );
@@ -36,7 +36,7 @@ export const Basic = () => {
  */
 export const Toolbar = () => {
   return (
-    <IconButton variant="toolbar">
+    <IconButton variant="toolbar" aria-label="Bar chart">
       <BarChartIcon />
     </IconButton>
   );
@@ -47,7 +47,11 @@ export const Toolbar = () => {
  */
 export const Link = () => {
   return (
-    <IconLink href="https://google.com" target="_blank">
+    <IconLink
+      href="https://google.com"
+      target="_blank"
+      aria-label="Open calendar"
+    >
       <CalendarIcon />
     </IconLink>
   );

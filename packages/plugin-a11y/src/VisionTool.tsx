@@ -136,7 +136,7 @@ export default function VisionTool() {
         onSelectionChange={(key) => setFilter(key as FilterName)}
       >
         <TooltipTrigger>
-          <IconButton variant="toolbar">
+          <IconButton variant="toolbar" aria-label="Vision filter">
             <ColorPreview filter={filter} />
           </IconButton>
           <Tooltip>Vision filter: {filter}</Tooltip>

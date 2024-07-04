@@ -6,12 +6,17 @@ import { getAllStorySlugs, getStoryBySlug } from "../../utils/stories";
 
 import * as stylex from "@stylexjs/stylex";
 import { importPlugin } from "@fwoosh/pages";
+import { Scroller } from "@fwoosh/ui/components/Scroller";
 
 const styles = stylex.create({
   iframe: {
     display: "flex",
     height: "100%",
     width: "100%",
+  },
+  scroller: {
+    flexGrow: 1,
+    minHeight: 0,
   },
 });
 
@@ -38,20 +43,24 @@ export default async function Story({ storySlug }: { storySlug: string }) {
       wrappers.map(({ filepath }) => importPlugin(filepath))
     );
 
-    frame = wrapperComponents.reduceRight((acc, Wrapper, index) => {
-      const wrapper = wrappers[index]!;
+    frame = (
+      <Scroller style={styles.scroller}>
+        {wrapperComponents.reduceRight((acc, Wrapper, index) => {
+          const wrapper = wrappers[index]!;
 
-      return (
-        <Wrapper
-          key={wrapper.id}
-          page={page}
-          story={story}
-          options={wrapper.options}
-        >
-          {acc}
-        </Wrapper>
-      );
-    }, frame);
+          return (
+            <Wrapper
+              key={wrapper.id}
+              page={page}
+              story={story}
+              options={wrapper.options}
+            >
+              {acc}
+            </Wrapper>
+          );
+        }, frame)}
+      </Scroller>
+    );
   }
 
   return (

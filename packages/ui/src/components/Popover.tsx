@@ -2,7 +2,7 @@
 
 import {
   Popover as PopoverPrimitive,
-  PopoverProps,
+  PopoverProps as PopoverPrimitiveProps,
 } from "react-aria-components";
 import * as stylex from "@stylexjs/stylex";
 import { mergeProps } from "react-aria";
@@ -20,10 +20,18 @@ const styles = stylex.create({
   },
 });
 
+export interface PopoverProps
+  extends Omit<PopoverPrimitiveProps, "style" | "className"> {
+  style?: stylex.StyleXStyles;
+}
+
 export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
-  (props, ref) => (
+  ({ style, ...props }, ref) => (
     <PopoverPrimitive
-      {...mergeProps(props, stylex.props(styles.popover), { ref })}
+      {...mergeProps(props, stylex.props(styles.popover, style), {
+        ref,
+        className: "inter",
+      })}
     />
   )
 );

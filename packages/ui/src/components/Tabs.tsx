@@ -4,7 +4,7 @@ import {
   Tabs as TabsPrimitive,
   TabsProps as TabsPrimitiveProps,
   TabList as TabListPrimitive,
-  TabListProps,
+  TabListProps as TabListPrimitiveProps,
   Tab as TabPrimitive,
   TabProps as TabPrimitiveProps,
   TabPanel as TabPanelPrimitive,
@@ -16,12 +16,7 @@ import { borderRadius, space, text } from "../theme/tokens.stylex.js";
 import { appChrome } from "../theme/tokens.stylex.js";
 import { FocusRing } from "./FocusRing.js";
 import { mergeProps } from "react-aria";
-import {
-  ScrollBars,
-  ScrollRoot,
-  ScrollViewport,
-  Scroller,
-} from "./Scroller.js";
+import { ScrollBars, ScrollRoot, ScrollViewport } from "./Scroller.js";
 
 const tabRootStyles = stylex.create({
   base: {
@@ -64,9 +59,19 @@ const tabListStyles = stylex.create({
   },
 });
 
-export function TabList<T>(props: TabListProps<T>) {
-  // @ts-expect-error Couldn't get the generics to work
-  return <TabListPrimitive {...props} {...stylex.props(tabListStyles.base)} />;
+interface TabListProps<T>
+  extends Omit<TabListPrimitiveProps<T>, "style" | "className"> {
+  children: React.ReactNode;
+  style?: stylex.StyleXStyles;
+}
+
+export function TabList<T>({ style, ...props }: TabListProps<T>) {
+  return (
+    // @ts-expect-error Couldn't get the generics to work
+    <TabListPrimitive
+      {...mergeProps(props, stylex.props(tabListStyles.base, style))}
+    />
+  );
 }
 
 const tabStyles = stylex.create({

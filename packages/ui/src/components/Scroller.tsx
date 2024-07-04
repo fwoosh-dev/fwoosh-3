@@ -9,18 +9,17 @@ import {
   space,
 } from "../theme/tokens.stylex.js";
 import { mergeProps, useFocusRing } from "react-aria";
+import { useEffect, useRef, useState } from "react";
 
 const styles = stylex.create({
   root: {
     overflow: "hidden",
   },
+  rootHeight: (height) => ({ height }),
   viewport: {
     height: "100%",
     width: "100%",
 
-    borderColor: "transparent",
-    borderStyle: "solid",
-    borderWidth: focusRing.width,
     boxSizing: "border-box",
     outline: {
       ":focus-visible": "none",
@@ -28,7 +27,7 @@ const styles = stylex.create({
     },
   },
   viewportFocused: {
-    borderColor: focusRing.color,
+    boxShadow: `inset 0 0 0 calc(${focusRing.width} * 1px) ${focusRing.color}`,
   },
   bar: {
     boxSizing: "border-box",
@@ -124,13 +123,35 @@ export function ScrollBars() {
 }
 
 export interface ScrollerProps {
-  children: React.ReactNode;
-  style?: stylex.StyleXStyles;
+  setHeightOnMount?: boolean;
 }
 
-export function Scroller({ children, ...props }: ScrollRootProps) {
+export function Scroller({
+  children,
+  setHeightOnMount,
+  style,
+  ...props
+}: ScrollRootProps & ScrollerProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState<number | undefined>();
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      if (!ref.current) {
+        return;
+      }
+
+      const rect = ref.current.getBoundingClientRect();
+      setHeight(rect.height);
+    });
+
+    return () => {
+      setHeight(undefined);
+    };
+  }, [setHeightOnMount]);
+
   return (
-    <ScrollRoot {...props}>
+    <ScrollRoot ref={ref} {...props} style={[styles.rootHeight(height), style]}>
       <ScrollViewport>{children}</ScrollViewport>
       <ScrollBars />
     </ScrollRoot>

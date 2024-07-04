@@ -29,7 +29,6 @@ import { mergeProps } from "react-aria";
 import { FocusRing } from "./FocusRing.js";
 import { IconWrapper } from "./IconButton.js";
 import { Scroller } from "./Scroller.js";
-import { useRef, useState } from "react";
 
 interface SelectVariant {
   variant?: "toolbar";
@@ -153,40 +152,16 @@ export function Select<T extends object>({
   variant,
   ...props
 }: SelectProps<T>) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number | undefined>(undefined);
-
-  const onOpenChange = (isOpen: boolean) => {
-    if (isOpen) {
-      requestAnimationFrame(() => {
-        if (!ref.current) {
-          return;
-        }
-
-        const rect = ref.current.getBoundingClientRect();
-        setHeight(rect.height);
-      });
-    } else {
-      setHeight(undefined);
-    }
-  };
-
   return (
     <SelectPrimitive
       {...mergeProps(props, stylex.props(selectStyles.select, style))}
-      onOpenChange={onOpenChange}
     >
       {label && <Label>{label}</Label>}
       <SelectTrigger variant={variant} />
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
-      <Popover
-        ref={ref}
-        {...mergeProps(stylex.props(selectStyles.popover), {
-          style: { height },
-        })}
-      >
-        <Scroller style={selectStyles.scroller}>
+      <Popover style={selectStyles.popover}>
+        <Scroller setHeightOnMount={true} style={selectStyles.scroller}>
           <ListBox items={items}>{children}</ListBox>
         </Scroller>
       </Popover>

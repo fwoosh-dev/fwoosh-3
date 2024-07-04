@@ -63,6 +63,13 @@
         "default": "./dist/esm/app.js"
       }
     },
+    "./components/Dialog": {
+      "import": {
+        "source": "./src/components/Dialog.tsx",
+        "types": "./dist/esm/components/Dialog.d.ts",
+        "default": "./dist/esm/components/Dialog.js"
+      }
+    },
     "./components/FocusRing": {
       "import": {
         "source": "./src/components/FocusRing.tsx",
@@ -152,6 +159,13 @@
         "source": "./src/components/Tabs.tsx",
         "types": "./dist/esm/components/Tabs.d.ts",
         "default": "./dist/esm/components/Tabs.js"
+      }
+    },
+    "./components/Text": {
+      "import": {
+        "source": "./src/components/Text.tsx",
+        "types": "./dist/esm/components/Text.d.ts",
+        "default": "./dist/esm/components/Text.js"
       }
     },
     "./components/TextField": {

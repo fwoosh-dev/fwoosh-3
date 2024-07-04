@@ -21,6 +21,8 @@
 - [ ] MDX only pages
 - [ ] improve docs view
 - [ ] View docs button
+- [ ] sentence case the sidebar
+- [ ] fix bug where new stories don't work when they are added to a running app
 - [ ] Style MD components more
 - [ ] sidebar sorting
 - [ ] Remember initial layout in ssr friendly way

@@ -1,6 +1,5 @@
 import { glob } from "glob";
 import { promises as fs } from "fs";
-import crypto from "crypto";
 import { Page, getStorySlug } from "@fwoosh/types";
 import { extractComments } from "@fwoosh/extract-comments";
 import { importMeta, importPage } from "@fwoosh/pages";
@@ -11,28 +10,11 @@ export async function getAllPages() {
   return glob(`${process.env.TARGET_DIRECTORY}/**/*.stories.tsx`);
 }
 
-const cache = new Map<string, Page>();
-
-async function calculateChecksum(filePath: string) {
-  const fileBuffer = await fs.readFile(filePath);
-  const hash = crypto.createHash("sha256");
-  hash.update(fileBuffer);
-  const checksum = hash.digest("hex");
-  return checksum;
-}
-
 export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
   const { kebabCase } = await changeCasePromise;
   const files = await getAllPages();
   const stories = await Promise.all(
     files.map(async (file) => {
-      const checksum = await calculateChecksum(file);
-      const cached = cache.get(checksum);
-
-      if (cached) {
-        return cached;
-      }
-
       const fileTitle = file.replace(/\.stories\.tsx$/, "");
       const { meta: _, ...stories } = await importPage(file);
       const { meta } = await importMeta(file);
@@ -61,7 +43,6 @@ export const getAllPageGroups = async (): Promise<Record<string, Page[]>> => {
         })),
       };
 
-      cache.set(checksum, page);
       return page;
     })
   );

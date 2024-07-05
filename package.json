@@ -25,7 +25,7 @@
     "typescript-eslint": "^7.14.1"
   },
   "resolutions": {
-    "react": "19.0.0-beta-e7d213dfb0-20240507",
-    "react-dom": "19.0.0-beta-e7d213dfb0-20240507"
+    "react": "19.0.0-rc-3da26163a3-20240704",
+    "react-dom": "19.0.0-rc-3da26163a3-20240704"
   }
 }

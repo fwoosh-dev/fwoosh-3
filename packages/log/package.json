@@ -35,5 +35,6 @@
   },
   "main": "./dist/commonjs/index.js",
   "types": "./dist/commonjs/index.d.ts",
-  "type": "module"
+  "type": "module",
+  "module": "./dist/esm/index.js"
 }

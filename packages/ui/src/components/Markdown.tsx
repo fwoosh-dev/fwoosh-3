@@ -1,7 +1,7 @@
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkUnwrapImages from "remark-unwrap-images";
-import remarkEmoji from "remark-emoji";
+// import remarkEmoji from "remark-emoji";
 import type {
   Code,
   Heading,
@@ -42,7 +42,7 @@ export async function getAst(text: string): Promise<Root> {
     .use(remarkParse, {})
     // Markdown plugins
     .use(remarkGfm)
-    .use(remarkEmoji)
+    // .use(remarkEmoji)
     .use(remarkUnwrapImages)
     // Caput the AST
     .use(function process() {

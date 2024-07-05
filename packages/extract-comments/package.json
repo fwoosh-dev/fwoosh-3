@@ -39,5 +39,6 @@
     "comment-parser": "^1.4.1",
     "js-tokens": "^9.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "module": "./dist/esm/index.js"
 }
